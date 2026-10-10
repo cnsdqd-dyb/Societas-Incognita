@@ -14,6 +14,15 @@ with sync_playwright() as p:
     rid = 'functional_sol_low_4x50_20261010/sol_low/simulation'
     page.locator('#run').select_option(rid)
     page.wait_for_function('(id)=>data?.meta.id===id && document.getElementById("loading").classList.contains("hidden")', arg=rid)
+    page.evaluate('''async()=>{
+      const saved=data;
+      for(const run of runs){
+       data=await api('/api/run?id='+encodeURIComponent(run.id));makeWorld();resetActors();
+       if(actors.some(a=>blocked(a.x,a.y)))throw Error('Blocked spawn '+run.id);
+       const cells=walkableWorldCells();if(connectedWorldCells(cells).length!==cells.length)throw Error('Disconnected '+run.id);
+      }
+      data=saved;makeWorld();resetActors();enterRound();
+    }''')
     result = page.evaluate('''()=>{
       const layout=()=>JSON.stringify({seed:worldScene.seed,pond:worldScene.pond,props:worldScene.props,stations,spawns:worldScene.spawns});
       const first=layout(); makeWorld();resetActors();if(first!==layout())throw Error('Unstable scenery');
@@ -33,6 +42,8 @@ with sync_playwright() as p:
        for(const node of document.querySelectorAll('.atlas-material')){
         const item=node.dataset.material,expected=num(record?.pools_after?.[item]);
         if(!node.textContent.includes(item+' · '+expected))throw Error('Wrong quantity '+item);
+        const box=node.getBBox(),root=node.ownerSVGElement.viewBox.baseVal;
+        if(box.x<0||box.y<0||box.x+box.width>root.width||box.y+box.height>root.height)throw Error('Clipped material '+item);
        }
       }
       seek(8);return {materials:n,pond:Boolean(worldScene.pond),seed:worldScene.seed};
