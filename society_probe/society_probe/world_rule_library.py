@@ -116,7 +116,34 @@ def randomize_material_functions(d, seed):
     return assignment
 
 
-def generate(seed, modules=None, noise_amplitude=0.):
+def exploration_window(definition, ecological_step=.1, precursor_reseeding=.25):
+    """Slow ecological turnover; precursor regeneration is funded by reserve.
+
+    This changes candidate laws and requires fresh screening/certification.
+    It does not protect stocks from extraction or guarantee discoverability.
+    """
+    if not 0 < ecological_step <= 1 or not 0 <= precursor_reseeding <= 1:
+        raise ValueError('Invalid exploration-window parameters')
+    for item in ('A', 'B'):
+        pool = definition['pools'][item]
+        for field in ('regeneration', 'depletion'):
+            if field in pool:
+                pool[field] = expr('mul', ecological_step, pool[field])
+    for flow in definition.get('pool_flows', []):
+        if flow['source'] in ('A', 'B'):
+            flow['rate'] = expr('mul', ecological_step, flow['rate'])
+    pool = definition['pools']['A']
+    # The ordinary reserve-limited replenishment mechanism pays for this influx.
+    pool['regeneration'] = expr('add', pool['regeneration'], expr('mul', precursor_reseeding,
+        expr('max', 0, expr('sub', 1, expr('div', ref('pool.A'), pool['capacity'])))))
+    for item in ('A', 'B'):
+        rate = definition['resources'][item]['decay']
+        definition['resources'][item]['decay'] = 1 - (1-rate)**ecological_step if rate else 0
+    definition['quantity_semantics'] = 'continuous_v1'
+    return definition
+
+
+def generate(seed, modules=None, noise_amplitude=0., ecological_step=.1, precursor_reseeding=.25):
     rng = random.Random(seed); d = base_definition()
     selected = list(modules) if modules is not None else rng.sample(list(MODULES), rng.randint(1, min(4, len(MODULES))))
     if len(set(selected)) != len(selected) or not set(selected) <= set(MODULES):
@@ -197,12 +224,15 @@ def generate(seed, modules=None, noise_amplitude=0.):
     add_functional_services(d, seed, selected_services)
     import production_semantics
     production_semantics.normalize(d)
+    exploration_window(d, ecological_step, precursor_reseeding)
     d['noise'] = {'distribution': 'uniform' if noise_amplitude else 'none', 'amplitude': noise_amplitude}
     d['id'] = 'candidate_'+str(seed)
     engine.validate(d)
     return {'definition': d, 'generation': {'seed': seed, 'modules': selected,
             'definition_sha256': digest(d), 'status': 'candidate_not_certified',
-            'generator_version': 'compositional_v6_functional_services',
+            'generator_version': 'compositional_v7_continuous_exploration',
+            'exploration_window': {'ecological_step': ecological_step, 'precursor_reseeding': precursor_reseeding,
+                'funding': 'ordinary finite world reserve; no free energy or guaranteed survival'},
             'functional_services': selected_services,
             'material_function_assignment': function_assignment,
             'mathematical_optimum': 'not_computed'}}

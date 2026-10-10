@@ -1,0 +1,202 @@
+{
+  "a3": [
+    {
+      "round": 8,
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "B": 1,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 15,
+      "facility": "F0",
+      "mode": "compress",
+      "inputs": {
+        "B": 1,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 18,
+      "facility": "F0",
+      "mode": "seed",
+      "inputs": {
+        "B": 2,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    }
+  ],
+  "a2": [
+    {
+      "round": 8,
+      "facility": "F1",
+      "mode": "combine",
+      "inputs": {
+        "B": 1,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 10,
+      "facility": "F1",
+      "mode": "compress",
+      "inputs": {
+        "B": 1,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 12,
+      "facility": "F1",
+      "mode": "seed",
+      "inputs": {
+        "B": 1,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 18,
+      "facility": "F1",
+      "mode": "combine",
+      "inputs": {
+        "B": 1,
+        "BAT": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 20,
+      "facility": "F1",
+      "mode": "compress",
+      "inputs": {
+        "B": 1,
+        "BAT": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 23,
+      "facility": "F1",
+      "mode": "seed",
+      "inputs": {
+        "B": 1,
+        "BAT": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 35,
+      "facility": "F1",
+      "mode": "combine",
+      "inputs": {
+        "P_bound": 1,
+        "P_neutral": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 37,
+      "facility": "F1",
+      "mode": "compress",
+      "inputs": {
+        "P_bound": 1,
+        "P_neutral": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 39,
+      "facility": "F1",
+      "mode": "seed",
+      "inputs": {
+        "P_bound": 1,
+        "P_neutral": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    }
+  ],
+  "a0": [
+    {
+      "round": 11,
+      "facility": "F0",
+      "mode": "seed",
+      "inputs": {
+        "B": 1,
+        "Q": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    }
+  ],
+  "a1": [
+    {
+      "round": 13,
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "P_bound": 1,
+        "P_neutral": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 16,
+      "facility": "F0",
+      "mode": "compress",
+      "inputs": {
+        "P_bound": 1,
+        "P_neutral": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    },
+    {
+      "round": 19,
+      "facility": "F0",
+      "mode": "seed",
+      "inputs": {
+        "P_bound": 1,
+        "P_neutral": 1
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    }
+  ]
+}

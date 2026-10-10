@@ -1,4 +1,4 @@
-"""Offline replay of recorded native decisions; never invokes a model or API."""
+"""Offline replay of recorded model decisions; never invokes a model or API."""
 import argparse
 import copy
 import hashlib
@@ -33,7 +33,10 @@ def main():
     lean = find_local_lean()
     if lean:
         os.environ['PATH'] = str(Path(lean).parent) + os.pathsep + os.environ.get('PATH', '')
-    sys.path.insert(0, str(root / 'engine_snapshot'))
+    engine = root / 'engine_snapshot'
+    if not engine.exists():
+        engine = root.parent / 'engine_snapshot'
+    sys.path.insert(0, str(engine))
     import sim
     import schemas
     import jsonschema
@@ -41,8 +44,18 @@ def main():
     for line in (root / 'simulation/calls.jsonl').read_text('utf-8').splitlines():
         row = json.loads(line)
         key = row['request_key']
-        if key in records and records[key] != row:
-            raise ValueError('Conflicting replies for a stable request key')
+        external = isinstance(row.get('response'), str)
+        if external:
+            try:
+                value, _ = sim.decode_response(row['response'])
+                from provider_schema import validate_phase_response
+                validate_phase_response(row['kind'], value)
+            except ValueError:
+                # Failed paid outputs were never accepted into the trajectory.
+                continue
+            row = {**row, 'response': value, 'external_record': True}
+        if key in records and records[key]['request_hash'] != row['request_hash']:
+            raise ValueError('Conflicting inputs for a stable request key')
         records[key] = row
 
     class RecordedAPI:
@@ -57,7 +70,11 @@ def main():
             record = records[request_key]
             if digest([model, kind, system, payload]) != record['request_hash']:
                 raise ValueError('Replay observation/prompt differs: ' + request_key)
-            jsonschema.validate(record['response'], schemas.schema(kind, payload, self.cfg))
+            if record.get('external_record'):
+                from provider_schema import validate_phase_response
+                validate_phase_response(kind, record['response'])
+            else:
+                jsonschema.validate(record['response'], schemas.schema(kind, payload, self.cfg))
             with self.lock:
                 if request_key not in self.used:
                     self.calls += 1
@@ -68,6 +85,9 @@ def main():
     cfg = json.loads((root / 'config.json').read_text('utf-8'))
     if cfg.get('experiment', {}).get('stage') == 'small_functional_natural_inventory_pilot':
         from functional_pilot_admission import install
+        install(root)
+    elif cfg.get('experiment', {}).get('stage') == 'functional_homogeneous_4x50_runtime_comparison':
+        from functional_comparison_admission import install
         install(root)
     sim.run(cfg, output, mock=False, resume=False)
     original = json.loads((root / 'simulation/checkpoint.json').read_text('utf-8'))['state']

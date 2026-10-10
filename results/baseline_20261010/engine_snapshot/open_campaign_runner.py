@@ -1,0 +1,91 @@
+"""Two durable sequential lanes. Fixed per-case caps sum to $4; $1 stays reserved."""
+import argparse
+import json
+import os
+import subprocess
+import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+import psutil
+from native_codex import write_json
+
+
+def read(path):
+    return json.loads(path.read_text('utf-8')) if path.exists() else {}
+
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);args=parser.parse_args()
+    root=Path(args.run).resolve();manifest=read(root/'manifest.json')
+    if sum(r['api_cost_cap_usd'] for r in manifest['runs'])>manifest['additional_authorized_api_budget_usd']:
+        raise ValueError('Allocated caps exceed authorization')
+    lockfile=root/'controller.lock'
+    if lockfile.exists():
+        old=read(lockfile);pid=old.get('pid')
+        if pid and psutil.pid_exists(pid):raise RuntimeError('Existing campaign controller; refusing duplicate')
+        lockfile.unlink()
+    with lockfile.open('x',encoding='utf-8') as handle:json.dump({'pid':os.getpid()},handle)
+    statuses=read(root/'campaign_status.json').get('runs',{});mutex=threading.RLock()
+
+    def save():
+        with mutex:
+            cost=0.;billed=0.;reserved=0.
+            for case in manifest['runs']:
+                output=root/case['name']/'simulation';account=read(output/'api_accounting.json')
+                if case['backend']!='codex_native_cli':
+                    cost+=account.get('cost_usd',0);reserved+=account.get('reserved_usd',0)
+                    for line in (output/'calls.jsonl').read_text('utf-8').splitlines() if (output/'calls.jsonl').exists() else []:
+                        try:billed+=float(json.loads(line).get('usage',{}).get('cost') or 0)
+                        except json.JSONDecodeError:pass
+            write_json(root/'campaign_status.json',{'pid':os.getpid(),'updated':time.time(),'runs':statuses,
+                'conservative_api_cost_usd':cost,'returned_request_billed_usd':billed,'in_flight_reserved_usd':reserved,
+                'additional_authorized_api_budget_usd':5.,'allocated_caps_usd':4.,'native_cost_usd':None})
+
+    def run_case(case):
+        folder=root/case['name'];output=folder/'simulation'
+        if (output/'result.json').exists():
+            with mutex:statuses[case['name']]={'status':'complete','result':read(output/'result.json').get('completed_rounds')};save()
+            return
+        native=case['backend']=='codex_native_cli'
+        command=([sys.executable,'native_codex.py','--run',str(folder)] if native else
+            [sys.executable,'run_frozen.py','--engine',str(folder/'engine_snapshot'),'--run-cost-cap',str(case['api_cost_cap_usd']),
+             '--config',str(folder/'config.json'),'--output',str(output),'--api-key-file','../api_key','--network-retries','2','--reuse-catalog'])
+        for attempt in range(3):
+            actual=command+(['--resume'] if not native and (output/'checkpoint.json').exists() else [])
+            with (folder/f'runner_{attempt}.stdout.log').open('a',encoding='utf-8') as out, (folder/f'runner_{attempt}.stderr.log').open('a',encoding='utf-8') as err:
+                child=subprocess.Popen(actual,stdin=subprocess.DEVNULL,stdout=out,stderr=err,
+                    creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+                with mutex:statuses[case['name']]={'status':'running','pid':child.pid,'attempt':attempt};save()
+                while child.poll() is None:
+                    with mutex:
+                        state=read(output/'checkpoint.json').get('state',{});journal=read(output/'in_progress.json')
+                        statuses[case['name']].update(completed_rounds=state.get('round',0),
+                            in_progress_round=journal.get('state',{}).get('round'),phase=journal.get('phase'),
+                            alive=sum(a['alive'] for a in state.get('agents',{}).values()))
+                        save()
+                    time.sleep(10)
+            if child.returncode==0:
+                with mutex:statuses[case['name']]={'status':'complete','completed_rounds':read(output/'result.json')['completed_rounds']};save()
+                return
+            error=(folder/f'runner_{attempt}.stderr.log').read_text('utf-8')[-3000:]
+            with mutex:statuses[case['name']]={'status':'failed','error':error,'attempt':attempt};save()
+            retryable=any(token in error for token in ('Native CLI failed','Native request timed out','PermissionError','URLError','RemoteDisconnected','IncompleteRead','TimeoutError'))
+            if not retryable:break
+            time.sleep(5)
+
+    def lane(native):
+        for case in manifest['runs']:
+            if (case['backend']=='codex_native_cli')==native:run_case(case)
+
+    try:
+        save()
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            futures=[pool.submit(lane,native) for native in (False,True)]
+            for future in futures:future.result()
+        save()
+    finally:lockfile.unlink(missing_ok=True)
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,927 @@
+{
+  "plan": [
+    {
+      "a0": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 1
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 1
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 1
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 1
+      }
+    },
+    {
+      "a3": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "A",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a0": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a2": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a0": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a2": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "liquidate",
+        "item": "B",
+        "amount": 2
+      }
+    },
+    {
+      "a1": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a3": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a3": {
+        "tool": "wait"
+      },
+      "a2": {
+        "tool": "wait"
+      },
+      "a1": {
+        "tool": "wait"
+      },
+      "a0": {
+        "tool": "wait"
+      }
+    },
+    {
+      "a2": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a3": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a1": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      },
+      "a0": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 2
+      }
+    }
+  ],
+  "policy": {
+    "amount": 2,
+    "threshold": 6,
+    "mode": "A",
+    "floor": 10
+  },
+  "scope": "One deterministic runtime survival path, not a Lean or robustness certificate"
+}

@@ -1,0 +1,7 @@
+group,completed_rounds,alive,final_survival_rate,population_time,population_time_upper,survival_attainment,final_liquid_energy_all,final_liquid_energy_alive,invalid_actions,experiment_attempts,completed_experiments,productive_experiments,assembly_attempts,successful_assemblies,function_uses,works_created,play_actions,game_actions,external_api_usd,native_cost_usd
+gptoss20b,50,0,0.0,32,200,0.16,0.0,0,6,3,0,0,2,0,0,0,0,0,0.08022257999999995,0
+qwen7b,50,0,0.0,32,200,0.16,0.0,0,0,0,0,0,0,0,0,0,0,0,0.05234250000000001,0
+luna_low,50,2,0.5,159,200,0.795,406.0,406.0,13,0,0,0,0,0,0,0,0,0,0.0,
+deepseek_flash,50,0,0.0,79,200,0.395,0.0,0,35,0,0,0,0,0,0,0,0,0,0.10503486000000001,0
+sol_low,50,4,1.0,200,200,1.0,304.6,304.6,3,16,16,0,18,0,0,0,0,0,0.0,
+mixed4,50,2,0.5,116,200,0.58,186.8,186.8,15,1,1,0,1,0,0,1,0,0,0.11173713000000003,

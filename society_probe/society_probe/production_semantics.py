@@ -2,6 +2,7 @@
 from fractions import Fraction
 from functools import reduce
 from math import gcd
+import math
 
 
 def proportional(definition):
@@ -16,8 +17,9 @@ def match(definition, facility, mode, basket):
             continue
         factors = [Fraction(str(basket[k])) / n for k, n in recipe['inputs'].items()]
         if proportional(definition):
-            if factors[0] > 0 and all(x == factors[0] for x in factors):
-                return recipe, factors[0]
+            if factors[0] > 0 and all(math.isclose(float(x), float(factors[0]), rel_tol=1e-12, abs_tol=0) for x in factors):
+                # Only roundoff-scale discrepancies qualify; the limiting input funds output.
+                return recipe, min(factors)
         elif all(x == 1 for x in factors):
             return recipe, Fraction(1)
     return None, Fraction(0)

@@ -1,0 +1,106 @@
+{
+  "stage": "completed",
+  "groups": [
+    {
+      "group": "gptoss20b",
+      "model": "openai/gpt-oss-20b",
+      "backend": "openrouter",
+      "rounds": 50,
+      "members": 4,
+      "external_cap_usd": 1.5,
+      "models": [
+        "openai/gpt-oss-20b",
+        "openai/gpt-oss-20b",
+        "openai/gpt-oss-20b",
+        "openai/gpt-oss-20b"
+      ]
+    },
+    {
+      "group": "qwen7b",
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "backend": "openrouter",
+      "rounds": 50,
+      "members": 4,
+      "external_cap_usd": 1.5,
+      "models": [
+        "qwen/qwen-2.5-7b-instruct",
+        "qwen/qwen-2.5-7b-instruct",
+        "qwen/qwen-2.5-7b-instruct",
+        "qwen/qwen-2.5-7b-instruct"
+      ]
+    },
+    {
+      "group": "luna_low",
+      "model": "gpt-6-luna",
+      "backend": "codex_native_cli",
+      "rounds": 50,
+      "members": 4,
+      "external_cap_usd": 0,
+      "models": [
+        "gpt-6-luna",
+        "gpt-6-luna",
+        "gpt-6-luna",
+        "gpt-6-luna"
+      ]
+    },
+    {
+      "group": "deepseek_flash",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "backend": "openrouter",
+      "rounds": 50,
+      "members": 4,
+      "external_cap_usd": 1.5,
+      "reasoning_enabled": false,
+      "models": [
+        "deepseek/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash"
+      ]
+    },
+    {
+      "group": "sol_low",
+      "model": "gpt-6.1-sol",
+      "backend": "codex_native_cli",
+      "rounds": 50,
+      "members": 4,
+      "external_cap_usd": 0,
+      "models": [
+        "gpt-6.1-sol",
+        "gpt-6.1-sol",
+        "gpt-6.1-sol",
+        "gpt-6.1-sol"
+      ]
+    },
+    {
+      "group": "mixed4",
+      "model": "mixed4",
+      "backend": "hybrid_codex_openrouter",
+      "rounds": 50,
+      "members": 4,
+      "external_cap_usd": 1.5,
+      "models": [
+        "openai/gpt-oss-20b",
+        "qwen/qwen-2.5-7b-instruct",
+        "deepseek/deepseek-v4.1-flash",
+        "gpt-6.1-sol"
+      ]
+    }
+  ],
+  "group_directories": {
+    "gptoss20b": "gptoss20b",
+    "qwen7b": "qwen7b",
+    "luna_low": "luna_low",
+    "deepseek_flash": "deepseek_flash",
+    "sol_low": "sol_low",
+    "mixed4": "mixed4"
+  },
+  "world_version": "compositional_v6_functional_services_original_integer_interface",
+  "world_seed": 2,
+  "simulation_seed": 7,
+  "pressure": true,
+  "members": 4,
+  "rounds": 50,
+  "certificate_status": "not_certified",
+  "notes": "All trials precede decimal-input and ecological-window revisions."
+}

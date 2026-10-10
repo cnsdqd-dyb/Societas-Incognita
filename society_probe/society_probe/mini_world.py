@@ -25,6 +25,7 @@ HELP = '''One physical action per round. ENERGY denotes liquid stock; self.energ
 gather(item,amount): attempt to extract a visible pool material.
 experiment(facility,mode,inputs:[{item,amount}],batches): attempt a combination at a station.
 Inputs list names one-batch quantities; batches multiplies them. Results arrive at settlement.
+In continuous worlds material/ENERGY amounts may be positive decimals; batches and attack effort remain integers.
 liquidate(item,amount): attempt to convert a held material into liquid energy.
 use_item(item,amount): consume a material to apply its world-state function, if it has one.
 give_item(target,item,amount,note): transfer a held material (or ENERGY); note records a voluntary purpose such as custody.
@@ -160,7 +161,7 @@ def observation(cfg, state, aid):
     if cfg.get('recipe_visibility', 'hidden') == 'full':
         result['production_rules'] = copy.deepcopy(d['recipes'])
     if d.get('production_semantics') == 'proportional_v1':
-        result['processing_interface'] = 'Recipes accept scaled matching ratios. Fractional products accumulate in inventory and obey ordinary decay. A station minimum applies only if explicitly present.'
+        result['processing_interface'] = 'Recipes accept scaled matching ratios, including decimal input amounts. Fractional products accumulate and may be processed, transferred or liquidated. Batches remain positive integers. Ordinary decay and explicitly declared station minimums apply.'
         for station in result['stations']:
             minimum = d['facilities'][station['facility']].get('min_processing_extent')
             if minimum is not None: station['min_processing_extent'] = minimum
@@ -184,9 +185,17 @@ def public_rules(cfg):
             'maintenance_rule': 'Physical outputs settle before maintenance. Under pressure, full liquid-energy consumption restores one vitality up to five; shortage loses one. Zero vitality is inactive. Rescue, when enabled, is paid by another member and activates next round.'}
 
 
-def quantity(cfg, value, maximum=None):
+def continuous_quantities(cfg):
+    d = spec(cfg)
+    return d.get('quantity_semantics') == 'continuous_v1' or d.get('production_semantics') == 'proportional_v1'
+
+
+def quantity(cfg, value, maximum=None, integer=False):
     cap = spec(cfg)['max_quantity'] if maximum is None else maximum
-    if type(value) is not int or not 1 <= value <= cap: raise ValueError('Invalid quantity')
+    if integer or not continuous_quantities(cfg):
+        if type(value) is not int or not 1 <= value <= cap: raise ValueError('Invalid integer quantity')
+    elif type(value) not in (int, float) or not math.isfinite(value) or not 0 < value <= cap:
+        raise ValueError('Invalid finite positive quantity')
     return value
 
 
@@ -213,7 +222,7 @@ def balance(a, item):
 
 
 def check_payment(a, basket):
-    if any(balance(a, k)+1e-9 < amount for k, amount in basket.items()):
+    if any(balance(a, k) < amount for k, amount in basket.items()):
         raise ValueError('Insufficient assets')
 
 
@@ -259,7 +268,7 @@ def act(cfg, state, aid, action):
         facility = action.get('facility'); mode = action.get('mode')
         if facility not in d['facilities'] or mode not in d['facilities'][facility]['modes']:
             raise ValueError('Unknown station or mode')
-        batches = quantity(cfg, action.get('batches'), d['max_batches'])
+        batches = quantity(cfg, action.get('batches'), d['max_batches'], integer=True)
         inputs = parse_basket(cfg, action.get('inputs'))
         if 'ENERGY' in inputs: raise ValueError('Use material inputs at stations')
         inputs = {k: amount*batches for k, amount in inputs.items()}
@@ -310,7 +319,7 @@ def act(cfg, state, aid, action):
     if tool == 'seize_item':
         import resource_seizure
         victim = target_agent(state, aid, action.get('target')); rule = cfg['resource_seizure']
-        effort = quantity(cfg, action.get('effort'), rule['max_attack_effort']); cost = effort*rule['attack_unit_cost']
+        effort = quantity(cfg, action.get('effort'), rule['max_attack_effort'], integer=True); cost = effort*rule['attack_unit_cost']
         check_payment(a, {'ENERGY': cost})
         attack = d['resources'][item].get('accessibility', 1)*effort*(1+a['energy']/rule['energy_scale'])
         defense = (1+victim['energy']/rule['energy_scale'])*(1+resource_seizure.active_defense(state, action['target']) + functional_effects.live_bonus(state, action['target'], 'shield'))
@@ -489,17 +498,18 @@ def researcher_metrics(cfg, state):
 
 
 def action_properties(cfg, tool):
+    amount = ({'type': 'number', 'exclusiveMinimum': 0, 'maximum': spec(cfg)['max_quantity']}
+              if continuous_quantities(cfg) else {'type': 'integer', 'minimum': 1, 'maximum': spec(cfg)['max_quantity']})
     if tool == material_combinations.TOOL:
         return material_combinations.action_properties()
     if tool in functional_effects.STORAGE_TOOLS:
         result = {'container': {'type': 'string'}, 'item': {'type': 'string', 'enum': list(spec(cfg)['resources'])},
-                  'amount': {'type': 'integer', 'minimum': 1, 'maximum': spec(cfg)['max_quantity']}}
+                  'amount': amount}
         if tool == 'seize_storage': result['effort'] = {'type': 'integer', 'minimum': 1, 'maximum': 2}
         return result
     if tool in capability_devices.TOOLS:
         return capability_devices.action_properties(cfg, tool)
     d = spec(cfg); item = {'type': 'string', 'enum': list(d['resources'])}
-    amount = {'type': 'integer', 'minimum': 1, 'maximum': d['max_quantity']}
     entry = {'type': 'object', 'properties': {'item': {'type': 'string', 'enum': list(d['resources'])+['ENERGY']}, 'amount': amount},
              'required': ['item', 'amount'], 'additionalProperties': False}
     basket = {'type': 'array', 'items': entry, 'minItems': 1, 'maxItems': len(d['resources'])+1}

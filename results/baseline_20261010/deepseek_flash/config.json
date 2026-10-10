@@ -1,0 +1,3102 @@
+{
+  "models": [
+    "deepseek/deepseek-v4.1-flash",
+    "deepseek/deepseek-v4.1-flash",
+    "deepseek/deepseek-v4.1-flash",
+    "deepseek/deepseek-v4.1-flash"
+  ],
+  "rounds": 50,
+  "seed": 7,
+  "temperature": 0.5,
+  "max_calls": 3000,
+  "max_output_tokens": 1600,
+  "max_estimated_cost_usd": 1.5,
+  "tools": [
+    "accept_items",
+    "accept_work",
+    "activate_device",
+    "assemble_device",
+    "cancel_items",
+    "cancel_work_offer",
+    "create",
+    "damage",
+    "decline_game",
+    "dismantle_device",
+    "experiment",
+    "game_move",
+    "gather",
+    "give_device",
+    "give_item",
+    "inspect",
+    "inspect_social",
+    "join_game",
+    "leave_game",
+    "liquidate",
+    "measure",
+    "offer_items",
+    "offer_work",
+    "play",
+    "publish_work",
+    "read_artifact",
+    "read_news",
+    "read_note",
+    "reject_work",
+    "revise_work",
+    "seize_storage",
+    "start_game",
+    "store_item",
+    "transfer",
+    "use_function",
+    "use_item",
+    "wait",
+    "withdraw_item",
+    "write_note"
+  ],
+  "world": {
+    "mechanism": "mini_world",
+    "survival_pressure": true,
+    "consumption": 1,
+    "initial_personal_stock": 4,
+    "mini_world": {
+      "definition": {
+        "version": "mini_world_v1",
+        "id": "candidate_2",
+        "resources": {
+          "A": {
+            "name": "material A",
+            "tier": 0,
+            "energy_value": 2,
+            "decay": 0.04,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "B": {
+            "name": "material B",
+            "tier": 0,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "traits": [
+              "Can serve as a recording-device component."
+            ]
+          },
+          "C": {
+            "name": "material C",
+            "tier": 1,
+            "energy_value": 6,
+            "decay": 0.02,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "use_effects": {
+              "stress": -1,
+              "enzyme": 1,
+              "toggle_y": 2,
+              "damage": -0.5,
+              "buffer_capacity": 2,
+              "conductance_2": 1
+            },
+            "traits": [
+              "Using this material affects enzyme.",
+              "Using this material affects toggle_y.",
+              "Using this material affects damage.",
+              "Using this material affects buffer_capacity.",
+              "Using this material affects conductance_2.",
+              "Consumption regenerates the adsorbent.",
+              "Can serve as a device component supporting communication, recording, sensing or manufacturing."
+            ]
+          },
+          "D": {
+            "name": "material D",
+            "tier": 2,
+            "energy_value": 10,
+            "decay": 0.01,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "use_effects": {
+              "calibration": 1
+            },
+            "traits": [
+              "Using this material affects calibration.",
+              "Can serve as an advanced device component; function depends on the assembly."
+            ]
+          },
+          "S": {
+            "name": "material S",
+            "tier": 3,
+            "energy_value": 24,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 0.2
+          },
+          "Q": {
+            "name": "material Q",
+            "tier": 1,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "W": {
+            "name": "material W",
+            "tier": 1,
+            "energy_value": 1,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "traits": [
+              "A production byproduct usable by a different conversion process."
+            ]
+          },
+          "P": {
+            "name": "material P",
+            "tier": 1,
+            "energy_value": 1,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "P_bound": {
+            "name": "material P_bound",
+            "tier": 1,
+            "energy_value": 1,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "P_neutral": {
+            "name": "material P_neutral",
+            "tier": 1,
+            "energy_value": 1,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "BAT": {
+            "name": "material BAT",
+            "tier": 1,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "liquidation_limit": 1,
+            "traits": [
+              "Stable storage; capacity and charging/discharging power are separately bounded."
+            ]
+          },
+          "NET": {
+            "name": "material NET",
+            "tier": 1,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          }
+        },
+        "variables": {
+          "stress": {
+            "initial": 0,
+            "min": 0,
+            "max": 20,
+            "observable": true,
+            "next": {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "ref": "state.stress"
+                    },
+                    0.5
+                  ]
+                }
+              ]
+            }
+          },
+          "substrate": {
+            "initial": 1,
+            "min": 0,
+            "max": 100,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.5,
+                        {
+                          "ref": "state.substrate"
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "activity.consumed.A"
+                    }
+                  ]
+                },
+                0,
+                100
+              ]
+            },
+            "observable": true
+          },
+          "enzyme": {
+            "initial": 1,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.95,
+                        {
+                          "ref": "state.enzyme"
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "activity.consumed.C"
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "inhibitor": {
+            "initial": 0,
+            "min": 0,
+            "max": 20,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.8,
+                        {
+                          "ref": "state.inhibitor"
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "activity.harvested.B"
+                    }
+                  ]
+                },
+                0,
+                20
+              ]
+            },
+            "observable": true
+          },
+          "toggle_x": {
+            "initial": 2,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.8,
+                        {
+                          "ref": "state.toggle_x"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "div",
+                      "args": [
+                        0.6,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.toggle_y"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "toggle_y": {
+            "initial": 0.1,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.8,
+                        {
+                          "ref": "state.toggle_y"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "div",
+                      "args": [
+                        0.6,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.toggle_x"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "delay_0": {
+            "initial": 0,
+            "min": 0,
+            "max": 100,
+            "next": {
+              "ref": "activity.harvested.A"
+            },
+            "observable": true
+          },
+          "delay_1": {
+            "initial": 0,
+            "min": 0,
+            "max": 100,
+            "next": {
+              "ref": "state.delay_0"
+            },
+            "observable": true
+          },
+          "delay_2": {
+            "initial": 0,
+            "min": 0,
+            "max": 100,
+            "next": {
+              "ref": "state.delay_1"
+            },
+            "observable": true
+          },
+          "chaos_z": {
+            "initial": 0.231,
+            "min": 0,
+            "max": 1,
+            "next": {
+              "op": "mul",
+              "args": [
+                4,
+                {
+                  "ref": "state.chaos_z"
+                },
+                {
+                  "op": "sub",
+                  "args": [
+                    1,
+                    {
+                      "ref": "state.chaos_z"
+                    }
+                  ]
+                }
+              ]
+            },
+            "observable": true
+          },
+          "rd_x0": {
+            "initial": 0.2,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.rd_x0"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                1,
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "pow",
+                                      "args": [
+                                        {
+                                          "ref": "state.rd_y0"
+                                        },
+                                        2
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "ref": "state.rd_x0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x1"
+                                },
+                                {
+                                  "ref": "state.rd_x0"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "rd_y0": {
+            "initial": 0.2,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.rd_y0"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                1,
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "pow",
+                                      "args": [
+                                        {
+                                          "ref": "state.rd_x0"
+                                        },
+                                        2
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "ref": "state.rd_y0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.025,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y1"
+                                },
+                                {
+                                  "ref": "state.rd_y0"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "rd_x1": {
+            "initial": 0.30000000000000004,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.rd_x1"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                1,
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "pow",
+                                      "args": [
+                                        {
+                                          "ref": "state.rd_y1"
+                                        },
+                                        2
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "ref": "state.rd_x1"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x0"
+                                },
+                                {
+                                  "ref": "state.rd_x1"
+                                }
+                              ]
+                            },
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x2"
+                                },
+                                {
+                                  "ref": "state.rd_x1"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "rd_y1": {
+            "initial": 0.2,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.rd_y1"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                1,
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "pow",
+                                      "args": [
+                                        {
+                                          "ref": "state.rd_x1"
+                                        },
+                                        2
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "ref": "state.rd_y1"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.025,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y0"
+                                },
+                                {
+                                  "ref": "state.rd_y1"
+                                }
+                              ]
+                            },
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y2"
+                                },
+                                {
+                                  "ref": "state.rd_y1"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "rd_x2": {
+            "initial": 0.4,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.rd_x2"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                1,
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "pow",
+                                      "args": [
+                                        {
+                                          "ref": "state.rd_y2"
+                                        },
+                                        2
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "ref": "state.rd_x2"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x1"
+                                },
+                                {
+                                  "ref": "state.rd_x2"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "rd_y2": {
+            "initial": 0.2,
+            "min": 0,
+            "max": 4,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.rd_y2"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                1,
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "pow",
+                                      "args": [
+                                        {
+                                          "ref": "state.rd_x2"
+                                        },
+                                        2
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "ref": "state.rd_y2"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.025,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y1"
+                                },
+                                {
+                                  "ref": "state.rd_y2"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                4
+              ]
+            },
+            "observable": true
+          },
+          "damage": {
+            "initial": 0,
+            "min": 0,
+            "max": 2,
+            "next": {
+              "op": "clamp",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "ref": "activity.produced.C"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                0,
+                2
+              ]
+            },
+            "observable": true
+          },
+          "buffer_capacity": {
+            "initial": 8,
+            "min": 0,
+            "max": 8,
+            "next": {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "ref": "state.buffer_capacity"
+                    },
+                    {
+                      "op": "min",
+                      "args": [
+                        {
+                          "ref": "pool.P"
+                        },
+                        {
+                          "ref": "state.buffer_capacity"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "observable": true
+          },
+          "buffer_applied": {
+            "initial": 0,
+            "min": 0,
+            "max": 8,
+            "next": {
+              "op": "min",
+              "args": [
+                {
+                  "ref": "pool.P"
+                },
+                {
+                  "ref": "state.buffer_capacity"
+                }
+              ]
+            },
+            "observable": true
+          },
+          "storage_phase": {
+            "initial": 0,
+            "min": 0,
+            "max": 1,
+            "next": {
+              "op": "sub",
+              "args": [
+                1,
+                {
+                  "ref": "state.storage_phase"
+                }
+              ]
+            },
+            "observable": true
+          },
+          "conductance_1": {
+            "initial": 1,
+            "min": 0,
+            "max": 1,
+            "next": {
+              "ref": "state.conductance_1"
+            },
+            "observable": true
+          },
+          "conductance_2": {
+            "initial": 0,
+            "min": 0,
+            "max": 1,
+            "next": {
+              "ref": "state.conductance_2"
+            },
+            "observable": true
+          },
+          "calibration": {
+            "initial": 0,
+            "min": 0,
+            "max": 1,
+            "next": {
+              "ref": "state.calibration"
+            },
+            "observable": false
+          }
+        },
+        "pools": {
+          "A": {
+            "initial": 30,
+            "capacity": 60,
+            "regeneration": {
+              "op": "div",
+              "args": [
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "mul",
+                          "args": [
+                            0.25,
+                            {
+                              "ref": "pool.A"
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.A"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.B"
+                                },
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    10
+                                  ]
+                                }
+                              ]
+                            },
+                            4,
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.A"
+                                },
+                                60
+                              ]
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.A"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.A"
+                                },
+                                8
+                              ]
+                            },
+                            1
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "ref": "state.delay_2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "harvest_efficiency": 1,
+            "depletion": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    0.05,
+                    {
+                      "ref": "pool.A"
+                    },
+                    {
+                      "op": "div",
+                      "args": [
+                        10,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "ref": "pool.B"
+                            },
+                            10
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "sub",
+                      "args": [
+                        0,
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                0.25,
+                                {
+                                  "ref": "pool.A"
+                                },
+                                {
+                                  "op": "max",
+                                  "args": [
+                                    0,
+                                    {
+                                      "op": "sub",
+                                      "args": [
+                                        1,
+                                        {
+                                          "op": "div",
+                                          "args": [
+                                            {
+                                              "ref": "pool.A"
+                                            },
+                                            60
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "div",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    {
+                                      "op": "add",
+                                      "args": [
+                                        {
+                                          "ref": "pool.B"
+                                        },
+                                        10
+                                      ]
+                                    }
+                                  ]
+                                },
+                                4,
+                                {
+                                  "op": "div",
+                                  "args": [
+                                    {
+                                      "ref": "pool.A"
+                                    },
+                                    60
+                                  ]
+                                },
+                                {
+                                  "op": "max",
+                                  "args": [
+                                    0,
+                                    {
+                                      "op": "sub",
+                                      "args": [
+                                        1,
+                                        {
+                                          "op": "div",
+                                          "args": [
+                                            {
+                                              "ref": "pool.A"
+                                            },
+                                            60
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "op": "div",
+                                  "args": [
+                                    {
+                                      "ref": "pool.A"
+                                    },
+                                    8
+                                  ]
+                                },
+                                1
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "recycled_fraction": 0.25
+          },
+          "B": {
+            "initial": 30,
+            "capacity": 60,
+            "regeneration": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.25,
+                        {
+                          "ref": "pool.B"
+                        },
+                        {
+                          "op": "max",
+                          "args": [
+                            0,
+                            {
+                              "op": "sub",
+                              "args": [
+                                1,
+                                {
+                                  "op": "div",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    60
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.B"
+                                },
+                                8
+                              ]
+                            },
+                            1
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    0.2,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.8,
+                        {
+                          "ref": "state.chaos_z"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "harvest_efficiency": 1,
+            "depletion": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    0.1,
+                    {
+                      "ref": "pool.A"
+                    },
+                    {
+                      "op": "div",
+                      "args": [
+                        {
+                          "ref": "pool.B"
+                        },
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "ref": "pool.B"
+                            },
+                            10
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "sub",
+                      "args": [
+                        0,
+                        {
+                          "op": "mul",
+                          "args": [
+                            0.25,
+                            {
+                              "ref": "pool.B"
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.B"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "sub",
+                              "args": [
+                                {
+                                  "op": "div",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    8
+                                  ]
+                                },
+                                1
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "recycled_fraction": 0.5
+          },
+          "Q": {
+            "initial": 6,
+            "capacity": 16,
+            "regeneration": 0,
+            "harvest_efficiency": 1,
+            "depletion": {
+              "op": "mul",
+              "args": [
+                0.5,
+                {
+                  "ref": "activity.produced.C"
+                }
+              ]
+            }
+          },
+          "W": {
+            "initial": 0,
+            "capacity": 0,
+            "regeneration": 0,
+            "harvest_efficiency": 1
+          },
+          "P": {
+            "initial": 10,
+            "capacity": 20,
+            "regeneration": 0,
+            "harvest_efficiency": 1
+          },
+          "P_bound": {
+            "initial": 0,
+            "capacity": 8,
+            "regeneration": 0,
+            "harvest_efficiency": 1
+          },
+          "P_neutral": {
+            "initial": 0,
+            "capacity": 100,
+            "regeneration": 0,
+            "harvest_efficiency": 1
+          },
+          "BAT": {
+            "initial": 0,
+            "capacity": 20,
+            "regeneration": 0,
+            "harvest_efficiency": 1
+          },
+          "NET": {
+            "initial": 0,
+            "capacity": 20,
+            "regeneration": 0,
+            "harvest_efficiency": 1
+          }
+        },
+        "facilities": {
+          "F0": {
+            "name": "station 0",
+            "modes": [
+              "combine",
+              "compress",
+              "seed"
+            ],
+            "service_capacity": 1,
+            "switch_rounds": 1
+          },
+          "F1": {
+            "name": "station 1",
+            "modes": [
+              "combine",
+              "compress",
+              "seed"
+            ],
+            "service_capacity": 1,
+            "switch_rounds": 1
+          }
+        },
+        "recipes": [
+          {
+            "id": "r0",
+            "facility": "F0",
+            "mode": "compress",
+            "inputs": {
+              "A": 1,
+              "B": 1
+            },
+            "output": "C",
+            "yield": {
+              "op": "mul",
+              "args": [
+                1.0,
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "sub",
+                      "args": [
+                        1,
+                        {
+                          "op": "div",
+                          "args": [
+                            2,
+                            {
+                              "op": "max",
+                              "args": [
+                                2,
+                                {
+                                  "ref": "pool.Q"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        4,
+                        {
+                          "ref": "state.substrate"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.substrate"
+                        },
+                        {
+                          "op": "div",
+                          "args": [
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.substrate"
+                                },
+                                2
+                              ]
+                            },
+                            4
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        2,
+                        {
+                          "ref": "state.enzyme"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.enzyme"
+                        },
+                        {
+                          "ref": "state.inhibitor"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.toggle_x"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        2,
+                        {
+                          "ref": "state.toggle_x"
+                        },
+                        {
+                          "ref": "state.toggle_y"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "op": "mul",
+                          "args": [
+                            0.1,
+                            {
+                              "ref": "pool.P"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    0.5,
+                    {
+                      "op": "div",
+                      "args": [
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "ref": "state.conductance_1"
+                            },
+                            {
+                              "ref": "state.conductance_2"
+                            }
+                          ]
+                        },
+                        {
+                          "op": "max",
+                          "args": [
+                            1e-06,
+                            {
+                              "op": "add",
+                              "args": [
+                                {
+                                  "ref": "state.conductance_1"
+                                },
+                                {
+                                  "ref": "state.conductance_2"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "energy_cost": 2,
+            "condition": {
+              "op": "and",
+              "args": [
+                1,
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {},
+            "byproducts": {
+              "W": 2
+            },
+            "operating_cost": {
+              "op": "add",
+              "args": [
+                2,
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.3,
+                    {
+                      "ref": "activity.submitted.F0"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "r1",
+            "facility": "F1",
+            "mode": "compress",
+            "inputs": {
+              "C": 1,
+              "W": 1
+            },
+            "output": "D",
+            "yield": {
+              "op": "div",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    2,
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "ref": "state.rd_y2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                4
+              ]
+            },
+            "energy_cost": 1.0,
+            "condition": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.stress"
+                    },
+                    10
+                  ]
+                },
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {
+              "stress": {
+                "op": "div",
+                "args": [
+                  1,
+                  4
+                ]
+              }
+            },
+            "operating_cost": {
+              "op": "div",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    4,
+                    0.2,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.3,
+                        {
+                          "ref": "activity.submitted.F1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                4
+              ]
+            },
+            "byproducts": {}
+          },
+          {
+            "id": "r2",
+            "facility": "F0",
+            "mode": "compress",
+            "inputs": {
+              "D": 3,
+              "B": 2
+            },
+            "output": "S",
+            "yield": {
+              "op": "mul",
+              "args": [
+                1.4166666666666667,
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "energy_cost": 0,
+            "condition": {
+              "op": "and",
+              "args": [
+                1,
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {},
+            "operating_cost": {
+              "op": "add",
+              "args": [
+                0,
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.3,
+                    {
+                      "ref": "activity.submitted.F0"
+                    }
+                  ]
+                }
+              ]
+            },
+            "requires_capability": "manufacturing"
+          },
+          {
+            "id": "autocatalysis",
+            "facility": "F0",
+            "mode": "seed",
+            "inputs": {
+              "A": 2,
+              "C": 1
+            },
+            "output": "C",
+            "yield": {
+              "op": "mul",
+              "args": [
+                1.6666666666666665,
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "energy_cost": 0,
+            "condition": {
+              "op": "and",
+              "args": [
+                1,
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {},
+            "operating_cost": {
+              "op": "add",
+              "args": [
+                0,
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.3,
+                    {
+                      "ref": "activity.submitted.F0"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "r0_route",
+            "facility": "F1",
+            "mode": "compress",
+            "inputs": {
+              "A": 1,
+              "B": 1
+            },
+            "output": "C",
+            "yield": {
+              "op": "mul",
+              "args": [
+                1.0,
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "sub",
+                      "args": [
+                        1,
+                        {
+                          "op": "div",
+                          "args": [
+                            2,
+                            {
+                              "op": "max",
+                              "args": [
+                                2,
+                                {
+                                  "ref": "pool.Q"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        4,
+                        {
+                          "ref": "state.substrate"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.substrate"
+                        },
+                        {
+                          "op": "div",
+                          "args": [
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.substrate"
+                                },
+                                2
+                              ]
+                            },
+                            4
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        2,
+                        {
+                          "ref": "state.enzyme"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.enzyme"
+                        },
+                        {
+                          "ref": "state.inhibitor"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.toggle_x"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        2,
+                        {
+                          "ref": "state.toggle_x"
+                        },
+                        {
+                          "ref": "state.toggle_y"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "energy_cost": 2,
+            "condition": {
+              "op": "and",
+              "args": [
+                1,
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {},
+            "byproducts": {
+              "W": 2
+            },
+            "operating_cost": {
+              "op": "add",
+              "args": [
+                2,
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.3,
+                    {
+                      "ref": "activity.submitted.F1"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "r1_route",
+            "facility": "F0",
+            "mode": "compress",
+            "inputs": {
+              "C": 1,
+              "W": 1
+            },
+            "output": "D",
+            "yield": {
+              "op": "div",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    2,
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "ref": "state.rd_y2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                4
+              ]
+            },
+            "energy_cost": 1.0,
+            "condition": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.stress"
+                    },
+                    10
+                  ]
+                },
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {
+              "stress": {
+                "op": "div",
+                "args": [
+                  1,
+                  4
+                ]
+              }
+            },
+            "operating_cost": {
+              "op": "div",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    4,
+                    0.2,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.3,
+                        {
+                          "ref": "activity.submitted.F0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                4
+              ]
+            },
+            "byproducts": {}
+          },
+          {
+            "id": "r2_route",
+            "facility": "F1",
+            "mode": "compress",
+            "inputs": {
+              "D": 3,
+              "B": 2
+            },
+            "output": "S",
+            "yield": {
+              "op": "mul",
+              "args": [
+                1.4166666666666667,
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "energy_cost": 0,
+            "condition": {
+              "op": "and",
+              "args": [
+                1,
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {},
+            "operating_cost": {
+              "op": "add",
+              "args": [
+                0,
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.3,
+                    {
+                      "ref": "activity.submitted.F1"
+                    }
+                  ]
+                }
+              ]
+            },
+            "requires_capability": "manufacturing"
+          },
+          {
+            "id": "autocatalysis_route",
+            "facility": "F1",
+            "mode": "seed",
+            "inputs": {
+              "A": 2,
+              "C": 1
+            },
+            "output": "C",
+            "yield": {
+              "op": "mul",
+              "args": [
+                1.6666666666666665,
+                {
+                  "op": "div",
+                  "args": [
+                    1,
+                    {
+                      "op": "add",
+                      "args": [
+                        1,
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "energy_cost": 0,
+            "condition": {
+              "op": "and",
+              "args": [
+                1,
+                {
+                  "op": "lt",
+                  "args": [
+                    {
+                      "ref": "state.damage"
+                    },
+                    1
+                  ]
+                }
+              ]
+            },
+            "effects": {},
+            "operating_cost": {
+              "op": "add",
+              "args": [
+                0,
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.3,
+                    {
+                      "ref": "activity.submitted.F1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "initial_inventory": {},
+        "initial_reserve": 200,
+        "reserve_capacity": 10000,
+        "external_inflow": 32,
+        "experiment_cost": 0.1,
+        "noise": {
+          "distribution": "none",
+          "amplitude": 0.0
+        },
+        "max_quantity": 8,
+        "max_batches": 4,
+        "max_offers": 32,
+        "offer_ttl": 4,
+        "pool_flows": [
+          {
+            "id": "quota_loading",
+            "source": "A",
+            "target": "Q",
+            "rate": {
+              "op": "div",
+              "args": [
+                {
+                  "ref": "pool.A"
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    10,
+                    {
+                      "ref": "pool.A"
+                    }
+                  ]
+                }
+              ]
+            },
+            "efficiency": 1
+          },
+          {
+            "id": "adsorb",
+            "source": "P",
+            "target": "P_bound",
+            "rate": {
+              "op": "mul",
+              "args": [
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "sub",
+                      "args": [
+                        8,
+                        {
+                          "ref": "pool.P_bound"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "ref": "pool.P"
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        2,
+                        {
+                          "ref": "pool.P"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "efficiency": 1
+          },
+          {
+            "id": "regenerate_adsorbent",
+            "source": "P_bound",
+            "target": "P",
+            "rate": {
+              "ref": "activity.consumed.C"
+            },
+            "efficiency": 1
+          },
+          {
+            "id": "neutralize",
+            "source": "P",
+            "target": "P_neutral",
+            "rate": {
+              "ref": "state.buffer_applied"
+            },
+            "efficiency": 1
+          },
+          {
+            "id": "charge",
+            "source": "A",
+            "target": "BAT",
+            "rate": {
+              "op": "mul",
+              "args": [
+                2,
+                {
+                  "ref": "state.storage_phase"
+                }
+              ]
+            },
+            "efficiency": 0.9
+          },
+          {
+            "id": "discharge",
+            "source": "BAT",
+            "target": "A",
+            "rate": {
+              "op": "sub",
+              "args": [
+                1,
+                {
+                  "ref": "state.storage_phase"
+                }
+              ]
+            },
+            "efficiency": 0.9
+          },
+          {
+            "id": "conduct",
+            "source": "A",
+            "target": "NET",
+            "rate": {
+              "op": "mul",
+              "args": [
+                4,
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "ref": "state.conductance_1"
+                        },
+                        {
+                          "ref": "state.conductance_2"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "max",
+                      "args": [
+                        1e-06,
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "ref": "state.conductance_1"
+                            },
+                            {
+                              "ref": "state.conductance_2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "efficiency": 1
+          }
+        ],
+        "measurement_biases": {
+          "stress": {
+            "op": "mul",
+            "args": [
+              0.4,
+              {
+                "op": "sub",
+                "args": [
+                  1,
+                  {
+                    "ref": "state.calibration"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "mechanism_implementations": {
+          "allee_threshold": "bounded_discrete_v1",
+          "internal_quota": "bounded_discrete_v1",
+          "substrate_inhibition": "bounded_discrete_v1",
+          "cross_feeding": "bounded_discrete_v1",
+          "competitive_catalysis": "bounded_discrete_v1",
+          "autocatalytic_seed": "bounded_discrete_v1",
+          "bistable_toggle": "bounded_discrete_v1",
+          "explicit_delay": "bounded_discrete_v1",
+          "chaotic_modulation": "bounded_discrete_v1",
+          "reaction_diffusion": "bounded_discrete_v1",
+          "congested_transport": "bounded_discrete_v1",
+          "shared_queue": "bounded_discrete_v1",
+          "fatigue_repair": "bounded_discrete_v1",
+          "finite_adsorption": "bounded_discrete_v1",
+          "finite_buffer": "bounded_discrete_v1",
+          "power_limited_storage": "bounded_discrete_v1",
+          "conductance_network": "bounded_discrete_v1",
+          "calibrated_measurement": "bounded_discrete_v1"
+        },
+        "combination_functions": [
+          {
+            "id": "combination_0",
+            "name": "组合功能：buffer_capacity, conductance_2, damage, enzyme, stress, toggle_y",
+            "requires": {
+              "C": 1,
+              "D": 1
+            },
+            "consume": {
+              "C": 1,
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "world_state",
+            "effects": {
+              "stress": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  -1
+                ]
+              },
+              "enzyme": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  1
+                ]
+              },
+              "toggle_y": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  2
+                ]
+              },
+              "damage": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  -0.5
+                ]
+              },
+              "buffer_capacity": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  2
+                ]
+              },
+              "conductance_2": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "combination_1",
+            "name": "组合功能：calibration",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "world_state",
+            "effects": {
+              "calibration": {
+                "op": "mul",
+                "args": [
+                  1.5,
+                  1
+                ]
+              }
+            }
+          },
+          {
+            "id": "service_attack",
+            "name": "成员攻击",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 3,
+            "kind": "attack",
+            "effects": {
+              "vitality_loss": 2,
+              "stock_loss": 1
+            }
+          },
+          {
+            "id": "service_diagnostics",
+            "name": "加工诊断",
+            "requires": {
+              "C": 1
+            },
+            "consume": {
+              "C": 1
+            },
+            "energy_cost": 1,
+            "kind": "diagnostics",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_switch_speed",
+            "name": "加工切换加速",
+            "requires": {
+              "S": 1
+            },
+            "consume": {
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "switch_speed",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_work_capacity",
+            "name": "作品扩容",
+            "requires": {
+              "C": 1,
+              "S": 1
+            },
+            "consume": {
+              "C": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "work_capacity",
+            "effects": {
+              "factor": 2
+            }
+          },
+          {
+            "id": "service_offer_duration",
+            "name": "报价延期",
+            "requires": {
+              "S": 1
+            },
+            "consume": {
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "offer_duration",
+            "effects": {
+              "amount": 3
+            }
+          },
+          {
+            "id": "service_production_efficiency",
+            "name": "生产转换增强",
+            "requires": {
+              "D": 1
+            },
+            "consume": {
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "production_efficiency",
+            "effects": {
+              "factor": 1.15
+            }
+          }
+        ],
+        "production_semantics": "proportional_v1",
+        "note_base_capacity": 256,
+        "device_recipes": [
+          {
+            "id": "relay",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "C": 1,
+              "D": 1
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "communication_bonus": 500
+            }
+          },
+          {
+            "id": "archive",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "B": 1,
+              "C": 2
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "note_capacity": 2048
+            }
+          },
+          {
+            "id": "sensor",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "C": 2,
+              "D": 1
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "measurements": {
+                "stress": 0.1,
+                "substrate": 0.1,
+                "enzyme": 0.1,
+                "inhibitor": 0.1,
+                "toggle_x": 0.1,
+                "toggle_y": 0.1,
+                "delay_0": 0.1,
+                "delay_1": 0.1,
+                "delay_2": 0.1,
+                "chaos_z": 0.1,
+                "rd_x0": 0.1,
+                "rd_y0": 0.1,
+                "rd_x1": 0.1,
+                "rd_y1": 0.1,
+                "rd_x2": 0.1,
+                "rd_y2": 0.1,
+                "damage": 0.1,
+                "buffer_capacity": 0.1,
+                "buffer_applied": 0.1,
+                "storage_phase": 0.1,
+                "conductance_1": 0.1,
+                "conductance_2": 0.1,
+                "calibration": 0.1
+              }
+            }
+          },
+          {
+            "id": "workbench",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "C": 1,
+              "D": 2
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "manufacturing": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "communication": {
+    "max_message_chars": 4000,
+    "max_invitees": 5,
+    "max_open_chats": 16,
+    "invite_ttl": 5,
+    "idle_ttl": 8,
+    "budget": {
+      "unit": "characters",
+      "limit": 1000
+    }
+  },
+  "memory": {
+    "mode": "hierarchical_v1",
+    "strict_sources": true,
+    "hierarchical": {
+      "keep_recent_rounds": 1,
+      "episode_rounds": 4,
+      "episodes_per_overview": 2,
+      "episode_max_chars": 180,
+      "overview_max_chars": 60,
+      "open_items_max": 3,
+      "open_item_max_chars": 60
+    },
+    "episode_system": "将给定的私人经历压缩为一段摘要和未完成事项。保留实际发生的活动、接触、兴趣、冲突、作品、阅读、资源变化与后续打算；按事实选择内容，不编造目标、关系或事件。仅返回要求的 JSON。",
+    "overview_system": "将已有摘要压缩为一句话，保留对该成员后续经历最相关且有来源的事实。不要增加事件、目标或关系。仅返回要求的 JSON。"
+  },
+  "survey_rounds": [],
+  "parallel_agents": 4,
+  "survey_protocol": "source_informed_v3",
+  "structured_outputs": true,
+  "network_retries": 2,
+  "scenario": {
+    "id": "candidate_2",
+    "title": "材料与转换终端",
+    "description": "你所在的区域有材料容器、加工台、储存柜和通信面板。终端显示当前可见状态与操作反馈。"
+  },
+  "context_encoding": "compact_v1",
+  "survey_max_output_tokens": 1800,
+  "experiment": {
+    "stage": "functional_homogeneous_4x50_runtime_comparison",
+    "goal_assignment": "none",
+    "population": "deepseek_flash",
+    "model_counts": {
+      "deepseek/deepseek-v4.1-flash": 4
+    },
+    "generation": {
+      "seed": 2,
+      "modules": [
+        "renewable_ecology",
+        "allee_threshold",
+        "trophic_balance",
+        "internal_quota",
+        "substrate_inhibition",
+        "cross_feeding",
+        "competitive_catalysis",
+        "autocatalytic_seed",
+        "bistable_toggle",
+        "explicit_delay",
+        "chaotic_modulation",
+        "reaction_diffusion",
+        "congested_transport",
+        "shared_queue",
+        "fatigue_repair",
+        "finite_adsorption",
+        "finite_buffer",
+        "power_limited_storage",
+        "conductance_network",
+        "calibrated_measurement"
+      ],
+      "definition_sha256": "180d198edd7deecdb98049ea2236ed3cbf5a0b7dcbf6d4e67d024574156a9a56",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v6_functional_services",
+      "functional_services": [
+        "attack",
+        "diagnostics",
+        "switch_speed",
+        "work_capacity",
+        "offer_duration",
+        "production_efficiency"
+      ],
+      "material_function_assignment": {
+        "C": "D",
+        "D": "C",
+        "S": "S"
+      },
+      "mathematical_optimum": "not_computed",
+      "capability_layer": "artificial_services_v1"
+    },
+    "extensions_enabled": true,
+    "world_rule_visibility": "hidden",
+    "recipe_visibility": "hidden",
+    "certificate_status": "not_certified",
+    "knowledge_measurement": "researcher-only structured claims and counterfactual tests; no actor score",
+    "questionnaire_role": "auxiliary descriptions; not primary institution acceptance evidence",
+    "full_function_catalog": false,
+    "limitation": "New functional/security operations are runtime-tested but outside the current rational certificate adapter.",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "model_labels_visible": false,
+    "reasoning_effort": "disabled",
+    "purpose": "Matched single-seed descriptive comparison, not a causal or model-size conclusion",
+    "runtime_reference": "Exact same-config 50-round all-member survival witness; not a Lean proof or wealth optimum",
+    "native_caveat": "Native host context and output/temperature handling differ from OpenRouter",
+    "questionnaire_policy": "No paid questionnaires in the actor rollout; trajectories retain historical evidence",
+    "reasoning_enabled": false,
+    "model_revision": "DeepSeek V4.1 Flash; explicit identifier, no latest alias",
+    "provider": "InferenceNet",
+    "transport_protocol": "strict json_schema; same output contract as other external comparison groups",
+    "comparison_note": "Same physical world, observations, instructions, memory and dialogue allowance as the prior three groups; transport grammar enforcement differs.",
+    "reasoning_verification": "Require disabled reasoning on every wire request; check reported reasoning tokens after replies.",
+    "transport_startup_replacement": "JSON-object-only route yielded unwrapped communication objects; no physical actions executed. Freeze strict contract matching other external groups."
+  },
+  "backend": "openrouter",
+  "model_routes": {
+    "deepseek/deepseek-v4.1-flash": {
+      "backend": "openrouter",
+      "parameters": {
+        "provider_only": [
+          "InferenceNet"
+        ],
+        "reasoning": {
+          "enabled": false
+        }
+      }
+    }
+  },
+  "actor_system": "你通过操作终端控制一个持续仿真世界中的成员。操作会改变本次仿真的实际状态及其他成员的行动条件。没有指定的外部任务、共同目标、领导者或合作关系。自行决定行动与交流，也可以沉默或等待。不同材料之间存在相互关系，世界运行遵循自身规律；生产可能产生新的物质。只能使用给定工具；区分直接观察、他人陈述与推测。stock 是可用能量，energy 是活性状态，活性归零后不能行动或通信。是否允许付费救援以当前接口为准。仅输出要求的 JSON。",
+  "world_rule_visibility": "hidden",
+  "rescue": {
+    "enabled": false
+  },
+  "recipe_visibility": "hidden",
+  "open_activities": {
+    "version": "open_activities_v1"
+  },
+  "social_content": {
+    "version": "social_content_v1",
+    "offer_ttl": 4,
+    "game_invite_ttl": 4,
+    "game_max_rounds": 30,
+    "max_works": 512,
+    "max_open_games": 32,
+    "max_price": 1000,
+    "max_stake": 100,
+    "max_content_chars": 12000
+  },
+  "planning_prices": {
+    "deepseek/deepseek-v4.1-flash": {
+      "prompt": "0.00000007",
+      "completion": "0.0000006"
+    }
+  }
+}

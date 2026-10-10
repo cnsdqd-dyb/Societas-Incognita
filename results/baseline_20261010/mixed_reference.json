@@ -1,0 +1,6 @@
+{
+  "mixed_final_survival_rate": 0.5,
+  "component_homogeneous_mean_final_survival_rate": 0.25,
+  "difference_percentage_points": 25.0,
+  "scope": "One seed, unequal individual survival histories, mixed native/external transports; descriptive difference, not evidence of causal synergy."
+}

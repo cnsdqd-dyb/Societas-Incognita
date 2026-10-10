@@ -1,0 +1,16 @@
+{
+  "calls": 360,
+  "cost_usd": 0.11173713000000003,
+  "reserved_usd": 8.673617379884035e-19,
+  "backend": "hybrid_codex_openrouter",
+  "external_api_calls": 210,
+  "native_calls": 150,
+  "native_cost_usd": null,
+  "reported_native_usage": {
+    "input_tokens": 3858335,
+    "cached_input_tokens": 1342336,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 9638,
+    "reasoning_output_tokens": 1254
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "original_config_sha256": "77aff83270288d8f77d77ff7fecd426e54bbf2e570995dfdfcdb41637f042384",
+  "original_checkpoint_sha256": "18e606456f3a4b39ee3ec5a63cce90ce89c4f4452bae7252ed81d9d2c83f449d",
+  "public_config_sha256": "ab598081088d69b060abe542c4141a05416c8445a2407eb079af0dd8500f62bd",
+  "publication_changes": "Local workspace references replaced; shared private budget path omitted. Actor state, actions and numeric trajectories unchanged.",
+  "certificate_status": "runtime_checked_not_lean_certified",
+  "full_response_replay_verified": true
+}

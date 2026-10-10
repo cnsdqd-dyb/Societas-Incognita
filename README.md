@@ -8,6 +8,17 @@ English · [简体中文](README.zh-CN.md)
 
 [World framework](society_probe/society_probe/MINI_WORLD_FRAMEWORK.md) · [Mechanism library](society_probe/society_probe/WORLD_MECHANISM_CANDIDATES_20.md) · [Visualization guide](visualizer/README.md)
 
+## Quick start
+
+```bash
+git clone https://github.com/cnsdqd-dyb/Societas-Incognita.git
+cd Societas-Incognita
+python -m pip install -r requirements.txt
+python quickstart.py
+```
+
+This runs a four-member, eight-round **scripted demo with no model calls**. [Quick start guide](QUICKSTART.md) covers real-model opt-in, checkpoints, resume and the viewer. [Six baseline trials](results/baseline_20261010/README.md) contain tables, curves and recorded trajectories under the original rules; new worlds use slower ecology, reserve-funded precursor reseeding and decimal material amounts. These revisions have offline validation, not new LLM trial results.
+
 ## The research question
 
 We construct material worlds whose laws are assembled from **20 bounded mathematical mechanisms**. Agents can collect, transform, use, and exchange materials; unlock functions by holding particular material combinations; communicate; build capability devices; and create works. They are not assigned a common external task, a leader, or a role as a scientist.
@@ -170,6 +181,18 @@ This combination makes it possible to ask **which laws favor scientific cooperat
 | Works | Create, revise, publish, read, and trade text, novels, jokes, knowledge claims, and Python/XML games |
 
 Material knowledge and ownership are recorded separately. Holding a material can disclose its private characteristics; transferring it does not erase learned information. Capability use still depends on current permissions. See [implementation alignment](society_probe/society_probe/CODE_ALIGNMENT_20261010.md).
+
+## 🎬 Pixel observatory
+
+Inspect agent behavior, conversations, material inventories, and directed interactions in a pixel world.
+
+![Society Probe interface: social analytics, pixel-world replay, and agent details](docs/images/viewer-interface.png)
+
+**Recorded replay · 16× speed · dialogue bubbles held for 0.5 seconds.**
+
+![Rendered 16x agent replay with movement, material actions, and dialogue bubbles](docs/images/viewer-replay-16x.gif)
+
+[Open the local viewer](http://127.0.0.1:8776/) · [Capture settings](docs/images/viewer-capture.json)
 
 ## Explore locally
 

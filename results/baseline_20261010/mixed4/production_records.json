@@ -1,0 +1,15 @@
+{
+  "a2": [
+    {
+      "round": 2,
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "B": 2
+      },
+      "batches": 1,
+      "produced": {},
+      "result": "no_product"
+    }
+  ]
+}

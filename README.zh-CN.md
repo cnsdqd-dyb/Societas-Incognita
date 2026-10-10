@@ -8,6 +8,17 @@
 
 [研究框架](society_probe/society_probe/MINI_WORLD_FRAMEWORK.md) · [机制组合](society_probe/society_probe/MATHEMATICAL_WORLD_COMPOSITION.md) · [20 种机制](society_probe/society_probe/WORLD_MECHANISM_CANDIDATES_20.md) · [可视化使用说明](visualizer/README.md)
 
+## 快速上手
+
+```bash
+git clone https://github.com/cnsdqd-dyb/Societas-Incognita.git
+cd Societas-Incognita
+python -m pip install -r requirements.txt
+python quickstart.py
+```
+
+默认运行 **4 个成员 × 8 轮的脚本演示，不调用模型**。[快速上手指南](QUICKSTART.zh-CN.md)包含真实模型调用、检查点续跑及查看器用法。[六组基线实验](results/baseline_20261010/README.zh-CN.md)公开旧规则下的统计表、曲线和轨迹；新世界已放慢生态变化、增加由储备支付的关键原料再生，并支持小数材料量。这些改动只有离线验证，尚未重跑真实模型实验。
+
 ## 我们在研究什么？
 
 我们构建由数学机制驱动的物质世界，让智能体通过操作与反馈探索它们。世界提供材料池、加工设施、能量约束和交流接口，但不指定外部共同任务、领导者或合作关系。材料可以被获取、转化、使用、交换；持有特定材料组合还可以解锁作用于能力和世界状态的功能，支持通信、记录、测量与制造等活动。

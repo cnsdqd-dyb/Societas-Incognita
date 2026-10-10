@@ -1,0 +1,2 @@
+# Preserve published experiment bytes and provenance hashes across platforms.
+results/** -text

@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
+import run_sources
 
 HERE = Path(__file__).resolve().parent
 RUNS = HERE.parent / 'society_probe' / 'society_probe' / 'runs'
@@ -16,7 +17,7 @@ def read_json(path):
 
 
 def describe(path, checkpoint=None):
-    cfg = read_json(path.parent / 'config.json')
+    cfg = run_sources.config(path.parent)
     cp = checkpoint or read_json(path)
     state = cp.get('state', {})
     exp = cfg.get('experiment', {})
@@ -34,8 +35,30 @@ def catalog():
     if time.monotonic() - CACHE.get('catalog_time', 0) < 8:
         return CACHE['catalog']
     items = []
-    for path in RUNS.rglob('checkpoint.json'):
+    source, groups = run_sources.index(RUNS)
+    paths = [(entry['folder'] / 'simulation' / 'checkpoint.json', entry) for entry in groups]
+    if source is None:
+        paths = [(p, None) for p in RUNS.glob('*/simulation/checkpoint.json')]
+    for path, entry in paths:
         try:
+            if entry:
+                cp = run_sources.read(path) or {'state': {}}
+                cfg = run_sources.config(path.parent)
+                state = cp.get('state', {})
+                status = run_sources.read(entry['folder'] / 'runner_status.json') or {}
+                item = dict(id=path.parent.relative_to(RUNS).as_posix(),
+                    name=entry['group'], group=entry['group'], family=cfg.get('world', {}).get('mechanism', 'material_world'),
+                    environment=cfg.get('experiment', {}).get('environment_id', 'functional_material_world'),
+                    models=[entry['definition'].get('model', '')],
+                    pressure=cfg.get('world', {}).get('survival_pressure', False), seed=cfg.get('seed'),
+                    rounds=state.get('round', 0), planned=cfg.get('rounds', entry['definition'].get('rounds', 0)),
+                    agents=len(state.get('agents', {})) or entry['definition'].get('members', 0),
+                    status=status.get('status', 'complete' if (path.parent/'result.json').exists() else 'running'),
+                    mock=cp.get('mock', False), updated=path.stat().st_mtime if path.exists() else 0)
+                progress = run_sources.pending(path.parent, item['rounds'])
+                item['pending_round'] = progress['round'] if progress else None
+                items.append(item)
+                continue
             stamp = (path.stat().st_mtime_ns, (path.parent / 'result.json').exists())
             cache_key = 'meta:' + str(path)
             prior = CACHE.get(cache_key)
@@ -45,7 +68,8 @@ def catalog():
                 items.append(item)
         except (OSError, ValueError, KeyError):
             continue  # A running experiment may be replacing a checkpoint.
-    items.sort(key=lambda x: ('multi_environment_v2' not in x['id'], 'four_model_mix' not in x['id'], -x['updated']))
+    if source is None:
+        items.sort(key=lambda x: -x['updated'])
     CACHE.update(catalog=items, catalog_time=time.monotonic())
     return items
 
@@ -55,26 +79,39 @@ def load_run(rid):
     if not folder.is_relative_to(RUNS.resolve()):
         raise ValueError('Invalid run')
     path = folder / 'checkpoint.json'
-    stamp = path.stat().st_mtime_ns
+    stamp = tuple(p.stat().st_mtime_ns if p.exists() else 0 for p in
+                  (path, folder/'in_progress.json', folder.parent/'runner_status.json', folder.parent/'config.json'))
     if rid in CACHE and CACHE[rid][0] == stamp:
         return CACHE[rid][1]
-    cp = read_json(path)
+    cp = read_json(path) if path.exists() else {'state': {'round': 0, 'agents': {}}}
     state = cp['state']
-    cfg = read_json(folder / 'config.json')
-    events = state.get('events', [])
+    cfg = run_sources.config(folder)
+    completed = state.get('round', 0)
+    events = [e for e in state.get('events', []) if e.get('round', 0) <= completed]
+    meta = next((item for item in catalog() if item['id'] == rid), None)
+    if meta is None:
+        meta = describe(path, cp)
+    else:
+        meta = dict(meta, rounds=completed)
     # The checkpoint is the source of truth for settled events, not proposed calls.
-    payload = dict(meta=describe(path, cp), config={k: cfg.get(k) for k in
+    payload = dict(meta=meta, config={k: cfg.get(k) for k in
                    ['world', 'tools', 'scenario', 'experiment', 'mixed_world']},
                    agents={k: {'model': v.get('model', ''), 'initial_stock': cfg.get('world', {}).get('initial_personal_stock', 0)}
                            for k, v in state.get('agents', {}).items()},
-                   events=events, snapshots=state.get('snapshots', []),
-                   environment_history=state.get('environment_history', []))
-    payload['communications'] = state.get('communication_events') or [
+                   events=events, snapshots=[s for s in state.get('snapshots', []) if s.get('round', 0) <= completed],
+                   environment_history=[s for s in state.get('environment_history', []) if s.get('round', 0) <= completed])
+    payload['communications'] = [c for c in (state.get('communication_events') or [
         c for event in events for c in event.get('pre_action_dialogue', [])]
+        ) if c.get('round', 0) <= completed]
     payload['artifacts'] = state.get('culture', state.get('mixed', {})).get('artifacts', {})
     payload['social_content'] = state.get('social_content', {})
     payload['physics'] = state.get('mini_world', {})
     payload['final_agents'] = state.get('agents', {})
+    if not payload['agents']:
+        payload['agents'] = {f'a{i}': {'model': meta['models'][0], 'initial_stock': 0}
+                             for i in range(meta['agents'])}
+    payload['in_progress'] = run_sources.pending(folder, completed)
+    payload['runner_status'] = (run_sources.read(folder.parent/'runner_status.json') or {}).get('status', meta['status'])
     CACHE[rid] = (stamp, payload)
     return payload
 
@@ -124,6 +161,8 @@ class Handler(SimpleHTTPRequestHandler):
             query = parse_qs(url.query)
             if url.path == '/api/runs':
                 result = catalog()
+            elif url.path == '/api/comparison':
+                result = run_sources.comparison(RUNS)
             elif url.path == '/api/mechanisms':
                 import mechanism_lab
                 result = mechanism_lab.catalog()
@@ -195,6 +234,11 @@ class Handler(SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--port', type=int, default=8776)
+    parser.add_argument('--runs-root', type=Path, help='Read a published results bundle or a local demo output directory')
     args = parser.parse_args()
+    if args.runs_root:
+        RUNS = args.runs_root.resolve()
+    elif not RUNS.exists():
+        RUNS = HERE.parent / 'results' / 'baseline_20261010'
     print(f'Society Observatory: http://127.0.0.1:{args.port}', flush=True)
     ThreadingHTTPServer(('127.0.0.1', args.port), Handler).serve_forever()

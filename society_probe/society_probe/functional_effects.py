@@ -267,7 +267,7 @@ def storage_action(cfg, state, aid, action):
     if action['tool'] == 'seize_storage':
         owner = container['owner']; victim = state['agents'][owner]
         if owner == aid or not victim['alive']: raise ValueError('Invalid container seizure target')
-        effort = world.quantity(cfg, action.get('effort'), 2)
+        effort = world.quantity(cfg, action.get('effort'), 2, integer=True)
         fee = .5 * effort; world.check_payment(actor, {'ENERGY': fee})
         attack = world.spec(cfg)['resources'][item].get('accessibility', 1) * effort * (1 + actor['energy'] / 5)
         defense = (1 + victim['energy'] / 5) * (1 + container['armor'] + live_bonus(state, owner, 'shield'))

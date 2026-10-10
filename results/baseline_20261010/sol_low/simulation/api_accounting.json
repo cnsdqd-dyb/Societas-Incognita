@@ -1,0 +1,16 @@
+{
+  "calls": 744,
+  "cost_usd": 0.0,
+  "reserved_usd": 0.0,
+  "backend": "codex_native_cli",
+  "native_cost_usd": null,
+  "external_api_calls": 0,
+  "reported_usage": {
+    "input_tokens": 20670567,
+    "cached_input_tokens": 6897280,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 57613,
+    "reasoning_output_tokens": 4265
+  },
+  "cost_note": "Engine cost_usd is an external API placeholder; native usage price is unknown."
+}

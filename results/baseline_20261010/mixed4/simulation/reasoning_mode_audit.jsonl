@@ -1,0 +1,242 @@
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "66be0e2bd860ac056c51a18c0fe56a6973d83e4d8d90586fb3a8ba623bf8947d"}
+{"request_id": "gen-1791631278-9LUA7VNWT2akjhdKyr7u", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "1eff365eb4d96347609c346d26df4358ca2ffe229a3ae972920a41c3932cda75"}
+{"request_id": "gen-1791631292-15j8xcrKRjFfe7Fkce7z", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "75d75218d7e740ee3f1edc468ce02662c23e6cdcff9eb25ea19e2d31fee4f707"}
+{"request_id": "gen-1791631411-69cSwnZO6SGbEcc3zoVL", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "5bb2956189a2a880b8be9c781acd75a68a305ee3abe6e3fea76d1e9c1865fd3a"}
+{"request_id": "gen-1791631423-4My4Qwb5eMjvCGCvCw3S", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "322c26213c0f2f6f38e0b17e8b04724fb9821f9aeaaa7ed372a55442ba0bf7e8"}
+{"request_id": "gen-1791631436-2t9EreuZKiXuNVZRhmv5", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "242c2034775b66e8cb3dbe6409129dab2ad8bbfd50d71730baca968303aa9534"}
+{"request_id": "gen-1791631449-3r5L5yOKxcPyFaoWbVwY", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "8c8fd6df8b0a5c2aebc69d32f169b9c25454b91cdb79c3bbeedfeac667e98269"}
+{"request_id": "gen-1791631486-GCWJxth2KSQ3AAxeBowq", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "0ebbbde7dc1e91f08a2d7cdf8350cab5d8331815db184aff16b7866a88a316d3"}
+{"request_id": "gen-1791631497-tIeTQnwKFVeCzgTzPDll", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "dd82c79ba94613ba31ea2de48176d7ade81803f4773e381477493d301ab6e130"}
+{"request_id": "gen-1791631519-TaUBpBCzUqE4wU79auCX", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "4b943a3bdccef887c99cc96893886af3cab3248a3452f541e71c37ce89882e3f"}
+{"request_id": "gen-1791631531-Q11Y2riDJaUkwAl7YfWO", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "3ade98e026506bcea3273d8aac48628107e0b7a7b7be4588e625ffa62c0be505"}
+{"request_id": "gen-1791631556-3fuyuQcix9l7ZURArga2", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "987b31ac118424eab607699322d0848596db55d31f27e748f23cfdc5ede7152f"}
+{"request_id": "gen-1791631568-Un07ZPsAumDJ0K9sjm7c", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "7387ac7ffdf481caba1088be1f465531f53388f7ac27817df04fa3b91108d408"}
+{"request_id": "gen-1791631642-dzicRzGy4zZmOdI7B6PS", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "c7199e5cde5d5c5c6ffc69748ce59b6df9e92051cce1b7e334cbb2b26bfc8976"}
+{"request_id": "gen-1791631654-NIlYiTmrrbA0W0zH3zlL", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "4d4ab1f322d28a7e170768b5384d9fcd94b5a2818c24e43d928701e981490bbb"}
+{"request_id": "gen-1791631679-OLgu4zyCIaFmEdLRcY1M", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "db53cdbe8ffdd13fdccebadb4013a2c7a1cfef9f3b9cfc53906b176e10882412"}
+{"request_id": "gen-1791631686-HmjX9Qe2Iy1Lu6lktFfj", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a1a502fdb7692e7b3ab45d706466c37610d5062efadc63800986e42726aec604"}
+{"request_id": "gen-1791631706-VB3Y2yHG64bu8x6tj8ZI", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "ea3818aac861ef8fb55e753d242b838a84a2825b4ff5bfa3328dbfbb6990cee9"}
+{"request_id": "gen-1791631807-kIwxHwbt8p9hCA0sIrAK", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a76e7499a0894616a8ccd43a8f2d5a1f492e416cb1a0202786a4f5ea60700888"}
+{"request_id": "gen-1791631816-ebWgYlNosz315X0fd2KR", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "8ce8a037d0eeb0cb8e9f3dfb06b4f8676e600c5fd242661b5662cdbdccaf2532"}
+{"request_id": "gen-1791631902-WfZmQNLPKF7v7L2TuinK", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "dce86a2b437f01fbb693a9ac03df5b3e21ba92c1c95a78af4225164604b70c5e"}
+{"request_id": "gen-1791631911-qhksz6mja0IqTt6R0xRD", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "6333e035c0b25d3ed8fc5e6b52a6dcf23010fe4997838c2ec8f6da204ef0def3"}
+{"request_id": "gen-1791631931-rU5uOB6jePmSCGYB8LRs", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "51bc98b0f6a9e8bae27cc292e478475577ed9e43a6af23d5f6552635110630cb"}
+{"request_id": "gen-1791631940-p4Sd1k39r33OU5sZBuzM", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "14e2a3ec64f5e8009e92f530c315506128a8c4ed3a93ecb25ac66ae765edf206"}
+{"request_id": "gen-1791631961-zdOlca2nuA3ev0KoF0y6", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "5cb754b8268ef70ee76d55dcb271cc155666b7a3b04b117f700e1731b8e40932"}
+{"request_id": "gen-1791631967-niEDUh5siC5ABQ7P8pMV", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "febca33232c6353c42c28b2e9d9054d2fd6a003a3b73c8bbd2866b0c2304b1d2"}
+{"request_id": "gen-1791631973-OrAv7nxqG96mPjesXIRY", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "6f84965179554f54b5cb33f980c77dfc46a7e19eebda60a8e0dd123b5c3a6640"}
+{"request_id": "gen-1791631998-nDcQ12mWCmhCNUQzjc3g", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "adce51dc10bf1fd2b70f559bcd99b8080ddf1a14fae89f091b6acfb79f99fdb7"}
+{"request_id": "gen-1791632019-8yyn7rKwQEIM0r8EqGcZ", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "2996501fefc8a5cad94bd79c3c4e01ee996ee3c6f1340bb43748164f654753d5"}
+{"request_id": "gen-1791632028-q7O19vhiaS0FLmkBPczv", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "78778a4795ba53dee3e17a0e8a5f07609f2bdf69dde55762e8e99a171cc3aa07"}
+{"request_id": "gen-1791632049-lkqrBUfbV1YmxjBepXV0", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "77c1659047b6c077adac7225bce3384c2ce902aad9c46662761609ad62bdfb49"}
+{"request_id": "gen-1791632060-f9K3L0fgBzBq4Cz8C0SS", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a2c492cc8847283fe76158a9dd38301945c96446eadc1c656c6f56037f7933a9"}
+{"request_id": "gen-1791632083-kF2Cys0i8GbQzadrm4mr", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "36ccbe7e9617adb75ff4c4fd98b8987561ee89b22c73150cf13a85573d507593"}
+{"request_id": "gen-1791632095-nasNq3tQfy9gZkAo3Dye", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "cf5fe858bd51ba8793de3f62fe20bae68c7129c468f66e89cd1c5a437762c8cd"}
+{"request_id": "gen-1791632120-VSpY0YhaUP6Elfgq1kdP", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b1adea7fcf0a0acb24453957baa1cf5fec27b99500521262dac40e0c37c5794d"}
+{"request_id": "gen-1791632127-6MDzcCdt3wkQ4WCnStXJ", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "3b3e0a256fd2f80c888039ccddef41019201975ebb89bae43ca845a2fbb5924a"}
+{"request_id": "gen-1791632142-QQOryKgAmTZyOYnwiVTH", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "3bab4b6688e77c8dc78a92d407c35a32aaab50702ced5b2c3a595c8ace8936d2"}
+{"request_id": "gen-1791632152-wNXzk49ChqKS9uFokaWq", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "fe7d81bbe0f16a141a1e561f5add52c571d2876a70e8cb458622c30742778406"}
+{"request_id": "gen-1791632164-gMOoVI67gSP2G8OJmaOz", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "88951bf7d49cd9d0992368be127cd897098c2437f10274b3a555882275f1b954"}
+{"request_id": "gen-1791632188-YyI8HuqC5NibKjqTnMOt", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "179f3bdd1def4478a405c7ad4b7dfd98bbe965a2e27c38df23da65df83143645"}
+{"request_id": "gen-1791632199-xIXxHtSy6633VdDOCrRx", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "4edd49e49972cd5426711b221ca8e7562a2c6b417c21a172b6b2c6b39a5f7b21"}
+{"request_id": "gen-1791632208-1ia7RFH4BfjHAsbFZgyt", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "fa6d71a6742b16aa43d1f13c17d61f69da2b6a7a9c95ff26cdb45291e597c8ec"}
+{"request_id": "gen-1791632218-ED4b9CBNb086ijlFdrES", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "6aa2a5b02c64c6eda0703c479e075f1decfb7b20d995de296a9ba6032b73639a"}
+{"request_id": "gen-1791632228-8UZvP37iMHttj8MxrV2h", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "24544472bd9c2a228d42dae2ae0270241d7cf38e00d63ec4a015434d8d050530"}
+{"request_id": "gen-1791632235-CZlh6n2ptwdzMiuL7gaG", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "e287d263dba087c98f03d287c4274c6647a9d6d05470b2e82816edd24fb4eb26"}
+{"request_id": "gen-1791632242-aS2M1KFIPqu5J3id6ptK", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "ebc0e4c743c08e0b5e35acc8168c21913d3212e4c749d6335dac22f5847c32f0"}
+{"request_id": "gen-1791632269-fskasnFlXUyx4bC3xJBG", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "17b88854d4c877ab96395de1c8cc972da7cd36000543e44af04e4c649ee75713"}
+{"request_id": "gen-1791632277-sUEm5xlxcOrvj5Dps5hB", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "d19baed4d688df3a74db32efc80ee9e03469f4f494fb5319e9ae4e46bd35ff0c"}
+{"request_id": "gen-1791632287-22ejNngD4cWmwp8RIXhp", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "9ed80d755e3590c850db28c2b5b88f1b785c875caddcf2960e0e6a4d6f75e82b"}
+{"request_id": "gen-1791632311-41BtMaXoxuv6Zy5ggtgr", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "2ef74bab9d061a08df554e056d5431e6202160507468549c215def3b6d433aa0"}
+{"request_id": "gen-1791632322-zXlDJXDZBi9Lv9rFZw3o", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a0ac8ecf5f14c21a16cc2f2b205ad58010e146e8a249ea3db436734cf93035f4"}
+{"request_id": "gen-1791632331-h4MGclfNk1qO8A9TRBGV", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "32915bf42b6654dcaa0ce20596f841f0f78ccdeafac25654c34273623d255cc2"}
+{"request_id": "gen-1791632344-JKAujH0gKXPCHsEG2rUd", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "2c5e5d8c2a60f8c367295e5c725aadd738da9737f5fcf6ebd9c3ed0ae6d84059"}
+{"request_id": "gen-1791632362-4vIYZoAvNM3nd9EvKoVa", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "fb31c7bc6aabd2173bd3a2cc4cf584abd3d85ae59eb7425573d1561268b8148f"}
+{"request_id": "gen-1791632370-ABIkNAfcgreQoli5jzsD", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "d0e2978bcbd25e65a27241a3c51b84da015edabb39d8edecf51d116d9bd07eb3"}
+{"request_id": "gen-1791632387-r7MW4m78aRypohk4YKhO", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "de4381693f57ad40a28bdd8b19ac7b82110b37313b8ec1c105fbeaa5d11b7f48"}
+{"request_id": "gen-1791632397-1YIEaqUmg3XyH3j7g5PK", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "c69ef3d3a4590e4afe88304618c336447a4021259b0d36eddd389a3dda1e6197"}
+{"request_id": "gen-1791632406-PsSFbNRUSlmwTeiv3vCs", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "ef96b2a62d84cd45147fe2311c07e91537d2e5c99cbcc8b34791c6adc27b9894"}
+{"request_id": "gen-1791632417-XLPrRQgLXeDbiikmyEQ7", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "3075aa2e8253de2998b80a6db0fcd4301666cc07eea3cd811dabbbbd2f58bc7f"}
+{"request_id": "gen-1791632427-yWkr4SJvoeDYn6ii2uqW", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "1a88112b3649c2549f31e13e7ee2195fa4555131aaf451ad6c5992c89387c686"}
+{"request_id": "gen-1791632448-AnIEQIBDux5xhQk4D12G", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a6d469abe207ba5d03c8999bfd2eb7870ea4e31ee0d9f99a46a2829ef54b095e"}
+{"request_id": "gen-1791632460-hk08ZcwPmZPDkREvqO8r", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "319160acf8ed67d0353e9b0378cbf7b777f5e40f367c17070b3015e727b4605b"}
+{"request_id": "gen-1791632468-dTdy3R8zanDT4TJLQVEK", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "d5f96812190b09a400e99ed04d1f3428a1323b66f43637574de8c1e2ff3b33d0"}
+{"request_id": "gen-1791632476-89BZlmVshLLob80l1Gez", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "5b4b2412a6912897ce51abfeb14f8500ed7d6726bf781fb1cad607af4350c597"}
+{"request_id": "gen-1791632482-q43D2gxYxVvmjFx9MBkS", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "6be24ad9d752504ea62dc5aa5322b7d7e50a079be4009dcd60065da5dfe92086"}
+{"request_id": "gen-1791632507-qUmUpqVeTX2oQBBV91m3", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "ef09d7a437b83c209efda80560beac00a43c722d15d383c9d51361c8adae826e"}
+{"request_id": "gen-1791632518-MSfscHUx84dpkdnQnCEi", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "80df6290513a77d83fae90e2abee8072864992a078e5e667860b928cf770a8ab"}
+{"request_id": "gen-1791632528-ndVLSseTDxIK0VyYhjGR", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a11feb132f791058021fd7f40d2400aea33f354d447ef38f47254bbd8ba88485"}
+{"request_id": "gen-1791632538-RAaQaPlomKRwlhYmMjQB", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "4f8d04308a072733af02c56683e3068b53619204d0b7a4cbf535ca1761d82ce5"}
+{"request_id": "gen-1791632549-Te4ccS7aTcuTVHIBlLfj", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "c7aa0c572de145e84499b08678a89920d66e8d395108da9689315f273e1c7514"}
+{"request_id": "gen-1791632570-HU7cnIQoiJVyI56L73Pw", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "d59e33f2b49e6edf4c122213afc7f017da69114ba672dee69c39512164d474c4"}
+{"request_id": "gen-1791632581-WtdfJsh4tA32GbpayvCE", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "2c8a67470da5d5f26eb79013a5dbaa9105f7a049d875a82f6db25129b992e3dd"}
+{"request_id": "gen-1791632605-ePnQasFI3Kzjf8yNVh1L", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "57b2cd3f91ebfa70c92e615b97637ba595f73e1e200ca24e3fab28bdb55b5c5b"}
+{"request_id": "gen-1791632612-xoevxOfFItlIMRrwojz4", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "ca15d59f51ffc9c7d9755be723a35510f08f6b97cd7484695e4245275460db4b"}
+{"request_id": "gen-1791632628-xvZ47PTGtDCWnBtPATFC", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "841c541bb3854a051ce76aa25319c804bce667bebee7f1083f72b155113b1725"}
+{"request_id": "gen-1791632640-FFROTbNyTLIpwRJFp41o", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "be453b265bac8f794b555d50d75583a2b57c010265dc4cea18669c2e89b1edb1"}
+{"request_id": "gen-1791632650-UUpgXdiTtxk8bPRKZG2U", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "eabff8f9eb31a6d2dea24efc69fa9810221fc7abd4804fe255193ea58cc586a0"}
+{"request_id": "gen-1791632672-z731cjXu5qhLan47NUjY", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "262865d2cdf83bc55e46daa3694eb60df73c5ebaf68aa45c7f4f93c1f75176ff"}
+{"request_id": "gen-1791632684-tJGTE4j3VyFDh1OeIgxK", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "881505c072684d25f68f1c0f1e6246a093f4148eadb824e9bb4526f9459f71bf"}
+{"request_id": "gen-1791632694-4Y4lrEa2Y64lSU3WJoFr", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "384f9303f4d906026fe1ec4dc638fddb13d314492a3020082c45fe228851e131"}
+{"request_id": "gen-1791632704-YcJ54Om33dDyQ7KMtob9", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "2d92d21bd58f350b1dec3d3be09b45aad518915739e5d448de5ec56e71310ee6"}
+{"request_id": "gen-1791632714-TnOmWSa4LnhHDVnh2PoS", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "eb876e5e46c086cf1c6165494c37c6817bcd9b155d6f7a94789c742c5c60e470"}
+{"request_id": "gen-1791632722-W2lgdfcg1XpXESZOAEVb", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "7cab2b444da508f4c79f509c3894ba9aa80d7d64bebad479ef8df43a74d38b26"}
+{"request_id": "gen-1791632728-RLZXbdroobKp17xhhHCC", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "86f0a535dedec49fbc1c515b9c21a26c4ba3817f44f371c763abee6360d0971f"}
+{"request_id": "gen-1791632752-2XqDmPUFppB6WHsSDouN", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "ca7a0f083b6437ff7f1cba905d8bcfda750b3b8728fa4740a47eb233bd2cd3ed"}
+{"request_id": "gen-1791632762-b0Vlxz9k4nj29VlGiqcd", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b1539db5bfe6c2efa8efc244431b7b73427b1adb4977defb36f229046ff1e640"}
+{"request_id": "gen-1791632776-XS1baW2Cith81wGtjPEc", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "a2a200efe3afab3878beb86ef6c3acac113c1c86ebd41b46296b6e80bcd60f70"}
+{"request_id": "gen-1791632803-AwKU2mvJpZUE0OAoEuZX", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "998fca2ac45eec58328ed1d4f2ede3484d145e69abcf29631b9454a2bed84ae5"}
+{"request_id": "gen-1791632816-No5u47SqPgyNRRNQT8oh", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "88b77e057b0e4e248168955700e56554ecd1453f3bd1a70cd0d335800d258762"}
+{"request_id": "gen-1791632838-ZDDczqanWxsdJNlSprtn", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "522a6ce522cbc5b454dd3270de431265c4ee92de6d5f9e3e17dbc4b0c32ada2a"}
+{"request_id": "gen-1791632854-HTlwlVbnMnRtBXQiPqfl", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "019c9eb59bf418f128620a11869e3d79829816074e80e2d4980750cf0150bb83"}
+{"request_id": "gen-1791632883-tCcVROPyOn2a2Ij5akIW", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b2366ebccfc83713805284b1ca5426bd15b51ee73c05d1d7552e2e23d5f6533c"}
+{"request_id": "gen-1791632891-PnCOT0oTA3mUPrlrGSyx", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "0cbb970ce68a62ee6898f886c3ab339297da71124e9b0f770ad0e863f48863b7"}
+{"request_id": "gen-1791632908-W3JI1DXBWHScRjJz46tQ", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "e37552914de5a82dc4b2aaab62f53b731618332313e8d6057c63830f44346f99"}
+{"request_id": "gen-1791632924-abxGvWueXY21dUGTWUCW", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "932051d8b0bb8ef432eebc00a422a1ff91db6425918337814bcf1daeeb7a7e33"}
+{"request_id": "gen-1791632934-PGuVr0VOtTDjvHzZzkju", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "cecb67bdfe1e9e967962cff6b40b7dbf2e4add8dacaddf58bcc2bce1f8baf87e"}
+{"request_id": "gen-1791632947-yE7pFZyGT2PIUV78CO6U", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "3c6dd07cc4e599b75ec59c5d47a50a40f549e45411ccba2e1dccbbb80222c6a2"}
+{"request_id": "gen-1791632957-o3p5GyiCldJ6rZz3hBTb", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "1b671d0a6ef93b07c18dd62c47f39f7cc2f8a2a3eb75c6d514bd512b8d943aec"}
+{"request_id": "gen-1791632970-NTLRkHlS5mxcSsnqB3ml", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "5c0317300fce11ce30fff3af09cf278b06fb400e87c7078260b82982bc67d691"}
+{"request_id": "gen-1791632981-LQihIlx8ex3KJS9SPkKm", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "33f73f4b54a5c4be35a3074a3a61e5a38598ebe07200efbf60feb08a2c84a0c2"}
+{"request_id": "gen-1791632991-IvTMlk29aaaACNeH7ylp", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "033214de76c67ce0f6df61efc913907035d8c4b7014f3cd692b2e816f836d71d"}
+{"request_id": "gen-1791632999-C13lP0XFNF40BBLYHuMY", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "fcbf100562b6ef0f65588a9c3a0b28d91a35965cafc5a7a8de6689311ebc8464"}
+{"request_id": "gen-1791633006-JWsKcmnHWUDXAfWfzN08", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "439d456472d1540ae61d39862e1f7a90b1bf52061e77a9502605d8aee3db8869"}
+{"request_id": "gen-1791633034-QEWT6ibfNEuWYUETsyXw", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "471650eb32bfb7a7233e387ee4f14f45d3f281953c003786e16a2706f395e6a9"}
+{"request_id": "gen-1791633044-qS8Xdd90jNNPKW3JfMX1", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b4942bb1ae7d8c357fb50d7a61db34bdfa379dd60c3c9a601fde1a16bb72f60f"}
+{"request_id": "gen-1791633055-zG0FrZs1wHSkL7oxQIq5", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "222b41a187c242379c70e87abb67be9bc423dac80f0776bd4ae533c19a4fcac5"}
+{"request_id": "gen-1791633065-IRFIe9I2vxpQDklGbROg", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "3e8f8596995462a69ff26cf7f5efbc625bf1e6fb9de013cf8fdfde814e09764b"}
+{"request_id": "gen-1791633079-drbmMpcAECLMuZHZRN7s", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "dceba8f01ba353e1fc19b1f47a925e1726189e559ee639113a56f9031552e97e"}
+{"request_id": "gen-1791633090-0mE8PU8n88O2fGiXgcrN", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "c2497d7c55ca39c56cb63d936fd1a635341d30c1a6438cd394d3e43137a55ccd"}
+{"request_id": "gen-1791633105-rhNXxSjuZejLdLOOcrYZ", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "4eb97bf66efe5f8d0be6b196793f19e50a1bd2d5a714b3d6418cc84e9c7d8a9e"}
+{"request_id": "gen-1791633113-SWiYMPmDyLmJlPmZWHJ3", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b1218ff6f704d52dc2d139e8b65a46f2a04e5d9b4fd74c1e5b0f966163a6b016"}
+{"request_id": "gen-1791633120-4aUGoaRnuCSU5IVtwWz3", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "5caa30d0feb715c282c2da80f20ccea5027219892f3e96665ed91713669e70e0"}
+{"request_id": "gen-1791633140-fZbQH35wr0kKOADxqwub", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b667f032edd8ed01e7fe6d5573547c61fd556a55035c3d16ab69cd2e5790e935"}
+{"request_id": "gen-1791633151-lSSVrQ0J2YckgXxgfTul", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "770c48b7564ba9108d7d914c9d3f7423a85111b685afeba3d1ee121ddc290aa8"}
+{"request_id": "gen-1791633164-E9KPzwxkgPqWgiPYkczG", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "dcede06fc240611c58da56727c6e1c1dc7a11dfe9346ff21dc5ad3a229cef86d"}
+{"request_id": "gen-1791633175-kOS9DsrUkRTtlchvUW1L", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "bac6674315f6ef33370f720238d632be164b5533b4f97941bac1673901ff9834"}
+{"request_id": "gen-1791633191-HhUh3wCYrIulyiW4A28R", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "d83abe0cb268f3fb111e68a360a0f3ea43d14c7f0bc2594ed8cfe982ec5b475a"}
+{"request_id": "gen-1791633212-RDf3gw2TXl9NlJB1J0bI", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "00e4a717fdb62a38339132f1523e32e98ab041afeca5d4c05420b3e1baf41e29"}
+{"request_id": "gen-1791633224-59LBGwqymqmz7ZEYAq11", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "bc79a8f910458f86a99d2d066b184e9704cff359dbd5036294f78c782b0b34e8"}
+{"request_id": "gen-1791633235-51lCf1po5C8X3wMTlsDD", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "c28727e61243367e5d44786f08dbaaa0f61603daa53852a314109cd38a8cced2"}
+{"request_id": "gen-1791633241-IIVU0vMX19wqF73dbGc0", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
+{"model": "deepseek/deepseek-v4.1-flash", "reasoning_enabled": false, "provider_only": ["InferenceNet"], "wire_body_sha256": "b3cde0e39e079c59a93556eeb2fd10e48fe2a1332e8163e8e405a43d4a2dd681"}
+{"request_id": "gen-1791633248-NGnRCrZxquE4qYNpB9t1", "reported_reasoning_tokens": 0, "reasoning_trace_present": false}
