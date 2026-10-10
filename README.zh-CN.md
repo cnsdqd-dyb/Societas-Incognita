@@ -80,7 +80,7 @@ python quickstart.py
 
 公式与机制设计见[来源笔记](society_probe/society_probe/WORLD_MECHANISM_CANDIDATES_20.md)；实际组合见[机制实现](society_probe/society_probe/world_mechanisms_20.py)。
 
-## 组合数学法则与物质演化
+## 组合数学法则 → 物质演化 → 实验反馈
 
 确定性配置下，可以概括为：
 
@@ -91,27 +91,22 @@ $$
 
 其中 $z$ 是生成种子，$\mathcal K$ 是机制组合，$\theta$ 是生成的世界法则，$\mathcal O_i$ 是成员的可见接口。成员依据观察与历史行动；隐藏规则配置不直接提供 $\theta$。有界噪声可另行启用。
 
-我们用可组合数学表达式定义材料再生、消耗、生产与设施服务。在隐藏规则设置下，公式实际驱动世界，但不直接披露给成员。成员接触的是接口允许的数量、操作和反馈，通过试验与交流探索规则。规则公开程度与配方公开程度可以单独配置，作为对照条件。
+下面的动态 SVG 直接在 README 中播放。材料数量、生产与转移来自研究引擎。读者可以看到数学法则层；在隐藏规则设置下，这些公式不直接披露给智能体。
 
-下面的动态 SVG 直接在 README 中展示再生、延迟、副产物、拥堵与排队组合下的数量变化、生产依赖和成员间转移。右侧公式属于研究者规则层，并不是直接给智能体的提示。演示使用固定操作序列，数值与结算来自物理引擎。
+![组合物质世界的动态像素图：数量变化、生产依赖、成员间转移及其背后的数学法则](docs/images/compositional-world-laws.svg)
 
-![组合数学世界的动态物质关系、数量曲线和研究者公式](docs/images/compositional-world-laws.svg)
+图中组合了**再生、延迟反馈、副产物互馈、运输拥堵与共享队列**。A、B 是材料池；C、W、D、S 表示成员持有的材料。曲线追踪各类材料数量。实际结算的生产与转移会触发路径高亮和移动像素；静态路径表示配方依赖。
 
-[完整世界定义与逐回合数据](docs/images/compositional-world-laws-data.json)
+演示采用固定操作序列，由引擎计算演化过程。数值标签与曲线追踪材料数量，移动像素对应已结算的生产与转移。[世界定义与完整逐轮轨迹](docs/images/compositional-world-laws-data.json)。
 
-以下 GIF 对照三种机制组合：
+<details>
+<summary>GIF：对照三种不同的机制组合</summary>
 
-![不同机制组合下的材料数量变化、生产转化，以及成员不可直接看到的公式](docs/images/mechanism-combinations.gif)
+![三种机制组合及其引擎实际计算数量的像素动画](docs/images/mechanism-combinations.gif)
 
-[查看可编辑 SVG](docs/images/hidden-rules-visible-feedback.svg) · [静态 PNG](docs/images/hidden-rules-visible-feedback.png) · [完整公式、参数与逐回合数据](docs/images/mechanism-demo-data.json)
+再生 × 低存量阈值；延迟 × 非线性调制 × 扩散；副产物互馈 × 拥堵 × 排队。[可编辑快照 SVG](docs/images/hidden-rules-visible-feedback.svg) · [完整探针数据](docs/images/mechanism-demo-data.json)。
 
-| 动画中的世界 | 数量与转化为什么不同？ | 启动本地服务后交互查看 |
-| --- | --- | --- |
-| 再生 × 低存量阈值 | 再生量依赖当前存量，低存量条件改变恢复反馈 | [调整初始存量与采集量](http://127.0.0.1:8776/lab?modules=renewable_ecology,allee_threshold&seed=7&stock=0.2) |
-| 延迟 × 非线性调制 × 扩散 | 历史采集进入延迟管线，控制变量调制后续演化 | [观察变量与材料池](http://127.0.0.1:8776/lab?modules=explicit_delay,chaotic_modulation,reaction_diffusion&seed=7&stock=0.5) |
-| 副产物 × 拥堵 × 排队 | 配方、能量预算、通路成本与服务容量共同限制产出 | [查看配方与实际结算](http://127.0.0.1:8776/lab?modules=cross_feeding,congested_transport,shared_queue&seed=7&stock=0.5) |
-
-像素条展示材料池数量，移动方块呈现生产与转移。进入本地实验室，可以调整机制组合、种子、初始存量和操作强度，观察轨迹如何变化。
+</details>
 
 ## 💬 智能体能做什么？
 
