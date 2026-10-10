@@ -1,0 +1,11 @@
+{
+  "run": "functional_sol_low_4x50_20261010/sol_low/simulation",
+  "completed_rounds": 40,
+  "start_round": 8,
+  "end_round": 12,
+  "playback_speed": 16,
+  "dialogue_hold_seconds": 0.5,
+  "capture_seconds": 16,
+  "frames_per_second": 12,
+  "source": "browser render of recorded checkpoint; no model calls"
+}
