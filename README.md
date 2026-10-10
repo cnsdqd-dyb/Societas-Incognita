@@ -19,6 +19,7 @@ python quickstart.py
 
 This runs a four-member, eight-round **scripted demo with no model calls**. [Quick start guide](QUICKSTART.md) covers real-model opt-in, checkpoints, resume and the viewer. [Six baseline trials](results/baseline_20261010/README.md) contain tables, curves and recorded trajectories under the original rules; new worlds use slower ecology, reserve-funded precursor reseeding and decimal material amounts. These revisions have offline validation, not new LLM trial results.
 
+
 ## The research question
 
 We construct material worlds whose laws are assembled from **20 bounded mathematical mechanisms**. Agents can collect, transform, use, and exchange materials; unlock functions by holding particular material combinations; communicate; build capability devices; and create works. They are not assigned a common external task, a leader, or a role as a scientist.
