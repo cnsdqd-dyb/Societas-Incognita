@@ -171,17 +171,17 @@ This combination makes it possible to ask **which laws favor scientific cooperat
 
 Material knowledge and ownership are recorded separately. Holding a material can disclose its private characteristics; transferring it does not erase learned information. Capability use still depends on current permissions. See [implementation alignment](society_probe/society_probe/CODE_ALIGNMENT_20261010.md).
 
-## ?? Pixel observatory
+## 🎬 Pixel observatory
 
 Inspect agent behavior, conversations, material inventories, and directed interactions in a pixel world.
 
 ![Society Probe interface: social analytics, pixel-world replay, and agent details](docs/images/viewer-interface.png)
 
-**Recorded replay ? 16? speed ? dialogue bubbles held for 0.5 seconds.**
+**Recorded replay · 16× speed · dialogue bubbles held for 0.5 seconds.**
 
 ![Rendered 16x agent replay with movement, material actions, and dialogue bubbles](docs/images/viewer-replay-16x.gif)
 
-[Open the local viewer](http://127.0.0.1:8776/) ? [Capture settings](docs/images/viewer-capture.json)
+[Open the local viewer](http://127.0.0.1:8776/) · [Capture settings](docs/images/viewer-capture.json)
 
 ## Explore locally
 
