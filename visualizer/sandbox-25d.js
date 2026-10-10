@@ -30,7 +30,7 @@ function terrainHeight(x,y){
 function rotatedWorld(x,y){let dx=x-W/2,dy=y-H/2;for(let i=0;i<sandboxCamera.turn;i++)[dx,dy]=[-dy,dx];return{x:dx,y:dy}}
 function projectWorld(x,y,z=terrainHeight(x,y)){
  const p=rotatedWorld(x,y),zoom=sandboxCamera.zoom;
- return{x:W/2+(p.x-p.y)*.56*zoom+sandboxCamera.panX,y:320+(p.x+p.y)*.265*zoom-z*zoom+sandboxCamera.panY};
+ return{x:W/2+(p.x-p.y)*.56*zoom+sandboxCamera.panX,y:292+(p.x+p.y)*.265*zoom-z*zoom+sandboxCamera.panY};
 }
 function actorScreenPosition(a){return projectWorld(a.x,a.y)}
 function sandboxDepth(x,y){const p=rotatedWorld(x,y);return p.x+p.y}
@@ -112,9 +112,9 @@ function drawIsoTile(t){
  const corners=[projectWorld(x,y,z),projectWorld(x+step,y,z),projectWorld(x+step,y+step,z),projectWorld(x,y+step,z)];
  // All side faces are emitted with terrain surfaces; painter order resolves camera rotation.
  const sides=[[0,1,x,y-step],[1,2,x+step,y],[2,3,x,y+step],[3,0,x-step,y]];
- for(const [a,b,nx,ny]of sides){const n=nx<0||ny<0||nx>=W||ny>=H?null:sandboxTile(nx+10,ny+10),base=n?.active?n.level*sandboxStep:-(12+(hashWorldIdentity(x+','+y)%3)*5);if(base>=z)continue;
+ for(const [a,b,nx,ny]of sides){const n=nx<0||ny<0||nx>=W||ny>=H?null:sandboxTile(nx+10,ny+10),base=n?.active?n.level*sandboxStep:0;if(base>=z)continue;
   const bottomA=projectWorld(a===0||a===3?x:x+step,a<2?y:y+step,base),bottomB=projectWorld(b===0||b===3?x:x+step,b<2?y:y+step,base);
-  polyCanvas([corners[a],corners[b],bottomB,bottomA],(a+sandboxCamera.turn)%2?'#6d827d':'#83958c');
+  polyCanvas([corners[a],corners[b],bottomB,bottomA],n?.active?((a+sandboxCamera.turn)%2?'#6d827d':'#83958c'):((a+sandboxCamera.turn)%2?'#96714f':'#bea072'));
   const lineZ=Math.floor((z+base)/2);if(z-base>20){ctx.strokeStyle='#a2afa099';ctx.lineWidth=1;const aa=projectWorld(a===0||a===3?x:x+step,a<2?y:y+step,lineZ),bb=projectWorld(b===0||b===3?x:x+step,b<2?y:y+step,lineZ);ctx.beginPath();ctx.moveTo(aa.x,aa.y);ctx.lineTo(bb.x,bb.y);ctx.stroke()}
  }
  polyCanvas(corners,tileColor(t));
@@ -123,6 +123,7 @@ function drawIsoTile(t){
   if(slope){for(let i=1;i<4;i++){const offset=i*5,aa=slope[0]?projectWorld(x+offset,y+3,z):projectWorld(x+3,y+offset,z),bb=slope[0]?projectWorld(x+offset,y+17,z):projectWorld(x+17,y+offset,z);ctx.strokeStyle='#b5aa8a';ctx.lineWidth=1.5*sandboxCamera.zoom;ctx.beginPath();ctx.moveTo(aa.x,aa.y);ctx.lineTo(bb.x,bb.y);ctx.stroke()}}
  }
  else if(!t.water&&hashWorldIdentity(worldScene.seed+','+x+','+y)%8===0){const p=projectWorld(x+6,y+10,z);rect(p.x,p.y,3*sandboxCamera.zoom,2*sandboxCamera.zoom,'#d1d8a577')}
+ if(typeof drawEcoTileDetail==='function')drawEcoTileDetail(t);
 }
 function drawIsoStation(s){
  const z=terrainHeight(s.x+s.w/2,s.y+s.h/2),p=projectWorld(s.x+s.w/2,s.y+s.h/2,z),zoom=sandboxCamera.zoom;
@@ -166,13 +167,15 @@ function drawProjectedInteractions(){
 }
 draw=function(){
  rect(0,0,W,H,'#e9efdb');if(!data||!worldScene?.terrain)return;
- const sky=ctx.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#e8f1e5');sky.addColorStop(1,'#fbf7e7');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+ const sky=ctx.createLinearGradient(0,0,0,H),skyColors=typeof ecoSkyColors==='function'?ecoSkyColors():['#e8f1e5','#fbf7e7'];sky.addColorStop(0,skyColors[0]);sky.addColorStop(1,skyColors[1]);ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+ if(typeof drawIslandUnderside==='function')drawIslandUnderside();
  if(sandboxCamera.follow){const a=actors.find(a=>a.id===selected);if(a){const p=projectWorld(a.x,a.y),dx=(W/2-p.x)*.09,dy=(H*.55-p.y)*.09;if(Math.hypot(dx,dy)>.05){sandboxCamera.panX+=dx;sandboxCamera.panY+=dy;speechLayoutKey=''}}}
  if(!sandboxStatic.length)rebuildSandboxItems();
  const dynamic=actors.map(a=>({depth:sandboxDepth(a.x,a.y)+8,order:3,draw:()=>drawIsoActor(a)})).sort((a,b)=>a.depth-b.depth);
  let j=0;for(const item of sandboxStatic){while(j<dynamic.length&&dynamic[j].depth<item.depth)dynamic[j++].draw();item.draw()}while(j<dynamic.length)dynamic[j++].draw();
  const water=worldScene.terrain.tiles.filter(t=>t.water);if(water.length){const t=water[Math.floor(clock*2)%water.length],p=projectWorld(t.x+10,t.y+10,t.level*sandboxStep);rect(p.x-4,p.y,9,2,'#cdece280')}
  drawProjectedInteractions();
+ if(typeof drawClimateEffects==='function')drawClimateEffects();
 };
 
 const sandboxControls=document.createElement('div');sandboxControls.className='sandbox-controls';sandboxControls.innerHTML='<span class="sandbox-title">🏔️ 2.5D 沙盒 <small id="terrainSummary"></small></span><div><button id="rotateLeft" title="向左旋转相机（Q）">↶</button><button id="rotateRight" title="向右旋转相机（E）">↷</button><button id="zoomOut" title="缩小">−</button><button id="zoomIn" title="放大">＋</button><button id="resetCamera">全景</button><button id="followAgent" aria-pressed="false">跟随成员</button></div>';
@@ -190,6 +193,6 @@ canvas.addEventListener('pointermove',e=>{if(!sandboxDrag)return;const dx=e.clie
 canvas.addEventListener('pointerup',()=>{sandboxSuppressClick=Boolean(sandboxDrag?.moved);sandboxDrag=null});canvas.addEventListener('pointercancel',()=>{sandboxDrag=null;sandboxSuppressClick=true});
 canvas.addEventListener('wheel',e=>{e.preventDefault();zoomSandbox(Math.exp(-e.deltaY*.001))},{passive:false});
 canvas.addEventListener('click',e=>{e.stopImmediatePropagation();if(sandboxSuppressClick){sandboxSuppressClick=false;return}const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)*W/r.width,y=(e.clientY-r.top)*H/r.height;
- const nearest=actors.map(a=>({a,p:actorScreenPosition(a)})).map(v=>({...v,d:Math.hypot(v.p.x-x,v.p.y-18*sandboxCamera.zoom-y)})).sort((a,b)=>a.d-b.d)[0];if(nearest?.d<32*sandboxCamera.zoom)selectAgent(nearest.a.id);
+ const nearest=actors.map(a=>({a,p:actorScreenPosition(a)})).map(v=>({...v,d:Math.hypot(v.p.x-x,v.p.y-18*sandboxCamera.zoom-y)})).sort((a,b)=>a.d-b.d)[0];if(nearest?.d<32*sandboxCamera.zoom)selectAgent(nearest.a.id);else if(typeof pickMachine==='function')pickMachine(x,y);
 },true);
 document.addEventListener('keydown',e=>{if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName))return;if(e.code==='KeyQ')changeCameraTurn(-1);if(e.code==='KeyE')changeCameraTurn(1)});
