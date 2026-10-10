@@ -1,0 +1,152 @@
+{
+  "prepared_not_run": true,
+  "configs": [
+    "fixture_full_p0",
+    "fixture_hidden_p0",
+    "fixture_full_p1",
+    "fixture_hidden_p1"
+  ],
+  "members": 4,
+  "rounds": 50,
+  "production_noise_default": {
+    "distribution": "uniform",
+    "amplitude": 0.15
+  },
+  "fixture_noise": "none; paired disclosure and pressure interface tests",
+  "candidate_worlds": [
+    {
+      "seed": 0,
+      "modules": [
+        "trophic_balance",
+        "cross_inhibition",
+        "delayed_feedback",
+        "catalytic_feedback"
+      ],
+      "definition_sha256": "8151cc13098cbde0080460e8935e78d52d4ffdd925c947dde3d7b37d164d273b",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 1,
+      "modules": [
+        "threshold_hysteresis",
+        "cross_inhibition"
+      ],
+      "definition_sha256": "10a5e341fe189da8802473b6b58b2b0d608963ec4bbef388c43fc1dc1e5d2b1b",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 2,
+      "modules": [
+        "cross_inhibition"
+      ],
+      "definition_sha256": "9e1d3d93ed7f30e4ec81b5720de584fccb6f1202f32d67b03a1861d2e3309a9a",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 3,
+      "modules": [
+        "threshold_hysteresis",
+        "catalytic_feedback"
+      ],
+      "definition_sha256": "cb85da6b41b9ebfad6f55b0ec46466b81020c4db04385d6d745d0b9bd11e4ad8",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 4,
+      "modules": [
+        "delayed_feedback",
+        "cross_inhibition"
+      ],
+      "definition_sha256": "7aeff55182677637bf7d17eb50df3cb636f82f665b4710927eb634f1be763293",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 5,
+      "modules": [
+        "catalytic_feedback",
+        "delayed_feedback",
+        "cross_inhibition"
+      ],
+      "definition_sha256": "75540ed87f8d0325291792a429ba6538f022224b5bc08ccbb381481605ef124b",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 6,
+      "modules": [
+        "trophic_balance"
+      ],
+      "definition_sha256": "b940add4ccdcb19921396cf33214f2d9a834c8e1e7cf6d9ccbbe9865f5098079",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 7,
+      "modules": [
+        "renewable_ecology",
+        "trophic_balance",
+        "cross_inhibition"
+      ],
+      "definition_sha256": "9a43c732afb5c7af976ff09883006222e576fad851cc1ac77f4f4b9f62c6e9fd",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v2",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    }
+  ],
+  "candidate_full_survival_fixed_seed_witnesses": 0,
+  "lean_control_status": "lean_checked_restricted_projection",
+  "paid_model_calls": 0,
+  "scope": "Framework fixtures and candidate screening only. No model behavior results. Failed policy does not prove infeasibility. Noisy witnesses are not robust certificates."
+}

@@ -1,0 +1,154 @@
+{
+  "prepared_not_run": true,
+  "default_environment": "M2_cheap_small8_p1",
+  "configs": [
+    "M1_cheap_small8_p0",
+    "M1_cheap_small8_p1",
+    "M2_cheap_small8_p0",
+    "M2_cheap_small8_p1",
+    "M3_cheap_small8_p0",
+    "M3_cheap_small8_p1",
+    "M4_cheap_small8_p0",
+    "M4_cheap_small8_p1",
+    "M5_cheap_small8_p0",
+    "M5_cheap_small8_p1",
+    "M6_cheap_small8_p0",
+    "M6_cheap_small8_p1",
+    "M7_cheap_small8_p0",
+    "M7_cheap_small8_p1"
+  ],
+  "quoted_at_utc": "2026-10-09T12:01:21.725796+00:00",
+  "models": [
+    {
+      "model": "mistralai/ministral-3b-2512",
+      "parameters_B": 3,
+      "provider": "Mistral",
+      "strict_schema": true,
+      "input_usd_per_M": 0.09999999999999999,
+      "output_usd_per_M": 0.09999999999999999,
+      "quantization": "unknown",
+      "quote_source": "https://openrouter.ai/api/v1/models/mistralai/ministral-3b-2512/endpoints"
+    },
+    {
+      "model": "mistralai/ministral-8b-2512",
+      "parameters_B": 8,
+      "provider": "Mistral",
+      "strict_schema": true,
+      "input_usd_per_M": 0.15,
+      "output_usd_per_M": 0.15,
+      "quantization": "unknown",
+      "quote_source": "https://openrouter.ai/api/v1/models/mistralai/ministral-8b-2512/endpoints"
+    },
+    {
+      "model": "qwen/qwen3.5-9b",
+      "parameters_B": 9,
+      "provider": "DeepInfra",
+      "strict_schema": true,
+      "input_usd_per_M": 0.09999999999999999,
+      "output_usd_per_M": 0.15,
+      "quantization": "bf16",
+      "quote_source": "https://openrouter.ai/api/v1/models/qwen/qwen3.5-9b/endpoints"
+    },
+    {
+      "model": "google/gemma-3-4b-it",
+      "parameters_B": 4,
+      "provider": "DeepInfra",
+      "strict_schema": true,
+      "input_usd_per_M": 0.049999999999999996,
+      "output_usd_per_M": 0.09999999999999999,
+      "quantization": "bf16",
+      "quote_source": "https://openrouter.ai/api/v1/models/google/gemma-3-4b-it/endpoints"
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "parameters_B": 8,
+      "provider": "DeepInfra",
+      "strict_schema": false,
+      "input_usd_per_M": 0.02,
+      "output_usd_per_M": 0.04,
+      "quantization": "fp8",
+      "quote_source": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.1-8b-instruct/endpoints"
+    },
+    {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "parameters_B": 7,
+      "provider": "Phala",
+      "strict_schema": true,
+      "input_usd_per_M": 0.09999999999999999,
+      "output_usd_per_M": 0.19999999999999998,
+      "quantization": "unknown",
+      "quote_source": "https://openrouter.ai/api/v1/models/qwen/qwen-2.5-7b-instruct/endpoints"
+    },
+    {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "parameters_B": 3,
+      "provider": "Parasail",
+      "strict_schema": true,
+      "input_usd_per_M": 0.049999999999999996,
+      "output_usd_per_M": 0.33,
+      "quantization": "bf16",
+      "quote_source": "https://openrouter.ai/api/v1/models/meta-llama/llama-3.2-3b-instruct/endpoints"
+    },
+    {
+      "model": "google/gemma-3-12b-it",
+      "parameters_B": 12,
+      "provider": "DeepInfra",
+      "strict_schema": true,
+      "input_usd_per_M": 0.049999999999999996,
+      "output_usd_per_M": 0.15,
+      "quantization": "bf16",
+      "quote_source": "https://openrouter.ai/api/v1/models/google/gemma-3-12b-it/endpoints"
+    }
+  ],
+  "population": [
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-8b-2512",
+    "qwen/qwen3.5-9b",
+    "google/gemma-3-4b-it",
+    "meta-llama/llama-3.1-8b-instruct",
+    "qwen/qwen-2.5-7b-instruct",
+    "meta-llama/llama-3.2-3b-instruct",
+    "google/gemma-3-12b-it"
+  ],
+  "prompt_token_proxy": {
+    "initial_action_prompt_tokens_cl100k": 3284,
+    "initial_communication_prompt_tokens_cl100k": 1694
+  },
+  "cost_scenarios": [
+    {
+      "average_comm_outputs_per_agent_round": 1,
+      "planned_calls_including_144_memory_calls": 944,
+      "assumed_mean_input_tokens": 10000,
+      "assumed_mean_output_tokens": 300,
+      "estimated_usd": 0.775
+    },
+    {
+      "average_comm_outputs_per_agent_round": 3,
+      "planned_calls_including_144_memory_calls": 1744,
+      "assumed_mean_input_tokens": 10000,
+      "assumed_mean_output_tokens": 300,
+      "estimated_usd": 1.431
+    },
+    {
+      "average_comm_outputs_per_agent_round": 6,
+      "planned_calls_including_144_memory_calls": 2944,
+      "assumed_mean_input_tokens": 10000,
+      "assumed_mean_output_tokens": 300,
+      "estimated_usd": 2.416
+    },
+    {
+      "average_comm_outputs_per_agent_round": 12,
+      "planned_calls_including_144_memory_calls": 5344,
+      "assumed_mean_input_tokens": 10000,
+      "assumed_mean_output_tokens": 300,
+      "estimated_usd": 4.386
+    }
+  ],
+  "budget_per_template_usd": 0,
+  "notes": [
+    "Public API quotes and metadata only; no paid actor or survey calls.",
+    "Quote precision, quantization and provider output-format support vary. Llama 8B uses JSON object validation rather than guaranteed strict decoding.",
+    "Estimates assume all eight agents live for all 50 rounds, equal calls per model, and no cache discounts, retries or questionnaires. Actual input/output lengths and provider billing can differ.",
+    "This is a heterogeneous model/size/version population, not an isolated model-size causal experiment."
+  ]
+}

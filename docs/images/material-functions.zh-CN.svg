@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 490" role="img" aria-labelledby="title desc">
+<title id="title">材料组合解锁可使用的功能与破坏作用</title>
+<desc id="desc">生产材料，同一成员库存凑齐条件后私下发现功能，再确认付费使用或取消。作用改变作品、能力、生存条件或公共资源。这是概念图，不是实验轨迹。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#83927b"/></marker></defs>
+<rect width="1280" height="490" rx="12" fill="#f7f4e9"/>
+<g font-family="Microsoft YaHei,SimHei,Segoe UI,Arial,sans-serif" fill="#293f37">
+<text x="28" y="37" font-size="24" fill="#293f37" font-weight="bold">从材料生产到可使用的功能</text>
+<text x="28" y="63" font-size="15" fill="#728075" font-weight="normal">世界种子决定功能配置，持有与组合材料可以解锁新的作用。</text>
+<rect x="28" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="42" y="105" width="8" height="8" fill="#719564"/>
+<rect x="55" y="105" width="8" height="8" fill="#719564"/>
+<rect x="68" y="105" width="8" height="8" fill="#719564"/>
+<text x="42" y="143" font-size="17" fill="#293f37" font-weight="bold">生产材料</text>
+<text x="42" y="174" font-size="13" fill="#293f37" font-weight="normal">探索隐藏的生产规律</text>
+<text x="42" y="196" font-size="13" fill="#293f37" font-weight="normal">积累中间材料</text>
+<rect x="280" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="294" y="105" width="8" height="8" fill="#d3a35c"/>
+<rect x="307" y="105" width="8" height="8" fill="#d3a35c"/>
+<rect x="320" y="105" width="8" height="8" fill="#d3a35c"/>
+<text x="294" y="143" font-size="17" fill="#293f37" font-weight="bold">凑齐组合</text>
+<text x="294" y="174" font-size="13" fill="#293f37" font-weight="normal">同一成员库存凑齐条件</text>
+<text x="294" y="196" font-size="13" fill="#293f37" font-weight="normal">不计托管与容器储存</text>
+<rect x="532" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="546" y="105" width="8" height="8" fill="#997baa"/>
+<rect x="559" y="105" width="8" height="8" fill="#997baa"/>
+<rect x="572" y="105" width="8" height="8" fill="#997baa"/>
+<text x="546" y="143" font-size="17" fill="#293f37" font-weight="bold">私下发现</text>
+<text x="546" y="174" font-size="13" fill="#293f37" font-weight="normal">私下披露功能与特性</text>
+<text x="546" y="196" font-size="13" fill="#293f37" font-weight="normal">解锁目标与费用接口</text>
+<rect x="784" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="798" y="105" width="8" height="8" fill="#5b90a9"/>
+<rect x="811" y="105" width="8" height="8" fill="#5b90a9"/>
+<rect x="824" y="105" width="8" height="8" fill="#5b90a9"/>
+<text x="798" y="143" font-size="17" fill="#293f37" font-weight="bold">主动选择</text>
+<text x="798" y="174" font-size="13" fill="#293f37" font-weight="normal">确认并支付使用成本</text>
+<text x="798" y="196" font-size="13" fill="#293f37" font-weight="normal">或取消，不支付使用成本</text>
+<rect x="1036" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="1050" y="105" width="8" height="8" fill="#aeb255"/>
+<rect x="1063" y="105" width="8" height="8" fill="#aeb255"/>
+<rect x="1076" y="105" width="8" height="8" fill="#aeb255"/>
+<text x="1050" y="143" font-size="17" fill="#293f37" font-weight="bold">产生作用</text>
+<text x="1050" y="174" font-size="13" fill="#293f37" font-weight="normal">改变实际仿真状态</text>
+<text x="1050" y="196" font-size="13" fill="#293f37" font-weight="normal">记录事件并保存检查点</text>
+<path d="M244 158 L277 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M496 158 L529 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M748 158 L781 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1000 158 L1033 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1144 221 L1144 245" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M218 265 H1144 V245" stroke="#83927b" stroke-width="2" fill="none"/>
+<path d="M218 265 L218 284" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M640 265 L640 284" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1062 265 L1062 284" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="28" y="285" width="380" height="139" rx="5" fill="#e5eaf0" stroke="#acb79f"/>
+<text x="45" y="315" font-size="18" fill="#293f37" font-weight="bold">作品与信息能力</text>
+<text x="45" y="345" font-size="15" fill="#293f37" font-weight="normal">作品容量 ×2；笔记容量 +1,000</text>
+<text x="45" y="370" font-size="15" fill="#293f37" font-weight="normal">增加通信额度与邀请人数</text>
+<text x="45" y="395" font-size="15" fill="#293f37" font-weight="normal">提升设备覆盖与测量能力</text>
+<rect x="450" y="285" width="380" height="139" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<text x="467" y="315" font-size="18" fill="#293f37" font-weight="bold">生产与生存能力</text>
+<text x="467" y="345" font-size="15" fill="#293f37" font-weight="normal">提高产率、诊断与切换速度</text>
+<text x="467" y="370" font-size="15" fill="#293f37" font-weight="normal">储存保护、放能与防护</text>
+<text x="467" y="395" font-size="15" fill="#293f37" font-weight="normal">付费救援，下一轮恢复行动</text>
+<rect x="872" y="285" width="380" height="139" rx="5" fill="#efe1d7" stroke="#acb79f"/>
+<text x="889" y="315" font-size="18" fill="#293f37" font-weight="bold">破坏与冲突</text>
+<text x="889" y="345" font-size="15" fill="#293f37" font-weight="normal">成员攻击与大范围毁伤</text>
+<text x="889" y="370" font-size="15" fill="#293f37" font-weight="normal">资源污染与加工台破坏</text>
+<text x="889" y="395" font-size="15" fill="#293f37" font-weight="normal">设备与储存容器损伤</text>
+<text x="28" y="454" font-size="14" fill="#728075" font-weight="normal">已实现 24 类附加功能，每个世界按种子选取一部分；材料成本与目标权限仍然有效。</text>
+<text x="28" y="477" font-size="12" fill="#728075" font-weight="normal">概念接口图：新增功能已做运行时验证，其完整语义尚未获得 Lean 认证。</text>
+</g></svg>

@@ -1,0 +1,2207 @@
+{
+  "fingerprint": "81ec0898a5130635ef24e961ec298082ce373d89fab05e4b170e15dc6dfd2163",
+  "mock": true,
+  "state": {
+    "round": 6,
+    "zones": [
+      2,
+      1
+    ],
+    "maintenance": 0,
+    "agents": {
+      "a0": {
+        "model": "mistralai/ministral-3b-2512",
+        "stock": 7,
+        "energy": 5,
+        "alive": true,
+        "memory": {},
+        "recent": [
+          {
+            "round": 1,
+            "agent": "a0",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "invite",
+                "targets": [
+                  "a1",
+                  "a2"
+                ]
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": []
+          },
+          {
+            "round": 2,
+            "agent": "a0",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 2"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 1,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "agent": "a0",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "send",
+                "chat": "c1",
+                "text": "Synthetic private message"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 2,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              },
+              {
+                "round": 2,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "agent": "a0",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "close",
+                "chat": "c1"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 1,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 3,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              },
+              {
+                "round": 3,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              },
+              {
+                "round": 3,
+                "from": "a1",
+                "channel": "c1",
+                "text": "Synthetic private message"
+              },
+              {
+                "round": 3,
+                "from": "a0",
+                "channel": "c1",
+                "text": "Synthetic private message"
+              }
+            ]
+          },
+          {
+            "round": 5,
+            "agent": "a0",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 5"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 4,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              }
+            ]
+          },
+          {
+            "round": 6,
+            "agent": "a0",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 6"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 5,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              }
+            ]
+          }
+        ],
+        "inbox": [
+          {
+            "round": 6,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          }
+        ]
+      },
+      "a1": {
+        "model": "mistralai/ministral-3b-2512",
+        "stock": 1,
+        "energy": 5,
+        "alive": true,
+        "memory": {},
+        "recent": [
+          {
+            "round": 1,
+            "agent": "a1",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 1"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 1
+              }
+            },
+            "observed_messages": []
+          },
+          {
+            "round": 2,
+            "agent": "a1",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "accept",
+                "chat": "c1"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 1,
+                "op": "invitation",
+                "from": "a0",
+                "chat": "c1"
+              },
+              {
+                "round": 1,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "agent": "a1",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "send",
+                "chat": "c1",
+                "text": "Synthetic private message"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 2,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              },
+              {
+                "round": 2,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "agent": "a1",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 4"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 3,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              },
+              {
+                "round": 3,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              },
+              {
+                "round": 3,
+                "from": "a1",
+                "channel": "c1",
+                "text": "Synthetic private message"
+              },
+              {
+                "round": 3,
+                "from": "a0",
+                "channel": "c1",
+                "text": "Synthetic private message"
+              }
+            ]
+          },
+          {
+            "round": 5,
+            "agent": "a1",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 5"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 1,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 4,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              }
+            ]
+          },
+          {
+            "round": 6,
+            "agent": "a1",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 6"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 5,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              }
+            ]
+          }
+        ],
+        "inbox": [
+          {
+            "round": 6,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          }
+        ]
+      },
+      "a2": {
+        "model": "mistralai/ministral-3b-2512",
+        "stock": 2,
+        "energy": 5,
+        "alive": true,
+        "memory": {},
+        "recent": [
+          {
+            "round": 1,
+            "agent": "a2",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 1"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": []
+          },
+          {
+            "round": 2,
+            "agent": "a2",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "reject",
+                "chat": "c1"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 1,
+                "op": "invitation",
+                "from": "a0",
+                "chat": "c1"
+              },
+              {
+                "round": 1,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "agent": "a2",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 3"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 2,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              },
+              {
+                "round": 2,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "agent": "a2",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 4"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 3,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              },
+              {
+                "round": 3,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              }
+            ]
+          },
+          {
+            "round": 5,
+            "agent": "a2",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 5"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 4,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              }
+            ]
+          },
+          {
+            "round": 6,
+            "agent": "a2",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 0,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 6"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 0
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 5,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              }
+            ]
+          }
+        ],
+        "inbox": [
+          {
+            "round": 6,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          }
+        ]
+      },
+      "a3": {
+        "model": "mistralai/ministral-3b-2512",
+        "stock": 3,
+        "energy": 5,
+        "alive": true,
+        "memory": {},
+        "recent": [
+          {
+            "round": 1,
+            "agent": "a3",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 1"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 1
+              }
+            },
+            "observed_messages": []
+          },
+          {
+            "round": 2,
+            "agent": "a3",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 2"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 1,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              },
+              {
+                "round": 1,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 1"
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "agent": "a3",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 3"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 2,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 2,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              },
+              {
+                "round": 2,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 2"
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "agent": "a3",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 4"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 3,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              },
+              {
+                "round": 3,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 3"
+              }
+            ]
+          },
+          {
+            "round": 5,
+            "agent": "a3",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 5"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 0,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 4,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              },
+              {
+                "round": 4,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 4"
+              }
+            ]
+          },
+          {
+            "round": 6,
+            "agent": "a3",
+            "decision": {
+              "action": {
+                "tool": "harvest",
+                "zone": 1,
+                "amount": 2
+              },
+              "communication": {
+                "op": "public",
+                "text": "Synthetic round 6"
+              }
+            },
+            "outcome": {
+              "action": {
+                "harvested": 1,
+                "zone": 1
+              }
+            },
+            "observed_messages": [
+              {
+                "round": 5,
+                "from": "a0",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a2",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a1",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              },
+              {
+                "round": 5,
+                "from": "a3",
+                "channel": "public",
+                "text": "Synthetic round 5"
+              }
+            ]
+          }
+        ],
+        "inbox": [
+          {
+            "round": 6,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          },
+          {
+            "round": 6,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 6"
+          }
+        ]
+      }
+    },
+    "chats": {
+      "c1": {
+        "owner": "a0",
+        "members": [
+          "a0",
+          "a1"
+        ],
+        "pending": [],
+        "created": 1,
+        "last_active": 3,
+        "open": false
+      }
+    },
+    "next_chat": 2,
+    "action_counts": {
+      "a0": {
+        "harvest": 6
+      },
+      "a2": {
+        "harvest": 6
+      },
+      "a3": {
+        "harvest": 6
+      },
+      "a1": {
+        "harvest": 6
+      }
+    },
+    "events": [
+      {
+        "round": 1,
+        "agent": "a0",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "invite",
+            "targets": [
+              "a1",
+              "a2"
+            ]
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": []
+      },
+      {
+        "round": 1,
+        "agent": "a2",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 1"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": []
+      },
+      {
+        "round": 1,
+        "agent": "a3",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 1"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 1
+          }
+        },
+        "observed_messages": []
+      },
+      {
+        "round": 1,
+        "agent": "a1",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 1"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 1
+          }
+        },
+        "observed_messages": []
+      },
+      {
+        "round": 2,
+        "agent": "a0",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 2"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 1,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "agent": "a1",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "accept",
+            "chat": "c1"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 1,
+            "op": "invitation",
+            "from": "a0",
+            "chat": "c1"
+          },
+          {
+            "round": 1,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "agent": "a2",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "reject",
+            "chat": "c1"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 1,
+            "op": "invitation",
+            "from": "a0",
+            "chat": "c1"
+          },
+          {
+            "round": 1,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          }
+        ]
+      },
+      {
+        "round": 2,
+        "agent": "a3",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 2"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 1,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          },
+          {
+            "round": 1,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 1"
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "agent": "a3",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 3"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 2,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          },
+          {
+            "round": 2,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "agent": "a2",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 3"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 2,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          },
+          {
+            "round": 2,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "agent": "a1",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "send",
+            "chat": "c1",
+            "text": "Synthetic private message"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 2,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          },
+          {
+            "round": 2,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          }
+        ]
+      },
+      {
+        "round": 3,
+        "agent": "a0",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "send",
+            "chat": "c1",
+            "text": "Synthetic private message"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 2,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          },
+          {
+            "round": 2,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 2"
+          }
+        ]
+      },
+      {
+        "round": 4,
+        "agent": "a0",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "close",
+            "chat": "c1"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 1,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 3,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          },
+          {
+            "round": 3,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          },
+          {
+            "round": 3,
+            "from": "a1",
+            "channel": "c1",
+            "text": "Synthetic private message"
+          },
+          {
+            "round": 3,
+            "from": "a0",
+            "channel": "c1",
+            "text": "Synthetic private message"
+          }
+        ]
+      },
+      {
+        "round": 4,
+        "agent": "a1",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 4"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 3,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          },
+          {
+            "round": 3,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          },
+          {
+            "round": 3,
+            "from": "a1",
+            "channel": "c1",
+            "text": "Synthetic private message"
+          },
+          {
+            "round": 3,
+            "from": "a0",
+            "channel": "c1",
+            "text": "Synthetic private message"
+          }
+        ]
+      },
+      {
+        "round": 4,
+        "agent": "a2",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 4"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 3,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          },
+          {
+            "round": 3,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          }
+        ]
+      },
+      {
+        "round": 4,
+        "agent": "a3",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 4"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 3,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          },
+          {
+            "round": 3,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 3"
+          }
+        ]
+      },
+      {
+        "round": 5,
+        "agent": "a0",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 5"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 4,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          }
+        ]
+      },
+      {
+        "round": 5,
+        "agent": "a2",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 5"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 4,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          }
+        ]
+      },
+      {
+        "round": 5,
+        "agent": "a1",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 5"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 1,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 4,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          }
+        ]
+      },
+      {
+        "round": 5,
+        "agent": "a3",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 5"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 4,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          },
+          {
+            "round": 4,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 4"
+          }
+        ]
+      },
+      {
+        "round": 6,
+        "agent": "a3",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 6"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 1,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 5,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          }
+        ]
+      },
+      {
+        "round": 6,
+        "agent": "a0",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 6"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 2,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 5,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          }
+        ]
+      },
+      {
+        "round": 6,
+        "agent": "a1",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 1,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 6"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 1
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 5,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          }
+        ]
+      },
+      {
+        "round": 6,
+        "agent": "a2",
+        "decision": {
+          "action": {
+            "tool": "harvest",
+            "zone": 0,
+            "amount": 2
+          },
+          "communication": {
+            "op": "public",
+            "text": "Synthetic round 6"
+          }
+        },
+        "outcome": {
+          "action": {
+            "harvested": 0,
+            "zone": 0
+          }
+        },
+        "observed_messages": [
+          {
+            "round": 5,
+            "from": "a0",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a2",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a1",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          },
+          {
+            "round": 5,
+            "from": "a3",
+            "channel": "public",
+            "text": "Synthetic round 5"
+          }
+        ]
+      }
+    ],
+    "surveys": [
+      {
+        "round": 0,
+        "agent": "a0",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 0,
+        "agent": "a1",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 0,
+        "agent": "a2",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 0,
+        "agent": "a3",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 3,
+        "agent": "a0",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 3,
+        "agent": "a1",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 3,
+        "agent": "a2",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 3,
+        "agent": "a3",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 6,
+        "agent": "a0",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 6,
+        "agent": "a1",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 6,
+        "agent": "a2",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      },
+      {
+        "round": 6,
+        "agent": "a3",
+        "responses": {
+          "stability": 3,
+          "recognition": 3,
+          "trust": 3,
+          "evidence": [
+            "Synthetic mock questionnaire"
+          ],
+          "peer_recognition": {}
+        },
+        "synthetic": true
+      }
+    ],
+    "compactions": []
+  },
+  "calls": 36,
+  "cost_usd": 0.0
+}

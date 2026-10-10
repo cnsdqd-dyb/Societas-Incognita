@@ -1,0 +1,113 @@
+{
+  "stage": "prepared_not_run",
+  "total_configs": 76,
+  "base_configs": 70,
+  "offline_only": true,
+  "real_api_budget_per_template_usd": 0,
+  "defaults": {
+    "agents": 8,
+    "rounds": 50,
+    "world_rule_visibility": "full",
+    "rescue_energy": 3,
+    "rescue_cost": 3,
+    "pre_action_communication_limit": 3
+  },
+  "configs": [
+    "M1_mixed4_p0",
+    "M1_mixed4_p1",
+    "M1_ministral3b_p0",
+    "M1_ministral3b_p1",
+    "M1_qwen7b_p0",
+    "M1_qwen7b_p1",
+    "M1_gptoss20b_p0",
+    "M1_gptoss20b_p1",
+    "M1_native_low_p0",
+    "M1_native_low_p1",
+    "M2_mixed4_p0",
+    "M2_mixed4_p1",
+    "M2_ministral3b_p0",
+    "M2_ministral3b_p1",
+    "M2_qwen7b_p0",
+    "M2_qwen7b_p1",
+    "M2_gptoss20b_p0",
+    "M2_gptoss20b_p1",
+    "M2_native_low_p0",
+    "M2_native_low_p1",
+    "M3_mixed4_p0",
+    "M3_mixed4_p1",
+    "M3_ministral3b_p0",
+    "M3_ministral3b_p1",
+    "M3_qwen7b_p0",
+    "M3_qwen7b_p1",
+    "M3_gptoss20b_p0",
+    "M3_gptoss20b_p1",
+    "M3_native_low_p0",
+    "M3_native_low_p1",
+    "M4_mixed4_p0",
+    "M4_mixed4_p1",
+    "M4_ministral3b_p0",
+    "M4_ministral3b_p1",
+    "M4_qwen7b_p0",
+    "M4_qwen7b_p1",
+    "M4_gptoss20b_p0",
+    "M4_gptoss20b_p1",
+    "M4_native_low_p0",
+    "M4_native_low_p1",
+    "M5_mixed4_p0",
+    "M5_mixed4_p1",
+    "M5_ministral3b_p0",
+    "M5_ministral3b_p1",
+    "M5_qwen7b_p0",
+    "M5_qwen7b_p1",
+    "M5_gptoss20b_p0",
+    "M5_gptoss20b_p1",
+    "M5_native_low_p0",
+    "M5_native_low_p1",
+    "M6_mixed4_p0",
+    "M6_mixed4_p1",
+    "M6_ministral3b_p0",
+    "M6_ministral3b_p1",
+    "M6_qwen7b_p0",
+    "M6_qwen7b_p1",
+    "M6_gptoss20b_p0",
+    "M6_gptoss20b_p1",
+    "M6_native_low_p0",
+    "M6_native_low_p1",
+    "M7_mixed4_p0",
+    "M7_mixed4_p1",
+    "M7_ministral3b_p0",
+    "M7_ministral3b_p1",
+    "M7_qwen7b_p0",
+    "M7_qwen7b_p1",
+    "M7_gptoss20b_p0",
+    "M7_gptoss20b_p1",
+    "M7_native_low_p0",
+    "M7_native_low_p1",
+    "M5_mixed4_p1_hidden",
+    "M5_mixed4_p1_no_rescue",
+    "M5_mixed4_p1_comm0",
+    "M5_mixed4_p1_comm1",
+    "M5_mixed4_p1_comm2",
+    "M5_mixed4_p1_comm6"
+  ],
+  "ablations": {
+    "hidden": {
+      "visibility": "hidden"
+    },
+    "no_rescue": {
+      "rescue": false
+    },
+    "comm0": {
+      "turns": 0
+    },
+    "comm1": {
+      "turns": 1
+    },
+    "comm2": {
+      "turns": 2
+    },
+    "comm6": {
+      "turns": 6
+    }
+  }
+}

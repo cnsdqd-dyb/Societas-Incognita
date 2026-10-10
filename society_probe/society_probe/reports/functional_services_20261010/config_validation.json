@@ -1,0 +1,16 @@
+[
+  {
+    "config": "world_config.json",
+    "agents": 4,
+    "functions": 8,
+    "containers": 4,
+    "observations_checked": 4
+  },
+  {
+    "config": "all_functions_config.json",
+    "agents": 4,
+    "functions": 26,
+    "containers": 4,
+    "observations_checked": 4
+  }
+]

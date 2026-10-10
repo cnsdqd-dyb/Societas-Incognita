@@ -1,0 +1,187 @@
+{
+  "models": [
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512"
+  ],
+  "rounds": 50,
+  "seed": 7,
+  "temperature": 0.5,
+  "max_calls": 1200,
+  "max_output_tokens": 1100,
+  "max_estimated_cost_usd": 0.2,
+  "tools": [
+    "wait",
+    "allocate",
+    "transfer",
+    "inspect"
+  ],
+  "world": {
+    "mechanism": "contest",
+    "survival_pressure": true,
+    "consumption": 1,
+    "initial_personal_stock": 4,
+    "hidden_dynamics": false,
+    "supply": 10.4,
+    "effort_cost": 1.0,
+    "rho": 1.0,
+    "max_effort": 3
+  },
+  "communication": {
+    "max_message_chars": 300,
+    "max_invitees": 5,
+    "max_open_chats": 16,
+    "invite_ttl": 5,
+    "idle_ttl": 8
+  },
+  "memory": {
+    "mode": "hierarchical_v1",
+    "strict_sources": true,
+    "hierarchical": {
+      "keep_recent_rounds": 1,
+      "episode_rounds": 4,
+      "episodes_per_overview": 2,
+      "episode_max_chars": 180,
+      "overview_max_chars": 60,
+      "open_items_max": 3,
+      "open_item_max_chars": 60
+    }
+  },
+  "survey_rounds": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50
+  ],
+  "parallel_agents": 4,
+  "survey_protocol": "source_informed_v3",
+  "structured_outputs": true,
+  "network_retries": 2,
+  "scenario": {
+    "title": "流量分配平台",
+    "description": "平台接入固定流量的补给管线，每名成员有独立接收端。成员可消耗个人储备调整本轮抽取强度；管线按有效强度分配补给。全部未调整时等分。"
+  },
+  "experiment": {
+    "family": "contest",
+    "population": "homogeneous_a",
+    "pressure": true,
+    "capability": "information",
+    "paired_seed": 7,
+    "stage": "long_pilot",
+    "cooperation_necessity": "not_required_by_construction",
+    "tool_intervention": "inspect reveals member stocks; uses one action; no production bonus",
+    "measurement_protocol": "source_informed_v3"
+  },
+  "research_reference": {
+    "family": "contest",
+    "analytic_diagnostics": {
+      "equal_zero_effort_share": 1.3,
+      "internal_symmetric_effort_if_unconstrained_rho1": 1.1375
+    },
+    "claim": "Local accounting/feasibility diagnostics, not optimal organization."
+  },
+  "admission": {
+    "admitted": true,
+    "scope": "Specified finite horizon only; not a proof of indefinite sustainability.",
+    "witness": {
+      "policy": "balanced",
+      "rounds": 100,
+      "alive_fraction": 1.0,
+      "invalid_actions": 0,
+      "final_stocks": {
+        "a0": 34.00000000000002,
+        "a1": 34.00000000000002,
+        "a2": 34.00000000000002,
+        "a3": 34.00000000000002,
+        "a4": 34.00000000000002,
+        "a5": 34.00000000000002,
+        "a6": 34.00000000000002,
+        "a7": 34.00000000000002
+      },
+      "recovered_members": [],
+      "injured_initialization": false,
+      "synthetic": true,
+      "interpretation": "Deterministic mechanical witness, not LLM behavior."
+    },
+    "recovery_witness": {
+      "policy": "balanced",
+      "rounds": 100,
+      "alive_fraction": 1.0,
+      "invalid_actions": 0,
+      "final_stocks": {
+        "a0": 34.00000000000002,
+        "a1": 34.00000000000002,
+        "a2": 34.00000000000002,
+        "a3": 34.00000000000002,
+        "a4": 34.00000000000002,
+        "a5": 34.00000000000002,
+        "a6": 34.00000000000002,
+        "a7": 34.00000000000002
+      },
+      "recovered_members": [
+        "a0",
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "a6",
+        "a7"
+      ],
+      "injured_initialization": true,
+      "synthetic": true,
+      "interpretation": "Deterministic mechanical witness, not LLM behavior."
+    },
+    "comparators": [
+      {
+        "policy": "wait",
+        "rounds": 100,
+        "alive_fraction": 1.0,
+        "invalid_actions": 0,
+        "final_stocks": {
+          "a0": 34.00000000000002,
+          "a1": 34.00000000000002,
+          "a2": 34.00000000000002,
+          "a3": 34.00000000000002,
+          "a4": 34.00000000000002,
+          "a5": 34.00000000000002,
+          "a6": 34.00000000000002,
+          "a7": 34.00000000000002
+        },
+        "recovered_members": [],
+        "injured_initialization": false,
+        "synthetic": true,
+        "interpretation": "Deterministic mechanical witness, not LLM behavior."
+      },
+      {
+        "policy": "greedy",
+        "rounds": 100,
+        "alive_fraction": 1.0,
+        "invalid_actions": 0,
+        "final_stocks": {
+          "a0": 1.000000000000008,
+          "a1": 1.000000000000008,
+          "a2": 1.000000000000008,
+          "a3": 1.000000000000008,
+          "a4": 1.000000000000008,
+          "a5": 1.000000000000008,
+          "a6": 1.000000000000008,
+          "a7": 1.000000000000008
+        },
+        "recovered_members": [],
+        "injured_initialization": false,
+        "synthetic": true,
+        "interpretation": "Deterministic mechanical witness, not LLM behavior."
+      }
+    ]
+  },
+  "context_encoding": "compact_v1",
+  "survey_max_output_tokens": 1800
+}

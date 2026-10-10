@@ -1,0 +1,59 @@
+/* Presentation animation uses settled outcomes, never invented transactions. */
+let phaseReal=0,speechGroup=0,speechLayoutKey='',interactionFlows=[],interactionCulture=[];
+function resetInteractionAnimation(){phaseReal=0;speechGroup=0;speechLayoutKey='';interactionFlows=[];interactionCulture=[];}
+function roundSpeeches(){const messages=eventsAt(round).filter(e=>{const c=communicationOf(e);return c.op&&c.op!=='silent'&&(c.text||c.op==='invite'||['accept','reject','leave','close'].includes(c.op));});return messages.sort((a,b)=>(b.agent===selected)-(a.agent===selected));}
+function speechText(e){const c=communicationOf(e);if(c.text)return c.text;return {invite:'邀请 '+(c.targets||[]).join('、')+' 加入私聊',accept:'接受私聊邀请 '+(c.chat||''),reject:'拒绝私聊邀请 '+(c.chat||''),leave:'离开私聊 '+(c.chat||''),close:'关闭私聊 '+(c.chat||'')}[c.op]||c.op;}
+function renderRoundInteractions(){interactionFlows=eventsAt(round).flatMap(actualFlows);$('resourceFeed').innerHTML=interactionFlows.length?interactionFlows.map(f=>`<button class="resource-transaction ${f.kind==='seize'?'seizure':''}" data-event-agent="${esc(f.event.agent)}" data-round="${f.event.round}"><span>${f.kind==='seize'?'⚔️':'📦'} ${esc(f.from)} <b>→</b> ${esc(f.to)}</span><strong>${amountLabel(f.amount)} 单位</strong><small>${f.kind==='seize'?'实际夺取':'实际转交'}</small></button>`).join(''):'<p class="subtle empty-flow">本回合没有成员间资源转移。</p>';
+  $('dialogueFeed').innerHTML=roundSpeeches().map(e=>{const c=communicationOf(e);return `<button class="dialogue-entry" data-event-agent="${esc(e.agent)}" data-round="${e.round}"><span class="dialogue-speaker" style="border-color:${agentColor(e.agent)}">${esc(e.agent)} <small>${c.op==='public'?'📢 公共':c.op==='send'?'💬 私聊 '+esc(c.chat):'👋 通信'}${e.outcome?.communication_error?' · 未送达':''}</small></span><span>${esc(speechText(e))}</span></button>`}).join('')||'<p class="subtle">本回合没有发言。</p>';
+  const authors=new Map();for(const e of data.events.filter(e=>e.round<=round)){const o=outcomeOf(e);if(o.artifact_created)authors.set(o.artifact_created,e.agent);for(const w of e.observed_state?.environment?.artifact_index||[])if(w.author)authors.set(w.id,w.author);}interactionCulture=eventsAt(round).flatMap(e=>culturalLinks(e,authors));
+  $('cultureFeed').innerHTML=interactionCulture.map(link=>`<button class="culture-transaction" data-event-agent="${esc(link.event.agent)}" data-round="${round}"><b>${link.kind==='read'?'📖':link.kind==='play'?'🎭':link.kind==='create'?'🎨':'💥'} ${esc(link.from)} → ${link.to==='ART'?'作品库':esc(link.to)}</b><span>${edgeLabels[link.kind]}${actionOf(link.event).title?' · '+esc(actionOf(link.event).title):''}</span></button>`).join('');
+  updatePhaseLabel();
+}
+function updatePhaseLabel(){if(!data)return;const names={move:'移动到行动地点',act:'执行动作 · 资源结算动画',chat:'成员对话'};$('phaseLabel').textContent=`R${round} · ${names[activePhase]||'准备行动'}${playing?'':' · 已暂停'}`;}
+function renderSpeechOverlay(force=false){if(!data)return;const visible=activePhase==='chat'||(!playing&&activePhase==='move'),messages=roundSpeeches(),groups=Math.max(1,Math.ceil(messages.length/2)),group=visible?(playing?speechGroup%groups:0):0;
+  const key=[data.meta.id,round,selected,visible,group,$('world').clientWidth].join('|');if(!force&&key===speechLayoutKey)return;speechLayoutKey=key;
+  const overlay=$('speechOverlay');overlay.innerHTML='';if(!visible||!messages.length)return;
+  const width=canvas.clientWidth,height=canvas.clientHeight,bubbleWidth=Math.min(width<480?190:244,width-20),chosen=messages.slice(group*2,group*2+2),boxes=[];let connectors='';
+  for(const e of chosen){const actor=actors.find(a=>a.id===e.agent);if(!actor)continue;const ax=actor.x/W*width,ay=(actor.y-24)/H*height;let x=Math.min(width-bubbleWidth-8,Math.max(8,ax-bubbleWidth/2)),y=Math.max(8,ay-126);const boxHeight=110;
+    if(boxes.some(b=>x<b.x+bubbleWidth+8&&x+bubbleWidth+8>b.x&&y<b.y+boxHeight&&y+boxHeight>b.y))y=Math.max(8,Math.min(height-boxHeight-28,boxes[0].y+boxHeight+12));
+    boxes.push({x,y});const c=communicationOf(e),label=c.op==='public'?'公共发言':c.op==='send'?'私聊 '+(c.chat||''):'通信';const button=document.createElement('button');button.className='speech-bubble';button.dataset.eventAgent=e.agent;button.dataset.round=e.round;button.style.left=x+'px';button.style.top=y+'px';button.style.width=bubbleWidth+'px';button.style.borderColor=agentColor(e.agent);button.setAttribute('aria-label',`${e.agent} ${label}：${speechText(e)}`);button.innerHTML=`<span class="bubble-header"><b>${esc(e.agent)} ${c.op==='public'?'📢':'💬'}</b><small>${esc(label)}${e.outcome?.communication_error?' · 未送达':''}</small></span><span class="bubble-text">${esc(speechText(e))}</span><small class="bubble-hint">点击查看全文</small>`;overlay.appendChild(button);
+    connectors+=`<path d="M${x+bubbleWidth/2},${y+boxHeight-6} L${ax},${ay}" stroke="${agentColor(e.agent)}" stroke-width="2" stroke-dasharray="4 3" fill="none"/><circle cx="${ax}" cy="${ay}" r="3" fill="${agentColor(e.agent)}"/>`;
+  }
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.classList.add('speech-connectors');svg.innerHTML=connectors;overlay.prepend(svg);
+}
+function changePhase(phase){activePhase=phase;elapsed=0;phaseReal=0;speechGroup=0;speechLayoutKey='';updatePhaseLabel();renderSpeechOverlay(true);}
+function advancePlayback(dt){elapsed+=dt*speed;phaseReal+=dt;
+  if(activePhase==='move'){moveActors(dt*speed);if(actors.every(a=>a.arrived||a.inactive)&&elapsed>=1)changePhase('act');}
+  else if(activePhase==='act'){moveActors(0);const hold=Math.max(interactionFlows.length?2.2:1.25,3/speed);if(phaseReal>=hold)changePhase('chat');}
+  else if(activePhase==='chat'){moveActors(0);const messages=roundSpeeches(),hold=Number($('speechDuration').value)||0.5,groups=Math.max(1,Math.ceil(messages.length/2));speechGroup=Math.min(groups-1,Math.floor(phaseReal/hold));renderSpeechOverlay();const duration=messages.length?hold*groups:Math.max(.4,1/speed);if(phaseReal>=duration){if(round<data.meta.rounds){round++;selectedEvent=null;enterRound();}else{playing=false;$('play').textContent='▶ 播放';updatePhaseLabel();renderSpeechOverlay(true);}}}
+}
+function frame(now){const dt=Math.min((now-last)/1000||0,.05);last=now;clock+=dt;if(data&&playing)advancePlayback(dt);draw();renderSpeechOverlay();requestAnimationFrame(frame);}
+function drawArrow(from,to,color,width=3,bend=0){const dx=to.x-from.x,dy=to.y-from.y,d=Math.hypot(dx,dy)||1,nx=dx/d,ny=dy/d,s={x:from.x+nx*20,y:from.y-9+ny*20},t={x:to.x-nx*22,y:to.y-9-ny*22},control={x:(s.x+t.x)/2-ny*bend,y:(s.y+t.y)/2+nx*bend-20};ctx.save();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.quadraticCurveTo(control.x,control.y,t.x,t.y);ctx.stroke();const angle=Math.atan2(t.y-control.y,t.x-control.x);ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(t.x,t.y);ctx.lineTo(t.x-12*Math.cos(angle-.45),t.y-12*Math.sin(angle-.45));ctx.lineTo(t.x-12*Math.cos(angle+.45),t.y-12*Math.sin(angle+.45));ctx.closePath();ctx.fill();ctx.restore();return{s,t,control};}
+function bezierPoint(path,t){return{x:(1-t)**2*path.s.x+2*(1-t)*t*path.control.x+t*t*path.t.x,y:(1-t)**2*path.s.y+2*(1-t)*t*path.control.y+t*t*path.t.y};}
+function drawInteractionEffects(){if(!data)return;
+  const acting=activePhase==='act',talking=activePhase==='chat';
+  const history=data.environment_history.find(e=>e.round===round),workshop=stations.find(s=>s.id==='workshop');
+  if(workshop&&data.config.tools?.includes('process')){
+    const facilities=data.config.world?.facilities||2;
+    for(let i=0;i<Math.min(3,facilities);i++){const x=workshop.x+10+i*60,y=workshop.y+37,load=history?.loads?.[i],busy=actors.some(a=>a.arrived&&actionOf(a.event).tool==='process'&&actionOf(a.event).facility===i)&&acting;
+      rect(x,y,46,35,'#456d66');rect(x+4,y+4,38,18,'#abc8b2');rect(x+7,y+7,7,7,busy&&clock%1>.5?'#f1d680':'#608d79');text('设备 '+i,x+23,y+33,'#fff6dd',10);text('负载 '+(load??'—'),x+23,workshop.y-15,'#365341',11);
+    }
+  }
+  for(const a of actors){const st=stateFor(a.id),before=a.event?.observed_state?.self,energy=st?.energy,color=energy<=2?'#c7755e':'#4e7c65';rect(a.x-12,a.y+34,24,4,'#ebe7cb');if(Number.isFinite(energy))rect(a.x-12,a.y+34,Math.max(0,Math.min(24,energy/5*24)),4,color);
+    if(acting&&Number.isFinite(before?.energy)&&Number.isFinite(energy)&&energy!==before.energy){text(`⚡ ${energy-before.energy>0?'+':''}${num(energy-before.energy)}`,a.x,a.y-75,energy<before.energy?'#a6422d':'#346d49',14);}
+    const action=actionOf(a.event),outcome=outcomeOf(a.event),job=a.event?.observed_state?.environment?.your_job;
+    if(job&&action.tool==='wait')text(`设备 ${job.facility} · 余 ${job.remaining} 回合`,a.x,a.y+60,'#425b4e',12);
+    if(!acting||!a.arrived)continue;
+    const completion=history?.completed_jobs?.find(j=>j.agent===a.id),income=history?.inflows?.[a.id];
+    if(completion&&Number(income)>0&&workshop){const origin={x:workshop.x+workshop.w/2,y:workshop.y+workshop.h};const path=drawArrow(origin,a,'#709c65',2,25),point=bezierPoint(path,(phaseReal*.6)%1);text('📦',point.x,point.y,'#365b37',19);text('加工完成 +'+amountLabel(income),a.x,a.y-88,'#3f703d',13);}
+    if(['harvest','process','allocate','contribute','maintain','create'].includes(action.tool)){
+      const progress=Math.min(1,phaseReal/Math.max(1.25,3/speed));rect(a.x-26,a.y+43,52,7,'#4e6950');rect(a.x-24,a.y+45,Math.floor(48*progress),3,'#f1cf77');const label=action.tool==='process'?'⚙ 设备 '+(action.facility??0):actions[action.tool]?.[1]||action.tool;text(label,a.x,a.y+66,'#36523b',12);
+      const angle=clock*8+a.i;for(let i=0;i<3;i++){const x=a.x+Math.cos(angle+i*2)*20,y=a.y-8+Math.sin(angle+i*2)*12;rect(x,y,4,4,'#f7df91');}rect(a.x+8,a.y-5+Math.sin(clock*15)*4,6,4,'#edd6ab');
+      if(progress>.5){const amount=outcome.harvested??outcome.output;const result=Number.isFinite(amount)?'+'+num(amount):outcome.submitted!=null?'项目已提交':outcome.artifact_created?'作品已保存':outcome.error?'执行失败':'执行已记录';text(result,a.x,a.y-84,'#375b38',13);}
+    }
+  }
+  if(acting||!playing){interactionFlows.forEach((flow,index)=>{const from=actors.find(a=>a.id===flow.from),to=actors.find(a=>a.id===flow.to);if(!from||!to)return;const color=flow.kind==='seize'?'#c87542':'#d3a32c';ctx.save();ctx.shadowColor='#fff4b7';ctx.shadowBlur=12;const path=drawArrow(from,to,color,5,index%2?35:-35);ctx.restore();const t=playing?(phaseReal*.55+index*.2)%1:.5;for(let j=0;j<3;j++){const p=bezierPoint(path,(t+j*.17)%1);rect(p.x-6,p.y-6,12,12,'#fff6c5');rect(p.x-4,p.y-4,8,8,color);}const mid=bezierPoint(path,.5);rect(mid.x-43,mid.y-23,86,23,'#fff8ddeb');text(`📦 ${amountLabel(flow.amount)}`,mid.x,mid.y-7,'#845c16',14);text('−'+amountLabel(flow.amount),from.x,from.y-77,'#9f623c',14);text('+'+amountLabel(flow.amount),to.x,to.y-77,'#366f45',14);});}
+  if(talking){const current=roundSpeeches().slice(speechGroup*2,speechGroup*2+2);for(const e of current){const from=actors.find(a=>a.id===e.agent),c=communicationOf(e);if(!from||e.outcome?.communication_error)continue;if(c.op==='send')for(const id of e.outcome?.private_recipients||[]){const to=actors.find(a=>a.id===id);if(to&&id!==e.agent)drawArrow(from,to,'#6e9ec0',2,25);}else if(c.op==='public'){ctx.save();ctx.strokeStyle='#b6d8e5';ctx.lineWidth=2;ctx.globalAlpha=.6;for(let i=0;i<2;i++){ctx.beginPath();ctx.arc(from.x,from.y-9,22+((phaseReal*28+i*24)%52),0,Math.PI*2);ctx.stroke();}ctx.restore();}}}
+  if(acting)for(const link of interactionCulture){if(link.from===link.to||link.to==='ART')continue;const from=actors.find(a=>a.id===link.from),to=actors.find(a=>a.id===link.to);if(from&&to){const path=drawArrow(from,to,'#9378af',2,45),p=bezierPoint(path,(phaseReal*.5)%1);text(link.kind==='read'?'📖':link.kind==='play'?'🎭':'💥',p.x,p.y,'#70588d',19);}}
+}
+window.addEventListener('resize',()=>renderSpeechOverlay(true));

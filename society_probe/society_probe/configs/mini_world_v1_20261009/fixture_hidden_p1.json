@@ -1,0 +1,285 @@
+{
+  "models": [
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512"
+  ],
+  "rounds": 50,
+  "seed": 7,
+  "temperature": 0.5,
+  "max_calls": 401400,
+  "max_output_tokens": 1100,
+  "max_estimated_cost_usd": 0,
+  "tools": [
+    "accept_items",
+    "cancel_items",
+    "experiment",
+    "gather",
+    "give_item",
+    "inspect",
+    "liquidate",
+    "offer_items",
+    "transfer",
+    "use_item",
+    "wait"
+  ],
+  "world": {
+    "mechanism": "mini_world",
+    "survival_pressure": true,
+    "consumption": 1,
+    "initial_personal_stock": 4,
+    "mini_world": {
+      "definition": {
+        "version": "mini_world_v1",
+        "id": "framework_fixture",
+        "resources": {
+          "A": {
+            "name": "material A",
+            "tier": 0,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "B": {
+            "name": "material B",
+            "tier": 0,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "C": {
+            "name": "material C",
+            "tier": 1,
+            "energy_value": 4,
+            "decay": 0.02,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "D": {
+            "name": "material D",
+            "tier": 2,
+            "energy_value": 8,
+            "decay": 0.01,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "use_effects": {
+              "stress": -1
+            }
+          },
+          "S": {
+            "name": "material S",
+            "tier": 3,
+            "energy_value": 16,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 0.2
+          }
+        },
+        "variables": {
+          "stress": {
+            "initial": 0,
+            "min": 0,
+            "max": 20,
+            "observable": true,
+            "next": {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "ref": "state.stress"
+                    },
+                    0.5
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "pools": {
+          "A": {
+            "initial": 40,
+            "capacity": 100,
+            "regeneration": 8,
+            "harvest_efficiency": 1
+          },
+          "B": {
+            "initial": 40,
+            "capacity": 100,
+            "regeneration": 8,
+            "harvest_efficiency": 1
+          }
+        },
+        "facilities": {
+          "F0": {
+            "name": "station 0",
+            "modes": [
+              "combine",
+              "compress"
+            ]
+          },
+          "F1": {
+            "name": "station 1",
+            "modes": [
+              "combine",
+              "compress"
+            ]
+          }
+        },
+        "recipes": [
+          {
+            "id": "r0",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "A": 2,
+              "B": 1
+            },
+            "output": "C",
+            "yield": 1,
+            "energy_cost": 0,
+            "condition": 1,
+            "effects": {}
+          },
+          {
+            "id": "r1",
+            "facility": "F1",
+            "mode": "combine",
+            "inputs": {
+              "A": 2,
+              "C": 3
+            },
+            "output": "D",
+            "yield": 2,
+            "energy_cost": 0,
+            "condition": {
+              "op": "lt",
+              "args": [
+                {
+                  "ref": "state.stress"
+                },
+                10
+              ]
+            },
+            "effects": {
+              "stress": 1
+            }
+          },
+          {
+            "id": "r2",
+            "facility": "F1",
+            "mode": "compress",
+            "inputs": {
+              "D": 2
+            },
+            "output": "S",
+            "yield": 1,
+            "energy_cost": 0,
+            "condition": 1,
+            "effects": {}
+          }
+        ],
+        "initial_inventory": {},
+        "initial_reserve": 200,
+        "reserve_capacity": 10000,
+        "external_inflow": 40,
+        "experiment_cost": 0.1,
+        "noise": {
+          "distribution": "none",
+          "amplitude": 0
+        },
+        "max_quantity": 8,
+        "max_batches": 4,
+        "max_offers": 32,
+        "offer_ttl": 4
+      }
+    }
+  },
+  "communication": {
+    "max_message_chars": 4000,
+    "max_invitees": 5,
+    "max_open_chats": 16,
+    "invite_ttl": 5,
+    "idle_ttl": 8,
+    "budget": {
+      "unit": "characters",
+      "limit": 1000
+    }
+  },
+  "memory": {
+    "mode": "hierarchical_v1",
+    "strict_sources": true,
+    "hierarchical": {
+      "keep_recent_rounds": 1,
+      "episode_rounds": 4,
+      "episodes_per_overview": 2,
+      "episode_max_chars": 180,
+      "overview_max_chars": 60,
+      "open_items_max": 3,
+      "open_item_max_chars": 60
+    },
+    "episode_system": "将给定的私人经历压缩为一段摘要和未完成事项。保留实际发生的活动、接触、兴趣、冲突、作品、阅读、资源变化与后续打算；按事实选择内容，不编造目标、关系或事件。仅返回要求的 JSON。",
+    "overview_system": "将已有摘要压缩为一句话，保留对该成员后续经历最相关且有来源的事实。不要增加事件、目标或关系。仅返回要求的 JSON。"
+  },
+  "survey_rounds": [],
+  "parallel_agents": 4,
+  "survey_protocol": "source_informed_v3",
+  "structured_outputs": false,
+  "network_retries": 0,
+  "scenario": {
+    "id": "framework_fixture",
+    "title": "材料与转换终端",
+    "description": "你所在的区域有材料容器、加工台、储存柜和通信面板。终端显示当前可见状态与操作反馈。"
+  },
+  "context_encoding": "compact_v1",
+  "survey_max_output_tokens": 1800,
+  "experiment": {
+    "stage": "mini_world_framework_prepared_not_run",
+    "goal_assignment": "none",
+    "population": "homogeneous_pilot",
+    "model_counts": {
+      "mistralai/ministral-3b-2512": 4
+    },
+    "generation": {
+      "status": "framework_fixture_not_certified"
+    },
+    "extensions_enabled": false,
+    "world_rule_visibility": "hidden",
+    "recipe_visibility": "hidden",
+    "certificate_status": "not_certified",
+    "knowledge_measurement": "researcher-only structured claims and counterfactual tests; no actor score",
+    "questionnaire_role": "auxiliary descriptions; not primary institution acceptance evidence"
+  },
+  "backend": "hybrid_codex_openrouter",
+  "model_routes": {
+    "mistralai/ministral-3b-2512": {
+      "backend": "openrouter",
+      "parameters": {
+        "provider_only": [
+          "Mistral"
+        ],
+        "structured_outputs": true
+      }
+    }
+  },
+  "actor_system": "你通过操作终端控制一个持续仿真世界中的成员。操作会改变本次仿真的实际状态及其他成员的行动条件。没有指定的外部任务、共同目标、领导者或合作关系。自行决定行动与交流，也可以沉默或等待。只能使用给定工具；区分直接观察、他人陈述与推测。stock 是可用能量，energy 是活性状态，活性归零后不能行动或通信。是否允许付费救援以当前接口为准。仅输出要求的 JSON。",
+  "planning_prices": {
+    "mistralai/ministral-3b-2512": {
+      "prompt": "0.0000001",
+      "completion": "0.0000001",
+      "input_cache_read": "0.00000001",
+      "discount": 0
+    }
+  },
+  "world_rule_visibility": "hidden",
+  "rescue": {
+    "enabled": false
+  },
+  "recipe_visibility": "hidden",
+  "require_lean_certificate": true
+}

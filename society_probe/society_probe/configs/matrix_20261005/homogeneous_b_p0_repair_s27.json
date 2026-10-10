@@ -1,0 +1,110 @@
+{
+  "models": [
+    "qwen/qwen3-8b",
+    "qwen/qwen3-8b",
+    "qwen/qwen3-8b",
+    "qwen/qwen3-8b"
+  ],
+  "rounds": 20,
+  "seed": 27,
+  "temperature": 0.5,
+  "max_calls": 260,
+  "max_output_tokens": 1200,
+  "max_estimated_cost_usd": 0.5,
+  "tools": [
+    "wait",
+    "harvest",
+    "transfer",
+    "inspect",
+    "repair"
+  ],
+  "world": {
+    "family": "supply",
+    "initial_stock": [
+      8,
+      8
+    ],
+    "capacity": [
+      12,
+      12
+    ],
+    "regeneration": [
+      2,
+      2
+    ],
+    "max_harvest": 3,
+    "consumption": 1,
+    "survival_pressure": false,
+    "hidden_dynamics": true,
+    "spoilage": 0,
+    "shock_round": null
+  },
+  "communication": {
+    "max_message_chars": 300,
+    "max_invitees": 3,
+    "max_open_chats": 8,
+    "invite_ttl": 3,
+    "idle_ttl": 4
+  },
+  "memory": {
+    "trigger_chars": 6000,
+    "summary_max_chars": 2000,
+    "keep_recent_rounds": 2
+  },
+  "survey_rounds": [
+    0,
+    5,
+    10,
+    15,
+    20
+  ],
+  "scenario": {
+    "title": "supply",
+    "description": "多个成员共享两个资源区域，可自由行动与交流，没有指定任务。"
+  },
+  "research_reference": {
+    "base_sustainable_throughput": 4,
+    "zone_assignment": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "total_consumption_demand": 4,
+    "scope": "Exact steady-flow subsystem without repairs, spoilage or shocks; NOT full survival optimum."
+  },
+  "admission": {
+    "passed": true,
+    "replay_rounds": 20,
+    "reference_policies": {
+      "wait": {
+        "alive": 4,
+        "final_supply": [
+          12,
+          12
+        ]
+      },
+      "greedy": {
+        "alive": 4,
+        "final_supply": [
+          2,
+          2
+        ]
+      },
+      "balanced": {
+        "alive": 4,
+        "final_supply": [
+          8,
+          8
+        ]
+      }
+    },
+    "scope": "Arithmetic replay agreement for 3 policies, not exhaustive formal verification."
+  },
+  "experiment": {
+    "population": "homogeneous_b",
+    "pressure": false,
+    "capability": "repair",
+    "paired_seed": 27
+  }
+}

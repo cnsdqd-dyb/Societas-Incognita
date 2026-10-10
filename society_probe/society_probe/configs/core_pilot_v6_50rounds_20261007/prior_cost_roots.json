@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "runs/core_sanity_20261005",
+    "runs/core_sanity_v2_20261005",
+    "runs/core_sanity_v3_20261005",
+    "runs/core_sanity_v4_20261005",
+    "runs/core_campaign_20261005/long_pilot",
+    "runs/core_campaign_v5_20261005/long_pilot",
+    "runs/context_cost_probe_20261007",
+    "runs/context_cost_tight_probe_20261007"
+  ],
+  "prior_cost_usd_at_freeze": 8.185612739999995,
+  "total_budget_usd": 10
+}

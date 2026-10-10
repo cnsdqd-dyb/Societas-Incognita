@@ -1,0 +1,184 @@
+{
+  "models": [
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512"
+  ],
+  "rounds": 100,
+  "seed": 27,
+  "temperature": 0.5,
+  "max_calls": 2448,
+  "max_output_tokens": 1100,
+  "max_estimated_cost_usd": 0.5,
+  "tools": [
+    "wait",
+    "process",
+    "transfer",
+    "inspect"
+  ],
+  "world": {
+    "mechanism": "congestion",
+    "survival_pressure": true,
+    "consumption": 1,
+    "initial_personal_stock": 4,
+    "hidden_dynamics": false,
+    "facilities": 2,
+    "input_cost": 1.0,
+    "output_per_job": 6.0,
+    "base_duration": 1,
+    "load_delay": 1
+  },
+  "communication": {
+    "max_message_chars": 300,
+    "max_invitees": 5,
+    "max_open_chats": 16,
+    "invite_ttl": 5,
+    "idle_ttl": 8
+  },
+  "memory": {
+    "trigger_chars": 8000,
+    "summary_max_chars": 3000,
+    "keep_recent_rounds": 3
+  },
+  "survey_rounds": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100
+  ],
+  "parallel_agents": 4,
+  "scenario": {
+    "title": "并行处理站",
+    "description": "处理站中有几台设备，成员可提交原料，处理后取回储能产物。每人只能有一个未完成项目。同一设备负载越高，新项目所需时间越长，已开始项目保留其工期。"
+  },
+  "experiment": {
+    "family": "congestion",
+    "population": "homogeneous_a",
+    "pressure": true,
+    "capability": "information",
+    "paired_seed": 27,
+    "stage": "long_pilot",
+    "cooperation_necessity": "not_required_by_construction",
+    "tool_intervention": "inspect reveals member stocks; uses one action; no production bonus"
+  },
+  "research_reference": {
+    "family": "congestion",
+    "analytic_diagnostics": {
+      "balanced_load_upper": 4,
+      "balanced_batch_duration": 4,
+      "net_output_per_job": 5.0
+    },
+    "claim": "Local accounting/feasibility diagnostics, not optimal organization."
+  },
+  "admission": {
+    "admitted": true,
+    "scope": "Specified finite horizon only; not a proof of indefinite sustainability.",
+    "witness": {
+      "policy": "balanced",
+      "rounds": 100,
+      "alive_fraction": 1.0,
+      "invalid_actions": 0,
+      "final_stocks": {
+        "a0": 29.0,
+        "a1": 29.0,
+        "a2": 29.0,
+        "a3": 29.0,
+        "a4": 29.0,
+        "a5": 29.0,
+        "a6": 29.0,
+        "a7": 29.0
+      },
+      "recovered_members": [],
+      "injured_initialization": false,
+      "synthetic": true,
+      "interpretation": "Deterministic mechanical witness, not LLM behavior."
+    },
+    "recovery_witness": {
+      "policy": "balanced",
+      "rounds": 100,
+      "alive_fraction": 1.0,
+      "invalid_actions": 0,
+      "final_stocks": {
+        "a0": 29.0,
+        "a1": 29.0,
+        "a2": 29.0,
+        "a3": 29.0,
+        "a4": 29.0,
+        "a5": 29.0,
+        "a6": 29.0,
+        "a7": 29.0
+      },
+      "recovered_members": [
+        "a0",
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "a6",
+        "a7"
+      ],
+      "injured_initialization": true,
+      "synthetic": true,
+      "interpretation": "Deterministic mechanical witness, not LLM behavior."
+    },
+    "comparators": [
+      {
+        "policy": "wait",
+        "rounds": 100,
+        "alive_fraction": 0.0,
+        "invalid_actions": 0,
+        "final_stocks": {
+          "a0": 0.0,
+          "a1": 0.0,
+          "a2": 0.0,
+          "a3": 0.0,
+          "a4": 0.0,
+          "a5": 0.0,
+          "a6": 0.0,
+          "a7": 0.0
+        },
+        "recovered_members": [],
+        "injured_initialization": false,
+        "synthetic": true,
+        "interpretation": "Deterministic mechanical witness, not LLM behavior."
+      },
+      {
+        "policy": "greedy",
+        "rounds": 100,
+        "alive_fraction": 1.0,
+        "invalid_actions": 0,
+        "final_stocks": {
+          "a0": 0.0,
+          "a1": 0.0,
+          "a2": 0.0,
+          "a3": 0.0,
+          "a4": 0.0,
+          "a5": 0.0,
+          "a6": 0.0,
+          "a7": 0.0
+        },
+        "recovered_members": [
+          "a0",
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7"
+        ],
+        "injured_initialization": false,
+        "synthetic": true,
+        "interpretation": "Deterministic mechanical witness, not LLM behavior."
+      }
+    ]
+  }
+}

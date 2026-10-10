@@ -1,0 +1,55 @@
+{
+  "models": [
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512"
+  ],
+  "rounds": 6,
+  "seed": 7,
+  "temperature": 0.5,
+  "max_calls": 150,
+  "max_output_tokens": 1800,
+  "max_estimated_cost_usd": 0.5,
+  "tools": [
+    "wait",
+    "harvest",
+    "transfer",
+    "inspect"
+  ],
+  "world": {
+    "initial_stock": [
+      8,
+      8
+    ],
+    "capacity": [
+      12,
+      12
+    ],
+    "regeneration": [
+      2,
+      2
+    ],
+    "max_harvest": 3,
+    "consumption": 1,
+    "survival_pressure": false
+  },
+  "communication": {
+    "max_message_chars": 300,
+    "max_invitees": 3,
+    "max_open_chats": 8,
+    "invite_ttl": 3,
+    "idle_ttl": 4
+  },
+  "memory": {
+    "trigger_chars": 6000,
+    "summary_max_chars": 2000,
+    "keep_recent_rounds": 2
+  },
+  "survey_rounds": [
+    0,
+    3,
+    6
+  ],
+  "survey_protocol": "source_informed_v3"
+}

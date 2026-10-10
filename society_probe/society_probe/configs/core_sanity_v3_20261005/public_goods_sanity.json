@@ -1,0 +1,171 @@
+{
+  "models": [
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512",
+    "mistralai/ministral-3b-2512"
+  ],
+  "rounds": 12,
+  "seed": 7,
+  "temperature": 0.5,
+  "max_calls": 336,
+  "max_output_tokens": 1100,
+  "max_estimated_cost_usd": 0.15,
+  "tools": [
+    "wait",
+    "contribute",
+    "transfer",
+    "inspect"
+  ],
+  "world": {
+    "mechanism": "public_goods",
+    "survival_pressure": true,
+    "consumption": 1,
+    "initial_personal_stock": 4,
+    "hidden_dynamics": false,
+    "private_supply": 1.0,
+    "multiplier": 2.0,
+    "max_contribution": 2
+  },
+  "communication": {
+    "max_message_chars": 300,
+    "max_invitees": 5,
+    "max_open_chats": 16,
+    "invite_ttl": 5,
+    "idle_ttl": 8
+  },
+  "memory": {
+    "trigger_chars": 8000,
+    "summary_max_chars": 3000,
+    "keep_recent_rounds": 3
+  },
+  "survey_rounds": [
+    0,
+    12
+  ],
+  "parallel_agents": 4,
+  "survey_protocol": "conditional_v2",
+  "structured_outputs": true,
+  "scenario": {
+    "title": "能量转换廊",
+    "description": "长廊里有一座转换装置和个人储备柜。个人接口定期收到材料。放入装置的材料会借助外部能量生成产物，并流向各成员的输出口。成员也可以不投入。"
+  },
+  "experiment": {
+    "family": "public_goods",
+    "population": "homogeneous_a",
+    "pressure": true,
+    "capability": "information",
+    "paired_seed": 7,
+    "stage": "interface_sanity",
+    "cooperation_necessity": "not_required_by_construction",
+    "tool_intervention": "inspect reveals member stocks; uses one action; no production bonus"
+  },
+  "research_reference": {
+    "family": "public_goods",
+    "analytic_diagnostics": {
+      "own_contribution_marginal": -0.75,
+      "aggregate_contribution_marginal": 1.0,
+      "private_supply_to_demand": 1.0
+    },
+    "claim": "Local accounting/feasibility diagnostics, not optimal organization."
+  },
+  "admission": {
+    "admitted": true,
+    "scope": "Specified finite horizon only; not a proof of indefinite sustainability.",
+    "witness": {
+      "policy": "balanced",
+      "rounds": 12,
+      "alive_fraction": 1.0,
+      "invalid_actions": 0,
+      "final_stocks": {
+        "a0": 16.0,
+        "a1": 16.0,
+        "a2": 16.0,
+        "a3": 16.0,
+        "a4": 16.0,
+        "a5": 16.0,
+        "a6": 16.0,
+        "a7": 16.0
+      },
+      "recovered_members": [],
+      "injured_initialization": false,
+      "synthetic": true,
+      "interpretation": "Deterministic mechanical witness, not LLM behavior."
+    },
+    "recovery_witness": {
+      "policy": "balanced",
+      "rounds": 12,
+      "alive_fraction": 1.0,
+      "invalid_actions": 0,
+      "final_stocks": {
+        "a0": 16.0,
+        "a1": 16.0,
+        "a2": 16.0,
+        "a3": 16.0,
+        "a4": 16.0,
+        "a5": 16.0,
+        "a6": 16.0,
+        "a7": 16.0
+      },
+      "recovered_members": [
+        "a0",
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "a6",
+        "a7"
+      ],
+      "injured_initialization": true,
+      "synthetic": true,
+      "interpretation": "Deterministic mechanical witness, not LLM behavior."
+    },
+    "comparators": [
+      {
+        "policy": "wait",
+        "rounds": 12,
+        "alive_fraction": 1.0,
+        "invalid_actions": 0,
+        "final_stocks": {
+          "a0": 4.0,
+          "a1": 4.0,
+          "a2": 4.0,
+          "a3": 4.0,
+          "a4": 4.0,
+          "a5": 4.0,
+          "a6": 4.0,
+          "a7": 4.0
+        },
+        "recovered_members": [],
+        "injured_initialization": false,
+        "synthetic": true,
+        "interpretation": "Deterministic mechanical witness, not LLM behavior."
+      },
+      {
+        "policy": "greedy",
+        "rounds": 12,
+        "alive_fraction": 1.0,
+        "invalid_actions": 0,
+        "final_stocks": {
+          "a0": 4.0,
+          "a1": 4.0,
+          "a2": 4.0,
+          "a3": 4.0,
+          "a4": 4.0,
+          "a5": 4.0,
+          "a6": 4.0,
+          "a7": 4.0
+        },
+        "recovered_members": [],
+        "injured_initialization": false,
+        "synthetic": true,
+        "interpretation": "Deterministic mechanical witness, not LLM behavior."
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+api_key
+serper_api_key
+.env
+.env.*
+!.env.example
+node_modules/
+.tools/
+.playwright-cli/
+__pycache__/
+*.pyc
+# Research logs contain private communication and memories.
+society_probe/society_probe/runs/
+.cache/
+output/

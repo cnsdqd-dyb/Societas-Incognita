@@ -1,0 +1,148 @@
+{
+  "prepared_not_run": true,
+  "configs": [
+    "fixture_full_p0",
+    "fixture_hidden_p0",
+    "fixture_full_p1",
+    "fixture_hidden_p1"
+  ],
+  "members": 4,
+  "rounds": 50,
+  "production_noise_default": {
+    "distribution": "uniform",
+    "amplitude": 0.15
+  },
+  "fixture_noise": "none; paired disclosure and pressure interface tests",
+  "candidate_worlds": [
+    {
+      "seed": 0,
+      "modules": [
+        "renewable_ecology",
+        "cross_inhibition"
+      ],
+      "definition_sha256": "eeeaaf13491eb6b9144048622939efb65f7808ee2fa126b18820fce1e028d56c",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "replayed_full_survival",
+      "tested_policy_full_survival": true,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 1,
+      "modules": [
+        "delayed_feedback"
+      ],
+      "definition_sha256": "51fd86168b85144b3e558635bb4357dc536d6417a1df5d4ef246637bebbd553f",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 2,
+      "modules": [
+        "cross_inhibition"
+      ],
+      "definition_sha256": "3e9d91bd7f76e861ac4648d0b0874285fb128fb31cc741fc0ac03d557c58efb2",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 3,
+      "modules": [
+        "delayed_feedback"
+      ],
+      "definition_sha256": "9f23c89843b5311341927c84fcdea116e45cad2edd9f697cc9101a6eb7f8b80d",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 4,
+      "modules": [
+        "renewable_ecology"
+      ],
+      "definition_sha256": "b9c1f4eb56a22e0e8da51587cb7486b6f5f00cbbfca45bb9aaff014f6da10bf6",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "replayed_full_survival",
+      "tested_policy_full_survival": true,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 5,
+      "modules": [
+        "renewable_ecology",
+        "delayed_feedback",
+        "cross_inhibition"
+      ],
+      "definition_sha256": "eca233cc6af8326b64176390a97ef5d91e23fb5246abcde41c643eff56a6c6ce",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 6,
+      "modules": [
+        "cross_inhibition",
+        "renewable_ecology",
+        "delayed_feedback"
+      ],
+      "definition_sha256": "a689439b8012042e118dfaa91e8737665c4420d236d229caa8452184db76e5cc",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    },
+    {
+      "seed": 7,
+      "modules": [
+        "cross_inhibition",
+        "renewable_ecology"
+      ],
+      "definition_sha256": "40147f06587660be02003367c9c8b5fa1457bd9398640ac83796d0d08ea0cfe6",
+      "status": "candidate_not_certified",
+      "generator_version": "compositional_v1",
+      "mathematical_optimum": "not_computed",
+      "screen_status": "tested_policy_failed",
+      "tested_policy_full_survival": false,
+      "lean_status": "not_verified",
+      "eligible_for_research_run": false,
+      "exploration_opportunity_status": "not_assessed"
+    }
+  ],
+  "candidate_full_survival_fixed_seed_witnesses": 2,
+  "lean_control_status": "lean_unavailable",
+  "paid_model_calls": 0,
+  "scope": "Framework fixtures and candidate screening only. No model behavior results. Failed policy does not prove infeasibility. Noisy witnesses are not robust certificates."
+}

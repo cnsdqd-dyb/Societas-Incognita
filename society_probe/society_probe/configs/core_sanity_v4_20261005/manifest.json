@@ -1,0 +1,10 @@
+{
+  "runs": [
+    "commons_sanity",
+    "public_goods_sanity",
+    "contest_sanity",
+    "congestion_sanity"
+  ],
+  "count": 4,
+  "status": "configuration_only"
+}

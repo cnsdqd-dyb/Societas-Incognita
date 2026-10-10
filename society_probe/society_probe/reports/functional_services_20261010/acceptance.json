@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "tests": 101,
+  "groups": [
+    {
+      "group": "test_functional_effects.py",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_material_combinations.py",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_twenty_mechanisms.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_mini_world.py",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_material_capabilities.py",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_proportional_production.py",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_social_content.py",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "group": "test_interaction_controls.py",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "service_types": 24,
+  "model_calls": 0,
+  "interrupt_resume": "Five-round scripted run matches uninterrupted final state; returned request keys are unique.",
+  "lean_scope": "Existing bounded world_state combination actions; 20-mechanism, 3-round certificate. New functional services/security effects explicitly unsupported by the certificate adapter.",
+  "limitations": [
+    "Scripted tests do not establish discovery or social behavior by language models.",
+    "New rich configurations are not Lean-certified survival worlds.",
+    "Python compiler and floating-point execution remain trusted boundaries."
+  ]
+}

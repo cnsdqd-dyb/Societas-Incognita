@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 490" role="img" aria-labelledby="title desc">
+<title id="title">Materials unlock usable services and destructive effects</title>
+<desc id="desc">Produce materials, meet a private inventory condition, discover a function, then confirm a paid use or cancel. Effects change works, capabilities, survival or shared resources. Conceptual diagram, not an experimental trajectory.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#83927b"/></marker></defs>
+<rect width="1280" height="490" rx="12" fill="#f7f4e9"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#293f37">
+<text x="28" y="37" font-size="24" fill="#293f37" font-weight="bold">FROM MATERIALS TO ACTIONABLE FUNCTIONS</text>
+<text x="28" y="63" font-size="15" fill="#728075" font-weight="normal">A seeded service catalogue changes what holding and combining materials can enable.</text>
+<rect x="28" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="42" y="105" width="8" height="8" fill="#719564"/>
+<rect x="55" y="105" width="8" height="8" fill="#719564"/>
+<rect x="68" y="105" width="8" height="8" fill="#719564"/>
+<text x="42" y="143" font-size="17" fill="#293f37" font-weight="bold">PRODUCE</text>
+<text x="42" y="174" font-size="13" fill="#293f37" font-weight="normal">Explore hidden reactions</text>
+<text x="42" y="196" font-size="13" fill="#293f37" font-weight="normal">Accumulate intermediates</text>
+<rect x="280" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="294" y="105" width="8" height="8" fill="#d3a35c"/>
+<rect x="307" y="105" width="8" height="8" fill="#d3a35c"/>
+<rect x="320" y="105" width="8" height="8" fill="#d3a35c"/>
+<text x="294" y="143" font-size="17" fill="#293f37" font-weight="bold">COMBINE</text>
+<text x="294" y="174" font-size="13" fill="#293f37" font-weight="normal">One owner meets requirements</text>
+<text x="294" y="196" font-size="13" fill="#293f37" font-weight="normal">Escrow / storage excluded</text>
+<rect x="532" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="546" y="105" width="8" height="8" fill="#997baa"/>
+<rect x="559" y="105" width="8" height="8" fill="#997baa"/>
+<rect x="572" y="105" width="8" height="8" fill="#997baa"/>
+<text x="546" y="143" font-size="17" fill="#293f37" font-weight="bold">DISCOVER</text>
+<text x="546" y="174" font-size="13" fill="#293f37" font-weight="normal">Private property disclosure</text>
+<text x="546" y="196" font-size="13" fill="#293f37" font-weight="normal">Unlock target + cost interface</text>
+<rect x="784" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="798" y="105" width="8" height="8" fill="#5b90a9"/>
+<rect x="811" y="105" width="8" height="8" fill="#5b90a9"/>
+<rect x="824" y="105" width="8" height="8" fill="#5b90a9"/>
+<text x="798" y="143" font-size="17" fill="#293f37" font-weight="bold">CHOOSE</text>
+<text x="798" y="174" font-size="13" fill="#293f37" font-weight="normal">Confirm a paid use</text>
+<text x="798" y="196" font-size="13" fill="#293f37" font-weight="normal">Or cancel without use costs</text>
+<rect x="1036" y="91" width="216" height="129" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<rect x="1050" y="105" width="8" height="8" fill="#aeb255"/>
+<rect x="1063" y="105" width="8" height="8" fill="#aeb255"/>
+<rect x="1076" y="105" width="8" height="8" fill="#aeb255"/>
+<text x="1050" y="143" font-size="17" fill="#293f37" font-weight="bold">CHANGE</text>
+<text x="1050" y="174" font-size="13" fill="#293f37" font-weight="normal">Update actual world state</text>
+<text x="1050" y="196" font-size="13" fill="#293f37" font-weight="normal">Record and checkpoint</text>
+<path d="M244 158 L277 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M496 158 L529 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M748 158 L781 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1000 158 L1033 158" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1144 221 L1144 245" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M218 265 H1144 V245" stroke="#83927b" stroke-width="2" fill="none"/>
+<path d="M218 265 L218 284" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M640 265 L640 284" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M1062 265 L1062 284" stroke="#83927b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="28" y="285" width="380" height="139" rx="5" fill="#e5eaf0" stroke="#acb79f"/>
+<text x="45" y="315" font-size="18" fill="#293f37" font-weight="bold">WORKS &amp; INFORMATION</text>
+<text x="45" y="345" font-size="15" fill="#293f37" font-weight="normal">Work context ×2; notes +1,000</text>
+<text x="45" y="370" font-size="15" fill="#293f37" font-weight="normal">Communication budget / reach</text>
+<text x="45" y="395" font-size="15" fill="#293f37" font-weight="normal">Device coverage / measurement</text>
+<rect x="450" y="285" width="380" height="139" rx="5" fill="#e6eadf" stroke="#acb79f"/>
+<text x="467" y="315" font-size="18" fill="#293f37" font-weight="bold">PRODUCTION &amp; SURVIVAL</text>
+<text x="467" y="345" font-size="15" fill="#293f37" font-weight="normal">Yield / diagnostics / switching</text>
+<text x="467" y="370" font-size="15" fill="#293f37" font-weight="normal">Storage / discharge / defense</text>
+<text x="467" y="395" font-size="15" fill="#293f37" font-weight="normal">Paid rescue; activate next round</text>
+<rect x="872" y="285" width="380" height="139" rx="5" fill="#efe1d7" stroke="#acb79f"/>
+<text x="889" y="315" font-size="18" fill="#293f37" font-weight="bold">DISRUPTION &amp; CONFLICT</text>
+<text x="889" y="345" font-size="15" fill="#293f37" font-weight="normal">Attack / area damage</text>
+<text x="889" y="370" font-size="15" fill="#293f37" font-weight="normal">Pollution / facility sabotage</text>
+<text x="889" y="395" font-size="15" fill="#293f37" font-weight="normal">Device and container damage</text>
+<text x="28" y="454" font-size="14" fill="#728075" font-weight="normal">24 implemented service types; seeded worlds select a subset. Material costs and target permissions still apply.</text>
+<text x="28" y="477" font-size="12" fill="#728075" font-weight="normal">Conceptual interface diagram. New services are runtime-tested; their full Lean semantics are not yet certified.</text>
+</g></svg>

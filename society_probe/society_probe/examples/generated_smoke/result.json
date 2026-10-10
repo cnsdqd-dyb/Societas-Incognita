@@ -1,0 +1,185 @@
+{
+  "synthetic": true,
+  "completed_rounds": 6,
+  "calls": 36,
+  "cost_usd": 0.0,
+  "alive_fraction": 1.0,
+  "behavior_entropy_bits": {
+    "a0": -0.0,
+    "a2": -0.0,
+    "a3": -0.0,
+    "a1": -0.0
+  },
+  "invalid_actions": 0,
+  "compactions": 0,
+  "surveys": [
+    {
+      "round": 0,
+      "agent": "a0",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 0,
+      "agent": "a1",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 0,
+      "agent": "a2",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 0,
+      "agent": "a3",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 3,
+      "agent": "a0",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 3,
+      "agent": "a1",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 3,
+      "agent": "a2",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 3,
+      "agent": "a3",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 6,
+      "agent": "a0",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 6,
+      "agent": "a1",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 6,
+      "agent": "a2",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    },
+    {
+      "round": 6,
+      "agent": "a3",
+      "responses": {
+        "stability": 3,
+        "recognition": 3,
+        "trust": 3,
+        "evidence": [
+          "Synthetic mock questionnaire"
+        ],
+        "peer_recognition": {}
+      },
+      "synthetic": true
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "version": "composed_semantic_survival_v2",
+  "plan": [
+    {
+      "a0": {
+        "tool": "use_function",
+        "function": "combination_0",
+        "target": "world",
+        "confirm": true
+      },
+      "a1": {
+        "tool": "use_function",
+        "function": "combination_1",
+        "target": "world",
+        "confirm": true
+      },
+      "a2": {
+        "tool": "use_function",
+        "function": "combination_0",
+        "target": "world",
+        "confirm": true
+      },
+      "a3": {
+        "tool": "use_function",
+        "function": "combination_1",
+        "target": "world",
+        "confirm": false
+      }
+    },
+    {
+      "a0": {
+        "tool": "use_function",
+        "function": "combination_1",
+        "target": "world",
+        "confirm": true
+      },
+      "a1": {
+        "tool": "use_function",
+        "function": "combination_0",
+        "target": "world",
+        "confirm": true
+      },
+      "a2": {
+        "tool": "use_function",
+        "function": "combination_1",
+        "target": "world",
+        "confirm": true
+      },
+      "a3": {
+        "tool": "use_function",
+        "function": "combination_0",
+        "target": "world",
+        "confirm": true
+      }
+    },
+    {
+      "a0": {
+        "tool": "use_function",
+        "function": "combination_0",
+        "target": "world",
+        "confirm": true
+      },
+      "a1": {
+        "tool": "use_function",
+        "function": "combination_1",
+        "target": "world",
+        "confirm": true
+      },
+      "a2": {
+        "tool": "use_function",
+        "function": "combination_0",
+        "target": "world",
+        "confirm": true
+      },
+      "a3": {
+        "tool": "use_function",
+        "function": "combination_1",
+        "target": "world",
+        "confirm": true
+      }
+    }
+  ],
+  "lean": {
+    "source": "D:\\我的文件\\研究论文相关\\society_agents\\society_probe\\society_probe\\reports\\material_combinations_20261010\\all_twenty_3rounds.lean",
+    "sha256": "a40782f1ed0fa07704467a79b72318ac54e582c5ae8e6ea6a7745fbd8938bdbd",
+    "status": "lean_checked_composed_interval_certificate",
+    "world_sha256": "145c17d42eff0bc5e4e092f2c01b1b054664e65629c84a929188ca87d9f18b7c",
+    "configuration_sha256": "8620e21076cfa17f1508423d8f7f2786fd7732e2bac4a9b03d0ac8e2327633c4",
+    "horizon": 3,
+    "members": 4,
+    "nodes": 4711,
+    "unique_constraints": 1638,
+    "unique_values": 516,
+    "max_float_comparison_error": 2.842170943040401e-14,
+    "expression_count": 226,
+    "expression_lowering": "lean_kernel_proved_normalized_expression_semantics",
+    "scope": "Normalized expression lowering, all-operator interval soundness, dependency-preserving rational DAG evaluation, branch guards and semantic vitality positivity. JSON normalization, world-action lowering and IEEE equivalence are not formally proved; no optimality or discovery claim.",
+    "graph_nodes": 3419,
+    "original_graph_nodes": 4711,
+    "graph_constraints": 1638,
+    "semantic_live_outputs": 12,
+    "unique_semantic_live_outputs": 1,
+    "semantic_guard_outputs": 911,
+    "graph_semantics": "kernel_checked_dependency_preserving_rational_DAG",
+    "float_replay_audit": {
+      "status": "empirical_float_replay_only",
+      "runtime": {
+        "python_version": "3.10.9",
+        "python_implementation": "CPython",
+        "operating_system": "Windows",
+        "os_release": "10",
+        "machine_architecture": "AMD64",
+        "pointer_bits": 64,
+        "float_radix": 2,
+        "float_mantissa_bits": 53,
+        "float_epsilon": 2.220446049250313e-16,
+        "float_rounding_mode": 1
+      },
+      "comparisons": 267,
+      "distance_definition": "max(float(lo)-value, value-float(hi), 0)",
+      "endpoint_conversion": "rational endpoints converted to Python float; not a directed-rounding guarantee",
+      "acceptance_rule": "distance <= tolerance * max(1, abs(value))",
+      "tolerance": 1e-07,
+      "max_interval_violation": 2.842170943040401e-14,
+      "max_scaled_interval_violation": 6.472066479131562e-16,
+      "worst_scaled_violation_location": "round=3/pools/A",
+      "formal_ieee_equivalence": false
+    },
+    "action_phase_audit": {
+      "status": "empirical_float_replay_only",
+      "runtime": {
+        "python_version": "3.10.9",
+        "python_implementation": "CPython",
+        "operating_system": "Windows",
+        "os_release": "10",
+        "machine_architecture": "AMD64",
+        "pointer_bits": 64,
+        "float_radix": 2,
+        "float_mantissa_bits": 53,
+        "float_epsilon": 2.220446049250313e-16,
+        "float_rounding_mode": 1
+      },
+      "comparisons": 1068,
+      "distance_definition": "max(float(lo)-value, value-float(hi), 0)",
+      "endpoint_conversion": "rational endpoints converted to Python float; not a directed-rounding guarantee",
+      "acceptance_rule": "distance <= tolerance * max(1, abs(value))",
+      "tolerance": 1e-07,
+      "max_interval_violation": 1.4210854715202004e-14,
+      "max_scaled_interval_violation": 4.399791037327232e-16,
+      "worst_scaled_violation_location": "round=3/after=a3/pools/A",
+      "formal_ieee_equivalence": false
+    },
+    "returncode": 0,
+    "diagnostics": "D:\\我的文件\\研究论文相关\\society_agents\\society_probe\\society_probe\\reports\\material_combinations_20261010\\all_twenty_3rounds.lean:476:41: warning: This simp argument is unused:\n  QLe\n\nHint: Omit it from the simp argument list.\n  [apply] simp_all [check, valid, lt, le, QLt]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nD:\\我的文件\\研究论文相关\\society_agents\\society_probe\\society_probe\\reports\\material_combinations_20261010\\all_twenty_3rounds.lean:505:24: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nD:\\我的文件\\研究论文相关\\society_agents\\society_probe\\society_probe\\reports\\material_combinations_20261010\\all_twenty_3rounds.lean:507:24: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\n"
+  }
+}

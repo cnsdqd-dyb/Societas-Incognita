@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "synthetic_mechanical_check": true,
+  "initial_attack_or_wait_bounds": {
+    "lower": -1.0,
+    "upper": 0.5,
+    "worst": {
+      "tool": "seize",
+      "target": "a1",
+      "resource": "vault",
+      "amount": 1,
+      "effort": 2,
+      "loot": 0.0,
+      "cost": 1.0,
+      "net_wealth_change": -1.0
+    },
+    "best": {
+      "tool": "seize",
+      "target": "a1",
+      "resource": "liquid",
+      "amount": 2,
+      "effort": 1,
+      "loot": 1.0,
+      "cost": 0.5,
+      "net_wealth_change": 0.5
+    },
+    "enumerated_actions": 57,
+    "scope": "Conditional snapshot attack-or-wait; no other actors, supply, storage decay, maintenance or future reactions. Not a full environment trajectory bound."
+  },
+  "one_fixed_attacker_defense": {
+    "options": [
+      {
+        "defense_effort": 0,
+        "loss": 1.0,
+        "preparation_cost": 0.0,
+        "loss_plus_cost": 1.0
+      },
+      {
+        "defense_effort": 1,
+        "loss": 0.6666666666666666,
+        "preparation_cost": 0.5,
+        "loss_plus_cost": 1.1666666666666665
+      },
+      {
+        "defense_effort": 2,
+        "loss": 0.5,
+        "preparation_cost": 1.0,
+        "loss_plus_cost": 1.5
+      }
+    ],
+    "best": {
+      "defense_effort": 0,
+      "loss": 1.0,
+      "preparation_cost": 0.0,
+      "loss_plus_cost": 1.0
+    },
+    "worst": {
+      "defense_effort": 2,
+      "loss": 0.5,
+      "preparation_cost": 1.0,
+      "loss_plus_cost": 1.5
+    },
+    "scope": "Fixed next-round balances, energies and ordered attacks; preparation cost is a separate prior-round expense. Not an equilibrium or dynamic feasible bound; does not assume actors optimize it."
+  },
+  "two_fixed_attackers_defense": {
+    "options": [
+      {
+        "defense_effort": 0,
+        "loss": 2.0,
+        "preparation_cost": 0.0,
+        "loss_plus_cost": 2.0
+      },
+      {
+        "defense_effort": 1,
+        "loss": 1.3333333333333333,
+        "preparation_cost": 0.5,
+        "loss_plus_cost": 1.8333333333333333
+      },
+      {
+        "defense_effort": 2,
+        "loss": 1.0,
+        "preparation_cost": 1.0,
+        "loss_plus_cost": 2.0
+      }
+    ],
+    "best": {
+      "defense_effort": 1,
+      "loss": 1.3333333333333333,
+      "preparation_cost": 0.5,
+      "loss_plus_cost": 1.8333333333333333
+    },
+    "worst": {
+      "defense_effort": 0,
+      "loss": 2.0,
+      "preparation_cost": 0.0,
+      "loss_plus_cost": 2.0
+    },
+    "scope": "Fixed next-round balances, energies and ordered attacks; preparation cost is a separate prior-round expense. Not an equilibrium or dynamic feasible bound; does not assume actors optimize it."
+  },
+  "interpretation": "Conditional snapshot/security subsystem diagnostics; not a complete dynamic optimal policy or LLM experiment."
+}

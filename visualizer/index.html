@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Society · 像素观察站</title><link rel="stylesheet" href="style.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%238ccaad' d='M2 2h12v12H2z'/%3E%3Cpath fill='%23222d27' d='M5 5h2v2H5zm4 0h2v2H9zM5 10h6v2H5z'/%3E%3C/svg%3E"></head>
+<body>
+<header><div class="brand"><span class="logo">▦</span><div>SOCIETY <span class="muted">OBSERVATORY</span><small>多智能体 · 像素观察站</small></div></div><div class="live"><i></i><span id="connection">连接实验记录</span><button id="refresh">↻ 刷新数据</button></div></header>
+<main>
+<section class="analytics-panel" aria-label="社会行为分析">
+<div class="analytics-title"><span class="eyebrow">SOCIAL LENS</span><h2>社会观察</h2><label>统计范围<select id="analysisScope"><option value="cumulative">截至当前回合</option><option value="round">仅当前回合</option><option value="all">全部已有记录</option></select></label><p id="analysisRange" class="subtle"></p><nav class="analytics-jumps" aria-label="左侧分析导航"><button data-analysis-jump="energyRows">能量</button><button data-analysis-jump="actionDistribution">行为</button><button data-analysis-jump="speakerRanking">发言</button><button data-analysis-jump="networkGraph">关系图</button></nav></div>
+<section class="analysis-card"><h3>成员能量与库存</h3><div id="energyRows"></div><div id="energyTrend"></div></section>
+<section class="analysis-card"><h3>行为分布 <small id="actionCount"></small></h3><div id="actionDistribution"></div><p class="subtle">统计当前观察成员，跟随成员切换；按选择的工具计数，包含未成功执行的行为。</p></section>
+<section class="analysis-card"><h3>谁经常发言</h3><p class="subtle">公共与私聊文本分别计数；邀请单独统计。</p><div id="speakerRanking"></div></section>
+<section class="analysis-card network-card"><h3>成员互动有向图</h3><div class="network-tabs" role="group" aria-label="关系图类型"><button data-network="communication" class="active">交流</button><button data-network="resource">资源</button><button data-network="culture">文化</button></div><label class="graph-option"><input type="checkbox" id="showBroadcast" checked> 显示公共频道</label><div id="networkGraph"></div><p id="networkLegend" class="subtle"></p><div id="edgeEvidence"></div></section>
+</section>
+<section class="workspace">
+<div class="filters"><label>环境<select id="environment"><option>加载中…</option></select></label><label>模型<select id="model"><option value="">全部模型</option></select></label><label class="config">已有配置<select id="run"></select></label></div>
+<div class="world-top"><div><span class="eyebrow" id="themeLabel">WORLD VIEW</span><h1 id="worldTitle">像素社会</h1></div><div class="chips"><span id="pressure">—</span><span id="seed">SEED —</span><span id="layoutSeed">布局 —</span><span id="status">—</span></div></div>
+<div class="canvas-wrap"><canvas id="world" width="960" height="560" aria-label="智能体像素世界，点击角色查看详情"></canvas><div id="speechOverlay" class="speech-overlay"></div><div class="map-note">点击角色 / 气泡查看 · 空格暂停</div><div class="round-badge">ROUND <b id="roundBadge">01</b><small id="roundTotal">/ —</small></div><div id="loading" class="loading">正在读取实验记录…</div></div>
+<div class="world-bottom"><span><i class="dot"></i> <span id="population">— 位智能体</span></span><span id="pool">公共资源 —</span><span>碰撞与路径动画 <b>ON</b></span></div>
+<section class="playback"><div class="transport"><button id="restart" title="回到开头">↤</button><button id="previous" title="上一回合">‹</button><button id="play" class="primary">▶ 播放</button><button id="next" title="下一回合">›</button><span id="timeLabel">第 1 回合</span><label class="speed">播放速度<select id="speed"><option value="0.5">0.5×</option><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option><option value="16" selected>16×</option></select></label></div><input id="scrubber" type="range" min="1" max="1" value="1" aria-label="回合时间轴"><div class="timeline-labels"><span>起点</span><span id="progressText">完整回合记录</span><span id="endRound">—</span></div></section>
+<div class="replay-options"><span id="phaseLabel">准备行动</span><label>对话停留 <select id="speechDuration"><option value="0.5" selected>0.5 s</option><option value="2">2 秒</option><option value="3">3 秒</option><option value="5">5 秒</option><option value="8">8 秒</option></select></label><span class="subtle">对话保留阅读时间，不随倍速缩短</span></div>
+<section class="round-interactions"><div class="section-title"><h2>本回合互动</h2><span>金色：资源流动 · 蓝色：对话 · 紫色：文化</span></div><div id="resourceFeed"></div><div id="cultureFeed"></div><div id="dialogueFeed"></div></section>
+<section class="timeline"><div class="section-title"><h2>行为时间线</h2><span>点击事件展开原始记录</span></div><div id="tracks"></div></section>
+</section>
+<aside><div class="inspector-head"><span class="eyebrow">AGENT INSPECTOR</span><h2>智能体观察</h2><p>选择一个角色，看看它正在做什么。</p></div><div id="agentButtons" class="agent-buttons"></div><div id="inspector"></div></aside>
+</main><footer><span>● 真实实验记录</span><span>动作 / 对话来自日志；位置、闲逛和碰撞为可视化动画，不代表实验中的物理轨迹。</span></footer>
+<script src="analytics.js"></script><script src="scene.js"></script><script src="world.js"></script><script src="app.js"></script>
+<script src="replay-v2.js"></script></body></html>
