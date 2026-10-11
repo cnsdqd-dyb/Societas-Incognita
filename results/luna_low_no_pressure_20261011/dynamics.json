@@ -1,0 +1,1790 @@
+[
+  {
+    "round": 1,
+    "stocks": {
+      "a0": 4.0,
+      "a1": 4.0,
+      "a2": 4.0,
+      "a3": 4.0
+    },
+    "direct_material_types": {
+      "a0": 1,
+      "a1": 1,
+      "a2": 1,
+      "a3": 1
+    },
+    "completed_experiments": 0,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 4
+    },
+    "message_count": 2,
+    "message_characters": 363,
+    "pools": {
+      "A": 5.94768174365163,
+      "B": 30.745835982365033,
+      "Q": 6.037435039975099,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.18000000000000002,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 2,
+    "stocks": {
+      "a0": 4.0,
+      "a1": 11.967408971182806,
+      "a2": 19.934817942365612,
+      "a3": 11.96
+    },
+    "direct_material_types": {
+      "a0": 1,
+      "a1": 1,
+      "a2": 1,
+      "a3": 1
+    },
+    "completed_experiments": 0,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 4,
+      "liquidate": 3
+    },
+    "message_count": 7,
+    "message_characters": 1375,
+    "pools": {
+      "A": 6.25507143606114,
+      "B": 31.613601953707523,
+      "Q": 6.074664817031684,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 3,
+    "stocks": {
+      "a0": 4.0,
+      "a1": 11.967408971182806,
+      "a2": 19.934817942365612,
+      "a3": 11.96
+    },
+    "direct_material_types": {
+      "a0": 1,
+      "a1": 1,
+      "a2": 1,
+      "a3": 1
+    },
+    "completed_experiments": 0,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 8,
+      "liquidate": 3
+    },
+    "message_count": 13,
+    "message_characters": 2833,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 32.34958350102491,
+      "Q": 6.074664817031684,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 4,
+    "stocks": {
+      "a0": 4.0,
+      "a1": 11.967408971182806,
+      "a2": 19.934817942365612,
+      "a3": 24.42652679641308
+    },
+    "direct_material_types": {
+      "a0": 2,
+      "a1": 2,
+      "a2": 2,
+      "a3": 1
+    },
+    "completed_experiments": 0,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 11,
+      "liquidate": 4
+    },
+    "message_count": 17,
+    "message_characters": 3936,
+    "pools": {
+      "A": 0.49279536291561393,
+      "B": 8.356101559520907,
+      "Q": 6.07708725721797,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 5,
+    "stocks": {
+      "a0": 4.0,
+      "a1": 27.967408971182806,
+      "a2": 19.83481794236561,
+      "a3": 24.42652679641308
+    },
+    "direct_material_types": {
+      "a0": 2,
+      "a1": 2,
+      "a2": 2,
+      "a3": 2
+    },
+    "completed_experiments": 1,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 12,
+      "liquidate": 5,
+      "read_news": 1,
+      "experiment": 1
+    },
+    "message_count": 24,
+    "message_characters": 4866,
+    "pools": {
+      "A": 0.5323603071343932,
+      "B": 0.34747633040695625,
+      "Q": 6.081762037135664,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.18000000000000002,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 6,
+    "stocks": {
+      "a0": 20.0,
+      "a1": 27.967408971182806,
+      "a2": 35.83481794236561,
+      "a3": 24.326526796413077
+    },
+    "direct_material_types": {
+      "a0": 2,
+      "a1": 3,
+      "a2": 2,
+      "a3": 2
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 7,
+      "gather": 9,
+      "read_news": 1,
+      "experiment": 2
+    },
+    "message_count": 33,
+    "message_characters": 6207,
+    "pools": {
+      "A": 0.9300762097793939,
+      "B": 0.33903608641099314,
+      "Q": 0.005031194204298537,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 7,
+    "stocks": {
+      "a0": 35.6,
+      "a1": 40.130933045454135,
+      "a2": 35.83481794236561,
+      "a3": 24.326526796413077
+    },
+    "direct_material_types": {
+      "a0": 2,
+      "a1": 3,
+      "a2": 3,
+      "a3": 2
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "liquidate": 6,
+      "read_news": 1,
+      "experiment": 2,
+      "wait": 1
+    },
+    "message_count": 34,
+    "message_characters": 5935,
+    "pools": {
+      "A": 0.9601511859321574,
+      "B": 0.3306602638959276,
+      "Q": 0.008471325095384768,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 6.666666666666667,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.18000000000000002,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 8,
+    "stocks": {
+      "a0": 35.6,
+      "a1": 40.130933045454135,
+      "a2": 35.84488033077421,
+      "a3": 40.32652679641308
+    },
+    "direct_material_types": {
+      "a0": 2,
+      "a1": 4,
+      "a2": 3,
+      "a3": 2
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 8,
+      "liquidate": 8,
+      "read_news": 1,
+      "experiment": 2,
+      "wait": 1
+    },
+    "message_count": 30,
+    "message_characters": 4664,
+    "pools": {
+      "A": 0.40964931188397097,
+      "B": 0.32277910673332366,
+      "Q": 0.008471325095384768,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 3.333333333333333,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 9,
+    "stocks": {
+      "a0": 35.6,
+      "a1": 46.7975997121208,
+      "a2": 35.84488033077421,
+      "a3": 40.32652679641308
+    },
+    "direct_material_types": {
+      "a0": 2,
+      "a1": 4,
+      "a2": 3,
+      "a3": 3
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "read_news": 1,
+      "experiment": 2,
+      "liquidate": 8,
+      "gather": 7,
+      "wait": 1
+    },
+    "message_count": 33,
+    "message_characters": 4315,
+    "pools": {
+      "A": 0.4510460918913987,
+      "B": 0.31494877916810876,
+      "Q": 0.01238821944873585,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.18000000000000002,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 10,
+    "stocks": {
+      "a0": 35.6,
+      "a1": 46.7975997121208,
+      "a2": 35.84488033077421,
+      "a3": 43.65986012974641
+    },
+    "direct_material_types": {
+      "a0": 3,
+      "a1": 4,
+      "a2": 3,
+      "a3": 3
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "experiment": 1,
+      "liquidate": 8,
+      "gather": 9,
+      "wait": 1
+    },
+    "message_count": 30,
+    "message_characters": 3843,
+    "pools": {
+      "A": 0.6898801147811894,
+      "B": 0.3072870211968289,
+      "Q": 0.016683908388737984,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 11,
+    "stocks": {
+      "a0": 35.6,
+      "a1": 46.7975997121208,
+      "a2": 35.84488033077421,
+      "a3": 43.65986012974641
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 3
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 6,
+      "wait": 1,
+      "gather": 12
+    },
+    "message_count": 24,
+    "message_characters": 2710,
+    "pools": {
+      "A": 0.7250414841370255,
+      "B": 0.0,
+      "Q": 0.006423386185386433,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.18000000000000002,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 12,
+    "stocks": {
+      "a0": 35.63336781677748,
+      "a1": 46.7975997121208,
+      "a2": 36.459454373167866,
+      "a3": 43.65986012974641
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 3
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 6,
+      "gather": 13
+    },
+    "message_count": 21,
+    "message_characters": 2289,
+    "pools": {
+      "A": 0.40964931188397097,
+      "B": 0.0,
+      "Q": 0.006423386185386433,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 13,
+    "stocks": {
+      "a0": 35.53336781677748,
+      "a1": 48.24177521841906,
+      "a2": 36.459454373167866,
+      "a3": 43.65986012974641
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 4
+    },
+    "completed_experiments": 2,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 13,
+      "liquidate": 5,
+      "experiment": 1
+    },
+    "message_count": 23,
+    "message_characters": 2540,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 14,
+    "stocks": {
+      "a0": 35.53336781677748,
+      "a1": 48.24177521841906,
+      "a2": 37.27541527380367,
+      "a3": 43.672706902117184
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 4
+    },
+    "completed_experiments": 3,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 12,
+      "liquidate": 6,
+      "experiment": 1,
+      "wait": 1
+    },
+    "message_count": 19,
+    "message_characters": 2086,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 15,
+    "stocks": {
+      "a0": 37.333367816777475,
+      "a1": 48.73770963806034,
+      "a2": 37.27541527380367,
+      "a3": 43.672706902117184
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 4
+    },
+    "completed_experiments": 3,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 11,
+      "liquidate": 7,
+      "experiment": 1,
+      "wait": 1
+    },
+    "message_count": 19,
+    "message_characters": 2052,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 16,
+    "stocks": {
+      "a0": 37.41170868196959,
+      "a1": 48.73770963806034,
+      "a2": 37.27541527380367,
+      "a3": 43.57270690211718
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 4
+    },
+    "completed_experiments": 3,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 8,
+      "experiment": 2,
+      "wait": 1
+    },
+    "message_count": 18,
+    "message_characters": 1955,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 17,
+    "stocks": {
+      "a0": 37.41170868196959,
+      "a1": 49.23364405770162,
+      "a2": 37.27541527380367,
+      "a3": 43.57270690211718
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 3,
+      "a3": 4
+    },
+    "completed_experiments": 4,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 8,
+      "experiment": 2,
+      "liquidate": 7,
+      "wait": 2
+    },
+    "message_count": 19,
+    "message_characters": 2074,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 8.928643505893897e-05,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.007962602636390774,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 18,
+    "stocks": {
+      "a0": 37.889753220240564,
+      "a1": 49.23364405770162,
+      "a2": 37.27541527380367,
+      "a3": 43.57270690211718
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 4,
+    "productive_experiments": 0,
+    "action_counts": {
+      "wait": 2,
+      "liquidate": 7,
+      "gather": 9,
+      "experiment": 1
+    },
+    "message_count": 21,
+    "message_characters": 2503,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 8.928643505893897e-05,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 19,
+    "stocks": {
+      "a0": 37.889753220240564,
+      "a1": 49.7295784773429,
+      "a2": 37.291340479076446,
+      "a3": 44.06260485067382
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 4,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 8,
+      "experiment": 1,
+      "wait": 1
+    },
+    "message_count": 22,
+    "message_characters": 2632,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.00017857287011787795,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.007962602636390774,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 20,
+    "stocks": {
+      "a0": 37.889753220240564,
+      "a1": 49.7295784773429,
+      "a2": 37.291340479076446,
+      "a3": 44.06260485067382
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 4,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 11,
+      "experiment": 1,
+      "liquidate": 6,
+      "wait": 1
+    },
+    "message_count": 22,
+    "message_characters": 2571,
+    "pools": {
+      "A": 0.25608893979851677,
+      "B": 0.0,
+      "Q": 0.00017857287011787795,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 21,
+    "stocks": {
+      "a0": 37.889753220240564,
+      "a1": 49.74746835871321,
+      "a2": 37.291340479076446,
+      "a3": 44.06260485067382
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 4,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 6,
+      "gather": 11,
+      "wait": 1
+    },
+    "message_count": 21,
+    "message_characters": 2467,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.00017857287011787795,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 22,
+    "stocks": {
+      "a0": 37.889753220240564,
+      "a1": 49.74746835871321,
+      "a2": 37.8014318081693,
+      "a3": 44.06260485067382
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 4,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "liquidate": 6,
+      "wait": 3
+    },
+    "message_count": 20,
+    "message_characters": 2389,
+    "pools": {
+      "A": 0.4922832772048017,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 23,
+    "stocks": {
+      "a0": 37.78975322024056,
+      "a1": 49.74746835871321,
+      "a2": 37.8014318081693,
+      "a3": 44.06260485067382
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 5,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 5,
+      "gather": 10,
+      "wait": 3,
+      "experiment": 1
+    },
+    "message_count": 16,
+    "message_characters": 1703,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 24,
+    "stocks": {
+      "a0": 38.73228107213801,
+      "a1": 49.64746835871321,
+      "a2": 37.8014318081693,
+      "a3": 44.644789951905885
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 5,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "liquidate": 4,
+      "wait": 3,
+      "experiment": 2
+    },
+    "message_count": 15,
+    "message_characters": 1551,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 25,
+    "stocks": {
+      "a0": 38.73228107213801,
+      "a1": 49.64746835871321,
+      "a2": 38.29736622781058,
+      "a3": 44.644789951905885
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 6,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 5,
+      "gather": 8,
+      "wait": 4,
+      "experiment": 2
+    },
+    "message_count": 17,
+    "message_characters": 1731,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 26,
+    "stocks": {
+      "a0": 39.09228107213801,
+      "a1": 49.64746835871321,
+      "a2": 38.29736622781058,
+      "a3": 45.140724371547165
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 6,
+    "productive_experiments": 0,
+    "action_counts": {
+      "wait": 4,
+      "liquidate": 6,
+      "gather": 8,
+      "experiment": 2
+    },
+    "message_count": 21,
+    "message_characters": 2051,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 27,
+    "stocks": {
+      "a0": 39.09228107213801,
+      "a1": 49.64746835871321,
+      "a2": 38.79330064745186,
+      "a3": 45.140724371547165
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 6,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "experiment": 2,
+      "liquidate": 6,
+      "wait": 2
+    },
+    "message_count": 21,
+    "message_characters": 1969,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 28,
+    "stocks": {
+      "a0": 39.09228107213801,
+      "a1": 50.5353211371998,
+      "a2": 38.79330064745186,
+      "a3": 45.140724371547165
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 6,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 7,
+      "experiment": 1,
+      "wait": 3
+    },
+    "message_count": 22,
+    "message_characters": 2137,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 29,
+    "stocks": {
+      "a0": 39.09228107213801,
+      "a1": 50.5353211371998,
+      "a2": 38.81119052882217,
+      "a3": 45.140724371547165
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 6,
+    "productive_experiments": 0,
+    "action_counts": {
+      "wait": 3,
+      "liquidate": 6,
+      "gather": 10
+    },
+    "message_count": 22,
+    "message_characters": 2158,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 30,
+    "stocks": {
+      "a0": 39.09228107213801,
+      "a1": 50.5353211371998,
+      "a2": 38.81119052882217,
+      "a3": 45.636658791188445
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 6,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 6,
+      "gather": 10,
+      "wait": 3
+    },
+    "message_count": 19,
+    "message_characters": 2044,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.002596049351207404,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 31,
+    "stocks": {
+      "a0": 38.992281072138006,
+      "a1": 51.03125555684108,
+      "a2": 38.81119052882217,
+      "a3": 45.636658791188445
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 7,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 8,
+      "wait": 3,
+      "liquidate": 5,
+      "experiment": 1
+    },
+    "message_count": 15,
+    "message_characters": 1648,
+    "pools": {
+      "A": 0.29392799135972975,
+      "B": 0.0,
+      "Q": 0.00501352583229693,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.18000000000000002,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 32,
+    "stocks": {
+      "a0": 38.992281072138006,
+      "a1": 51.03125555684108,
+      "a2": 38.81119052882217,
+      "a3": 45.636658791188445
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 7,
+    "productive_experiments": 0,
+    "action_counts": {
+      "wait": 2,
+      "liquidate": 4,
+      "gather": 10,
+      "experiment": 1
+    },
+    "message_count": 15,
+    "message_characters": 1840,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.00501352583229693,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 33,
+    "stocks": {
+      "a0": 38.992281072138006,
+      "a1": 51.03125555684108,
+      "a2": 39.17119052882217,
+      "a3": 45.536658791188444
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 7,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 4,
+      "wait": 1,
+      "experiment": 2
+    },
+    "message_count": 16,
+    "message_characters": 1923,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.007962602636390774,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 34,
+    "stocks": {
+      "a0": 38.992281072138006,
+      "a1": 51.03125555684108,
+      "a2": 39.17119052882217,
+      "a3": 45.536658791188444
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 8,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 3,
+      "wait": 3,
+      "experiment": 2
+    },
+    "message_count": 19,
+    "message_characters": 2328,
+    "pools": {
+      "A": 0.25608893979851677,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 35,
+    "stocks": {
+      "a0": 38.992281072138006,
+      "a1": 51.03125555684108,
+      "a2": 39.07119052882217,
+      "a3": 45.643201960166394
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 8,
+    "productive_experiments": 0,
+    "action_counts": {
+      "experiment": 3,
+      "liquidate": 3,
+      "gather": 9,
+      "wait": 2
+    },
+    "message_count": 20,
+    "message_characters": 2246,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 36,
+    "stocks": {
+      "a0": 38.992281072138006,
+      "a1": 51.54134688593393,
+      "a2": 39.07119052882217,
+      "a3": 45.643201960166394
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 9,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 11,
+      "liquidate": 3,
+      "experiment": 2,
+      "wait": 3
+    },
+    "message_count": 21,
+    "message_characters": 2332,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 37,
+    "stocks": {
+      "a0": 40.392281072138005,
+      "a1": 51.54134688593393,
+      "a2": 39.07119052882217,
+      "a3": 45.643201960166394
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 9,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "liquidate": 4,
+      "experiment": 2,
+      "wait": 3
+    },
+    "message_count": 21,
+    "message_characters": 2233,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 38,
+    "stocks": {
+      "a0": 40.392281072138005,
+      "a1": 52.02134688593393,
+      "a2": 38.97119052882217,
+      "a3": 45.643201960166394
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 9,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "wait": 3,
+      "experiment": 2,
+      "liquidate": 4
+    },
+    "message_count": 18,
+    "message_characters": 1862,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 39,
+    "stocks": {
+      "a0": 40.392281072138005,
+      "a1": 52.02134688593393,
+      "a2": 38.97119052882217,
+      "a3": 46.13510385733627
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "experiment": 2,
+      "gather": 10,
+      "liquidate": 5,
+      "wait": 2
+    },
+    "message_count": 17,
+    "message_characters": 1730,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.005102812267355868,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 40,
+    "stocks": {
+      "a0": 40.392281072138005,
+      "a1": 52.03714688593393,
+      "a2": 39.953039458065234,
+      "a3": 46.13510385733627
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "wait": 2,
+      "gather": 10,
+      "liquidate": 6,
+      "experiment": 1
+    },
+    "message_count": 21,
+    "message_characters": 2249,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 41,
+    "stocks": {
+      "a0": 40.88828107213801,
+      "a1": 52.03714688593393,
+      "a2": 39.953039458065234,
+      "a3": 46.63103827697755
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 7,
+      "experiment": 1,
+      "wait": 2
+    },
+    "message_count": 20,
+    "message_characters": 2172,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 42,
+    "stocks": {
+      "a0": 40.889281072138004,
+      "a1": 52.03714688593393,
+      "a2": 40.448973877706514,
+      "a3": 46.63103827697755
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 8,
+      "liquidate": 8,
+      "experiment": 1,
+      "wait": 2
+    },
+    "message_count": 21,
+    "message_characters": 2199,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 43,
+    "stocks": {
+      "a0": 40.89948669667272,
+      "a1": 52.03714688593393,
+      "a2": 40.448973877706514,
+      "a3": 46.63103827697755
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 10,
+      "liquidate": 8,
+      "wait": 2
+    },
+    "message_count": 24,
+    "message_characters": 2488,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 44,
+    "stocks": {
+      "a0": 40.89948669667272,
+      "a1": 52.037151661626694,
+      "a2": 40.944908297347794,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 10,
+      "wait": 1
+    },
+    "message_count": 20,
+    "message_characters": 1982,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 45,
+    "stocks": {
+      "a0": 40.89948669667272,
+      "a1": 52.037151661626694,
+      "a2": 40.944908297347794,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 8,
+      "wait": 2,
+      "gather": 8,
+      "read_news": 1,
+      "inspect": 1
+    },
+    "message_count": 16,
+    "message_characters": 1586,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 46,
+    "stocks": {
+      "a0": 41.889360784492716,
+      "a1": 52.037151661626694,
+      "a2": 40.944908297347794,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "gather": 9,
+      "liquidate": 7,
+      "read_news": 1,
+      "inspect": 1,
+      "wait": 2
+    },
+    "message_count": 17,
+    "message_characters": 1567,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 47,
+    "stocks": {
+      "a0": 41.889360784492716,
+      "a1": 52.037151661626694,
+      "a2": 41.440842716989074,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 6,
+      "gather": 8,
+      "read_news": 1,
+      "inspect": 1,
+      "wait": 3
+    },
+    "message_count": 17,
+    "message_characters": 1501,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 48,
+    "stocks": {
+      "a0": 41.889360784492716,
+      "a1": 52.51715166162669,
+      "a2": 41.440842716989074,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 6,
+      "gather": 7,
+      "read_news": 1,
+      "inspect": 1,
+      "wait": 3
+    },
+    "message_count": 14,
+    "message_characters": 1203,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 49,
+    "stocks": {
+      "a0": 41.889360784492716,
+      "a1": 52.51715166162669,
+      "a2": 41.936777136630354,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "read_news": 1,
+      "inspect": 1,
+      "gather": 7,
+      "wait": 4,
+      "liquidate": 4
+    },
+    "message_count": 16,
+    "message_characters": 1410,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  },
+  {
+    "round": 50,
+    "stocks": {
+      "a0": 41.889360784492716,
+      "a1": 53.01715166162669,
+      "a2": 41.936777136630354,
+      "a3": 47.124952319998584
+    },
+    "direct_material_types": {
+      "a0": 4,
+      "a1": 4,
+      "a2": 4,
+      "a3": 4
+    },
+    "completed_experiments": 10,
+    "productive_experiments": 0,
+    "action_counts": {
+      "liquidate": 5,
+      "gather": 8,
+      "wait": 4
+    },
+    "message_count": 14,
+    "message_characters": 1111,
+    "pools": {
+      "A": 0.24898153034946266,
+      "B": 0.0,
+      "Q": 0.0,
+      "W": 0.0,
+      "P": 0.0,
+      "P_bound": 0.0,
+      "P_neutral": 0.0,
+      "BAT": 0.0,
+      "NET": 0.0
+    }
+  }
+]

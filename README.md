@@ -17,10 +17,12 @@ python -m pip install -r requirements.txt
 python quickstart.py
 ```
 
-This runs a four-member, eight-round **scripted demo with no model calls**. [Quick start guide](QUICKSTART.md) covers real-model opt-in, checkpoints, resume and the viewer. [Six baseline trials](results/baseline_20261010/README.md) contain tables, curves and recorded trajectories under the original rules; new worlds use slower ecology, reserve-funded precursor reseeding and decimal material amounts. These revisions have offline validation, not new LLM trial results.
+This runs a four-member, eight-round **scripted demo with no model calls**. [Quick start guide](QUICKSTART.md) covers real-model opt-in, checkpoints, resume and the viewer. [Six baseline trials](results/baseline_20261010/README.md) contain tables, curves and recorded trajectories under the original rules; new worlds use slower ecology, reserve-funded precursor reseeding and decimal material amounts. The newer Luna low no-pressure run is reported separately below.
 
 
 ## The research question
+
+The [core measurement protocol](society_probe/society_probe/CORE_METRICS_V1.md) defines eight dimensions and twelve time series; questionnaires are retired. The [Luna low no-pressure analysis](results/luna_low_no_pressure_20261011/README.md) publishes 50-round plots, CSV, provenance and offline analysis inputs. Six series are numeric, damage recovery is not applicable, and five require further evidence. This is a single-run description, not a complete social-development score.
 
 We construct material worlds whose laws are assembled from **20 bounded mathematical mechanisms**. Agents can collect, transform, use, and exchange materials; unlock functions by holding particular material combinations; communicate; build capability devices; and create works. They are not assigned a common external task, a leader, or a role as a scientist.
 

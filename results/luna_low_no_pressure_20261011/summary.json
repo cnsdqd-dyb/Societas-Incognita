@@ -1,0 +1,175 @@
+{
+  "valid_actions": 188,
+  "invalid_actions": 12,
+  "action_counts": {
+    "gather": 96,
+    "liquidate": 59,
+    "read_news": 2,
+    "experiment": 10,
+    "wait": 20,
+    "inspect": 1
+  },
+  "completed_experiments": 10,
+  "productive_experiments": 0,
+  "behavioral_jsd_range": [
+    0.0,
+    0.2922601092214974
+  ],
+  "final_metrics": {
+    "ecological_path_retention": {
+      "value": null,
+      "numerator": null,
+      "denominator": null,
+      "status": "missing_evidence",
+      "evidence_coverage": null,
+      "sample_size": 0,
+      "reason": "missing_path_catalog_and_reachability_evidence"
+    },
+    "verified_rule_coverage": {
+      "value": null,
+      "numerator": null,
+      "denominator": null,
+      "status": "missing_evidence",
+      "evidence_coverage": null,
+      "sample_size": 0,
+      "reason": "missing_rule_catalog_and_verified_claims"
+    },
+    "knowledge_adoption_coverage": {
+      "value": null,
+      "numerator": null,
+      "denominator": null,
+      "status": "missing_evidence",
+      "evidence_coverage": null,
+      "sample_size": 0,
+      "reason": "missing_received_rule_and_application_chain"
+    },
+    "sustained_cooperation_fulfillment": {
+      "value": null,
+      "numerator": null,
+      "denominator": null,
+      "status": "missing_evidence",
+      "evidence_coverage": null,
+      "sample_size": 0,
+      "reason": "missing_confirmed_arrangements_and_obligations"
+    },
+    "resource_turnover": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": null,
+      "status": "absence_verified",
+      "evidence_coverage": 1.0,
+      "sample_size": 17,
+      "denominator_method": "positive_lower_bound_from_liquid_stock",
+      "scope": "Zero transfers only; full positive-flow asset ledger not implemented"
+    },
+    "harmful_action_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 17,
+      "status": "absence_verified",
+      "evidence_coverage": 1.0,
+      "sample_size": 17,
+      "classification": "no_conflict_capable_valid_action_in_complete_log",
+      "scope": "Direct conflict; ordinary harvesting and environmental decay excluded"
+    },
+    "damage_recovery_rate": {
+      "value": null,
+      "numerator": null,
+      "denominator": null,
+      "status": "not_applicable",
+      "evidence_coverage": 1.0,
+      "sample_size": 0,
+      "reason": "no_direct_conflict_damage_episodes"
+    },
+    "cross_member_reuse_count": {
+      "value": 0,
+      "numerator": 0,
+      "denominator": null,
+      "status": "absence_verified",
+      "evidence_coverage": 1.0,
+      "sample_size": 0,
+      "reason": "no_reusable_work_or_game_objects"
+    },
+    "expression_divergence": {
+      "value": null,
+      "numerator": null,
+      "denominator": null,
+      "status": "missing_evidence",
+      "evidence_coverage": null,
+      "sample_size": 0,
+      "reason": "missing_audited_message_coding"
+    },
+    "active_fraction": {
+      "value": 1.0,
+      "numerator": 4,
+      "denominator": 4,
+      "status": "observed",
+      "evidence_coverage": 1.0,
+      "sample_size": 4,
+      "source": "snapshots:round:50"
+    },
+    "behavioral_divergence": {
+      "value": 0.2130119841854395,
+      "numerator": 0.6390359525563185,
+      "denominator": 3,
+      "status": "observed",
+      "evidence_coverage": 1.0,
+      "sample_size": 15,
+      "participant_ids": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "action_distributions": {
+        "a0": {
+          "liquidate": 1,
+          "wait": 3,
+          "gather": 1
+        },
+        "a1": {
+          "wait": 1,
+          "gather": 2,
+          "liquidate": 2
+        },
+        "a2": {
+          "gather": 3,
+          "liquidate": 2
+        },
+        "a3": {
+          "gather": 2
+        }
+      },
+      "uncatalogued_valid_tools": {},
+      "source_event_indices": [
+        180,
+        181,
+        183,
+        184,
+        185,
+        187,
+        188,
+        189,
+        191,
+        193,
+        194,
+        195,
+        196,
+        198,
+        199
+      ],
+      "classification": "tool_identity_from_config_other_for_uncatalogued",
+      "opportunity_adjusted": false
+    },
+    "cultural_production_count": {
+      "value": 0,
+      "numerator": 0,
+      "denominator": null,
+      "status": "observed",
+      "evidence_coverage": 1.0,
+      "sample_size": 0,
+      "by_kind": {},
+      "source_work_event_indices": [],
+      "scope": "New work objects including game-rule works; revisions and game sessions excluded"
+    }
+  }
+}

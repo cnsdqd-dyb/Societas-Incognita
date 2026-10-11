@@ -584,6 +584,8 @@ def compact(society, aid, api, persist=None):
 
 
 def survey(society, api, persist=None):
+    if not society.cfg.get('survey_enabled', False):
+        return
     if society.cfg.get('survey_protocol') == 'source_informed_v3':
         from survey_measurement import collect
         return collect(society, api, persist)
