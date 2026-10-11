@@ -1,0 +1,95 @@
+/* Seeded presentation geography; never modifies simulation logs or physical rules. */
+const beforePlanetWorld=makeWorld, beforePlanetBlocked=blocked, beforePlanetTile=drawIsoTile;
+let planetBuilding=false;
+blocked=function(x,y,pad=10){return beforePlanetBlocked(x,y,pad)||(!planetBuilding&&worldScene?.terrain?.islands&&!sandboxTile(x,y)?.active)};
+makeWorld=function(){
+ planetBuilding=true;
+ try{beforePlanetWorld()}finally{planetBuilding=false}
+ const terrain=worldScene.terrain,rng=seededWorldRandom(worldScene.seed^0xFA197);
+ const ecosystems=[['翠林群星',['forest','meadow','blossom','jungle']],['潮汐群星',['swamp','jungle','meadow','beach']],['霜岩群星',['snow','highland','forest','snow_peak']],['赤沙群星',['desert','highland','volcano','beach']]];
+ const profile=ecosystems[worldScene.seed%ecosystems.length];
+ const islands=stations.map((s,i)=>({id:i,x:s.x+s.w/2,y:s.y+s.h/2+18,rx:s.w/2+32,ry:s.h/2+47,phase:rng()*6.28,biome:profile[1][i%4]}));
+ const hub=terrain.routes[0][0];
+ islands.push({id:islands.length,x:hub.x,y:hub.y,rx:74,ry:54,phase:rng()*6.28,biome:profile[1][1]});
+ for(const p of worldScene.spawns)if(!islands.some(a=>Math.hypot((p.x-a.x)/a.rx,(p.y-a.y)/a.ry)<.8))islands.push({id:islands.length,x:p.x,y:p.y,rx:45,ry:40,phase:rng()*6.28,biome:profile[1][0]});
+ terrain.islands=islands;terrain.layoutVersion='floating-archipelago-v1';
+ for(const t of terrain.tiles){
+  const x=t.x+10,y=t.y+10;
+  const island=islands.find(a=>{const dx=(x-a.x)/a.rx,dy=(y-a.y)/a.ry,angle=Math.atan2(dy,dx);return Math.hypot(dx,dy)<1+.08*Math.sin(angle*5+a.phase)+.04*Math.cos(angle*3-a.phase)});
+  t.active=Boolean(island)||t.road;t.island=island?.id??null;t.bridge=t.road&&!island;
+  t.level=2+Math.floor(x/180);t.water=false;
+  if(island){t.biome=island.biome;if(!ecologyProtected(t)&&ecoHash(t.x,t.y)<.15)t.biome=profile[1][(island.id+1)%4]}
+ }
+ for(const s of stations){s.terrainLevel=2+Math.floor((s.x+s.w/2)/180);for(const t of terrain.tiles)if(t.x+10>s.x-12&&t.x+10<s.x+s.w+12&&t.y+10>s.y-12&&t.y+10<s.y+s.h+12){t.active=true;t.level=s.terrainLevel;t.bridge=false}}
+ // Rebuild corridors after ecological obstacles were settled; never accept a partial route.
+ planetBuilding=true;
+ try{for(const target of [...stations.map(s=>({x:s.x+s.w/2,y:s.y+s.h+34})),...worldScene.spawns])for(const p of [hub,...flatGridRoute(hub,target)]){const t=sandboxTile(p.x,p.y);t.active=true;t.road=true;t.bridge=t.island===null}}
+ finally{planetBuilding=false}
+ // Every connected pair has at most one elevation step, including plateau entrances.
+ for(let pass=0;pass<12;pass++){let changed=false;for(const t of terrain.tiles.filter(t=>t.active))for(const [dx,dy]of [[20,0],[-20,0],[0,20],[0,-20]]){const x=t.x+10+dx,y=t.y+10+dy;if(x<0||y<0||x>=W||y>=H)continue;const n=sandboxTile(x,y);if(n.active&&t.level>n.level+1){t.level=n.level+1;changed=true}}if(!changed)break}
+ for(const s of stations)s.terrainLevel=sandboxLevel(s.x+s.w/2,s.y+s.h/2);
+ worldScene.props=worldScene.props.filter(p=>sandboxTile(p.x,p.y).active&&!sandboxTile(p.x,p.y).bridge);
+ terrain.vegetation=terrain.vegetation.filter(p=>sandboxTile(p.x,p.y).active&&!sandboxTile(p.x,p.y).bridge);
+ worldScene.ecology.rivers=[];worldScene.ecology.waterfalls=[];worldScene.ecology.counts={};
+ for(const island of islands){
+  // Dedicated streams follow one island, terminate at a visible cliff, and avoid facilities.
+  let previous=null;const segments=[];
+  for(let i=0;i<=24;i++){const u=i/24,x=island.x-island.rx*.8+u*island.rx*1.8,y=island.y+island.ry*.64+Math.sin(u*Math.PI*2+island.phase)*7,t=sandboxTile(x,y);
+   if(!t.active||t.bridge||stations.some(s=>x>s.x-18&&x<s.x+s.w+18&&y>s.y-18&&y<s.y+s.h+18)){previous=null;continue}
+   const p={x,y,z:terrainHeight(x,y)+2};if(previous)segments.push({a:previous,b:p});previous=p;
+  }
+  worldScene.ecology.rivers.push(...segments);
+  if(previous&&segments.length)worldScene.ecology.waterfalls.push({x:previous.x,y:previous.y,z1:previous.z,z0:-48-island.id%3*12});
+ }
+ for(const p of [...worldScene.props,...terrain.vegetation]){const biome=sandboxTile(p.x,p.y).biome;p.type=biome==='snow'||biome==='snow_peak'?'snowPine':biome==='blossom'?'blossomTree':biome==='desert'||biome==='beach'?'palm':biome==='swamp'?'reed':biome==='jungle'?'jungleTree':'tree'}
+ for(const t of terrain.tiles)if(t.active)worldScene.ecology.counts[t.biome]=(worldScene.ecology.counts[t.biome]||0)+1;
+ worldScene.walkCells=terrainReachable(worldScene.spawns[0]);sandboxStatic=[];speechLayoutKey='';
+ $('themeLabel').textContent=profile[0];$('terrainSummary').textContent=`${islands.length} 座浮岛 · 独立生态星球`;
+ updateEcologyUI();
+};
+drawIslandUnderside=function(){
+ const terrain=worldScene.terrain;if(!terrain.islands)return;
+ const edges=[];
+ for(const t of terrain.tiles){if(!t.active||t.bridge)continue;
+  for(const [dx,dy,a,b]of [[0,-20,[t.x,t.y],[t.x+20,t.y]],[20,0,[t.x+20,t.y],[t.x+20,t.y+20]],[0,20,[t.x+20,t.y+20],[t.x,t.y+20]],[-20,0,[t.x,t.y+20],[t.x,t.y]]]){
+   const n=(t.x+dx<0||t.x+dx>=W||t.y+dy<0||t.y+dy>=H)?null:sandboxTile(t.x+dx+10,t.y+dy+10);if(n?.active&&!n.bridge)continue;
+   const normal=rotatedNormal(dx,dy);if(normal.x+normal.y<=0)continue;
+   edges.push({t,a,b,depth:sandboxDepth(t.x+10,t.y+10)});
+  }
+ }
+ edges.sort((a,b)=>a.depth-b.depth);
+ for(const {t,a,b}of edges){const island=terrain.islands[t.island]||{x:t.x+10,y:t.y+10};
+  const bottom=p=>[p[0]+(island.x-p[0])*.28,p[1]+(island.y-p[1])*.28,-45-(t.island||0)%3*12];
+  polyCanvas([projectWorld(...a,0),projectWorld(...b,0),projectWorld(...bottom(b)),projectWorld(...bottom(a))],['#a58869','#947d68','#b29b7c'][(t.x/20+t.y/20)%3]);
+ }
+};
+drawIsoTile=function(t){
+ if(!t.bridge){beforePlanetTile(t);return}
+ const z=t.level*sandboxStep;isoQuad(t.x,t.y,20,20,z,'#b6a483');
+ for(let i=2;i<20;i+=4)machineLine([[t.x+i,t.y,z+.2],[t.x+i,t.y+20,z+.2]],'#e1cfab',.8);
+ const neighbors=[[0,-20],[20,0],[0,20],[-20,0]];
+ for(const [dx,dy]of neighbors){const n=sandboxTile(t.x+10+dx,t.y+10+dy);if(n.active)continue;
+  const x=t.x+(dx>0?20:0),y=t.y+(dy>0?20:0),ex=x+(dx===0?20:0),ey=y+(dy===0?20:0);
+  machineLine([[x,y,z+8],[ex,ey,z+8]],'#817762',1.3);machineLine([[x,y,z],[x,y,z+9]],'#7e705b',1.2);
+ }
+};
+// Broad banks, layered water, moving highlights and falling spray, all camera-aware.
+const beforePlanetItems=rebuildSandboxItems;
+rebuildSandboxItems=function(){
+ const rivers=worldScene.ecology.rivers,falls=worldScene.ecology.waterfalls;
+ worldScene.ecology.rivers=[];worldScene.ecology.waterfalls=[];
+ try{beforePlanetItems()}finally{worldScene.ecology.rivers=rivers;worldScene.ecology.waterfalls=falls}
+ for(const segment of rivers)sandboxStatic.push({depth:sandboxDepth(segment.a.x,segment.a.y)+2,order:1,draw:()=>{
+  const a=segment.a,b=segment.b,line=(color,width,offset=0)=>machineLine([[a.x,a.y,a.z+offset],[b.x,b.y,b.z+offset]],color,width);
+  ctx.save();ctx.lineCap='butt';line('#9db8a5',12);line('#467e8b',8,.3);line('#69bfc4',5,1);
+  const u=(clock*.5+ecoHash(a.x,a.y))%1,p=projectWorld(a.x+(b.x-a.x)*u,a.y+(b.y-a.y)*u,a.z+(b.z-a.z)*u+2);
+  rect(p.x-2*sandboxCamera.zoom,p.y,4*sandboxCamera.zoom,1*sandboxCamera.zoom,'#dbf7ec');ctx.restore();
+ }});
+ for(const f of falls)sandboxStatic.push({depth:sandboxDepth(f.x,f.y)+3,order:1,draw:()=>{
+  const top=projectWorld(f.x,f.y,f.z1),bottom=projectWorld(f.x,f.y,f.z0),z=sandboxCamera.zoom;
+  const g=ctx.createLinearGradient(top.x,top.y,bottom.x,bottom.y);g.addColorStop(0,'#66c5cd');g.addColorStop(.8,'#a3dce3');g.addColorStop(1,'#c6e9e900');
+  polyCanvas([{x:top.x-4*z,y:top.y},{x:top.x+4*z,y:top.y},{x:bottom.x+6*z,y:bottom.y},{x:bottom.x-6*z,y:bottom.y}],g);
+  for(let i=0;i<4;i++){const u=(clock*.65+i/4)%1;ctx.strokeStyle='#efffffaa';ctx.lineWidth=z;ctx.beginPath();ctx.moveTo(top.x+(i-1.5)*z,top.y+(bottom.y-top.y)*u);ctx.lineTo(top.x+(i-1.5)*z,top.y+(bottom.y-top.y)*Math.min(1,u+.12));ctx.stroke()}
+ }});
+ sandboxStatic.sort((a,b)=>a.depth-b.depth||a.order-b.order);
+};

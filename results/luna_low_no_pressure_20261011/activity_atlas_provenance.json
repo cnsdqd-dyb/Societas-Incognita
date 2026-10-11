@@ -9,5 +9,12 @@
   "count_unit": "member_round_cell_passage",
   "atlas_code_sha256": "6c84ce7439ac7eea8d5cea0ab610fe12371c9e6fa8f0ea972ddac47060d36a1f",
   "source": "Settled valid actions; display destination plus terrain-aware route reconstruction. No physical location measurement.",
-  "render_theme": "daylight"
+  "render_theme": "daylight",
+  "presentation_layout_version": "floating-archipelago-v1",
+  "layout_code_sha256": {
+    "world.js": "2eb60962090285d67096f78c16ce96e915c00914729e3558b961aa0c8f2c3c85",
+    "sandbox-25d.js": "00a65da5b8b50c4a35fad840eaa1b52fdd0395bec30c462ec39c3aa95cc03abe",
+    "eco-environment.js": "4262db92ed22884a2f7e82be28623b87dc592f356bf87e70e44ea7adb5a4cc03",
+    "planet-islands.js": "4af17af1745209ea5c9224dced912877698dbd8b4ed4f786723f205ae5d74e3d"
+  }
 }
