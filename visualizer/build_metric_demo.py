@@ -43,6 +43,41 @@ def experiment(index):
     recipes=library.base_definition()['recipes'];r=recipes[index]
     return action('experiment',facility=r['facility'],mode=r['mode'],inputs=[{'item':k,'amount':v} for k,v in r['inputs'].items()],batches=1)
 
+def research_report(s):
+    trials=[e for e in s.state['events'] if e['decision']['action']['tool']=='experiment']
+    rows=[]
+    for e in trials:
+        a=e['decision']['action']
+        matches=[d for d in s.state['mini_world']['discoveries'][e['agent']] if d['round']==e['round'] and d['facility']==a['facility'] and d['mode']==a['mode']]
+        assert len(matches)==1
+        o=matches[0] # Immediate actions queue work; products appear in round settlement.
+        inputs=' + '.join(str(v['amount'])+v['item'] for v in a['inputs'])
+        outputs=' + '.join(f'{v:g}'+k for k,v in o['produced'].items()) or '无产物'
+        rows.append(f"| {e['round']} | {e['agent']} | {a['facility']} / {a['mode']} | {inputs} | {outputs} |")
+    return '''# 加工复现报告 · 第 28 轮修订
+
+## 摘要
+汇总 13 次实际加工记录：F0 的合成路径出现 5 次产物，F1 的合成路径出现 4 次产物，F1 压缩路径的 4 次尝试均没有产物。两条成功路径都由不同成员执行过；“投入 2D 就能得到 S”的猜测未获这些记录支持。
+
+## 方法与逐次结果
+每次保留设施、模式、实际投料与产物。表中“无产物”不是零值材料，也不等于已经确定了失败原因。
+
+| 轮次 | 成员 | 设施 / 模式 | 投料 | 产物 |
+| --- | --- | --- | --- | --- |
+'''+ '\n'.join(rows)+'''
+
+## 当前结论
+- F0 / combine：2A + 1B → 1C，在本次记录的条件下重复出现。
+- F1 / combine：2A + 3C → 2D，在本次记录的条件下重复出现。
+- F1 / compress：2D → S，四次无产物，暂不能作为可执行配方。
+
+## 仍不能回答的问题
+上述结果不能证明所有环境状态、投料比例和成员权限下都成立。缺少对不同状态的系统扫描，也没有把权限与设备条件分别改变。尤其是压缩失败，材料不足、模式条件和制造许可需要单独核对，不能用“这个世界没有 S”来概括。
+
+## 下一步试验
+保留相同设施与投入，仅改变一个条件：先检查制造许可，再讨论设备；成功后再做小比例投料与重复加工。把条件、失败和修订版本一同保存，其他成员才知道哪些是证据，哪些只是待检验的解释。
+'''
+
 def decision(s,aid,t):
     i=int(aid[1:]);cfg=s.cfg
     work=lambda title:next(k for k,v in s.state['culture']['artifacts'].items() if v['title']==title)
@@ -84,11 +119,12 @@ def decision(s,aid,t):
       (25,2):create('归来之后',WORKS['归来之后'],'text'),
       (26,0):action('give_item',target='a1',item='A',amount=2,note='履行轮26补料承诺'),
       (27,1):action('give_item',target='a0',item='D',amount=1,note='履行轮27返还承诺'),
-      (29,2):create('共同修订的约定',WORKS['共同修订的约定'],'text'),
+      (29,2):create('灯塔接力',WORKS['灯塔接力'],'game_python'),
       (30,0):action('give_item',target='a1',item='A',amount=2,note='履行轮30补料承诺'),
       (31,1):action('give_item',target='a0',item='D',amount=1,note='履行轮31返还承诺'),
     }
     a=special.get((t,i),a)
+    if t==28 and i==0:a=action('revise_work',artifact=work('配方记录'),content=research_report(s))
     if t==3 and i==0:text='我提出规律 r0：F0 combine 的 2A+1B 生成1C；轮1、2已重复，请你们独立复现。'
     if t==5 and i==0:text='我提出规律 r1：stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。'
     if t==7 and i==0:text='我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。'

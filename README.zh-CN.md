@@ -198,28 +198,28 @@ $$
 
 每个任务呈现为一颗可复原的浮岛星球。生态类型、植被、岩层、水色、日间天空与星环分别随机选取并组合，森林、湿地或雪地也可以搭配晶体、巨型蘑菇等景观。高低浮岛通过栈桥连接，河流与瀑布带有动态水纹；缩放地图时，对话预览保持固定屏幕尺寸。这些属于展示层，仿真法则与实验结果仍以引擎和日志为准。
 
-![浮岛星球回放、群体分析、作品与游戏窗口](docs/images/viewer-guided-demo-v3.png)
+**示例展示 · 2 / 4 / 6 / 8 位成员。**
 
-**示例展示 · 4 位成员 · 32 轮。**
+![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v4.gif)
 
-![示例回放片段：作品内容、取石棋局与规律发现的发言](docs/images/viewer-guided-demo-v3.gif)
+**八个指标维度随时间的变化。**
 
-![八个指标维度与十二条时间曲线](docs/images/demo-metrics-v3.png)
+![四成员示例中的八个维度与十二条时间曲线](docs/images/demo-metrics-v4.png)
 
-**作品以 Markdown 和可执行 XML 保存。** 下方为节选，点击链接可阅读全文。
+**作品可以是叙事、研究，也可以是可玩的游戏。** 下方展示排版后的节选与实际棋局，点击链接可查看完整 Markdown、XML 或 Python。
 
 <table>
 <tr>
-<td width="50%"><img src="docs/images/cloud-crossing-preview-v3.png" alt="浮岛短篇节选"><br><a href="docs/demo-works/cloud-crossing.md">浮岛短篇 · Markdown 全文</a></td>
-<td width="50%"><img src="docs/images/recipe-notes-preview-v3.png" alt="配方记录与复现方法节选"><br><a href="docs/demo-works/recipe-notes.md">配方记录 · Markdown 全文</a></td>
+<td width="50%"><img src="docs/images/rainy-post-office-preview-v4.png" alt="排版后的邮局短篇节选"><br><a href="docs/demo-works/rainy-post-office.md">雨停之前的邮局 · 故事全文</a></td>
+<td width="50%"><img src="docs/images/research-report-preview-v4.png" alt="含十三次加工记录、结果与局限的研究报告"><br><a href="docs/demo-works/research-report.md">加工复现报告 · 13 次试验、结果与待解问题</a></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/images/stone-game-preview-v3.png" alt="可执行取石游戏 XML 节选"><br><a href="docs/demo-works/stone-game.xml">取石游戏 · XML 全文</a></td>
-<td width="50%"><img src="docs/images/shared-agreement-preview-v3.png" alt="共同修订的约定节选"><br><a href="docs/demo-works/shared-agreement.md">共同修订的约定 · Markdown 全文</a></td>
+<td width="50%"><img src="docs/images/moon-stones-preview-v4.gif" alt="XML 取石游戏渲染为棋盘，石子逐步取走并显示胜者"><br><a href="docs/demo-works/moon-stones.xml">月下取石 · 可执行 XML</a></td>
+<td width="50%"><img src="docs/images/lighthouse-relay-preview-v4.gif" alt="Python 游戏渲染为海岸路线，棋子逐步走向灯塔终点"><br><a href="docs/demo-works/lighthouse-relay.py">灯塔接力 · 可执行 Python</a></td>
 </tr>
 </table>
 
-其它作品：[材料笑话](docs/demo-works/material-jokes.md) · [读后续篇](docs/demo-works/cloud-sequel.md) · [归来之后](docs/demo-works/after-rescue.md)。
+其它作品：[日常笑话](docs/demo-works/everyday-jokes.md) · [读者续篇](docs/demo-works/post-office-sequel.md) · [傍晚随笔](docs/demo-works/evening-sounds.md)。
 
 **发现规律时，他们说了什么？**
 
@@ -229,13 +229,8 @@ $$
 | a0 · R5 | “stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。” |
 | a1 · R14 | “2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。” |
 
-![晶体、巨型蘑菇、林木及混合植被的不同星球景观组合](docs/images/planet-scenery-combinations-v2.png)
+[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v4.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
 
-*四幅为景观种子预览，展示独立组合的风格，不代表四组实验结果。*
-
-[示例录制参数](docs/images/guided-demo-capture.json)
-
-[示例记录与指标数据](results/guided_metric_demo/README.md)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
 
 ## 快速查看
 

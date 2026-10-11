@@ -1,7 +1,7 @@
 # README media
 
-- `viewer-interface-planets-v2.png`: current browser screenshot of the floating-island observatory, including social analytics, replay controls, and agent details. Both language READMEs use this image.
-- `viewer-replay-planets-v2-16x.gif`: current 16-second browser-rendered excerpt from a recorded run, with the viewer set to 16× and dialogue hold set to 0.5 seconds. It loops at 12 frames per second. Capture metadata, layout seed and independently combined scenery traits are in `viewer-capture.json`. Scenery is presentation only, not simulated spatial physics. Older `viewer-interface.png` and `viewer-replay-16x.gif` are historical captures.
+- `viewer-interface-planets-v2.png`: historical screenshot of the floating-island observatory, including social analytics, replay controls, and agent details.
+- `viewer-replay-planets-v2-16x.gif`: historical 16-second browser-rendered excerpt from a recorded run, with the viewer set to 16× and dialogue hold set to 0.5 seconds. It loops at 12 frames per second. Capture metadata, layout seed and independently combined scenery traits are in `viewer-capture.json`. Scenery is presentation only, not simulated spatial physics. Older `viewer-interface.png` and `viewer-replay-16x.gif` are also historical captures.
 - `planet-scenery-combinations-v2.png`: four synthetic scenery-seed previews, showing woodland, crystals, mushrooms and mixed vegetation with independently sampled biome, water, stone and sky choices. This is a visual preview, not four experimental runs. Seeds and traits are in `planet-scenery-combinations-v2.json`; regenerate with `python visualizer/render_planet_gallery.py` while the local recorded viewer is running on port 8787.
 
 - `compositional-world-laws.svg`: script-free, animated SVG using SMIL. Quantities, highlighted production dependencies, and handoff events come from `compositional-world-laws-data.json`.
@@ -33,3 +33,10 @@ Hero prompt: A wide 16-bit pixel-art research illustration with a cream backgrou
 Action-strip prompt: Match the hero's isometric pixel style and palette, in one row of five miniature islands: two characters chatting; production with material cubes; authoring books and a board game; nonviolent disruption; and a character paying resources to support a tired member. No text.
 
 Object-strip prompt: Match the hero, in one row of five miniature islands: energy cube and meter; raw crystals; intermediate products and a conversion workbench; book, manuscript and game; and sensor, antenna, archive and manufacturing device. No text.
+# Current README showcase
+
+`planet-populations-v4.gif` combines four scenery previews with 2, 4, 6 and 8 walking sprites. These are presentation examples; settings and routes are saved in `planet-populations-v4.json`.
+
+`rainy-post-office-preview-v4.png` and `research-report-preview-v4.png` render Markdown as pages and tables. `moon-stones-preview-v4.gif` and `lighthouse-relay-preview-v4.gif` show XML/Python games executed by the bounded interpreter. `demo-metrics-v4.png` shows the eight metric dimensions for the saved four-member demo.
+
+Regenerate with the example server running on port 8789: `python visualizer/render_guided_demo.py`. Complete works are in [the work catalog](../demo-works/README.md).

@@ -5022,8 +5022,9 @@
           ],
           "action_distributions": {
             "a0": {
-              "gather": 4,
-              "give_item": 1
+              "gather": 3,
+              "give_item": 1,
+              "revise_work": 1
             },
             "a1": {
               "store_item": 2,
@@ -5204,8 +5205,9 @@
           ],
           "action_distributions": {
             "a0": {
-              "gather": 4,
-              "give_item": 1
+              "gather": 3,
+              "give_item": 1,
+              "revise_work": 1
             },
             "a1": {
               "store_item": 1,
@@ -5254,11 +5256,12 @@
           "evidence_coverage": 1.0,
           "sample_size": 2,
           "by_kind": {
-            "text": 2
+            "text": 1,
+            "game_python": 1
           },
           "source_work_event_indices": [
             5,
-            6
+            7
           ],
           "scope": "New work objects including game-rule works; revisions and game sessions excluded"
         }
@@ -5387,7 +5390,8 @@
           "action_distributions": {
             "a0": {
               "give_item": 2,
-              "gather": 3
+              "gather": 2,
+              "revise_work": 1
             },
             "a1": {
               "withdraw_item": 4,
@@ -5435,10 +5439,10 @@
           "evidence_coverage": 1.0,
           "sample_size": 1,
           "by_kind": {
-            "text": 1
+            "game_python": 1
           },
           "source_work_event_indices": [
-            6
+            7
           ],
           "scope": "New work objects including game-rule works; revisions and game sessions excluded"
         }
@@ -5566,7 +5570,8 @@
           ],
           "action_distributions": {
             "a0": {
-              "gather": 4,
+              "gather": 3,
+              "revise_work": 1,
               "give_item": 1
             },
             "a1": {
@@ -5615,10 +5620,10 @@
           "evidence_coverage": 1.0,
           "sample_size": 1,
           "by_kind": {
-            "text": 1
+            "game_python": 1
           },
           "source_work_event_indices": [
-            6
+            7
           ],
           "scope": "New work objects including game-rule works; revisions and game sessions excluded"
         }
@@ -5746,7 +5751,8 @@
           ],
           "action_distributions": {
             "a0": {
-              "gather": 4,
+              "revise_work": 1,
+              "gather": 3,
               "give_item": 1
             },
             "a1": {
@@ -5795,10 +5801,10 @@
           "evidence_coverage": 1.0,
           "sample_size": 1,
           "by_kind": {
-            "text": 1
+            "game_python": 1
           },
           "source_work_event_indices": [
-            6
+            7
           ],
           "scope": "New work objects including game-rule works; revisions and game sessions excluded"
         }

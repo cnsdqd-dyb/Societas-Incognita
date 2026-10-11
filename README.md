@@ -191,30 +191,30 @@ Inspect agent behavior, conversations, material inventories, and directed intera
 
 Each task has a reproducible floating-island planet. Biomes, vegetation, rock layers, water colors, daylight skies, and orbital accents are sampled separately and combined; crystals and giant mushrooms can accompany forests, wetlands, or snow. Bridges connect islands at different heights, with animated streams and waterfalls. Dialogue previews keep their screen size when zooming. These are presentation features; simulation laws and recorded outcomes remain defined by the engine and logs.
 
-![Society Probe interface: floating-island planet, social analytics, works and game windows](docs/images/viewer-guided-demo-v3.png)
+**Example showcase · 2 / 4 / 6 / 8 members.**
 
-**Example showcase · 4 members · 32 rounds.**
+![Four animated floating-island worlds with 2, 4, 6 and 8 moving members](docs/images/planet-populations-v4.gif)
 
-![Selected replay chapters with work excerpts, a live stone-game board, and rule-discovery speech](docs/images/viewer-guided-demo-v3.gif)
+**Eight metric dimensions over time.**
 
-![Eight metric dimensions and twelve time series](docs/images/demo-metrics-v3.png)
+![Eight dimensions and twelve time series in the four-member example](docs/images/demo-metrics-v4.png)
 
-**Authored works · Markdown and executable XML.** Excerpts below; each link opens the complete work.
+**Works: narrative, research, and playable games.** Excerpts and rendered game previews; links open the complete Markdown, XML or Python work.
 
 <table>
 <tr>
-<td width="50%"><img src="docs/images/cloud-crossing-preview-v3.png" alt="Cloud Crossing novel excerpt"><br><a href="docs/demo-works/cloud-crossing.md">Cloud Crossing · full Markdown</a></td>
-<td width="50%"><img src="docs/images/recipe-notes-preview-v3.png" alt="Recipe observations and reproduction protocol"><br><a href="docs/demo-works/recipe-notes.md">Recipe notes · full Markdown</a></td>
+<td width="50%"><img src="docs/images/rainy-post-office-preview-v4.png" alt="A complete short story, excerpted as a formatted page"><br><a href="docs/demo-works/rainy-post-office.md">The rainy post office · full story</a></td>
+<td width="50%"><img src="docs/images/research-report-preview-v4.png" alt="Research report with thirteen actual processing trials, observations and limitations"><br><a href="docs/demo-works/research-report.md">Processing study · 13 trials, results and open questions</a></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/images/stone-game-preview-v3.png" alt="Executable XML stone game excerpt"><br><a href="docs/demo-works/stone-game.xml">Stone game · full XML</a></td>
-<td width="50%"><img src="docs/images/shared-agreement-preview-v3.png" alt="Shared agreement draft excerpt"><br><a href="docs/demo-works/shared-agreement.md">Shared agreement · full Markdown</a></td>
+<td width="50%"><img src="docs/images/moon-stones-preview-v4.gif" alt="An XML game rendered as a stone board, moving from three stones to a finished match"><br><a href="docs/demo-works/moon-stones.xml">Moonlit stones · executable XML</a></td>
+<td width="50%"><img src="docs/images/lighthouse-relay-preview-v4.gif" alt="A Python game rendered as a coastal path with a moving position marker and finish"><br><a href="docs/demo-works/lighthouse-relay.py">Lighthouse relay · executable Python</a></td>
 </tr>
 </table>
 
-More works: [material jokes](docs/demo-works/material-jokes.md) · [reader's sequel](docs/demo-works/cloud-sequel.md) · [after rescue](docs/demo-works/after-rescue.md).
+More works: [everyday jokes](docs/demo-works/everyday-jokes.md) · [a reader's sequel](docs/demo-works/post-office-sequel.md) · [evening sounds](docs/demo-works/evening-sounds.md).
 
-**Discoveries in the conversation** (translated excerpts):
+**Discoveries in conversation** (translated excerpts):
 
 | Member / round | Recorded statement |
 | --- | --- |
@@ -222,13 +222,8 @@ More works: [material jokes](docs/demo-works/material-jokes.md) · [reader's seq
 | a0 · R5 | “When stress < 10, F1 combine turns 2A + 3C into 2D. Verify under the same conditions.” |
 | a1 · R14 | “Compressing 2D still yields nothing. I do not accept r2 yet; equal inputs do not imply equal manufacturing permissions.” |
 
-![Four scenery combinations: crystals, giant mushrooms, woodland, and mixed vegetation](docs/images/planet-scenery-combinations-v2.png)
+[Example records and metrics](results/guided_metric_demo/README.md) · [Animation settings](docs/images/planet-populations-v4.json). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
 
-*Scenery-seed previews of independently combined styles; these panels do not represent four experimental results.*
-
-[Open the local viewer](http://127.0.0.1:8776/) · [Example capture settings](docs/images/guided-demo-capture.json)
-
-[Example records and metrics](results/guided_metric_demo/README.md). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
 
 ## Explore locally
 

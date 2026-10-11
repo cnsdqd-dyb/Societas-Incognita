@@ -2,11 +2,11 @@
 
 Four scripted members execute 32 rounds through the environment engine: discovery, cooperation, trade, authored works, games, conflict and rescue. The showcase costs $0 and retains its separate demo metadata.
 
-The fixture supplies initial energy and materials and enables all 24 material functions. Actions settle through the engine, with zero recorded physical accounting residual. Seven works contain 436–794 characters of Markdown or executable XML.
+The fixture supplies initial energy and materials and enables all 24 material functions. Actions settle through the engine, with zero recorded physical accounting residual. Seven substantial works include fiction, jokes, a research report, a sequel, an essay, and executable XML/Python games. The report's second version tabulates thirteen settled processing outcomes: five C outputs, four D outputs and four attempts without a product.
 
-![Example replay with works, game state and discovery speech](../../docs/images/viewer-guided-demo-v3.gif)
+![Two, four, six and eight members walking in distinct example worlds](../../docs/images/planet-populations-v4.gif)
 
-[Read the complete works](../../docs/demo-works/) · [Eight metric cards](../../docs/images/demo-metrics-v3.png)
+[Read the complete works](../../docs/demo-works/README.md) · [Eight metric cards](../../docs/images/demo-metrics-v4.png)
 
 | Rounds | Directed content |
 | --- | --- |
@@ -14,7 +14,7 @@ The fixture supplies initial energy and materials and enables all 24 material fu
 | 8–13 | Accepted division of labor, material transfers, two missed obligations, item and work purchases |
 | 14–17 | Three actual turns of a multiplayer game, a non-author rewrite, device damage and repair |
 | 18–24 | Pool pollution and purification; attacks, inactivity, paid rescue, and compensation |
-| 25–32 | New works and a renewed cooperation arrangement |
+| 25–32 | Essay, research-report revision, Python game and renewed cooperation |
 
 There are 127 valid physical actions, 7 new works, 10 due obligations with 8 fulfilled, and 5 damage episodes. Member a2 becomes inactive at the end of round 21, is rescued in round 22, and returns in round 23. The third recipe guess is **refuted** because manufacturing permission is missing: it is not counted as verified knowledge. Two of three recipe claims pass scoped tests; all three other members subsequently reproduce each of those two rules.
 
