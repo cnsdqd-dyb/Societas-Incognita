@@ -1,6 +1,6 @@
 **前端可视化**
 
-![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v5.gif)
+![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v6.gif)
 
 **八个指标维度随时间的变化。**
 
@@ -29,4 +29,4 @@
 | a0 · R5 | “stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。” |
 | a1 · R14 | “2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。” |
 
-[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v5.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
+[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v6.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。

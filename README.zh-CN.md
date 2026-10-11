@@ -8,7 +8,7 @@
 
 **前端可视化**
 
-![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v5.gif)
+![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v6.gif)
 
 [研究框架](society_probe/society_probe/MINI_WORLD_FRAMEWORK.md) · [机制组合](society_probe/society_probe/MATHEMATICAL_WORLD_COMPOSITION.md) · [20 种机制](society_probe/society_probe/WORLD_MECHANISM_CANDIDATES_20.md) · [可视化使用说明](visualizer/README.md)
 
@@ -200,7 +200,7 @@ $$
 
 相同实验身份映射到固定展示种子，决定像素环境布局与成员初始位置，刷新和重新回放时保持一致。
 
-固定种子的多样浮岛、运动星球与头顶成员标识。[可视化说明](visualizer/PLANET_SCENERY.md)。
+不同世界组合不同的友好居民、立体设备与材料外观，种子固定后可复原。[可视化说明](visualizer/PLANET_SCENERY.md)。
 
 **八个指标维度随时间的变化。**
 
@@ -229,7 +229,7 @@ $$
 | a0 · R5 | “stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。” |
 | a1 · R14 | “2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。” |
 
-[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v5.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
+[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v6.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
 
 ## 快速查看
 

@@ -1,6 +1,6 @@
 **Frontend visualization**
 
-![Four animated floating-island worlds with 2, 4, 6 and 8 moving members](docs/images/planet-populations-v5.gif)
+![Four animated floating-island worlds with 2, 4, 6 and 8 moving members](docs/images/planet-populations-v6.gif)
 
 **Eight metric dimensions over time.**
 
@@ -29,4 +29,4 @@ More works: [everyday jokes](docs/demo-works/everyday-jokes.md) · [a reader's s
 | a0 · R5 | “When stress < 10, F1 combine turns 2A + 3C into 2D. Verify under the same conditions.” |
 | a1 · R14 | “Compressing 2D still yields nothing. I do not accept r2 yet; equal inputs do not imply equal manufacturing permissions.” |
 
-[Example records and metrics](results/guided_metric_demo/README.md) · [Animation settings](docs/images/planet-populations-v5.json). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
+[Example records and metrics](results/guided_metric_demo/README.md) · [Animation settings](docs/images/planet-populations-v6.json). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.

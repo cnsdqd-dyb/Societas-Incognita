@@ -1,0 +1,487 @@
+{
+  "purpose": "presentation-only scenery and walking sprites, not four experimental results",
+  "counts": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "fps": 10,
+  "frames": 100,
+  "previews": [
+    {
+      "count": 2,
+      "seed": 1355331263,
+      "traits": {
+        "biomes": [
+          "swamp",
+          "blossom",
+          "highland",
+          "forest",
+          "meadow"
+        ],
+        "water": [
+          "蜜流",
+          "#b48d4e",
+          "#e0c17c"
+        ],
+        "stone": [
+          "青岩",
+          [
+            "#769693",
+            "#658783",
+            "#9eb5ab"
+          ]
+        ],
+        "sky": [
+          "紫霞",
+          [
+            "#eeebf6",
+            "#faf8f0"
+          ]
+        ],
+        "flora": "woodland",
+        "accent": "#9cc88c",
+        "rings": false,
+        "levelBase": 1,
+        "grade": 217,
+        "name": "蜜流·青岩星",
+        "design": {
+          "inhabitants": "sprout",
+          "machines": "garden",
+          "materials": "pods",
+          "palette": [
+            "#c3d9af",
+            "#85ac86",
+            "#557d70",
+            "#e8efcf"
+          ]
+        }
+      },
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b"
+      ],
+      "route_lengths": [
+        50,
+        66
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 610,
+          "y": 330
+        },
+        {
+          "id": "a1",
+          "x": 570,
+          "y": 210
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 382.90000000000003,
+          "y": 270
+        },
+        {
+          "id": "a1",
+          "x": 801.1,
+          "y": 90
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "seed": 90794061,
+      "traits": {
+        "biomes": [
+          "snow_peak",
+          "meadow",
+          "highland"
+        ],
+        "water": [
+          "碧泉",
+          "#419496",
+          "#7ccfcd"
+        ],
+        "stone": [
+          "砂岩",
+          [
+            "#a58869",
+            "#947d68",
+            "#b29b7c"
+          ]
+        ],
+        "sky": [
+          "晴空",
+          [
+            "#e9f2f4",
+            "#fcfaf0"
+          ]
+        ],
+        "flora": "crystals",
+        "accent": "#88c4bd",
+        "rings": false,
+        "levelBase": 1,
+        "grade": 221,
+        "name": "碧泉·砂岩星",
+        "design": {
+          "inhabitants": "robot",
+          "machines": "prism",
+          "materials": "gems",
+          "palette": [
+            "#d9cae9",
+            "#a48fc4",
+            "#75688f",
+            "#f5eafd"
+          ]
+        }
+      },
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b",
+        "#8873b6",
+        "#338d79"
+      ],
+      "route_lengths": [
+        66,
+        78,
+        32,
+        58
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 730,
+          "y": 250
+        },
+        {
+          "id": "a1",
+          "x": 230,
+          "y": 290
+        },
+        {
+          "id": "a2",
+          "x": 610,
+          "y": 330
+        },
+        {
+          "id": "a3",
+          "x": 290,
+          "y": 350
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 502.90000000000003,
+          "y": 270
+        },
+        {
+          "id": "a1",
+          "x": 561.1,
+          "y": 270
+        },
+        {
+          "id": "a2",
+          "x": 714.9,
+          "y": 450
+        },
+        {
+          "id": "a3",
+          "x": 649.0999999999999,
+          "y": 230
+        }
+      ]
+    },
+    {
+      "count": 6,
+      "seed": 1795329815,
+      "traits": {
+        "biomes": [
+          "meadow",
+          "blossom",
+          "beach",
+          "forest",
+          "jungle"
+        ],
+        "water": [
+          "蜜流",
+          "#b48d4e",
+          "#e0c17c"
+        ],
+        "stone": [
+          "霜岩",
+          [
+            "#8eabb8",
+            "#748e9f",
+            "#b8cdd3"
+          ]
+        ],
+        "sky": [
+          "冰光",
+          [
+            "#e4eef6",
+            "#f5faf8"
+          ]
+        ],
+        "flora": "mushrooms",
+        "accent": "#9cc88c",
+        "rings": false,
+        "levelBase": 1,
+        "grade": 197,
+        "name": "蜜流·霜岩星",
+        "design": {
+          "inhabitants": "fox",
+          "machines": "brass",
+          "materials": "gears",
+          "palette": [
+            "#ead0ad",
+            "#bc9c79",
+            "#826f62",
+            "#fff0ca"
+          ]
+        }
+      },
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b",
+        "#8873b6",
+        "#338d79",
+        "#c16b91",
+        "#b49b38"
+      ],
+      "route_lengths": [
+        32,
+        34,
+        64,
+        36,
+        44,
+        56
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 270,
+          "y": 370
+        },
+        {
+          "id": "a1",
+          "x": 770,
+          "y": 270
+        },
+        {
+          "id": "a2",
+          "x": 510,
+          "y": 410
+        },
+        {
+          "id": "a3",
+          "x": 530,
+          "y": 170
+        },
+        {
+          "id": "a4",
+          "x": 170,
+          "y": 190
+        },
+        {
+          "id": "a5",
+          "x": 270,
+          "y": 230
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 130,
+          "y": 222.90000000000003
+        },
+        {
+          "id": "a1",
+          "x": 778.9,
+          "y": 430
+        },
+        {
+          "id": "a2",
+          "x": 270,
+          "y": 305.09999999999997
+        },
+        {
+          "id": "a3",
+          "x": 670.9000000000001,
+          "y": 270
+        },
+        {
+          "id": "a4",
+          "x": 270,
+          "y": 426.9
+        },
+        {
+          "id": "a5",
+          "x": 730,
+          "y": 257.0999999999999
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "seed": 1046524518,
+      "traits": {
+        "biomes": [
+          "beach",
+          "snow_peak",
+          "volcano",
+          "desert",
+          "snow"
+        ],
+        "water": [
+          "蜜流",
+          "#b48d4e",
+          "#e0c17c"
+        ],
+        "stone": [
+          "砂岩",
+          [
+            "#a58869",
+            "#947d68",
+            "#b29b7c"
+          ]
+        ],
+        "sky": [
+          "晴空",
+          [
+            "#e9f2f4",
+            "#fcfaf0"
+          ]
+        ],
+        "flora": "mixed",
+        "accent": "#ddadbd",
+        "rings": true,
+        "levelBase": 2,
+        "grade": 205,
+        "name": "蜜流·砂岩星",
+        "design": {
+          "inhabitants": "cloud",
+          "machines": "capsule",
+          "materials": "vials",
+          "palette": [
+            "#bcdce6",
+            "#83afc1",
+            "#547f91",
+            "#eaf7f7"
+          ]
+        }
+      },
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b",
+        "#8873b6",
+        "#338d79",
+        "#c16b91",
+        "#b49b38",
+        "#3b9da4",
+        "#a26fba"
+      ],
+      "route_lengths": [
+        28,
+        30,
+        60,
+        34,
+        52,
+        52,
+        58,
+        70
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 70,
+          "y": 370
+        },
+        {
+          "id": "a1",
+          "x": 370,
+          "y": 250
+        },
+        {
+          "id": "a2",
+          "x": 590,
+          "y": 270
+        },
+        {
+          "id": "a3",
+          "x": 310,
+          "y": 90
+        },
+        {
+          "id": "a4",
+          "x": 530,
+          "y": 190
+        },
+        {
+          "id": "a5",
+          "x": 450,
+          "y": 210
+        },
+        {
+          "id": "a6",
+          "x": 550,
+          "y": 430
+        },
+        {
+          "id": "a7",
+          "x": 830,
+          "y": 450
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 190,
+          "y": 217.09999999999997
+        },
+        {
+          "id": "a1",
+          "x": 398.9,
+          "y": 430
+        },
+        {
+          "id": "a2",
+          "x": 270,
+          "y": 365.09999999999997
+        },
+        {
+          "id": "a3",
+          "x": 310.90000000000003,
+          "y": 250
+        },
+        {
+          "id": "a4",
+          "x": 426.9,
+          "y": 430
+        },
+        {
+          "id": "a5",
+          "x": 257.0999999999999,
+          "y": 450
+        },
+        {
+          "id": "a6",
+          "x": 221.1,
+          "y": 270
+        },
+        {
+          "id": "a7",
+          "x": 410,
+          "y": 245.10000000000005
+        }
+      ]
+    }
+  ],
+  "overhead_labels": true,
+  "background_motion": "seeded decorative three-body-like orbits",
+  "underside": "closed shared-vertex rock mesh",
+  "world_design": "four independent seeded inhabitant, machine, material and palette choices; no simulated species attributes"
+}

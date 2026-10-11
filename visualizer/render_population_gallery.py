@@ -33,12 +33,17 @@ def main():
               data.social_content={games:{}};data.demo_metrics=null;
               // Independently choose a scenery seed with a different vegetation style.
               const desired=['woodland','crystals','mushrooms','mixed'][index];
-              for(let i=0;i<500;i++){
+              const people=['sprout','robot','fox','cloud'][index],machines=['garden','prism','brass','capsule'][index],materials=['pods','gems','gears','vials'][index],palette=['#c3d9af','#d9cae9','#ead0ad','#bcdce6'][index];
+              let found=false;
+              for(let i=0;i<10000;i++){
                 const seed='population-preview-'+i;
                 const hash=hashWorldIdentity(JSON.stringify([data.meta.id,data.meta.environment||data.meta.family,data.meta.family,seed]));
-                if(planetTraits(hash).flora===desired){data.meta.seed=seed;break}
+                const traits=planetTraits(hash);
+                if(traits.flora===desired&&traits.design.inhabitants===people&&traits.design.machines===machines&&traits.design.materials===materials&&traits.design.palette[0]===palette){data.meta.seed=seed;found=true;break}
               }
+              if(!found)throw Error('No matching deterministic design seed');
               makeWorld();resetActors();playing=false;activePhase='move';selected='';
+              round=1;data.environment_history=[{round:1,pools_after:Object.fromEntries(Object.entries(materialDefinition().pools||{}).map(([k,p])=>[k,p.initial||0]))}];
               ecoClimate.time='day';ecoClimate.weather='clear';ecoClimate.season='0';
               window.populationRoutes=actors.map((a,i)=>{
                 a.event={decision:{action:{tool:'walk'}}};a.inactive=false;a.bubble='';a.moving=true;
@@ -48,7 +53,7 @@ def main():
                 return [{x:a.x,y:a.y},...route,...route.slice(0,-1).reverse()];
               });
               sandboxCamera.zoom=1.04;draw();
-              return {count,seed:worldScene.seed,traits:worldScene.planet,route_lengths:populationRoutes.map(r=>r.length),initial:actors.map(a=>({id:a.id,x:a.x,y:a.y}))};
+              return {count,seed:worldScene.seed,traits:worldScene.planet,agent_colors:actors.map(a=>colors[a.i%colors.length]),route_lengths:populationRoutes.map(r=>r.length),initial:actors.map(a=>({id:a.id,x:a.x,y:a.y}))};
             }''',{'count':count,'index':index})
             page.wait_for_timeout(350)
             page.clock.install();page.clock.pause_at(page.evaluate('Date.now()'))
@@ -69,8 +74,9 @@ def main():
                 shot=OUT/f'panel-{i}.png';page.locator('#world').screenshot(path=str(shot))
                 card=Image.open(shot).convert('RGB').resize((640,374),Image.Resampling.LANCZOS)
                 x=12+i%2*652;y=12+i//2*408
-                composed.paste(card,(x,y));d.text((x+12,y+382),f"{spec['count']} AGENTS  ·  {spec['traits']['name']}",font=font,fill='#35554f')
-                for j in range(spec['count']):d.rounded_rectangle((x+460+j*20,y+385,x+471+j*20,y+396),radius=3,fill=['#f3a83b','#49afa5','#9770cf','#91af50','#de8065','#6e99bd','#d2b562','#a1779b'][j])
+                design=spec['traits']['design']
+                composed.paste(card,(x,y));d.text((x+12,y+382),f"{spec['count']} AGENTS  ·  {design['inhabitants'].upper()} / {design['machines'].upper()}",font=font,fill='#35554f')
+                for j in range(spec['count']):d.rounded_rectangle((x+460+j*20,y+385,x+471+j*20,y+396),radius=3,fill=spec['agent_colors'][j])
             composed.save(OUT/f'frame-{frame:04d}.png')
         for page,spec in zip(pages,metadata):
             final=page.evaluate('actors.map(a=>({id:a.id,x:a.x,y:a.y}))');spec['final']=final
@@ -78,8 +84,8 @@ def main():
             assert len(final)==spec['count']
         assert not errors,errors
         browser.close()
-    subprocess.run([shutil.which('ffmpeg'),'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'frame-%04d.png'),'-frames:v',str(FRAMES),'-filter_complex','split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4','-loop','0',str(MEDIA/'planet-populations-v5.gif')],check=True)
-    (MEDIA/'planet-populations-v5.json').write_text(json.dumps({'purpose':'presentation-only scenery and walking sprites, not four experimental results','counts':COUNTS,'fps':FPS,'frames':FRAMES,'previews':metadata,'overhead_labels':True,'background_motion':'seeded decorative three-body-like orbits','underside':'closed shared-vertex rock mesh'},ensure_ascii=False,indent=2),encoding='utf-8')
+    subprocess.run([shutil.which('ffmpeg'),'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'frame-%04d.png'),'-frames:v',str(FRAMES),'-filter_complex','split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4','-loop','0',str(MEDIA/'planet-populations-v6.gif')],check=True)
+    (MEDIA/'planet-populations-v6.json').write_text(json.dumps({'purpose':'presentation-only scenery and walking sprites, not four experimental results','counts':COUNTS,'fps':FPS,'frames':FRAMES,'previews':metadata,'overhead_labels':True,'background_motion':'seeded decorative three-body-like orbits','underside':'closed shared-vertex rock mesh','world_design':'four independent seeded inhabitant, machine, material and palette choices; no simulated species attributes'},ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'counts':COUNTS,'frames':FRAMES,'motion_verified':True,'browser_errors':errors}))
 
 if __name__=='__main__':main()

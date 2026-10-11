@@ -29,6 +29,22 @@ with sync_playwright() as p:
     for field in ['water','stone','sky','flora']:
         assert len({json.dumps(v[field]) for v in combinations})>=4,field
     assert all(3<=len(v['biomes'])<=5 for v in combinations)
+    for field in ['inhabitants','machines','materials']:
+        assert len({v['design'][field] for v in combinations})==4,field
+    assert page.evaluate('JSON.stringify(worldDesign(17))===JSON.stringify(worldDesign(17))')
+    visual_variants=page.evaluate('''() => {
+      const saved=worldScene.planet.design,a=actors[0],signatures=[];
+      for(const kind of ['sprout','fox','robot','cloud']){
+        worldScene.planet.design={...saved,inhabitants:kind};
+        signatures.push(directionalActorSVG(a,'south',0));
+        for(const facing of ['north','south','east','west'])for(const step of [0,1]){
+          const doc=new DOMParser().parseFromString(directionalActorSVG(a,facing,step),'image/svg+xml');
+          if(doc.querySelector('parsererror'))throw Error('Malformed inhabitant SVG');
+        }
+      }
+      worldScene.planet.design=saved;return new Set(signatures).size;
+    }''')
+    assert visual_variants==4
     rock=page.evaluate('''() => {
       const mesh=islandRockMesh(worldScene.terrain),expected=worldScene.terrain.tiles.filter(t=>t.active&&!t.bridge).length;
       let shared=0,closed=true;
