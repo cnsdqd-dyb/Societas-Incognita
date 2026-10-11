@@ -24,6 +24,7 @@ with sync_playwright() as p:
     page.goto(f'http://127.0.0.1:{args.port}/replay', wait_until='domcontentloaded')
     page.wait_for_selector('#loading.hidden', state='attached', timeout=60000)
     page.wait_for_function('atlasCache !== null')
+    assert not page.evaluate('document.body.classList.contains("observatory-night")'), 'Default must be daylight'
     last = page.evaluate('data.meta.rounds')
     before = page.evaluate('JSON.stringify(data)')
     page.locator('#scrubber').fill(str(min(10, last)))
@@ -77,7 +78,7 @@ with sync_playwright() as p:
     pending.value.save_as(out/'activity-atlas-export.png')
     assert (out/'activity-atlas-export.png').stat().st_size > 1000
     page.locator('#observatoryTheme').click()
-    assert not page.evaluate('document.body.classList.contains("observatory-night")')
+    assert page.evaluate('document.body.classList.contains("observatory-night")')
     page.locator('#observatoryTheme').click()
     page.locator('#activityAtlas').scroll_into_view_if_needed()
     page.screenshot(path=str(out/'observatory-atlas-desktop.png'))

@@ -7,6 +7,7 @@
     50
   ],
   "count_unit": "member_round_cell_passage",
-  "atlas_code_sha256": "85125324aecaea9647587eac11f188a6a0ce3700b1c0b440f75abc732cfbd58d",
-  "source": "Settled valid actions; display destination plus terrain-aware route reconstruction. No physical location measurement."
+  "atlas_code_sha256": "6c84ce7439ac7eea8d5cea0ab610fe12371c9e6fa8f0ea972ddac47060d36a1f",
+  "source": "Settled valid actions; display destination plus terrain-aware route reconstruction. No physical location measurement.",
+  "render_theme": "daylight"
 }
