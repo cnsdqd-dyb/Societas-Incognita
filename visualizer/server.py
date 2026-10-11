@@ -80,7 +80,7 @@ def load_run(rid):
         raise ValueError('Invalid run')
     path = folder / 'checkpoint.json'
     stamp = tuple(p.stat().st_mtime_ns if p.exists() else 0 for p in
-                  (path, folder/'in_progress.json', folder.parent/'runner_status.json', folder.parent/'config.json'))
+                  (path, folder/'in_progress.json', folder.parent/'runner_status.json', folder.parent/'config.json', folder.parent/'metric_demo.json'))
     if rid in CACHE and CACHE[rid][0] == stamp:
         return CACHE[rid][1]
     cp = read_json(path) if path.exists() else {'state': {'round': 0, 'agents': {}}}
@@ -107,6 +107,13 @@ def load_run(rid):
     payload['social_content'] = state.get('social_content', {})
     payload['physics'] = state.get('mini_world', {})
     payload['final_agents'] = state.get('agents', {})
+    if cfg.get('experiment', {}).get('exclude_from_research') and cfg.get('experiment', {}).get('stage') == 'guided_visualization_demo':
+        demo_path = folder.parent / 'metric_demo.json'
+        if demo_path.exists():
+            demo_metrics = read_json(demo_path)
+            if not demo_metrics.get('demo_only') or not demo_metrics.get('exclude_from_research'):
+                raise ValueError('Guided demo metrics must be explicitly excluded from research')
+            payload['demo_metrics'] = demo_metrics
     if not payload['agents']:
         payload['agents'] = {f'a{i}': {'model': meta['models'][0], 'initial_stock': 0}
                              for i in range(meta['agents'])}

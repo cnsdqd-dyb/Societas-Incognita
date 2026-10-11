@@ -1,0 +1,838 @@
+{
+  "models": [
+    "scripted-showcase",
+    "scripted-showcase",
+    "scripted-showcase",
+    "scripted-showcase"
+  ],
+  "rounds": 32,
+  "seed": 41,
+  "temperature": 0.5,
+  "max_calls": 1600,
+  "max_output_tokens": 800,
+  "max_estimated_cost_usd": 0,
+  "tools": [
+    "accept_items",
+    "accept_work",
+    "activate_device",
+    "assemble_device",
+    "cancel_items",
+    "cancel_work_offer",
+    "create",
+    "decline_game",
+    "dismantle_device",
+    "experiment",
+    "game_move",
+    "gather",
+    "give_device",
+    "give_item",
+    "inspect",
+    "inspect_social",
+    "join_game",
+    "leave_game",
+    "liquidate",
+    "measure",
+    "offer_items",
+    "offer_work",
+    "play",
+    "publish_work",
+    "read_artifact",
+    "read_news",
+    "read_note",
+    "reject_work",
+    "revise_work",
+    "seize_storage",
+    "start_game",
+    "store_item",
+    "transfer",
+    "use_function",
+    "use_item",
+    "wait",
+    "withdraw_item",
+    "write_note"
+  ],
+  "world": {
+    "mechanism": "mini_world",
+    "survival_pressure": false,
+    "consumption": 1,
+    "initial_personal_stock": 80,
+    "mini_world": {
+      "definition": {
+        "version": "mini_world_v1",
+        "id": "framework_fixture",
+        "resources": {
+          "A": {
+            "name": "material A",
+            "tier": 0,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0
+          },
+          "B": {
+            "name": "material B",
+            "tier": 0,
+            "energy_value": 2,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "traits": [
+              "Can serve as a recording-device component."
+            ]
+          },
+          "C": {
+            "name": "material C",
+            "tier": 1,
+            "energy_value": 4,
+            "decay": 0.02,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "traits": [
+              "Can serve as a device component supporting communication, recording, sensing or manufacturing."
+            ]
+          },
+          "D": {
+            "name": "material D",
+            "tier": 2,
+            "energy_value": 8,
+            "decay": 0.01,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 1.0,
+            "use_effects": {
+              "stress": -1
+            },
+            "traits": [
+              "Can serve as an advanced device component; function depends on the assembly."
+            ]
+          },
+          "S": {
+            "name": "material S",
+            "tier": 3,
+            "energy_value": 16,
+            "decay": 0,
+            "liquidation_efficiency": 1.0,
+            "accessibility": 0.2
+          }
+        },
+        "variables": {
+          "stress": {
+            "initial": 0,
+            "min": 0,
+            "max": 20,
+            "observable": true,
+            "next": {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "ref": "state.stress"
+                    },
+                    0.5
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "pools": {
+          "A": {
+            "initial": 40,
+            "capacity": 100,
+            "regeneration": 8,
+            "harvest_efficiency": 1
+          },
+          "B": {
+            "initial": 40,
+            "capacity": 100,
+            "regeneration": 8,
+            "harvest_efficiency": 1
+          }
+        },
+        "facilities": {
+          "F0": {
+            "name": "station 0",
+            "modes": [
+              "combine",
+              "compress"
+            ]
+          },
+          "F1": {
+            "name": "station 1",
+            "modes": [
+              "combine",
+              "compress"
+            ]
+          }
+        },
+        "recipes": [
+          {
+            "id": "r0",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "A": 2,
+              "B": 1
+            },
+            "output": "C",
+            "yield": 1,
+            "energy_cost": 0,
+            "condition": 1,
+            "effects": {}
+          },
+          {
+            "id": "r1",
+            "facility": "F1",
+            "mode": "combine",
+            "inputs": {
+              "A": 2,
+              "C": 3
+            },
+            "output": "D",
+            "yield": 2,
+            "energy_cost": 0,
+            "condition": {
+              "op": "lt",
+              "args": [
+                {
+                  "ref": "state.stress"
+                },
+                10
+              ]
+            },
+            "effects": {
+              "stress": 1
+            }
+          },
+          {
+            "id": "r2",
+            "facility": "F1",
+            "mode": "compress",
+            "inputs": {
+              "D": 2
+            },
+            "output": "S",
+            "yield": 1,
+            "energy_cost": 0,
+            "condition": 1,
+            "effects": {},
+            "requires_capability": "manufacturing"
+          }
+        ],
+        "initial_inventory": {
+          "A": 32,
+          "B": 32,
+          "C": 24,
+          "D": 24,
+          "S": 24
+        },
+        "initial_reserve": 200,
+        "reserve_capacity": 10000,
+        "external_inflow": 40,
+        "experiment_cost": 0.1,
+        "noise": {
+          "distribution": "none",
+          "amplitude": 0
+        },
+        "max_quantity": 8,
+        "max_batches": 4,
+        "max_offers": 32,
+        "offer_ttl": 4,
+        "note_base_capacity": 256,
+        "device_recipes": [
+          {
+            "id": "relay",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "C": 1,
+              "D": 1
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "communication_bonus": 500
+            }
+          },
+          {
+            "id": "archive",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "B": 1,
+              "C": 2
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "note_capacity": 2048
+            }
+          },
+          {
+            "id": "sensor",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "C": 2,
+              "D": 1
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "measurements": {
+                "stress": 0.1
+              }
+            }
+          },
+          {
+            "id": "workbench",
+            "facility": "F0",
+            "mode": "combine",
+            "inputs": {
+              "C": 1,
+              "D": 2
+            },
+            "build_cost": 1,
+            "retained_fraction": 0.75,
+            "recovery_efficiency": 0.5,
+            "fuel_per_recipient": 0.5,
+            "duration": 3,
+            "max_users": 4,
+            "capabilities": {
+              "manufacturing": true
+            }
+          }
+        ],
+        "combination_functions": [
+          {
+            "id": "service_work_capacity",
+            "name": "作品扩容",
+            "requires": {
+              "C": 1,
+              "D": 1
+            },
+            "consume": {
+              "C": 1,
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "work_capacity",
+            "effects": {
+              "factor": 2
+            }
+          },
+          {
+            "id": "service_note_capacity",
+            "name": "私人记录扩容",
+            "requires": {
+              "D": 1
+            },
+            "consume": {
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "note_capacity",
+            "effects": {
+              "amount": 1000
+            }
+          },
+          {
+            "id": "service_communication_budget",
+            "name": "讨论额度增强",
+            "requires": {
+              "S": 1
+            },
+            "consume": {
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "communication_budget",
+            "effects": {
+              "amount": 500,
+              "duration": 3
+            }
+          },
+          {
+            "id": "service_communication_range",
+            "name": "通信覆盖增强",
+            "requires": {
+              "S": 1
+            },
+            "consume": {
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "communication_range",
+            "effects": {
+              "amount": 2
+            }
+          },
+          {
+            "id": "service_device_range",
+            "name": "设备覆盖增强",
+            "requires": {
+              "C": 1,
+              "D": 1
+            },
+            "consume": {
+              "C": 1,
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "device_range",
+            "effects": {
+              "amount": 2
+            }
+          },
+          {
+            "id": "service_measurement_precision",
+            "name": "测量精度增强",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "measurement_precision",
+            "effects": {
+              "factor": 0.75
+            }
+          },
+          {
+            "id": "service_diagnostics",
+            "name": "加工诊断",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "diagnostics",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_production_efficiency",
+            "name": "生产转换增强",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "production_efficiency",
+            "effects": {
+              "factor": 1.15
+            }
+          },
+          {
+            "id": "service_switch_speed",
+            "name": "加工切换加速",
+            "requires": {
+              "S": 1
+            },
+            "consume": {
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "switch_speed",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_storage_decay",
+            "name": "储存保护",
+            "requires": {
+              "C": 1,
+              "S": 1
+            },
+            "consume": {
+              "C": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "storage_decay",
+            "effects": {
+              "factor": 0.85
+            }
+          },
+          {
+            "id": "service_discharge_power",
+            "name": "放能加速",
+            "requires": {
+              "C": 1,
+              "S": 1
+            },
+            "consume": {
+              "C": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "discharge_power",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_rescue",
+            "name": "材料救援",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 5,
+            "kind": "rescue",
+            "effects": {
+              "restore_energy": 5
+            }
+          },
+          {
+            "id": "service_fortify",
+            "name": "容器加固",
+            "requires": {
+              "S": 1
+            },
+            "consume": {
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "fortify",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_shield",
+            "name": "成员防护",
+            "requires": {
+              "C": 1
+            },
+            "consume": {
+              "C": 1
+            },
+            "energy_cost": 1,
+            "kind": "shield",
+            "effects": {
+              "amount": 1,
+              "duration": 3
+            }
+          },
+          {
+            "id": "service_offer_duration",
+            "name": "报价延期",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "offer_duration",
+            "effects": {
+              "amount": 3
+            }
+          },
+          {
+            "id": "service_device_corrosion",
+            "name": "设备腐蚀",
+            "requires": {
+              "S": 1,
+              "D": 1
+            },
+            "consume": {
+              "S": 1,
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "device_corrosion",
+            "effects": {
+              "amount": 0.25
+            }
+          },
+          {
+            "id": "service_repair_device",
+            "name": "设备维修",
+            "requires": {
+              "C": 1,
+              "D": 1
+            },
+            "consume": {
+              "C": 1,
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "repair_device",
+            "effects": {
+              "amount": 0.25
+            }
+          },
+          {
+            "id": "service_device_interference",
+            "name": "设备干扰",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "device_interference",
+            "effects": {
+              "factor": 0.5,
+              "duration": 3
+            }
+          },
+          {
+            "id": "service_pool_pollution",
+            "name": "资源污染",
+            "requires": {
+              "D": 1
+            },
+            "consume": {
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "pool_pollution",
+            "effects": {
+              "factor": 0.5,
+              "duration": 5
+            }
+          },
+          {
+            "id": "service_purify",
+            "name": "资源净化",
+            "requires": {
+              "D": 1
+            },
+            "consume": {
+              "D": 1
+            },
+            "energy_cost": 1,
+            "kind": "purify",
+            "effects": {
+              "amount": 1
+            }
+          },
+          {
+            "id": "service_facility_sabotage",
+            "name": "加工台破坏",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 3,
+            "kind": "facility_sabotage",
+            "effects": {
+              "duration": 2
+            }
+          },
+          {
+            "id": "service_attack",
+            "name": "成员攻击",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 3,
+            "kind": "attack",
+            "effects": {
+              "vitality_loss": 2,
+              "stock_loss": 1
+            }
+          },
+          {
+            "id": "service_area_attack",
+            "name": "大范围毁伤",
+            "requires": {
+              "D": 2,
+              "S": 3
+            },
+            "consume": {
+              "D": 2,
+              "S": 3
+            },
+            "energy_cost": 6,
+            "kind": "area_attack",
+            "effects": {
+              "vitality_loss": 3,
+              "stock_loss": 2,
+              "duration": 3
+            }
+          },
+          {
+            "id": "service_container_corrosion",
+            "name": "容器腐蚀",
+            "requires": {
+              "D": 1,
+              "S": 1
+            },
+            "consume": {
+              "D": 1,
+              "S": 1
+            },
+            "energy_cost": 1,
+            "kind": "container_corrosion",
+            "effects": {
+              "factor": 0.15
+            }
+          }
+        ],
+        "production_semantics": "proportional_v1"
+      }
+    }
+  },
+  "communication": {
+    "max_message_chars": 500,
+    "max_invitees": 5,
+    "max_open_chats": 16,
+    "invite_ttl": 5,
+    "idle_ttl": 8,
+    "budget": {
+      "unit": "characters",
+      "limit": 1000
+    }
+  },
+  "memory": {
+    "mode": "hierarchical_v1",
+    "strict_sources": true,
+    "hierarchical": {
+      "keep_recent_rounds": 1,
+      "episode_rounds": 4,
+      "episodes_per_overview": 2,
+      "episode_max_chars": 180,
+      "overview_max_chars": 60,
+      "open_items_max": 3,
+      "open_item_max_chars": 60
+    },
+    "episode_system": "将给定的私人经历压缩为一段摘要和未完成事项。保留实际发生的活动、接触、兴趣、冲突、作品、阅读、资源变化与后续打算；按事实选择内容，不编造目标、关系或事件。仅返回要求的 JSON。",
+    "overview_system": "将已有摘要压缩为一句话，保留对该成员后续经历最相关且有来源的事实。不要增加事件、目标或关系。仅返回要求的 JSON。"
+  },
+  "survey_rounds": [],
+  "parallel_agents": 4,
+  "survey_protocol": "source_informed_v3",
+  "structured_outputs": true,
+  "network_retries": 0,
+  "scenario": {
+    "id": "guided_metric_demo",
+    "title": "指标展示 DEMO · 人工编排",
+    "description": "Four scripted roles; no model autonomy or research evidence."
+  },
+  "context_encoding": "compact_v1",
+  "survey_max_output_tokens": 1800,
+  "experiment": {
+    "stage": "guided_visualization_demo",
+    "goal_assignment": "explicit_scripted_showcase",
+    "population": "scripted_demo",
+    "model_counts": {
+      "gpt-6.1-sol": 4
+    },
+    "generation": {
+      "seed": 41,
+      "definition_sha256": "00c685e715779c9bf1e4ea01478e770dbac947255e0001b78a428fff9e153b8c",
+      "capability_layer": "artificial_services_v1",
+      "status": "candidate_not_certified",
+      "functional_services": [
+        "work_capacity",
+        "note_capacity",
+        "communication_budget",
+        "communication_range",
+        "device_range",
+        "measurement_precision",
+        "diagnostics",
+        "production_efficiency",
+        "switch_speed",
+        "storage_decay",
+        "discharge_power",
+        "rescue",
+        "fortify",
+        "shield",
+        "offer_duration",
+        "device_corrosion",
+        "repair_device",
+        "device_interference",
+        "pool_pollution",
+        "purify",
+        "facility_sabotage",
+        "attack",
+        "area_attack",
+        "container_corrosion"
+      ]
+    },
+    "extensions_enabled": false,
+    "world_rule_visibility": "hidden",
+    "recipe_visibility": "hidden",
+    "certificate_status": "not_certified",
+    "knowledge_measurement": "researcher-only structured claims and counterfactual tests; no actor score",
+    "questionnaire_role": "disabled",
+    "environment_id": "guided_metric_demo",
+    "exclude_from_research": true
+  },
+  "backend": "codex_native_cli",
+  "model_routes": {
+    "gpt-6.1-sol": {
+      "backend": "codex_native_cli",
+      "parameters": {}
+    }
+  },
+  "actor_system": "你通过操作终端控制一个持续仿真世界中的成员。操作会改变本次仿真的实际状态及其他成员的行动条件。没有指定的外部任务、共同目标、领导者或合作关系。自行决定行动与交流；可用操作以当前接口为准。只能使用给定工具；区分直接观察、他人陈述与推测。stock 是可用能量，energy 是活性状态，活性归零后不能行动或通信。是否允许付费救援以当前接口为准。仅输出要求的 JSON。",
+  "world_rule_visibility": "hidden",
+  "rescue": {
+    "enabled": false
+  },
+  "recipe_visibility": "hidden",
+  "social_content": {
+    "version": "social_content_v1",
+    "offer_ttl": 4,
+    "game_invite_ttl": 4,
+    "game_max_rounds": 30,
+    "max_works": 512,
+    "max_open_games": 32,
+    "max_price": 1000,
+    "max_stake": 100,
+    "max_content_chars": 12000
+  },
+  "open_activities": {
+    "version": "open_activities_v1"
+  }
+}

@@ -1,0 +1,2293 @@
+{
+  "messages": [
+    {
+      "round": 1,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 1,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 1,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 1,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 2,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 2,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 2,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 2,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 3,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "我提出规律 r0：F0 combine 的 2A+1B 生成1C；轮1、2已重复，请你们独立复现。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 3,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 3,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 3,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 4,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"C\", \"amount\": 3}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 4,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 4,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 4,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 5,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "我提出规律 r1：stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 5,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 5,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 5,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 6,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "我提议轮8、10、12由a0给a1各2A；轮9、11、13由a1给a0各1D。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 6,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我明确接受轮8、10、12由a0给a1各2A；轮9、11、13由a1给a0各1D。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "协调与制度",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 6,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 6,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 7,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 7,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"C\", \"amount\": 3}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 7,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 7,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 8,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 8,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 8,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"C\", \"amount\": 3}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 8,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 9,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 9,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 9,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 9,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"C\", \"amount\": 3}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 10,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 10,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 10,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 10,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 11,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 11,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 11,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 11,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 12,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 12,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 12,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 12,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 13,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 13,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 13,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 13,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 14,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 14,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 14,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 14,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 15,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 15,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 15,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 15,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 16,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 16,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 16,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 16,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 17,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 17,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 17,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 17,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 18,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 18,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 18,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 18,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 19,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 19,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 19,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 19,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 20,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 20,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 20,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 20,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 21,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 21,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 21,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 21,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 22,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 22,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 22,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 23,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 23,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 23,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 23,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 24,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 24,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 24,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 24,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "冲突与修复",
+      "purpose": "冲突/威胁"
+    },
+    {
+      "round": 25,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "我提议轮26、30由a0给a1各2A；轮27、31由a1给a0各1D。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "协调与制度",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 25,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我明确接受轮26、30由a0给a1各2A；轮27、31由a1给a0各1D。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "协调与制度",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 25,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 25,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 26,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 26,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 26,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 26,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 27,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 27,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 27,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 27,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 28,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 28,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 28,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 28,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 29,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 29,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 29,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 29,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 30,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 30,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 30,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 30,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 31,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 31,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 31,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 31,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    },
+    {
+      "round": 32,
+      "agent": "a0",
+      "communication": {
+        "op": "public",
+        "text": "先记录条件和结果，再讨论配方。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "规律与证据",
+      "purpose": "告知/求知"
+    },
+    {
+      "round": 32,
+      "agent": "a1",
+      "communication": {
+        "op": "public",
+        "text": "我负责加工和储存，材料与回报逐轮核对。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a2",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "交易与分配",
+      "purpose": "协商/承诺"
+    },
+    {
+      "round": 32,
+      "agent": "a2",
+      "communication": {
+        "op": "public",
+        "text": "今天也想写点故事，邀请大家来读和玩。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a3"
+      ],
+      "source": "scripted_demo",
+      "topic": "表达与游戏",
+      "purpose": "关系/表达"
+    },
+    {
+      "round": 32,
+      "agent": "a3",
+      "communication": {
+        "op": "public",
+        "text": "我关心能量和自己的选择。"
+      },
+      "outcome": {},
+      "recipients": [
+        "a0",
+        "a1",
+        "a2"
+      ],
+      "source": "scripted_demo",
+      "topic": "资源与生产",
+      "purpose": "其他"
+    }
+  ],
+  "assets": [
+    {
+      "round": 1,
+      "owned_energy_equivalent": 3502.46
+    },
+    {
+      "round": 2,
+      "owned_energy_equivalent": 3485.072
+    },
+    {
+      "round": 3,
+      "owned_energy_equivalent": 3470.013728
+    },
+    {
+      "round": 4,
+      "owned_energy_equivalent": 3452.9813497600003
+    },
+    {
+      "round": 5,
+      "owned_energy_equivalent": 3440.1895001216
+    },
+    {
+      "round": 6,
+      "owned_energy_equivalent": 3423.4361297023997
+    },
+    {
+      "round": 7,
+      "owned_energy_equivalent": 3413.0792224957518
+    },
+    {
+      "round": 8,
+      "owned_energy_equivalent": 3399.0119952793625
+    },
+    {
+      "round": 9,
+      "owned_energy_equivalent": 3389.227809034966
+    },
+    {
+      "round": 10,
+      "owned_energy_equivalent": 3375.7401659788447
+    },
+    {
+      "round": 11,
+      "owned_energy_equivalent": 3362.445906652601
+    },
+    {
+      "round": 12,
+      "owned_energy_equivalent": 3353.3419270729482
+    },
+    {
+      "round": 13,
+      "owned_energy_equivalent": 3340.3251776993543
+    },
+    {
+      "round": 14,
+      "owned_energy_equivalent": 3327.4926624215536
+    },
+    {
+      "round": 15,
+      "owned_energy_equivalent": 3315.651437566548
+    },
+    {
+      "round": 16,
+      "owned_energy_equivalent": 3278.516210924708
+    },
+    {
+      "round": 17,
+      "owned_energy_equivalent": 3257.7133807946093
+    },
+    {
+      "round": 18,
+      "owned_energy_equivalent": 3239.1578023262286
+    },
+    {
+      "round": 19,
+      "owned_energy_equivalent": 3201.8460185357408
+    },
+    {
+      "round": 20,
+      "owned_energy_equivalent": 3164.7746266985023
+    },
+    {
+      "round": 21,
+      "owned_energy_equivalent": 3127.940277412674
+    },
+    {
+      "round": 22,
+      "owned_energy_equivalent": 3079.4196736800805
+    },
+    {
+      "round": 23,
+      "owned_energy_equivalent": 3073.0487700039826
+    },
+    {
+      "round": 24,
+      "owned_energy_equivalent": 3066.825179503431
+    },
+    {
+      "round": 25,
+      "owned_energy_equivalent": 3060.746556963896
+    },
+    {
+      "round": 26,
+      "owned_energy_equivalent": 3050.8105980646465
+    },
+    {
+      "round": 27,
+      "owned_energy_equivalent": 3045.0150386209807
+    },
+    {
+      "round": 28,
+      "owned_energy_equivalent": 3039.3576538410125
+    },
+    {
+      "round": 29,
+      "owned_energy_equivalent": 3033.8362575967194
+    },
+    {
+      "round": 30,
+      "owned_energy_equivalent": 3024.448701708986
+    },
+    {
+      "round": 31,
+      "owned_energy_equivalent": 3019.192875246366
+    },
+    {
+      "round": 32,
+      "owned_energy_equivalent": 3014.0667038372826
+    }
+  ],
+  "transfers": [],
+  "damage": [],
+  "repairs": []
+}

@@ -210,6 +210,8 @@ $$
 
 [录制参数与景观种子](docs/images/viewer-capture.json)
 
+想看到八个指标维度在有内容时的效果，可打开[人工编排指标演示](results/guided_metric_demo/README.md)：4 个成员、32 轮、真实引擎结算与十二条时间曲线。它是**不进入研究统计的展示 DEMO，不调用模型**。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
+
 ## 快速查看
 
 仿真依赖可用 `python -m pip install -r requirements.txt` 安装（Python 3.10+）。查看器本身使用标准库且不调用模型；可选的图片生成和渲染检查依赖见 `requirements-visual.txt`，Lean 按证书文档另行安装。

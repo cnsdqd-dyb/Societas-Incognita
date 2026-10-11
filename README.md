@@ -203,6 +203,8 @@ Each task has a reproducible floating-island planet. Biomes, vegetation, rock la
 
 [Open the local viewer](http://127.0.0.1:8776/) · [Capture settings](docs/images/viewer-capture.json)
 
+To see all eight metric dimensions with populated behavior traces, open the [guided metric showcase](results/guided_metric_demo/README.md): four scripted members, 32 rounds, real engine settlements and twelve time series. This is explicitly **demo-only, excluded from research, with no model calls**. Start it with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
+
 ## Explore locally
 
 Install simulation dependencies with `python -m pip install -r requirements.txt` (Python 3.10+). The standard-library viewer itself does not call models. Optional media/render checks use `requirements-visual.txt`; Lean is installed separately as described in the certificate documentation.

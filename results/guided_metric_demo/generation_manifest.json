@@ -1,0 +1,26 @@
+{
+  "demo_only": true,
+  "exclude_from_research": true,
+  "seed": 41,
+  "rounds": 32,
+  "members": 4,
+  "model_calls": 0,
+  "api_cost_usd": 0,
+  "certificate_status": "not_lean_certified",
+  "engine_sha256": {
+    "sim.py": "def4f74ee43e33922f1cf1c069cf748d5d0920424c1b7bc98c8c2da37cfa35d9",
+    "environments.py": "1ced6ee5fb4f590ff7ca9c3d83906d842fe6c1d1fb666b506cddf5ac7cf56f28",
+    "mini_world.py": "a8602f195411db42c2bd5cae1ccf123abff197946b87e9cbb27bc010cc39540f",
+    "world_rule_library.py": "76c047034c0aebff92fa39ab0d3f61ca5e7f66c87665a88b9edd09f5ebfba9cc",
+    "world_rule_engine.py": "528a189b138e8b02c20d10f1dcef9054333d9e83ad9e39eca150f61ec2d744df",
+    "functional_effects.py": "6605845154c466281c36b01d24a6694e956a764404c3f6b396a299cf7a3a73e7",
+    "social_content.py": "9a8001e3e9ff3496022414852199815064d5e7aee1819fc904826c8838b3e962",
+    "interaction_controls.py": "a32d595b0603a503afc0eacda532089a04f8a0c2561772abc274992118182942",
+    "core_metrics.py": "fc84d0fb9816b85efac09ecedb81e99ffc4f6f3f783b4e68980c8386b0e21124",
+    "knowledge_tracking.py": "5ad47464f924f2c47dea85acefd2fbe4d4be21f79bec866099798f83fea93501",
+    "capability_devices.py": "225370e75b8d31ad73878f3d9ba9974b27251782419e9a68214cdac40cd4178a",
+    "material_combinations.py": "638accc3ff7f43653d9715309ee594d9334316626ff813321e4b4718c7a5a839"
+  },
+  "builder_sha256": "42f1882ff72f510d9d538330b413e8ae1e1c72bb1513df2e86c02cfd575820ab",
+  "analyzer_sha256": "59c731ed90a9b162ca178fbb713ab9be30c2a209d180107e459291f8c744466d"
+}

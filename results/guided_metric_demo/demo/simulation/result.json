@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "demo_only": true,
+  "exclude_from_research": true,
+  "completed_rounds": 32,
+  "model_calls": 0,
+  "cost_usd": 0
+}
