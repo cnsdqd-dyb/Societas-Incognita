@@ -114,7 +114,8 @@ function drawIsoTile(t){
  const sides=[[0,1,x,y-step],[1,2,x+step,y],[2,3,x,y+step],[3,0,x-step,y]];
  for(const [a,b,nx,ny]of sides){const n=nx<0||ny<0||nx>=W||ny>=H?null:sandboxTile(nx+10,ny+10),base=n?.active?n.level*sandboxStep:0;if(base>=z)continue;
   const bottomA=projectWorld(a===0||a===3?x:x+step,a<2?y:y+step,base),bottomB=projectWorld(b===0||b===3?x:x+step,b<2?y:y+step,base);
-  polyCanvas([corners[a],corners[b],bottomB,bottomA],n?.active?((a+sandboxCamera.turn)%2?'#6d827d':'#83958c'):((a+sandboxCamera.turn)%2?'#96714f':'#bea072'));
+  const stone=worldScene.planet?.stone?.[1];
+  polyCanvas([corners[a],corners[b],bottomB,bottomA],n?.active?((a+sandboxCamera.turn)%2?'#6d827d':'#83958c'):stone?stone[(a+sandboxCamera.turn)%2?0:2]:((a+sandboxCamera.turn)%2?'#96714f':'#bea072'));
   const lineZ=Math.floor((z+base)/2);if(z-base>20){ctx.strokeStyle='#a2afa099';ctx.lineWidth=1;const aa=projectWorld(a===0||a===3?x:x+step,a<2?y:y+step,lineZ),bb=projectWorld(b===0||b===3?x:x+step,b<2?y:y+step,lineZ);ctx.beginPath();ctx.moveTo(aa.x,aa.y);ctx.lineTo(bb.x,bb.y);ctx.stroke()}
  }
  polyCanvas(corners,tileColor(t));

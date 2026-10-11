@@ -189,11 +189,17 @@ Material knowledge and ownership are recorded separately. Holding a material can
 
 Inspect agent behavior, conversations, material inventories, and directed interactions in a pixel world.
 
-![Society Probe interface: social analytics, pixel-world replay, and agent details](docs/images/viewer-interface.png)
+Each task has a reproducible floating-island planet. Biomes, vegetation, rock layers, water colors, daylight skies, and orbital accents are sampled separately and combined; crystals and giant mushrooms can accompany forests, wetlands, or snow. Bridges connect islands at different heights, with animated streams and waterfalls. Dialogue previews keep their screen size when zooming. These are presentation features; simulation laws and recorded outcomes remain defined by the engine and logs.
+
+![Society Probe interface: floating-island planet, social analytics, and agent details](docs/images/viewer-interface-planets-v2.png)
 
 **Recorded replay · 16× speed · dialogue bubbles held for 0.5 seconds.**
 
-![Rendered 16x agent replay with movement, material actions, and dialogue bubbles](docs/images/viewer-replay-16x.gif)
+![Rendered floating-island replay at 16x with movement, flowing water, and compact dialogue previews](docs/images/viewer-replay-planets-v2-16x.gif)
+
+![Four scenery combinations: crystals, giant mushrooms, woodland, and mixed vegetation](docs/images/planet-scenery-combinations-v2.png)
+
+*Scenery-seed previews of independently combined styles; these panels do not represent four experimental results.*
 
 [Open the local viewer](http://127.0.0.1:8776/) · [Capture settings](docs/images/viewer-capture.json)
 

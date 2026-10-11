@@ -1,7 +1,8 @@
 # README media
 
-- `viewer-interface.png`: screenshot of the real three-column pixel observatory, including social analytics, replay controls, and agent details.
-- `viewer-replay-16x.gif`: 16-second browser-rendered excerpt from a recorded run, with the viewer set to 16× and dialogue hold set to 0.5 seconds. It loops at 12 frames per second. Capture metadata is in `viewer-capture.json`.
+- `viewer-interface-planets-v2.png`: current browser screenshot of the floating-island observatory, including social analytics, replay controls, and agent details. Both language READMEs use this image.
+- `viewer-replay-planets-v2-16x.gif`: current 16-second browser-rendered excerpt from a recorded run, with the viewer set to 16× and dialogue hold set to 0.5 seconds. It loops at 12 frames per second. Capture metadata, layout seed and independently combined scenery traits are in `viewer-capture.json`. Scenery is presentation only, not simulated spatial physics. Older `viewer-interface.png` and `viewer-replay-16x.gif` are historical captures.
+- `planet-scenery-combinations-v2.png`: four synthetic scenery-seed previews, showing woodland, crystals, mushrooms and mixed vegetation with independently sampled biome, water, stone and sky choices. This is a visual preview, not four experimental runs. Seeds and traits are in `planet-scenery-combinations-v2.json`; regenerate with `python visualizer/render_planet_gallery.py` while the local recorded viewer is running on port 8787.
 
 - `compositional-world-laws.svg`: script-free, animated SVG using SMIL. Quantities, highlighted production dependencies, and handoff events come from `compositional-world-laws-data.json`.
 - `material-functions.svg`: a conceptual diagram of private combination discovery, confirmation/cancellation, and implemented capability, survival, and destructive effects. It uses the same palette and reads the implemented service count; it is not an experimental trajectory or Lean proof.

@@ -10,11 +10,11 @@
   "atlas_code_sha256": "6c84ce7439ac7eea8d5cea0ab610fe12371c9e6fa8f0ea972ddac47060d36a1f",
   "source": "Settled valid actions; display destination plus terrain-aware route reconstruction. No physical location measurement.",
   "render_theme": "daylight",
-  "presentation_layout_version": "floating-archipelago-v1",
+  "presentation_layout_version": "combinatorial-planets-v2",
   "layout_code_sha256": {
     "world.js": "2eb60962090285d67096f78c16ce96e915c00914729e3558b961aa0c8f2c3c85",
-    "sandbox-25d.js": "00a65da5b8b50c4a35fad840eaa1b52fdd0395bec30c462ec39c3aa95cc03abe",
+    "sandbox-25d.js": "7019fb2569548720654e2d2af3ea18afb61c52ca27e12b05de5cafe28df0321c",
     "eco-environment.js": "4262db92ed22884a2f7e82be28623b87dc592f356bf87e70e44ea7adb5a4cc03",
-    "planet-islands.js": "4af17af1745209ea5c9224dced912877698dbd8b4ed4f786723f205ae5d74e3d"
+    "planet-islands.js": "b1df358163282bbab85606d6eccd785521a6536b2cd28f8542e5d70ad6c42da6"
   }
 }

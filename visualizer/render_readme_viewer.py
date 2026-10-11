@@ -45,7 +45,7 @@ def main():
         page.evaluate('(r)=>seek(r)', start)
         page.wait_for_timeout(300)
         # Include the three-column interface and material panel in the still.
-        page.screenshot(path=str(MEDIA / 'viewer-interface.png'))
+        page.screenshot(path=str(MEDIA / 'viewer-interface-planets-v2.png'))
         # Keep the world, speech bubbles, timeline controls, and visible 16x label.
         clip = page.evaluate('''()=>{
           const a=document.querySelector('.world-top').getBoundingClientRect();
@@ -61,6 +61,7 @@ def main():
             page.clock.run_for((index + 1) * 1000 // fps - index * 1000 // fps)
             page.screenshot(path=str(FRAMES / f'frame-{index:04d}.png'), clip=clip)
         end = page.evaluate('round')
+        scenery = page.evaluate('({version:worldScene.terrain.layoutVersion,layout_seed:worldScene.seed,traits:worldScene.planet})')
         assert end > start, (start, end)
         assert page.evaluate('speed') == 16
         assert not errors, errors
@@ -68,11 +69,13 @@ def main():
     filters = 'fps=12,scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4'
     subprocess.run([ffmpeg, '-y', '-loglevel', 'error', '-framerate', str(fps),
                     '-i', str(FRAMES / 'frame-%04d.png'), '-frames:v', str(args.seconds*fps),
-                    '-filter_complex', filters, '-loop', '0', str(MEDIA/'viewer-replay-16x.gif')], check=True)
+                    '-filter_complex', filters, '-loop', '0', str(MEDIA/'viewer-replay-planets-v2-16x.gif')], check=True)
     (MEDIA/'viewer-capture.json').write_text(json.dumps({'run': rid, 'completed_rounds': completed,
         'start_round': start, 'end_round': end, 'playback_speed': 16, 'dialogue_hold_seconds': .5,
         'capture_seconds': args.seconds, 'frames_per_second': fps,
-        'source': 'browser render of recorded checkpoint; no model calls'}, indent=2), encoding='utf-8')
+        'source': 'browser render of recorded checkpoint; no model calls',
+        'scenery': scenery,
+        'coordinate_semantics': 'presentation_grid_not_simulation_positions'}, indent=2), encoding='utf-8')
     print(f'Captured interface and {args.seconds}s playback at 16x: R{start}–R{end}.')
 
 

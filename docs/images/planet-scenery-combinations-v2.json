@@ -1,0 +1,151 @@
+{
+  "purpose": "synthetic scenery seed previews; no new experiments or physical observations",
+  "previews": [
+    {
+      "seed": 4054653231,
+      "traits": {
+        "biomes": [
+          "highland",
+          "beach",
+          "meadow"
+        ],
+        "water": [
+          "玫泉",
+          "#aa8197",
+          "#e6b4ca"
+        ],
+        "stone": [
+          "赤岩",
+          [
+            "#ac7e6c",
+            "#956757",
+            "#c39c81"
+          ]
+        ],
+        "sky": [
+          "桃云",
+          [
+            "#f5e8e1",
+            "#fffaee"
+          ]
+        ],
+        "flora": "crystals",
+        "accent": "#88c4bd",
+        "rings": false,
+        "levelBase": 2,
+        "grade": 182,
+        "name": "玫泉·赤岩星"
+      }
+    },
+    {
+      "seed": 503241152,
+      "traits": {
+        "biomes": [
+          "meadow",
+          "desert",
+          "blossom"
+        ],
+        "water": [
+          "玫泉",
+          "#aa8197",
+          "#e6b4ca"
+        ],
+        "stone": [
+          "青岩",
+          [
+            "#769693",
+            "#658783",
+            "#9eb5ab"
+          ]
+        ],
+        "sky": [
+          "晴空",
+          [
+            "#e9f2f4",
+            "#fcfaf0"
+          ]
+        ],
+        "flora": "mushrooms",
+        "accent": "#b4a5d3",
+        "rings": false,
+        "levelBase": 1,
+        "grade": 208,
+        "name": "玫泉·青岩星"
+      }
+    },
+    {
+      "seed": 457855405,
+      "traits": {
+        "biomes": [
+          "desert",
+          "highland",
+          "blossom",
+          "volcano",
+          "snow"
+        ],
+        "water": [
+          "蜜流",
+          "#b48d4e",
+          "#e0c17c"
+        ],
+        "stone": [
+          "砂岩",
+          [
+            "#a58869",
+            "#947d68",
+            "#b29b7c"
+          ]
+        ],
+        "sky": [
+          "晴空",
+          [
+            "#e9f2f4",
+            "#fcfaf0"
+          ]
+        ],
+        "flora": "woodland",
+        "accent": "#b4a5d3",
+        "rings": true,
+        "levelBase": 2,
+        "grade": 192,
+        "name": "蜜流·砂岩星"
+      }
+    },
+    {
+      "seed": 2492202866,
+      "traits": {
+        "biomes": [
+          "snow",
+          "meadow",
+          "forest"
+        ],
+        "water": [
+          "紫汐",
+          "#8d7cad",
+          "#c3b6e5"
+        ],
+        "stone": [
+          "青岩",
+          [
+            "#769693",
+            "#658783",
+            "#9eb5ab"
+          ]
+        ],
+        "sky": [
+          "薄荷雾",
+          [
+            "#e4efdf",
+            "#faf9eb"
+          ]
+        ],
+        "flora": "mixed",
+        "accent": "#9cc88c",
+        "rings": false,
+        "levelBase": 1,
+        "grade": 196,
+        "name": "紫汐·青岩星"
+      }
+    }
+  ]
+}

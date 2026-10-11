@@ -1,11 +1,50 @@
 {
-  "run": "functional_sol_low_4x50_20261010/sol_low/simulation",
+  "run": "luna_low_no_pressure/simulation",
   "completed_rounds": 50,
-  "start_round": 8,
-  "end_round": 12,
+  "start_round": 5,
+  "end_round": 9,
   "playback_speed": 16,
   "dialogue_hold_seconds": 0.5,
   "capture_seconds": 16,
   "frames_per_second": 12,
-  "source": "browser render of recorded checkpoint; no model calls"
+  "source": "browser render of recorded checkpoint; no model calls",
+  "scenery": {
+    "version": "combinatorial-planets-v2",
+    "layout_seed": 1831242309,
+    "traits": {
+      "biomes": [
+        "meadow",
+        "snow",
+        "volcano",
+        "blossom"
+      ],
+      "water": [
+        "\u78a7\u6cc9",
+        "#419496",
+        "#7ccfcd"
+      ],
+      "stone": [
+        "\u8d64\u5ca9",
+        [
+          "#ac7e6c",
+          "#956757",
+          "#c39c81"
+        ]
+      ],
+      "sky": [
+        "\u8584\u8377\u96fe",
+        [
+          "#e4efdf",
+          "#faf9eb"
+        ]
+      ],
+      "flora": "mixed",
+      "accent": "#9cc88c",
+      "rings": true,
+      "levelBase": 2,
+      "grade": 206,
+      "name": "\u78a7\u6cc9\u00b7\u8d64\u5ca9\u661f"
+    }
+  },
+  "coordinate_semantics": "presentation_grid_not_simulation_positions"
 }

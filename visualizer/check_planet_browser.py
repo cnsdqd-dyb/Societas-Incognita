@@ -24,6 +24,11 @@ with sync_playwright() as p:
     }''')
     assert all(report['spawns']),report
     assert all(report['reachableStations']) and report['pathsOnTerrain'] and report['deterministic'],report
+    combinations=page.evaluate('Array.from({length:64},(_,i)=>planetTraits(i))')
+    assert len({json.dumps(v,sort_keys=True) for v in combinations})==64
+    for field in ['water','stone','sky','flora']:
+        assert len({json.dumps(v[field]) for v in combinations})>=4,field
+    assert all(3<=len(v['biomes'])<=5 for v in combinations)
     page.locator('#scrubber').fill('50')
     page.evaluate('renderSpeechOverlay(true);draw()')
     def sizes():
