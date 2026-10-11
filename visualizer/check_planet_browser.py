@@ -1,15 +1,19 @@
 """Check presentation connectivity, deterministic geography and zoom-independent bubbles."""
 import json
+import argparse
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 out=Path(__file__).resolve().parent.parent/'output'/'playwright'
+parser=argparse.ArgumentParser()
+parser.add_argument('--url',default='http://127.0.0.1:8787/replay')
+args=parser.parse_args()
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True)
     page=browser.new_page(viewport={'width':1680,'height':1100})
     errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
-    page.goto('http://127.0.0.1:8787/replay')
+    page.goto(args.url)
     page.wait_for_selector('#loading.hidden',state='attached',timeout=60000)
     report=page.evaluate('''() => {
       const reachable=new Set(worldScene.walkCells.map(p=>tileKey(p.x,p.y)));
@@ -24,17 +28,17 @@ with sync_playwright() as p:
     }''')
     assert all(report['spawns']),report
     assert all(report['reachableStations']) and report['pathsOnTerrain'] and report['deterministic'],report
-    combinations=page.evaluate('Array.from({length:64},(_,i)=>planetTraits(i))')
-    assert len({json.dumps(v,sort_keys=True) for v in combinations})==64
+    combinations=page.evaluate('Array.from({length:256},(_,i)=>planetTraits(i))')
+    assert len({json.dumps(v,sort_keys=True) for v in combinations})==256
     for field in ['water','stone','sky','flora']:
         assert len({json.dumps(v[field]) for v in combinations})>=4,field
     assert all(3<=len(v['biomes'])<=5 for v in combinations)
     for field in ['inhabitants','machines','materials']:
-        assert len({v['design'][field] for v in combinations})==4,field
+        assert len({v['design'][field] for v in combinations})==8,field
     assert page.evaluate('JSON.stringify(worldDesign(17))===JSON.stringify(worldDesign(17))')
     visual_variants=page.evaluate('''() => {
       const saved=worldScene.planet.design,a=actors[0],signatures=[];
-      for(const kind of ['sprout','fox','robot','cloud']){
+      for(const kind of ['sprout','fox','robot','cloud','rabbit','otter','turtle','starling']){
         worldScene.planet.design={...saved,inhabitants:kind};
         signatures.push(directionalActorSVG(a,'south',0));
         for(const facing of ['north','south','east','west'])for(const step of [0,1]){
@@ -44,7 +48,24 @@ with sync_playwright() as p:
       }
       worldScene.planet.design=saved;return new Set(signatures).size;
     }''')
-    assert visual_variants==4
+    assert visual_variants==8
+    page.evaluate('''() => {
+      const saved=worldScene.planet.design;
+      for(const machines of ['garden','brass','prism','capsule','observatory','waterwheel','loom','forge']){
+        worldScene.planet.design={...saved,machines};draw();
+      }
+      for(const materials of ['pods','gears','gems','vials','pearls','ribbons','tablets','cores']){
+        worldScene.planet.design={...saved,materials};
+        for(const item of ['A','B','ENERGY']){
+          const doc=new DOMParser().parseFromString(materialArt(item).svg,'image/svg+xml');
+          if(doc.querySelector('parsererror'))throw Error('Malformed material SVG');
+        }
+      }
+      worldScene.planet.design=saved;
+      const outfits=Array.from({length:64},(_,i)=>memberWardrobe({id:'a'+i,i}));
+      if(new Set(outfits.map(v=>JSON.stringify(v))).size<60)throw Error('Insufficient clothing variety');
+      if(JSON.stringify(memberWardrobe(actors[0]))!==JSON.stringify(memberWardrobe(actors[0])))throw Error('Unstable clothing');
+    }''')
     rock=page.evaluate('''() => {
       const mesh=islandRockMesh(worldScene.terrain),expected=worldScene.terrain.tiles.filter(t=>t.active&&!t.bridge).length;
       let shared=0,closed=true;
@@ -61,7 +82,8 @@ with sync_playwright() as p:
     }''')
     assert rock['covered']==rock['expected'] and rock['shared']>0 and rock['closed'],rock
     assert rock['overhead'] and rock['orbitMoved'] and rock['orbitRepeatable'],rock
-    page.locator('#scrubber').fill('50')
+    speech_round=page.evaluate('Math.min(50,data.meta.rounds)')
+    page.locator('#scrubber').fill(str(speech_round))
     page.evaluate('renderSpeechOverlay(true);draw()')
     def sizes():
         return page.locator('.speech-bubble').evaluate_all('(bs)=>bs.map(b=>({width:b.offsetWidth,height:b.offsetHeight}))')

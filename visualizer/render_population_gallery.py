@@ -22,6 +22,7 @@ def main():
         browser=p.chromium.launch(headless=True)
         for index,count in enumerate(COUNTS):
             page=browser.new_page(viewport={'width':1680,'height':1100})
+            page.add_init_script('window.replayPresentationOnly=true')
             page.on('pageerror',lambda e:errors.append(str(e)))
             page.goto('http://127.0.0.1:8789/replay')
             page.wait_for_selector('#loading.hidden',state='attached',timeout=60000)
@@ -33,9 +34,9 @@ def main():
               data.social_content={games:{}};data.demo_metrics=null;
               // Independently choose a scenery seed with a different vegetation style.
               const desired=['woodland','crystals','mushrooms','mixed'][index];
-              const people=['sprout','robot','fox','cloud'][index],machines=['garden','prism','brass','capsule'][index],materials=['pods','gems','gears','vials'][index],palette=['#c3d9af','#d9cae9','#ead0ad','#bcdce6'][index];
+              const people=['sprout','rabbit','otter','robot'][index],machines=['garden','observatory','waterwheel','forge'][index],materials=['pods','ribbons','pearls','cores'][index],palette=['#c3d9af','#d9cae9','#ead0ad','#bcdce6'][index];
               let found=false;
-              for(let i=0;i<10000;i++){
+              for(let i=0;i<250000;i++){
                 const seed='population-preview-'+i;
                 const hash=hashWorldIdentity(JSON.stringify([data.meta.id,data.meta.environment||data.meta.family,data.meta.family,seed]));
                 const traits=planetTraits(hash);
@@ -53,7 +54,7 @@ def main():
                 return [{x:a.x,y:a.y},...route,...route.slice(0,-1).reverse()];
               });
               sandboxCamera.zoom=1.04;draw();
-              return {count,seed:worldScene.seed,traits:worldScene.planet,agent_colors:actors.map(a=>colors[a.i%colors.length]),route_lengths:populationRoutes.map(r=>r.length),initial:actors.map(a=>({id:a.id,x:a.x,y:a.y}))};
+              return {count,seed:worldScene.seed,traits:worldScene.planet,wardrobes:actors.map(a=>({id:a.id,...memberWardrobe(a)})),agent_colors:actors.map(a=>colors[a.i%colors.length]),route_lengths:populationRoutes.map(r=>r.length),initial:actors.map(a=>({id:a.id,x:a.x,y:a.y}))};
             }''',{'count':count,'index':index})
             page.wait_for_timeout(350)
             page.clock.install();page.clock.pause_at(page.evaluate('Date.now()'))
@@ -71,6 +72,7 @@ def main():
                     a.facing=Math.abs(dx)>Math.abs(dy)?dx>0?'east':'west':dy>0?'south':'north';
                   });draw();
                 }''',{'frame':frame,'fps':FPS})
+                assert page.locator('#loading').evaluate('(e)=>e.classList.contains("hidden")'),page.locator('#loading').inner_text()
                 shot=OUT/f'panel-{i}.png';page.locator('#world').screenshot(path=str(shot))
                 card=Image.open(shot).convert('RGB').resize((640,374),Image.Resampling.LANCZOS)
                 x=12+i%2*652;y=12+i//2*408
@@ -84,8 +86,8 @@ def main():
             assert len(final)==spec['count']
         assert not errors,errors
         browser.close()
-    subprocess.run([shutil.which('ffmpeg'),'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'frame-%04d.png'),'-frames:v',str(FRAMES),'-filter_complex','split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4','-loop','0',str(MEDIA/'planet-populations-v6.gif')],check=True)
-    (MEDIA/'planet-populations-v6.json').write_text(json.dumps({'purpose':'presentation-only scenery and walking sprites, not four experimental results','counts':COUNTS,'fps':FPS,'frames':FRAMES,'previews':metadata,'overhead_labels':True,'background_motion':'seeded decorative three-body-like orbits','underside':'closed shared-vertex rock mesh','world_design':'four independent seeded inhabitant, machine, material and palette choices; no simulated species attributes'},ensure_ascii=False,indent=2),encoding='utf-8')
+    subprocess.run([shutil.which('ffmpeg'),'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'frame-%04d.png'),'-frames:v',str(FRAMES),'-filter_complex','split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4','-loop','0',str(MEDIA/'planet-populations-v7.gif')],check=True)
+    (MEDIA/'planet-populations-v7.json').write_text(json.dumps({'purpose':'presentation-only scenery and walking sprites, not four experimental results','counts':COUNTS,'fps':FPS,'frames':FRAMES,'previews':metadata,'overhead_labels':True,'background_motion':'seeded decorative three-body-like orbits','underside':'closed shared-vertex rock mesh','world_design':'eight independent seeded inhabitant, machine, material and palette choices, plus per-member clothing; no simulated species attributes','auto_refresh':False,'browser_errors':errors},ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'counts':COUNTS,'frames':FRAMES,'motion_verified':True,'browser_errors':errors}))
 
 if __name__=='__main__':main()

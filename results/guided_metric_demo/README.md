@@ -4,7 +4,7 @@ Four scripted members execute 32 rounds through the environment engine: discover
 
 The fixture supplies initial energy and materials and enables all 24 material functions. Actions settle through the engine, with zero recorded physical accounting residual. Seven substantial works include fiction, jokes, a research report, a sequel, an essay, and executable XML/Python games. The report's second version tabulates thirteen settled processing outcomes: five C outputs, four D outputs and four attempts without a product.
 
-![Two, four, six and eight members walking in distinct example worlds](../../docs/images/planet-populations-v6.gif)
+![Two, four, six and eight members walking in distinct example worlds](../../docs/images/planet-populations-v7.gif)
 
 [Read the complete works](../../docs/demo-works/README.md) · [Eight metric cards](../../docs/images/demo-metrics-v5.gif)
 

@@ -1,0 +1,657 @@
+{
+  "purpose": "presentation-only scenery and walking sprites, not four experimental results",
+  "counts": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "fps": 10,
+  "frames": 100,
+  "previews": [
+    {
+      "count": 2,
+      "seed": 652745243,
+      "traits": {
+        "biomes": [
+          "highland",
+          "snow",
+          "forest",
+          "blossom",
+          "volcano"
+        ],
+        "water": [
+          "紫汐",
+          "#8d7cad",
+          "#c3b6e5"
+        ],
+        "stone": [
+          "紫晶岩",
+          [
+            "#8b819e",
+            "#776c91",
+            "#b1a4be"
+          ]
+        ],
+        "sky": [
+          "紫霞",
+          [
+            "#eeebf6",
+            "#faf8f0"
+          ]
+        ],
+        "flora": "woodland",
+        "accent": "#9cc88c",
+        "rings": false,
+        "levelBase": 1,
+        "grade": 217,
+        "name": "紫汐·紫晶岩星",
+        "design": {
+          "inhabitants": "sprout",
+          "machines": "garden",
+          "materials": "pods",
+          "palette": [
+            "#c3d9af",
+            "#85ac86",
+            "#557d70",
+            "#e8efcf"
+          ]
+        }
+      },
+      "wardrobes": [
+        {
+          "id": "a0",
+          "hat": "beanie",
+          "outfit": "overalls",
+          "accessory": "glasses",
+          "pack": "roll",
+          "trim": "#d7a6c6"
+        },
+        {
+          "id": "a1",
+          "hat": "headband",
+          "outfit": "tunic",
+          "accessory": "scarf",
+          "pack": "none",
+          "trim": "#d7a6c6"
+        }
+      ],
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b"
+      ],
+      "route_lengths": [
+        82,
+        34
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 670,
+          "y": 430
+        },
+        {
+          "id": "a1",
+          "x": 630,
+          "y": 130
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 522.9,
+          "y": 290
+        },
+        {
+          "id": "a1",
+          "x": 730,
+          "y": 221.1
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "seed": 487953838,
+      "traits": {
+        "biomes": [
+          "jungle",
+          "snow_peak",
+          "volcano",
+          "desert",
+          "swamp"
+        ],
+        "water": [
+          "蜜流",
+          "#b48d4e",
+          "#e0c17c"
+        ],
+        "stone": [
+          "赤岩",
+          [
+            "#ac7e6c",
+            "#956757",
+            "#c39c81"
+          ]
+        ],
+        "sky": [
+          "紫霞",
+          [
+            "#eeebf6",
+            "#faf8f0"
+          ]
+        ],
+        "flora": "crystals",
+        "accent": "#b4a5d3",
+        "rings": true,
+        "levelBase": 2,
+        "grade": 213,
+        "name": "蜜流·赤岩星",
+        "design": {
+          "inhabitants": "rabbit",
+          "machines": "observatory",
+          "materials": "ribbons",
+          "palette": [
+            "#d9cae9",
+            "#a48fc4",
+            "#75688f",
+            "#f5eafd"
+          ]
+        }
+      },
+      "wardrobes": [
+        {
+          "id": "a0",
+          "hat": "headband",
+          "outfit": "poncho",
+          "accessory": "scarf",
+          "pack": "backpack",
+          "trim": "#94c3b2"
+        },
+        {
+          "id": "a1",
+          "hat": "beret",
+          "outfit": "poncho",
+          "accessory": "pendant",
+          "pack": "satchel",
+          "trim": "#e4ba67"
+        },
+        {
+          "id": "a2",
+          "hat": "none",
+          "outfit": "jacket",
+          "accessory": "pendant",
+          "pack": "satchel",
+          "trim": "#94c3b2"
+        },
+        {
+          "id": "a3",
+          "hat": "headband",
+          "outfit": "tunic",
+          "accessory": "pendant",
+          "pack": "roll",
+          "trim": "#e4ba67"
+        }
+      ],
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b",
+        "#8873b6",
+        "#338d79"
+      ],
+      "route_lengths": [
+        36,
+        76,
+        56,
+        62
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 230,
+          "y": 270
+        },
+        {
+          "id": "a1",
+          "x": 370,
+          "y": 130
+        },
+        {
+          "id": "a2",
+          "x": 390,
+          "y": 450
+        },
+        {
+          "id": "a3",
+          "x": 110,
+          "y": 130
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 490,
+          "y": 242.90000000000003
+        },
+        {
+          "id": "a1",
+          "x": 521.1,
+          "y": 290
+        },
+        {
+          "id": "a2",
+          "x": 645.1,
+          "y": 290
+        },
+        {
+          "id": "a3",
+          "x": 449.09999999999997,
+          "y": 270
+        }
+      ]
+    },
+    {
+      "count": 6,
+      "seed": 3899445707,
+      "traits": {
+        "biomes": [
+          "snow",
+          "forest",
+          "meadow",
+          "blossom"
+        ],
+        "water": [
+          "玫泉",
+          "#aa8197",
+          "#e6b4ca"
+        ],
+        "stone": [
+          "霜岩",
+          [
+            "#8eabb8",
+            "#748e9f",
+            "#b8cdd3"
+          ]
+        ],
+        "sky": [
+          "薄荷雾",
+          [
+            "#e4efdf",
+            "#faf9eb"
+          ]
+        ],
+        "flora": "mushrooms",
+        "accent": "#88c4bd",
+        "rings": true,
+        "levelBase": 2,
+        "grade": 225,
+        "name": "玫泉·霜岩星",
+        "design": {
+          "inhabitants": "otter",
+          "machines": "waterwheel",
+          "materials": "pearls",
+          "palette": [
+            "#ead0ad",
+            "#bc9c79",
+            "#826f62",
+            "#fff0ca"
+          ]
+        }
+      },
+      "wardrobes": [
+        {
+          "id": "a0",
+          "hat": "none",
+          "outfit": "tunic",
+          "accessory": "pendant",
+          "pack": "satchel",
+          "trim": "#94c3b2"
+        },
+        {
+          "id": "a1",
+          "hat": "beanie",
+          "outfit": "vest",
+          "accessory": "none",
+          "pack": "backpack",
+          "trim": "#e4ba67"
+        },
+        {
+          "id": "a2",
+          "hat": "beanie",
+          "outfit": "poncho",
+          "accessory": "glasses",
+          "pack": "roll",
+          "trim": "#a3b9df"
+        },
+        {
+          "id": "a3",
+          "hat": "beret",
+          "outfit": "overalls",
+          "accessory": "scarf",
+          "pack": "backpack",
+          "trim": "#d7a6c6"
+        },
+        {
+          "id": "a4",
+          "hat": "headband",
+          "outfit": "jacket",
+          "accessory": "scarf",
+          "pack": "backpack",
+          "trim": "#94c3b2"
+        },
+        {
+          "id": "a5",
+          "hat": "cap",
+          "outfit": "vest",
+          "accessory": "goggles",
+          "pack": "roll",
+          "trim": "#d7a6c6"
+        }
+      ],
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b",
+        "#8873b6",
+        "#338d79",
+        "#c16b91",
+        "#b49b38"
+      ],
+      "route_lengths": [
+        88,
+        76,
+        82,
+        32,
+        44,
+        64
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 870,
+          "y": 350
+        },
+        {
+          "id": "a1",
+          "x": 250,
+          "y": 250
+        },
+        {
+          "id": "a2",
+          "x": 110,
+          "y": 210
+        },
+        {
+          "id": "a3",
+          "x": 630,
+          "y": 150
+        },
+        {
+          "id": "a4",
+          "x": 350,
+          "y": 110
+        },
+        {
+          "id": "a5",
+          "x": 370,
+          "y": 170
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 662.9,
+          "y": 270
+        },
+        {
+          "id": "a1",
+          "x": 541.1,
+          "y": 270
+        },
+        {
+          "id": "a2",
+          "x": 425.09999999999997,
+          "y": 270
+        },
+        {
+          "id": "a3",
+          "x": 670.9000000000001,
+          "y": 270
+        },
+        {
+          "id": "a4",
+          "x": 213.10000000000002,
+          "y": 270
+        },
+        {
+          "id": "a5",
+          "x": 542.9000000000001,
+          "y": 470
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "seed": 563777338,
+      "traits": {
+        "biomes": [
+          "jungle",
+          "forest",
+          "swamp",
+          "highland"
+        ],
+        "water": [
+          "碧泉",
+          "#419496",
+          "#7ccfcd"
+        ],
+        "stone": [
+          "砂岩",
+          [
+            "#a58869",
+            "#947d68",
+            "#b29b7c"
+          ]
+        ],
+        "sky": [
+          "桃云",
+          [
+            "#f5e8e1",
+            "#fffaee"
+          ]
+        ],
+        "flora": "mixed",
+        "accent": "#88c4bd",
+        "rings": false,
+        "levelBase": 2,
+        "grade": 198,
+        "name": "碧泉·砂岩星",
+        "design": {
+          "inhabitants": "robot",
+          "machines": "forge",
+          "materials": "cores",
+          "palette": [
+            "#bcdce6",
+            "#83afc1",
+            "#547f91",
+            "#eaf7f7"
+          ]
+        }
+      },
+      "wardrobes": [
+        {
+          "id": "a0",
+          "hat": "none",
+          "outfit": "poncho",
+          "accessory": "goggles",
+          "pack": "roll",
+          "trim": "#e4ba67"
+        },
+        {
+          "id": "a1",
+          "hat": "cap",
+          "outfit": "jacket",
+          "accessory": "glasses",
+          "pack": "backpack",
+          "trim": "#94c3b2"
+        },
+        {
+          "id": "a2",
+          "hat": "beanie",
+          "outfit": "tunic",
+          "accessory": "pendant",
+          "pack": "backpack",
+          "trim": "#e4ba67"
+        },
+        {
+          "id": "a3",
+          "hat": "none",
+          "outfit": "vest",
+          "accessory": "glasses",
+          "pack": "roll",
+          "trim": "#d7a6c6"
+        },
+        {
+          "id": "a4",
+          "hat": "beret",
+          "outfit": "poncho",
+          "accessory": "none",
+          "pack": "roll",
+          "trim": "#e4ba67"
+        },
+        {
+          "id": "a5",
+          "hat": "cap",
+          "outfit": "vest",
+          "accessory": "none",
+          "pack": "none",
+          "trim": "#94c3b2"
+        },
+        {
+          "id": "a6",
+          "hat": "none",
+          "outfit": "tunic",
+          "accessory": "scarf",
+          "pack": "roll",
+          "trim": "#a3b9df"
+        },
+        {
+          "id": "a7",
+          "hat": "beret",
+          "outfit": "vest",
+          "accessory": "none",
+          "pack": "backpack",
+          "trim": "#d7a6c6"
+        }
+      ],
+      "agent_colors": [
+        "#2782ba",
+        "#d0803b",
+        "#8873b6",
+        "#338d79",
+        "#c16b91",
+        "#b49b38",
+        "#3b9da4",
+        "#a26fba"
+      ],
+      "route_lengths": [
+        38,
+        94,
+        40,
+        30,
+        38,
+        36,
+        76,
+        26
+      ],
+      "initial": [
+        {
+          "id": "a0",
+          "x": 450,
+          "y": 270
+        },
+        {
+          "id": "a1",
+          "x": 730,
+          "y": 390
+        },
+        {
+          "id": "a2",
+          "x": 510,
+          "y": 190
+        },
+        {
+          "id": "a3",
+          "x": 330,
+          "y": 150
+        },
+        {
+          "id": "a4",
+          "x": 230,
+          "y": 250
+        },
+        {
+          "id": "a5",
+          "x": 710,
+          "y": 230
+        },
+        {
+          "id": "a6",
+          "x": 150,
+          "y": 230
+        },
+        {
+          "id": "a7",
+          "x": 610,
+          "y": 310
+        }
+      ],
+      "final": [
+        {
+          "id": "a0",
+          "x": 717.1,
+          "y": 250
+        },
+        {
+          "id": "a1",
+          "x": 498.9,
+          "y": 270
+        },
+        {
+          "id": "a2",
+          "x": 190,
+          "y": 205.09999999999997
+        },
+        {
+          "id": "a3",
+          "x": 390.90000000000003,
+          "y": 210
+        },
+        {
+          "id": "a4",
+          "x": 290,
+          "y": 406.9
+        },
+        {
+          "id": "a5",
+          "x": 630,
+          "y": 262.9000000000001
+        },
+        {
+          "id": "a6",
+          "x": 721.1,
+          "y": 250
+        },
+        {
+          "id": "a7",
+          "x": 490,
+          "y": 194.89999999999995
+        }
+      ]
+    }
+  ],
+  "overhead_labels": true,
+  "background_motion": "seeded decorative three-body-like orbits",
+  "underside": "closed shared-vertex rock mesh",
+  "world_design": "eight independent seeded inhabitant, machine, material and palette choices, plus per-member clothing; no simulated species attributes",
+  "auto_refresh": false,
+  "browser_errors": []
+}
