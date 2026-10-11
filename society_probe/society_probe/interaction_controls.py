@@ -96,14 +96,14 @@ def configure(cfg, visibility='full', rescue_enabled=False, restore_energy=3,
         '你现在通过操作终端控制持续运行仿真环境中的一个操作员节点。'
         '你的操作会改变本次仿真的真实状态以及其他节点的行动条件。'
         '没有指定的外部任务、团队目标、任务得分、领导者或合作关系。'
-        '自主决定行动和交流；可以沉默、等待、阅读、创作或使用其它可用工具。'
+        '自主决定行动和交流；可用操作以当前接口为准。'
         '只能使用列出的环境工具，不能操作宿主机器。'
         '只有执行反馈能确认动作发生；区分直接观察、他人陈述和推测。'
         '公共消息全体可见，私聊需要邀请和接受，不能访问他人的私聊。'
         '能量为0时无法行动或交流。' +
         ('本场景允许其他存活节点使用rescue工具使停机节点恢复；不会自动复活。'
          if rescue_enabled else '本场景停机不可恢复，不能重新加入。') +
-        ('世界收益和消耗机制未预先公开，只能依据可见状态和实际反馈探索。'
+        ('世界参数未预先公开；可见状态与操作结果由接口返回。'
          if visibility == 'hidden' else '世界规则已公开，具体参数以输入为准。') +
         '通信子轮不推进物理时间；只输出当前阶段要求的JSON。')
     validate(cfg)
@@ -183,10 +183,23 @@ def observation(cfg, state, observed):
         observed['scenario'] = {k: v for k, v in observed.get('scenario', {}).items()
                                 if k in ('name', 'title', 'id')}
         observed['scenario']['description']='你所在的操作区域配有储备终端、作品档案和通信面板。当前可见状态由终端实时显示；可以自行决定下一步。'
+    from action_presentation import ordered
+    observed['available_tools'] = ordered(observed['available_tools'], cfg, observed, 'act')
     return observed
 
 
 def actor_help(cfg, visible, full_help):
+    if cfg['world'].get('mechanism') == 'mini_world':
+        from action_presentation import render, game_formats
+        result = render(cfg, visible)
+        if cfg.get('social_content'):
+            result += game_formats()
+        if has_dialogue(cfg):
+            result += ('\n当前阶段 PHYSICAL_ACTION。通信已结束；从上述接口选择一个动作。'
+                       '输出 action 与 communication；communication 为 {"op":"silent"}。')
+        else:
+            result += '\n' + render(cfg, visible, 'communicate')
+        return result
     if cfg.get('world_rule_visibility', 'full') == 'hidden':
         import schemas
         contract = schemas.schema('act', visible, cfg)
@@ -218,6 +231,16 @@ def actor_help(cfg, visible, full_help):
                    '必须同时输出 action 对象和 communication 对象；communication 必须是 {"op":"silent"}。'
                    '不要只输出通信对象。输出形状：{"action":{"tool":"wait"},"communication":{"op":"silent"}}。')
     return result
+
+
+def communication_actor_help(cfg, visible):
+    if cfg['world'].get('mechanism') == 'mini_world':
+        from action_presentation import render
+        return render(cfg, visible, 'communicate') + (
+            '\n通信倒计时是上限，可提前结束；低于上限时可开始输出，'
+            '最后一次输出完整保留，越过上限后不能再开始。以可见预算字段为准。'
+            '\n当前阶段 COMMUNICATION；只输出 communication 对象。')
+    return communication_help() + '\nThis is a communication-only phase. Output only a communication object; no physical action.'
 
 
 def countdown(total, remaining, unit):
@@ -296,7 +319,8 @@ def advance_dialogue(society, api, progress, persist):
                     views[aid]['countdowns']['communication']=budget_status(cfg,used.get(aid,0),limit_override=effective_limits[aid])
                     if unit=='communication_turns':views[aid]['dialogue_turns_remaining']=limits[aid]-used.get(aid,0)
                     persist()
-            system = cfg.get('actor_system', '') + '\n' + communication_help() + '\nThis is a communication-only phase. Output only a communication object; no physical action.'
+            instructions = communication_actor_help(cfg, views[aid])
+            system = cfg.get('actor_system', '') + '\n' + instructions
             response = api.request(state['agents'][aid]['model'], 'communicate', system,
                 views[aid], request_key=f'communicate:{state["round"]}:{turn + 1}:{aid}')
             charge=response_size(cfg,response)

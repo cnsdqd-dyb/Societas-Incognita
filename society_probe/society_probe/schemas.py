@@ -80,6 +80,9 @@ def schema(kind, payload, cfg):
         'items':{'type':'string'}})]
     for op in ('accept','reject','leave','close'):communications.append(choice(op,chat={'type':'string'}))
     communications.append(choice('send',chat={'type':'string'},text=text))
+    from action_presentation import sort_variants
+    variants = sort_variants(variants, cfg, payload, 'act', 'tool')
+    communications = sort_variants(communications, cfg, payload, 'communicate', 'op')
     if kind=='communicate':
         return obj({'communication':{'anyOf':communications}})
     if any(k in cfg['communication'] for k in ('max_turns_before_action','budget')):

@@ -718,7 +718,7 @@ def _run_impl(cfg, output, mock=False, resume=False):
         society.state = checkpoint_interventions.load_branch(cfg)
     import numerical_audit
     runtime_environment = numerical_audit.runtime_environment()
-    engine_files=('sim.py','environments.py','metrics.py','schemas.py','interaction_controls.py','numerical_audit.py','provider_schema.py')
+    engine_files=('sim.py','environments.py','metrics.py','schemas.py','interaction_controls.py','action_presentation.py','numerical_audit.py','provider_schema.py')
     engine_files+=('additional_mechanisms.py',)
     if environments.mini_world.enabled(cfg):
         engine_files+=('material_combinations.py',)
