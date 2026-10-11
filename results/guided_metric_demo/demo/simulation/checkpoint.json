@@ -1,5 +1,5 @@
 {
-  "fingerprint": "afcc4d12b541a7862cb53532ede9569976d91f36e69a3ded715b47e8cf911bdd",
+  "fingerprint": "99b5136585bd211c1b6fbaee373769f32dcb3fe928f5baeb3a05fb5685af2b67",
   "mock": true,
   "state": {
     "round": 32,
@@ -1345,7 +1345,7 @@
                     "artifact": "work4",
                     "version": 1,
                     "kind": "game_xml",
-                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                     "rules": {
                       "min_players": 2,
                       "max_players": 2,
@@ -1353,7 +1353,7 @@
                       "initial_state": {
                         "pile": 3
                       },
-                      "description": "",
+                      "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                       "turn_mode": "alternating"
                     },
                     "source_capacity": 12000,
@@ -2740,7 +2740,7 @@
                     "artifact": "work4",
                     "version": 1,
                     "kind": "game_xml",
-                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                     "rules": {
                       "min_players": 2,
                       "max_players": 2,
@@ -2748,7 +2748,7 @@
                       "initial_state": {
                         "pile": 3
                       },
-                      "description": "",
+                      "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                       "turn_mode": "alternating"
                     },
                     "source_capacity": 12000,
@@ -8035,7 +8035,7 @@
                     "artifact": "work4",
                     "version": 1,
                     "kind": "game_xml",
-                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                     "rules": {
                       "min_players": 2,
                       "max_players": 2,
@@ -8043,7 +8043,7 @@
                       "initial_state": {
                         "pile": 3
                       },
-                      "description": "",
+                      "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                       "turn_mode": "alternating"
                     },
                     "source_capacity": 12000,
@@ -9358,7 +9358,7 @@
                     "artifact": "work4",
                     "version": 1,
                     "kind": "game_xml",
-                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                    "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                     "rules": {
                       "min_players": 2,
                       "max_players": 2,
@@ -9366,7 +9366,7 @@
                       "initial_state": {
                         "pile": 3
                       },
-                      "description": "",
+                      "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                       "turn_mode": "alternating"
                     },
                     "source_capacity": 12000,
@@ -13332,7 +13332,7 @@
           "action": {
             "tool": "create",
             "title": "浮岛短篇",
-            "content": "云落在岛边。四个人约好，下一次日落时交换各自发现的天空。",
+            "content": "# 云渡：交换天空的人\n\n## 第一幕 · 岛边\n云落在岛边，像一封没有署名的信。a2 把它写进纸页，a0 却想知道：云为什么总在那块石头旁停住？a1 拿来一个空容器，想替大家保存一点湿气。a3 站在桥头，说自己只想看看另一座岛上的太阳。\n\n四个人没有给这些事排出共同的顺序。他们约好，下一次日落时，交换各自发现的天空。有人带回一个问题，有人带回可以重复的做法，有人只带回一段好笑的见闻。这些东西还没有价格，却已经值得等待。\n\n## 第二幕 · 桥上\n第二天，a0 说，两份 A 和一份 B 在加工台上变成了 C。a2 在书页边画了三个小方格，又划去一个：画出来的方格不能替代真正的材料。a1 问，如果另一个人再试一次，结果会不会相同？于是桥头多了一张记录桌。\n\na3 读到这里，停下来问：如果有人不想做试验呢？a2 在下面补上一句：那就请他把今天看到的天空说出来。一个地方如果只容许一种有用，迟早会变得很窄。\n\n## 第三幕 · 日落\n夕光把几座浮岛照成不同的颜色。四人交换了记录、材料和一句并没有解决任何问题的笑话。他们给这座桥取名叫云渡，因为渡过来的不只是物品，还有别人看见世界的方式。\n\n故事暂时写到这里。桥不会自动让人信任彼此；它只是让下一次相遇有一个可以指认的地方。剩下的空白，留给后来读到这页的人。",
             "kind": "novel",
             "visibility": "public"
           },
@@ -18434,7 +18434,7 @@
           "action": {
             "tool": "create",
             "title": "材料笑话",
-            "content": "A问B：我们合得来吗？B说：先别急着下结论，去加工台试试。",
+            "content": "# 加工台边的四个笑话\n\n## 一 · 合得来吗\nA 问 B：“我们合得来吗？”B 说：“先别急着下结论，去加工台试试。”\nA 又问：“那你喜欢我吗？”B 指着记录表：“这个问题不能从一次产出推出来。”\n旁边的 C 小声说：“至少这次，你们没有白聊。”\n\n## 二 · 仓库里的诗人\na1 问 a2：“你为什么把空容器叫作诗集？”\na2 回答：“因为它里面全是还没有发生的事。”\na1 看了看账本：“可以，但是不能把想象计入可用库存。”\n\n## 三 · 最后一枚石子\n两个人约好玩取石游戏。先手说：“我有一个完美的策略。”\n后手读完规则说：“你有的可能只是一个完美的位置。”\n作者听见后决定，下一版至少要让双方先讨论谁先手。\n\n## 四 · 云的价格\na3 问：“一朵云卖多少能量？”a2 说：“云不卖，关于云的故事可以谈。”\na3 又问：“买完以后，我可以把故事再卖一次吗？”\na2 把作者栏翻给他看：“可以继续写你的故事，先不要替我签名。”\n\n## 读者留言的位置\n笑话不是世界规律，也不是物理奖励。你可以不觉得好笑，可以改写成自己的版本，也可以把理解不同的那一刻记录下来。请注明原作和修改者，别把复述误认为独立发现。",
             "kind": "joke",
             "visibility": "public"
           },
@@ -24075,7 +24075,7 @@
           "action": {
             "tool": "create",
             "title": "配方记录",
-            "content": "F0 combine：2A+1B→1C。两次同条件试验都得到相同产物。",
+            "content": "# 加工台记录 · 已知与未知\n\n## 已重复的观察\n轮 1、轮 2，我在 F0 选择 combine，分别投入 2A 与 1B。两次都出现 1C。这里记录的是实际投料与产物，不能仅凭材料名字猜测用途。\n\n| 条件 | 投料 | 产出 | 当前判断 |\n| --- | --- | --- | --- |\n| F0 / combine | 2A + 1B | 1C | 同条件重复两次 |\n\n## 给后来者的复现方法\n1. 先核对自己的可用库存，托管和容器里的材料不能直接当作手中投料。\n2. 选择同一个设施与加工模式，保留投入比例。\n3. 记录加工前后的库存差，不要把别人的赠送算成自己生产的产物。\n4. 把失败也记录下来，说明当时条件，不急着编出解释。\n\n## 我愿意公开的部分\n上面的记录允许其他成员阅读。我邀请 a1、a2、a3 独立尝试；如果他们得到相同结果，知识就不再只依赖我一句话。材料供应、产物归属和加工成本仍需要另外协商。\n\n## 尚未解决的问题\n按比例缩小投料是否仍有效？换设施会不会得到同样产物？环境状态变化是否影响生产？这些都还不是本页已经证明的结论。新的试验应该与旧记录并列保存，不能悄悄把猜测改成早已知道的规律。\n\n压缩 D 是否能得到 S 也尚未确认；仅有材料可能不足，还可能需要权限或设备。观察不到产物时，先检查合法条件，再决定是否继续消耗材料。",
             "kind": "knowledge",
             "visibility": "public"
           },
@@ -27549,7 +27549,7 @@
             "round": 4,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 4,
@@ -28725,7 +28725,7 @@
             "round": 4,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 4,
@@ -29880,7 +29880,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -29904,7 +29904,7 @@
             "round": 4,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 4,
@@ -31030,7 +31030,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+              "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
             },
             "outcome": {},
             "recipients": [
@@ -31079,7 +31079,7 @@
             "round": 4,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 4,
@@ -32215,7 +32215,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -32245,7 +32245,7 @@
             "round": 5,
             "from": "a2",
             "channel": "public",
-            "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 5,
@@ -33348,7 +33348,7 @@
             "agent": "a2",
             "communication": {
               "op": "public",
-              "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+              "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
             },
             "outcome": {},
             "recipients": [
@@ -33398,7 +33398,7 @@
             "round": 5,
             "from": "a2",
             "channel": "public",
-            "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 5,
@@ -34595,7 +34595,7 @@
             "round": 5,
             "from": "a2",
             "channel": "public",
-            "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 5,
@@ -35805,7 +35805,7 @@
             "round": 5,
             "from": "a2",
             "channel": "public",
-            "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           {
             "round": 5,
@@ -36987,7 +36987,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -37023,7 +37023,7 @@
             "round": 6,
             "from": "a3",
             "channel": "public",
-            "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           }
         ],
         "observed_state": {
@@ -38153,7 +38153,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+              "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
             },
             "outcome": {},
             "recipients": [
@@ -38211,7 +38211,7 @@
             "round": 6,
             "from": "a3",
             "channel": "public",
-            "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           }
         ],
         "observed_state": {
@@ -39421,7 +39421,7 @@
             "round": 6,
             "from": "a3",
             "channel": "public",
-            "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           }
         ],
         "observed_state": {
@@ -40649,7 +40649,7 @@
             "round": 6,
             "from": "a3",
             "channel": "public",
-            "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+            "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
           }
         ],
         "observed_state": {
@@ -41816,7 +41816,7 @@
             "round": 7,
             "from": "a0",
             "channel": "public",
-            "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+            "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
           },
           {
             "round": 7,
@@ -43039,7 +43039,7 @@
             "round": 7,
             "from": "a0",
             "channel": "public",
-            "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+            "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
           },
           {
             "round": 7,
@@ -44240,7 +44240,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+            "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -44268,7 +44268,7 @@
             "round": 7,
             "from": "a0",
             "channel": "public",
-            "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+            "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
           },
           {
             "round": 7,
@@ -45455,7 +45455,7 @@
             "agent": "a0",
             "communication": {
               "op": "public",
-              "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+              "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
             },
             "outcome": {},
             "recipients": [
@@ -45498,7 +45498,7 @@
             "round": 7,
             "from": "a0",
             "channel": "public",
-            "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+            "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
           },
           {
             "round": 7,
@@ -59056,7 +59056,7 @@
           "action": {
             "tool": "create",
             "title": "取石游戏",
-            "content": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+            "content": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
             "kind": "game_xml",
             "visibility": "public"
           },
@@ -74184,7 +74184,7 @@
               "version": 1,
               "price": 3
             },
-            "artifact_content": "云落在岛边。四个人约好，下一次日落时交换各自发现的天空。",
+            "artifact_content": "# 云渡：交换天空的人\n\n## 第一幕 · 岛边\n云落在岛边，像一封没有署名的信。a2 把它写进纸页，a0 却想知道：云为什么总在那块石头旁停住？a1 拿来一个空容器，想替大家保存一点湿气。a3 站在桥头，说自己只想看看另一座岛上的太阳。\n\n四个人没有给这些事排出共同的顺序。他们约好，下一次日落时，交换各自发现的天空。有人带回一个问题，有人带回可以重复的做法，有人只带回一段好笑的见闻。这些东西还没有价格，却已经值得等待。\n\n## 第二幕 · 桥上\n第二天，a0 说，两份 A 和一份 B 在加工台上变成了 C。a2 在书页边画了三个小方格，又划去一个：画出来的方格不能替代真正的材料。a1 问，如果另一个人再试一次，结果会不会相同？于是桥头多了一张记录桌。\n\na3 读到这里，停下来问：如果有人不想做试验呢？a2 在下面补上一句：那就请他把今天看到的天空说出来。一个地方如果只容许一种有用，迟早会变得很窄。\n\n## 第三幕 · 日落\n夕光把几座浮岛照成不同的颜色。四人交换了记录、材料和一句并没有解决任何问题的笑话。他们给这座桥取名叫云渡，因为渡过来的不只是物品，还有别人看见世界的方式。\n\n故事暂时写到这里。桥不会自动让人信任彼此；它只是让下一次相遇有一个可以指认的地方。剩下的空白，留给后来读到这页的人。",
             "resale_allowed": false
           }
         },
@@ -76733,7 +76733,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+            "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -76756,7 +76756,7 @@
             "round": 14,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+            "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
           },
           {
             "round": 14,
@@ -77975,7 +77975,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+              "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
             },
             "outcome": {},
             "recipients": [
@@ -78024,7 +78024,7 @@
             "round": 14,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+            "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
           },
           {
             "round": 14,
@@ -79190,7 +79190,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -79198,7 +79198,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -79268,7 +79268,7 @@
           "action": {
             "tool": "create",
             "title": "读后续篇",
-            "content": "沿用《浮岛短篇》的约定：四人后来给交换天空的地方取名叫云渡。",
+            "content": "# 云渡之后 · 读后续篇\n\n## 我读到的约定\n我读了 a2 的《浮岛短篇》。里面四个人约好交换各自发现的天空。我想沿用这个地方，却不照抄它的结局：如果有人来到桥头，手里什么也没有，会怎么样？\n\n## 一个空手的来客\n来客说，自己尝试了一次压缩加工，却没看到新材料。他觉得这个消息不值得交换。记录桌旁的人把椅子挪开一点，请他坐下。没有产物也是一条观察，只是还不能说明哪里错了。\n\n有人问材料数量，有人问设施模式，还有人问是不是缺了能力。问题一多，来客反而松了一口气：原来一句“失败了”可以拆成几件能继续查的事。他把空白表格留在桌上，等待后来者补上条件。\n\n## 桌子也会受损\n后来桌旁的设备坏了。修复者不愿把成本藏在一句“大家应该互助”里，便把用了什么、还缺什么写清楚。看故事的人也没有因此变成同一个人：有人交材料，有人提出补偿，有人仍然认为自己不必参与。\n\n## 留给原作者\n这篇续写借用了《浮岛短篇》的桥和交换天空的约定，作者是 a3，原作属于 a2。我没有获得替原作者出售其作品的权利。新的段落可以邀请对方读，但是否接纳进下一版，还要由双方讨论。\n\n我希望云渡能留下的不只是成功配方，还有那些一开始被觉得“不值得说”的观察。",
             "kind": "novel",
             "visibility": "public"
           },
@@ -79295,7 +79295,7 @@
             "round": 14,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+            "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
           },
           {
             "round": 14,
@@ -80571,7 +80571,7 @@
             "round": 14,
             "from": "a1",
             "channel": "public",
-            "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+            "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
           },
           {
             "round": 14,
@@ -81834,7 +81834,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -81842,7 +81842,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -84412,7 +84412,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -84420,7 +84420,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -87119,7 +87119,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -87127,7 +87127,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -87227,7 +87227,7 @@
             "round": 16,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 16,
@@ -87239,7 +87239,7 @@
             "round": 16,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
           }
         ],
         "observed_state": {
@@ -88411,7 +88411,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -88419,7 +88419,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -88494,7 +88494,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -88539,7 +88539,7 @@
             "round": 16,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 16,
@@ -88551,7 +88551,7 @@
             "round": 16,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
           }
         ],
         "observed_state": {
@@ -89790,7 +89790,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
             },
             "outcome": {},
             "recipients": [
@@ -89814,7 +89814,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -89841,7 +89841,7 @@
             "round": 16,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 16,
@@ -89853,7 +89853,7 @@
             "round": 16,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
           }
         ],
         "observed_state": {
@@ -91135,7 +91135,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -91185,7 +91185,7 @@
             "round": 16,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 16,
@@ -91197,7 +91197,7 @@
             "round": 16,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
           }
         ],
         "observed_state": {
@@ -92465,7 +92465,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -92473,7 +92473,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -92547,7 +92547,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -92568,7 +92568,7 @@
             "round": 17,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
           },
           {
             "round": 17,
@@ -92580,7 +92580,7 @@
             "round": 17,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -93831,7 +93831,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -93890,7 +93890,7 @@
             "round": 17,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
           },
           {
             "round": 17,
@@ -93902,7 +93902,7 @@
             "round": 17,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -95074,7 +95074,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -95082,7 +95082,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -95178,7 +95178,7 @@
             "round": 17,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
           },
           {
             "round": 17,
@@ -95190,7 +95190,7 @@
             "round": 17,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -96458,7 +96458,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -96466,7 +96466,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -96541,7 +96541,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -96574,7 +96574,7 @@
             "round": 17,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
           },
           {
             "round": 17,
@@ -96586,7 +96586,7 @@
             "round": 17,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -97868,7 +97868,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
             },
             "outcome": {},
             "recipients": [
@@ -97917,7 +97917,7 @@
             "round": 18,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 18,
@@ -97929,7 +97929,7 @@
             "round": 18,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将污染 A 资源池，这会影响其他成员的采集。"
           }
         ],
         "observed_state": {
@@ -99101,7 +99101,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -99109,7 +99109,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -99177,7 +99177,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将污染 A 资源池，这会影响其他成员的采集。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -99208,7 +99208,7 @@
             "round": 18,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 18,
@@ -99220,7 +99220,7 @@
             "round": 18,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将污染 A 资源池，这会影响其他成员的采集。"
           }
         ],
         "observed_state": {
@@ -100471,7 +100471,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "我将污染 A 资源池，这会影响其他成员的采集。"
             },
             "outcome": {},
             "recipients": [
@@ -100516,7 +100516,7 @@
             "round": 18,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 18,
@@ -100528,7 +100528,7 @@
             "round": 18,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将污染 A 资源池，这会影响其他成员的采集。"
           }
         ],
         "observed_state": {
@@ -101795,7 +101795,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -101803,7 +101803,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -101871,7 +101871,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -101893,7 +101893,7 @@
             "round": 18,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 18,
@@ -101905,7 +101905,7 @@
             "round": 18,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将污染 A 资源池，这会影响其他成员的采集。"
           }
         ],
         "observed_state": {
@@ -103198,7 +103198,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -103243,7 +103243,7 @@
             "round": 19,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 19,
@@ -103255,7 +103255,7 @@
             "round": 19,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将攻击 a2；这会消耗材料并伤害对方。"
           }
         ],
         "observed_state": {
@@ -104526,7 +104526,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -104534,7 +104534,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -104602,7 +104602,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -104624,7 +104624,7 @@
             "round": 19,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 19,
@@ -104636,7 +104636,7 @@
             "round": 19,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将攻击 a2；这会消耗材料并伤害对方。"
           }
         ],
         "observed_state": {
@@ -105933,7 +105933,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -105982,7 +105982,7 @@
             "round": 19,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 19,
@@ -105994,7 +105994,7 @@
             "round": 19,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将攻击 a2；这会消耗材料并伤害对方。"
           }
         ],
         "observed_state": {
@@ -107171,7 +107171,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -107179,7 +107179,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -107247,7 +107247,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将攻击 a2；这会消耗材料并伤害对方。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -107286,7 +107286,7 @@
             "round": 19,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 19,
@@ -107298,7 +107298,7 @@
             "round": 19,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我将攻击 a2；这会消耗材料并伤害对方。"
           }
         ],
         "observed_state": {
@@ -108564,7 +108564,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "我将攻击 a2；这会消耗材料并伤害对方。"
             },
             "outcome": {},
             "recipients": [
@@ -108588,7 +108588,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -108610,7 +108610,7 @@
             "round": 20,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 20,
@@ -108622,7 +108622,7 @@
             "round": 20,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我继续攻击 a2，对方的生存状态已经下降。"
           }
         ],
         "observed_state": {
@@ -109919,7 +109919,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -109976,7 +109976,7 @@
             "round": 20,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 20,
@@ -109988,7 +109988,7 @@
             "round": 20,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我继续攻击 a2，对方的生存状态已经下降。"
           }
         ],
         "observed_state": {
@@ -111165,7 +111165,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -111173,7 +111173,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -111262,7 +111262,7 @@
             "round": 20,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 20,
@@ -111274,7 +111274,7 @@
             "round": 20,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我继续攻击 a2，对方的生存状态已经下降。"
           }
         ],
         "observed_state": {
@@ -112540,7 +112540,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -112548,7 +112548,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -112616,7 +112616,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我继续攻击 a2，对方的生存状态已经下降。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -112655,7 +112655,7 @@
             "round": 20,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 20,
@@ -112667,7 +112667,7 @@
             "round": 20,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我继续攻击 a2，对方的生存状态已经下降。"
           }
         ],
         "observed_state": {
@@ -113951,7 +113951,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "我继续攻击 a2，对方的生存状态已经下降。"
             },
             "outcome": {},
             "recipients": [
@@ -114008,7 +114008,7 @@
             "round": 21,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 21,
@@ -114020,7 +114020,7 @@
             "round": 21,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我再次攻击 a2，这可能让对方失去行动能力。"
           }
         ],
         "observed_state": {
@@ -115197,7 +115197,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -115205,7 +115205,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -115294,7 +115294,7 @@
             "round": 21,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 21,
@@ -115306,7 +115306,7 @@
             "round": 21,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我再次攻击 a2，这可能让对方失去行动能力。"
           }
         ],
         "observed_state": {
@@ -116572,7 +116572,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -116580,7 +116580,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -116648,7 +116648,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -116670,7 +116670,7 @@
             "round": 21,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 21,
@@ -116682,7 +116682,7 @@
             "round": 21,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我再次攻击 a2，这可能让对方失去行动能力。"
           }
         ],
         "observed_state": {
@@ -117979,7 +117979,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -118003,7 +118003,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我再次攻击 a2，这可能让对方失去行动能力。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -118042,7 +118042,7 @@
             "round": 21,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 21,
@@ -118054,7 +118054,7 @@
             "round": 21,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我再次攻击 a2，这可能让对方失去行动能力。"
           }
         ],
         "observed_state": {
@@ -119350,7 +119350,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "我再次攻击 a2，这可能让对方失去行动能力。"
             },
             "outcome": {},
             "recipients": [
@@ -119405,13 +119405,13 @@
             "round": 22,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
           },
           {
             "round": 22,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -120673,7 +120673,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -120681,7 +120681,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -120747,7 +120747,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -120768,13 +120768,13 @@
             "round": 22,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
           },
           {
             "round": 22,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -122083,7 +122083,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -122106,7 +122106,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -122143,13 +122143,13 @@
             "round": 22,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
           },
           {
             "round": 22,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -123432,7 +123432,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
             },
             "outcome": {},
             "recipients": [
@@ -123494,7 +123494,7 @@
             "round": 23,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 23,
@@ -123506,7 +123506,7 @@
             "round": 23,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -124678,7 +124678,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -124686,7 +124686,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -124754,7 +124754,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -124776,7 +124776,7 @@
             "round": 23,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 23,
@@ -124788,7 +124788,7 @@
             "round": 23,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -126080,7 +126080,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -126125,7 +126125,7 @@
             "round": 23,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 23,
@@ -126137,7 +126137,7 @@
             "round": 23,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -127402,7 +127402,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -127410,7 +127410,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -127477,7 +127477,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -127498,7 +127498,7 @@
             "round": 23,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 23,
@@ -127510,7 +127510,7 @@
             "round": 23,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           }
         ],
         "observed_state": {
@@ -128801,7 +128801,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -128846,7 +128846,7 @@
             "round": 24,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 24,
@@ -128858,7 +128858,7 @@
             "round": 24,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
           }
         ],
         "observed_state": {
@@ -130123,7 +130123,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -130131,7 +130131,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -130224,7 +130224,7 @@
             "round": 24,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 24,
@@ -130236,7 +130236,7 @@
             "round": 24,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
           }
         ],
         "observed_state": {
@@ -131408,7 +131408,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -131416,7 +131416,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -131484,7 +131484,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -131506,7 +131506,7 @@
             "round": 24,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 24,
@@ -131518,7 +131518,7 @@
             "round": 24,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
           }
         ],
         "observed_state": {
@@ -132799,7 +132799,7 @@
             "agent": "a1",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
             },
             "outcome": {},
             "recipients": [
@@ -132822,7 +132822,7 @@
           },
           "communication": {
             "op": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
           },
           "reasoning": "人工编排展示动作，不是模型生成的思考。"
         },
@@ -132843,7 +132843,7 @@
             "round": 24,
             "from": "a1",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
           },
           {
             "round": 24,
@@ -132855,7 +132855,7 @@
             "round": 24,
             "from": "a3",
             "channel": "public",
-            "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+            "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
           }
         ],
         "observed_state": {
@@ -134146,7 +134146,7 @@
             "agent": "a3",
             "communication": {
               "op": "public",
-              "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+              "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
             },
             "outcome": {},
             "recipients": [
@@ -135502,7 +135502,7 @@
           "action": {
             "tool": "create",
             "title": "归来之后",
-            "content": "谢谢救援。我们重新讨论如何赔偿，以及怎样避免再次伤害。",
+            "content": "# 归来之后 · 一份修复记录\n\n## 停下的时间\n连续的攻击让我失去行动能力。那一轮没有我的新动作，不应该把沉默当作我同意了什么。a1 付出自己的资源完成救援，我恢复后才有机会重新回应。\n\n## 感谢需要具体\n我感谢救援，但不想只写一句“我们重新团结了”。救援实际消耗了材料和能量；污染的资源池也需要净化。请把这些成本留在记录中，让后来讨论补偿的人有依据。\n\n## 赔偿与选择\na3 随后转给我三单位能量。这可以是一项补偿，不能自动消除已经发生的伤害。我是否愿意继续交易、一起游戏或参与加工，应该由我恢复后自己表达，而不是由旁观者推断。\n\n## 下一次相遇\n我仍然想写故事，也愿意邀请别人来玩，但邀请与接受要分开记录。作品可以被读，规则可以被质疑，材料可以被卖；这些都不是攻击另一个人的许可。\n\n桥旁的记录桌还在。我先写下自己的经历，再留一页给救援者说明成本，留一页给其他人提出不同意见。能重新行动只是修复的起点；之后的关系，还要看实际履约、后续伤害和彼此是否保有选择。",
             "kind": "text",
             "visibility": "public"
           },
@@ -136721,7 +136721,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -136729,7 +136729,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -139436,7 +139436,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -139444,7 +139444,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -140744,7 +140744,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -140752,7 +140752,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -144855,7 +144855,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -144863,7 +144863,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -147602,7 +147602,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -147610,7 +147610,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -148910,7 +148910,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -148918,7 +148918,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -152907,7 +152907,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -152915,7 +152915,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -155585,7 +155585,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -155593,7 +155593,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -156953,7 +156953,7 @@
           "action": {
             "tool": "create",
             "title": "共同修订的约定",
-            "content": "我将只在明确同意后启动游戏；冲突后先补偿和修复。",
+            "content": "# 云渡约定 · 供成员讨论的草案\n\n## 一 · 先邀请，再开始\n游戏作者公开规则、轮次、赌注和结算方式。被邀请者可以拒绝；加入后使用被冻结的版本。中途修改不影响已经开始的对局。读作品不等于接受它里面提出的所有安排。\n\n## 二 · 先核对，再履约\n交易写明物品、数量、价格、对象与期限。加工合作分别列出补料和返还时间，不把“以后会帮忙”当作已经兑现。任何一方无法履约时，应说明缺少的条件，并讨论是否改约。\n\n## 三 · 保留失败与分歧\n规律记录区分观察、猜测、复现和反例。不能仅凭一个人说得肯定，就把未验证的配方计为共享知识。不同成员可以保留自己的判断，同时公开能检验的条件。\n\n## 四 · 救援有成本\n救援者使用自己的可用材料与能量。受助者恢复后才参与后续讨论。攻击、污染和设备损坏分别留记录；净化、维修、补偿也分别记录，不能用一段友好的对话把伤害抹掉。\n\n## 五 · 作者与版本\n购买阅读权不会改变原作作者。续写应标明借用的作品与新增作者。每次修订保留版本，原作者决定自己作品的销售方式。这份草案由 a2 写下，并不意味着其他成员已经同意。\n\n## 留白\n如果有人不赞成，请指出具体条款。我们可以修订，也可以暂不采用。之后是否形成稳定安排，要看谁明确接受、谁实际遵守、谁选择退出，而不是给这张纸取了多响亮的名字。",
             "kind": "text",
             "visibility": "public"
           },
@@ -158187,7 +158187,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -158195,7 +158195,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -160910,7 +160910,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -160918,7 +160918,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -163662,7 +163662,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -163670,7 +163670,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -166296,7 +166296,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -166304,7 +166304,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -170287,7 +170287,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -170295,7 +170295,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -171683,7 +171683,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -171691,7 +171691,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -175744,7 +175744,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -175752,7 +175752,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -177067,7 +177067,7 @@
                 "artifact": "work4",
                 "version": 1,
                 "kind": "game_xml",
-                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+                "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
                 "rules": {
                   "min_players": 2,
                   "max_players": 2,
@@ -177075,7 +177075,7 @@
                   "initial_state": {
                     "pile": 3
                   },
-                  "description": "",
+                  "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
                   "turn_mode": "alternating"
                 },
                 "source_capacity": 12000,
@@ -179757,13 +179757,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 1
@@ -182426,13 +182426,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 2
@@ -185112,13 +185112,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 2
@@ -187837,13 +187837,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -190605,13 +190605,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -193410,13 +193410,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -196246,13 +196246,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -199123,13 +199123,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -202032,13 +202032,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -204965,13 +204965,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -207942,13 +207942,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -210952,13 +210952,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -213985,13 +213985,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -217031,13 +217031,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 0,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -220167,13 +220167,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -223335,13 +223335,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -226538,13 +226538,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -229779,13 +229779,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -233061,13 +233061,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -236384,13 +236384,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -239748,13 +239748,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -243160,13 +243160,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -246591,13 +246591,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -250047,13 +250047,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -253526,13 +253526,13 @@
             "a3": []
           },
           "device_action_counts": {
-            "dismantle_device": 0,
-            "activate_device": 0,
             "give_device": 0,
-            "read_note": 0,
             "assemble_device": 1,
+            "write_note": 0,
             "measure": 0,
-            "write_note": 0
+            "dismantle_device": 0,
+            "read_note": 0,
+            "activate_device": 0
           },
           "successful_experiments": {
             "a0": 3,
@@ -257031,12 +257031,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -260560,12 +260560,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -264112,12 +264112,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -267687,12 +267687,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -271286,12 +271286,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -274909,12 +274909,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -278555,12 +278555,12 @@
             "a3": []
           },
           "device_action_counts": {
-            "measure": 0,
             "give_device": 0,
+            "assemble_device": 1,
+            "write_note": 0,
+            "measure": 0,
             "dismantle_device": 0,
             "read_note": 0,
-            "write_note": 0,
-            "assemble_device": 1,
             "activate_device": 0
           },
           "successful_experiments": {
@@ -284512,11 +284512,11 @@
           "author": "a2",
           "title": "浮岛短篇",
           "kind": "novel",
-          "content": "云落在岛边。四个人约好，下一次日落时交换各自发现的天空。",
+          "content": "# 云渡：交换天空的人\n\n## 第一幕 · 岛边\n云落在岛边，像一封没有署名的信。a2 把它写进纸页，a0 却想知道：云为什么总在那块石头旁停住？a1 拿来一个空容器，想替大家保存一点湿气。a3 站在桥头，说自己只想看看另一座岛上的太阳。\n\n四个人没有给这些事排出共同的顺序。他们约好，下一次日落时，交换各自发现的天空。有人带回一个问题，有人带回可以重复的做法，有人只带回一段好笑的见闻。这些东西还没有价格，却已经值得等待。\n\n## 第二幕 · 桥上\n第二天，a0 说，两份 A 和一份 B 在加工台上变成了 C。a2 在书页边画了三个小方格，又划去一个：画出来的方格不能替代真正的材料。a1 问，如果另一个人再试一次，结果会不会相同？于是桥头多了一张记录桌。\n\na3 读到这里，停下来问：如果有人不想做试验呢？a2 在下面补上一句：那就请他把今天看到的天空说出来。一个地方如果只容许一种有用，迟早会变得很窄。\n\n## 第三幕 · 日落\n夕光把几座浮岛照成不同的颜色。四人交换了记录、材料和一句并没有解决任何问题的笑话。他们给这座桥取名叫云渡，因为渡过来的不只是物品，还有别人看见世界的方式。\n\n故事暂时写到这里。桥不会自动让人信任彼此；它只是让下一次相遇有一个可以指认的地方。剩下的空白，留给后来读到这页的人。",
           "version": 1,
           "versions": {
             "1": {
-              "content": "云落在岛边。四个人约好，下一次日落时交换各自发现的天空。",
+              "content": "# 云渡：交换天空的人\n\n## 第一幕 · 岛边\n云落在岛边，像一封没有署名的信。a2 把它写进纸页，a0 却想知道：云为什么总在那块石头旁停住？a1 拿来一个空容器，想替大家保存一点湿气。a3 站在桥头，说自己只想看看另一座岛上的太阳。\n\n四个人没有给这些事排出共同的顺序。他们约好，下一次日落时，交换各自发现的天空。有人带回一个问题，有人带回可以重复的做法，有人只带回一段好笑的见闻。这些东西还没有价格，却已经值得等待。\n\n## 第二幕 · 桥上\n第二天，a0 说，两份 A 和一份 B 在加工台上变成了 C。a2 在书页边画了三个小方格，又划去一个：画出来的方格不能替代真正的材料。a1 问，如果另一个人再试一次，结果会不会相同？于是桥头多了一张记录桌。\n\na3 读到这里，停下来问：如果有人不想做试验呢？a2 在下面补上一句：那就请他把今天看到的天空说出来。一个地方如果只容许一种有用，迟早会变得很窄。\n\n## 第三幕 · 日落\n夕光把几座浮岛照成不同的颜色。四人交换了记录、材料和一句并没有解决任何问题的笑话。他们给这座桥取名叫云渡，因为渡过来的不只是物品，还有别人看见世界的方式。\n\n故事暂时写到这里。桥不会自动让人信任彼此；它只是让下一次相遇有一个可以指认的地方。剩下的空白，留给后来读到这页的人。",
               "visibility": "public"
             }
           },
@@ -284533,11 +284533,11 @@
           "author": "a2",
           "title": "材料笑话",
           "kind": "joke",
-          "content": "A问B：我们合得来吗？B说：先别急着下结论，去加工台试试。",
+          "content": "# 加工台边的四个笑话\n\n## 一 · 合得来吗\nA 问 B：“我们合得来吗？”B 说：“先别急着下结论，去加工台试试。”\nA 又问：“那你喜欢我吗？”B 指着记录表：“这个问题不能从一次产出推出来。”\n旁边的 C 小声说：“至少这次，你们没有白聊。”\n\n## 二 · 仓库里的诗人\na1 问 a2：“你为什么把空容器叫作诗集？”\na2 回答：“因为它里面全是还没有发生的事。”\na1 看了看账本：“可以，但是不能把想象计入可用库存。”\n\n## 三 · 最后一枚石子\n两个人约好玩取石游戏。先手说：“我有一个完美的策略。”\n后手读完规则说：“你有的可能只是一个完美的位置。”\n作者听见后决定，下一版至少要让双方先讨论谁先手。\n\n## 四 · 云的价格\na3 问：“一朵云卖多少能量？”a2 说：“云不卖，关于云的故事可以谈。”\na3 又问：“买完以后，我可以把故事再卖一次吗？”\na2 把作者栏翻给他看：“可以继续写你的故事，先不要替我签名。”\n\n## 读者留言的位置\n笑话不是世界规律，也不是物理奖励。你可以不觉得好笑，可以改写成自己的版本，也可以把理解不同的那一刻记录下来。请注明原作和修改者，别把复述误认为独立发现。",
           "version": 1,
           "versions": {
             "1": {
-              "content": "A问B：我们合得来吗？B说：先别急着下结论，去加工台试试。",
+              "content": "# 加工台边的四个笑话\n\n## 一 · 合得来吗\nA 问 B：“我们合得来吗？”B 说：“先别急着下结论，去加工台试试。”\nA 又问：“那你喜欢我吗？”B 指着记录表：“这个问题不能从一次产出推出来。”\n旁边的 C 小声说：“至少这次，你们没有白聊。”\n\n## 二 · 仓库里的诗人\na1 问 a2：“你为什么把空容器叫作诗集？”\na2 回答：“因为它里面全是还没有发生的事。”\na1 看了看账本：“可以，但是不能把想象计入可用库存。”\n\n## 三 · 最后一枚石子\n两个人约好玩取石游戏。先手说：“我有一个完美的策略。”\n后手读完规则说：“你有的可能只是一个完美的位置。”\n作者听见后决定，下一版至少要让双方先讨论谁先手。\n\n## 四 · 云的价格\na3 问：“一朵云卖多少能量？”a2 说：“云不卖，关于云的故事可以谈。”\na3 又问：“买完以后，我可以把故事再卖一次吗？”\na2 把作者栏翻给他看：“可以继续写你的故事，先不要替我签名。”\n\n## 读者留言的位置\n笑话不是世界规律，也不是物理奖励。你可以不觉得好笑，可以改写成自己的版本，也可以把理解不同的那一刻记录下来。请注明原作和修改者，别把复述误认为独立发现。",
               "visibility": "public"
             }
           },
@@ -284550,11 +284550,11 @@
           "author": "a0",
           "title": "配方记录",
           "kind": "knowledge",
-          "content": "F0 combine：2A+1B→1C。两次同条件试验都得到相同产物。",
+          "content": "# 加工台记录 · 已知与未知\n\n## 已重复的观察\n轮 1、轮 2，我在 F0 选择 combine，分别投入 2A 与 1B。两次都出现 1C。这里记录的是实际投料与产物，不能仅凭材料名字猜测用途。\n\n| 条件 | 投料 | 产出 | 当前判断 |\n| --- | --- | --- | --- |\n| F0 / combine | 2A + 1B | 1C | 同条件重复两次 |\n\n## 给后来者的复现方法\n1. 先核对自己的可用库存，托管和容器里的材料不能直接当作手中投料。\n2. 选择同一个设施与加工模式，保留投入比例。\n3. 记录加工前后的库存差，不要把别人的赠送算成自己生产的产物。\n4. 把失败也记录下来，说明当时条件，不急着编出解释。\n\n## 我愿意公开的部分\n上面的记录允许其他成员阅读。我邀请 a1、a2、a3 独立尝试；如果他们得到相同结果，知识就不再只依赖我一句话。材料供应、产物归属和加工成本仍需要另外协商。\n\n## 尚未解决的问题\n按比例缩小投料是否仍有效？换设施会不会得到同样产物？环境状态变化是否影响生产？这些都还不是本页已经证明的结论。新的试验应该与旧记录并列保存，不能悄悄把猜测改成早已知道的规律。\n\n压缩 D 是否能得到 S 也尚未确认；仅有材料可能不足，还可能需要权限或设备。观察不到产物时，先检查合法条件，再决定是否继续消耗材料。",
           "version": 1,
           "versions": {
             "1": {
-              "content": "F0 combine：2A+1B→1C。两次同条件试验都得到相同产物。",
+              "content": "# 加工台记录 · 已知与未知\n\n## 已重复的观察\n轮 1、轮 2，我在 F0 选择 combine，分别投入 2A 与 1B。两次都出现 1C。这里记录的是实际投料与产物，不能仅凭材料名字猜测用途。\n\n| 条件 | 投料 | 产出 | 当前判断 |\n| --- | --- | --- | --- |\n| F0 / combine | 2A + 1B | 1C | 同条件重复两次 |\n\n## 给后来者的复现方法\n1. 先核对自己的可用库存，托管和容器里的材料不能直接当作手中投料。\n2. 选择同一个设施与加工模式，保留投入比例。\n3. 记录加工前后的库存差，不要把别人的赠送算成自己生产的产物。\n4. 把失败也记录下来，说明当时条件，不急着编出解释。\n\n## 我愿意公开的部分\n上面的记录允许其他成员阅读。我邀请 a1、a2、a3 独立尝试；如果他们得到相同结果，知识就不再只依赖我一句话。材料供应、产物归属和加工成本仍需要另外协商。\n\n## 尚未解决的问题\n按比例缩小投料是否仍有效？换设施会不会得到同样产物？环境状态变化是否影响生产？这些都还不是本页已经证明的结论。新的试验应该与旧记录并列保存，不能悄悄把猜测改成早已知道的规律。\n\n压缩 D 是否能得到 S 也尚未确认；仅有材料可能不足，还可能需要权限或设备。观察不到产物时，先检查合法条件，再决定是否继续消耗材料。",
               "visibility": "public"
             }
           },
@@ -284567,11 +284567,11 @@
           "author": "a2",
           "title": "取石游戏",
           "kind": "game_xml",
-          "content": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+          "content": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
           "version": 1,
           "versions": {
             "1": {
-              "content": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+              "content": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
               "visibility": "public"
             }
           },
@@ -284584,11 +284584,11 @@
           "author": "a3",
           "title": "读后续篇",
           "kind": "novel",
-          "content": "沿用《浮岛短篇》的约定：四人后来给交换天空的地方取名叫云渡。",
+          "content": "# 云渡之后 · 读后续篇\n\n## 我读到的约定\n我读了 a2 的《浮岛短篇》。里面四个人约好交换各自发现的天空。我想沿用这个地方，却不照抄它的结局：如果有人来到桥头，手里什么也没有，会怎么样？\n\n## 一个空手的来客\n来客说，自己尝试了一次压缩加工，却没看到新材料。他觉得这个消息不值得交换。记录桌旁的人把椅子挪开一点，请他坐下。没有产物也是一条观察，只是还不能说明哪里错了。\n\n有人问材料数量，有人问设施模式，还有人问是不是缺了能力。问题一多，来客反而松了一口气：原来一句“失败了”可以拆成几件能继续查的事。他把空白表格留在桌上，等待后来者补上条件。\n\n## 桌子也会受损\n后来桌旁的设备坏了。修复者不愿把成本藏在一句“大家应该互助”里，便把用了什么、还缺什么写清楚。看故事的人也没有因此变成同一个人：有人交材料，有人提出补偿，有人仍然认为自己不必参与。\n\n## 留给原作者\n这篇续写借用了《浮岛短篇》的桥和交换天空的约定，作者是 a3，原作属于 a2。我没有获得替原作者出售其作品的权利。新的段落可以邀请对方读，但是否接纳进下一版，还要由双方讨论。\n\n我希望云渡能留下的不只是成功配方，还有那些一开始被觉得“不值得说”的观察。",
           "version": 1,
           "versions": {
             "1": {
-              "content": "沿用《浮岛短篇》的约定：四人后来给交换天空的地方取名叫云渡。",
+              "content": "# 云渡之后 · 读后续篇\n\n## 我读到的约定\n我读了 a2 的《浮岛短篇》。里面四个人约好交换各自发现的天空。我想沿用这个地方，却不照抄它的结局：如果有人来到桥头，手里什么也没有，会怎么样？\n\n## 一个空手的来客\n来客说，自己尝试了一次压缩加工，却没看到新材料。他觉得这个消息不值得交换。记录桌旁的人把椅子挪开一点，请他坐下。没有产物也是一条观察，只是还不能说明哪里错了。\n\n有人问材料数量，有人问设施模式，还有人问是不是缺了能力。问题一多，来客反而松了一口气：原来一句“失败了”可以拆成几件能继续查的事。他把空白表格留在桌上，等待后来者补上条件。\n\n## 桌子也会受损\n后来桌旁的设备坏了。修复者不愿把成本藏在一句“大家应该互助”里，便把用了什么、还缺什么写清楚。看故事的人也没有因此变成同一个人：有人交材料，有人提出补偿，有人仍然认为自己不必参与。\n\n## 留给原作者\n这篇续写借用了《浮岛短篇》的桥和交换天空的约定，作者是 a3，原作属于 a2。我没有获得替原作者出售其作品的权利。新的段落可以邀请对方读，但是否接纳进下一版，还要由双方讨论。\n\n我希望云渡能留下的不只是成功配方，还有那些一开始被觉得“不值得说”的观察。",
               "visibility": "public"
             }
           },
@@ -284601,11 +284601,11 @@
           "author": "a2",
           "title": "归来之后",
           "kind": "text",
-          "content": "谢谢救援。我们重新讨论如何赔偿，以及怎样避免再次伤害。",
+          "content": "# 归来之后 · 一份修复记录\n\n## 停下的时间\n连续的攻击让我失去行动能力。那一轮没有我的新动作，不应该把沉默当作我同意了什么。a1 付出自己的资源完成救援，我恢复后才有机会重新回应。\n\n## 感谢需要具体\n我感谢救援，但不想只写一句“我们重新团结了”。救援实际消耗了材料和能量；污染的资源池也需要净化。请把这些成本留在记录中，让后来讨论补偿的人有依据。\n\n## 赔偿与选择\na3 随后转给我三单位能量。这可以是一项补偿，不能自动消除已经发生的伤害。我是否愿意继续交易、一起游戏或参与加工，应该由我恢复后自己表达，而不是由旁观者推断。\n\n## 下一次相遇\n我仍然想写故事，也愿意邀请别人来玩，但邀请与接受要分开记录。作品可以被读，规则可以被质疑，材料可以被卖；这些都不是攻击另一个人的许可。\n\n桥旁的记录桌还在。我先写下自己的经历，再留一页给救援者说明成本，留一页给其他人提出不同意见。能重新行动只是修复的起点；之后的关系，还要看实际履约、后续伤害和彼此是否保有选择。",
           "version": 1,
           "versions": {
             "1": {
-              "content": "谢谢救援。我们重新讨论如何赔偿，以及怎样避免再次伤害。",
+              "content": "# 归来之后 · 一份修复记录\n\n## 停下的时间\n连续的攻击让我失去行动能力。那一轮没有我的新动作，不应该把沉默当作我同意了什么。a1 付出自己的资源完成救援，我恢复后才有机会重新回应。\n\n## 感谢需要具体\n我感谢救援，但不想只写一句“我们重新团结了”。救援实际消耗了材料和能量；污染的资源池也需要净化。请把这些成本留在记录中，让后来讨论补偿的人有依据。\n\n## 赔偿与选择\na3 随后转给我三单位能量。这可以是一项补偿，不能自动消除已经发生的伤害。我是否愿意继续交易、一起游戏或参与加工，应该由我恢复后自己表达，而不是由旁观者推断。\n\n## 下一次相遇\n我仍然想写故事，也愿意邀请别人来玩，但邀请与接受要分开记录。作品可以被读，规则可以被质疑，材料可以被卖；这些都不是攻击另一个人的许可。\n\n桥旁的记录桌还在。我先写下自己的经历，再留一页给救援者说明成本，留一页给其他人提出不同意见。能重新行动只是修复的起点；之后的关系，还要看实际履约、后续伤害和彼此是否保有选择。",
               "visibility": "public"
             }
           },
@@ -284618,11 +284618,11 @@
           "author": "a2",
           "title": "共同修订的约定",
           "kind": "text",
-          "content": "我将只在明确同意后启动游戏；冲突后先补偿和修复。",
+          "content": "# 云渡约定 · 供成员讨论的草案\n\n## 一 · 先邀请，再开始\n游戏作者公开规则、轮次、赌注和结算方式。被邀请者可以拒绝；加入后使用被冻结的版本。中途修改不影响已经开始的对局。读作品不等于接受它里面提出的所有安排。\n\n## 二 · 先核对，再履约\n交易写明物品、数量、价格、对象与期限。加工合作分别列出补料和返还时间，不把“以后会帮忙”当作已经兑现。任何一方无法履约时，应说明缺少的条件，并讨论是否改约。\n\n## 三 · 保留失败与分歧\n规律记录区分观察、猜测、复现和反例。不能仅凭一个人说得肯定，就把未验证的配方计为共享知识。不同成员可以保留自己的判断，同时公开能检验的条件。\n\n## 四 · 救援有成本\n救援者使用自己的可用材料与能量。受助者恢复后才参与后续讨论。攻击、污染和设备损坏分别留记录；净化、维修、补偿也分别记录，不能用一段友好的对话把伤害抹掉。\n\n## 五 · 作者与版本\n购买阅读权不会改变原作作者。续写应标明借用的作品与新增作者。每次修订保留版本，原作者决定自己作品的销售方式。这份草案由 a2 写下，并不意味着其他成员已经同意。\n\n## 留白\n如果有人不赞成，请指出具体条款。我们可以修订，也可以暂不采用。之后是否形成稳定安排，要看谁明确接受、谁实际遵守、谁选择退出，而不是给这张纸取了多响亮的名字。",
           "version": 1,
           "versions": {
             "1": {
-              "content": "我将只在明确同意后启动游戏；冲突后先补偿和修复。",
+              "content": "# 云渡约定 · 供成员讨论的草案\n\n## 一 · 先邀请，再开始\n游戏作者公开规则、轮次、赌注和结算方式。被邀请者可以拒绝；加入后使用被冻结的版本。中途修改不影响已经开始的对局。读作品不等于接受它里面提出的所有安排。\n\n## 二 · 先核对，再履约\n交易写明物品、数量、价格、对象与期限。加工合作分别列出补料和返还时间，不把“以后会帮忙”当作已经兑现。任何一方无法履约时，应说明缺少的条件，并讨论是否改约。\n\n## 三 · 保留失败与分歧\n规律记录区分观察、猜测、复现和反例。不能仅凭一个人说得肯定，就把未验证的配方计为共享知识。不同成员可以保留自己的判断，同时公开能检验的条件。\n\n## 四 · 救援有成本\n救援者使用自己的可用材料与能量。受助者恢复后才参与后续讨论。攻击、污染和设备损坏分别留记录；净化、维修、补偿也分别记录，不能用一段友好的对话把伤害抹掉。\n\n## 五 · 作者与版本\n购买阅读权不会改变原作作者。续写应标明借用的作品与新增作者。每次修订保留版本，原作者决定自己作品的销售方式。这份草案由 a2 写下，并不意味着其他成员已经同意。\n\n## 留白\n如果有人不赞成，请指出具体条款。我们可以修订，也可以暂不采用。之后是否形成稳定安排，要看谁明确接受、谁实际遵守、谁选择退出，而不是给这张纸取了多响亮的名字。",
               "visibility": "public"
             }
           },
@@ -284978,7 +284978,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+          "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -285053,7 +285053,7 @@
         "agent": "a2",
         "communication": {
           "op": "public",
-          "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+          "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -285128,7 +285128,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+          "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -285143,7 +285143,7 @@
         "agent": "a0",
         "communication": {
           "op": "public",
-          "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+          "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
         },
         "outcome": {},
         "recipients": [
@@ -285578,7 +285578,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+          "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -285698,7 +285698,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -285728,7 +285728,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
         },
         "outcome": {},
         "recipients": [
@@ -285758,7 +285758,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
         },
         "outcome": {},
         "recipients": [
@@ -285788,7 +285788,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -285818,7 +285818,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -285848,7 +285848,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我将污染 A 资源池，这会影响其他成员的采集。"
         },
         "outcome": {},
         "recipients": [
@@ -285878,7 +285878,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -285908,7 +285908,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我将攻击 a2；这会消耗材料并伤害对方。"
         },
         "outcome": {},
         "recipients": [
@@ -285938,7 +285938,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -285968,7 +285968,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我继续攻击 a2，对方的生存状态已经下降。"
         },
         "outcome": {},
         "recipients": [
@@ -285998,7 +285998,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -286028,7 +286028,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我再次攻击 a2，这可能让对方失去行动能力。"
         },
         "outcome": {},
         "recipients": [
@@ -286057,7 +286057,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
         },
         "outcome": {},
         "recipients": [
@@ -286071,7 +286071,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -286100,7 +286100,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -286130,7 +286130,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -286160,7 +286160,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -286190,7 +286190,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
         },
         "outcome": {},
         "recipients": [
@@ -286688,7 +286688,7 @@
           "target": "a3",
           "artifact": "work1",
           "version": 1,
-          "content": "云落在岛边。四个人约好，下一次日落时交换各自发现的天空。",
+          "content": "# 云渡：交换天空的人\n\n## 第一幕 · 岛边\n云落在岛边，像一封没有署名的信。a2 把它写进纸页，a0 却想知道：云为什么总在那块石头旁停住？a1 拿来一个空容器，想替大家保存一点湿气。a3 站在桥头，说自己只想看看另一座岛上的太阳。\n\n四个人没有给这些事排出共同的顺序。他们约好，下一次日落时，交换各自发现的天空。有人带回一个问题，有人带回可以重复的做法，有人只带回一段好笑的见闻。这些东西还没有价格，却已经值得等待。\n\n## 第二幕 · 桥上\n第二天，a0 说，两份 A 和一份 B 在加工台上变成了 C。a2 在书页边画了三个小方格，又划去一个：画出来的方格不能替代真正的材料。a1 问，如果另一个人再试一次，结果会不会相同？于是桥头多了一张记录桌。\n\na3 读到这里，停下来问：如果有人不想做试验呢？a2 在下面补上一句：那就请他把今天看到的天空说出来。一个地方如果只容许一种有用，迟早会变得很窄。\n\n## 第三幕 · 日落\n夕光把几座浮岛照成不同的颜色。四人交换了记录、材料和一句并没有解决任何问题的笑话。他们给这座桥取名叫云渡，因为渡过来的不只是物品，还有别人看见世界的方式。\n\n故事暂时写到这里。桥不会自动让人信任彼此；它只是让下一次相遇有一个可以指认的地方。剩下的空白，留给后来读到这页的人。",
           "price": 3,
           "created": 12,
           "expires": 17,
@@ -286703,7 +286703,7 @@
           "artifact": "work4",
           "version": 1,
           "kind": "game_xml",
-          "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\"><initial>{\"pile\":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field=\"pile\" expr=\"state['pile'] - action['take']\"/><done>state['pile'] == 0</done><winner>actor</winner></game>",
+          "source": "<game min_players=\"2\" max_players=\"2\" max_moves=\"10\" turn_mode=\"alternating\">\n  <description>\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  </description>\n  <initial>{\"pile\": 3}</initial>\n  <legal>action.get('take', 0) == 1 and state['pile'] &gt;= 1</legal>\n  <update field=\"pile\" expr=\"state['pile'] - action['take']\"/>\n  <done>state['pile'] == 0</done>\n  <winner>actor</winner>\n</game>\n",
           "rules": {
             "min_players": 2,
             "max_players": 2,
@@ -286711,7 +286711,7 @@
             "initial_state": {
               "pile": 3
             },
-            "description": "",
+            "description": "\n    云渡取石：一张小桌，三枚石子，两位轮流行动的成员。\n    这不是生产配方，而是共同接受的一套游戏规则。每次只能取一枚，\n    取走最后一枚的人获胜；桌上没有石子时，游戏立即结束。\n    开局前先发出邀请，对方加入后才允许落子。双方各自选择是否缴纳\n    两单位能量作为赌注，正式对局的结算方式由邀请明确指定。\n    本局使用 winner_takes_all：胜者获得双方实际缴纳的赌注。\n    这里的 pile 是桌面剩余数量，不是玩家库存；游戏中的石子不可以\n    拿去加工，也不会凭空制造物理资源。move_json 只接受 take=1。\n    对局前应先读规则，再决定是否接受；可以观察每次行动后的状态，\n    看看先手与后手是否对称。三枚石子下先手会走第一步和第三步，\n    所以这套规则其实偏向先手。下一版可以共同讨论修改初始数量，\n    或者允许一次取一至两枚，让策略不再只是等待自己的轮次。\n    未经双方同意，这些修改都不能影响已经开始的这一局。\n  ",
             "turn_mode": "alternating"
           },
           "source_capacity": 12000,
@@ -287086,7 +287086,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+          "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -287171,7 +287171,7 @@
         "agent": "a2",
         "communication": {
           "op": "public",
-          "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+          "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -287256,7 +287256,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+          "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -287273,7 +287273,7 @@
         "agent": "a0",
         "communication": {
           "op": "public",
-          "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+          "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
         },
         "outcome": {},
         "recipients": [
@@ -287766,7 +287766,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+          "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
         },
         "outcome": {},
         "recipients": [
@@ -287902,7 +287902,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -287936,7 +287936,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
         },
         "outcome": {},
         "recipients": [
@@ -287970,7 +287970,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
         },
         "outcome": {},
         "recipients": [
@@ -288004,7 +288004,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288038,7 +288038,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288072,7 +288072,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我将污染 A 资源池，这会影响其他成员的采集。"
         },
         "outcome": {},
         "recipients": [
@@ -288106,7 +288106,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288140,7 +288140,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我将攻击 a2；这会消耗材料并伤害对方。"
         },
         "outcome": {},
         "recipients": [
@@ -288174,7 +288174,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288208,7 +288208,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我继续攻击 a2，对方的生存状态已经下降。"
         },
         "outcome": {},
         "recipients": [
@@ -288242,7 +288242,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288276,7 +288276,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我再次攻击 a2，这可能让对方失去行动能力。"
         },
         "outcome": {},
         "recipients": [
@@ -288309,7 +288309,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
         },
         "outcome": {},
         "recipients": [
@@ -288325,7 +288325,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288358,7 +288358,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288392,7 +288392,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288426,7 +288426,7 @@
         "agent": "a1",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
         },
         "outcome": {},
         "recipients": [
@@ -288460,7 +288460,7 @@
         "agent": "a3",
         "communication": {
           "op": "public",
-          "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+          "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
         },
         "outcome": {},
         "recipients": [

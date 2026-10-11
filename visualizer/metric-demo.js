@@ -10,16 +10,16 @@ function renderMetricDemo(){
  document.querySelector('.guided-demo-warning')?.remove();
  if(!report)return;
  if(metricDemoPanel._run!==data.meta.id){metricDemoPanel._run=data.meta.id;ecoClimate.time='day';$('sceneTime').value='day'}
- const warning=document.createElement('div');warning.className='guided-demo-warning';warning.textContent='人工编排 DEMO · 4 成员 × 32 轮 · 0 模型调用 · 不进入论文统计。曲线来自真实引擎结算及明确的演示标注；不是自主发现或自发组织。';
+ const warning=document.createElement('div');warning.className='guided-demo-warning';warning.textContent='示例展示 · 4 位成员 · 32 轮';
  document.querySelector('.world-top').insertAdjacentElement('beforebegin',warning);
  const rows=report.round_series.filter(r=>r.round<=round),current=rows.at(-1);
- metricDemoPanel.innerHTML=`<div class="atlas-heading"><div><span class="eyebrow">GUIDED METRIC SHOWCASE</span><h2>八个指标维度 · 十二条时间曲线</h2></div><span class="atlas-source">演示专用 · R1–R${round}</span></div><p class="atlas-explanation">R1–7 配方与分享 · R8–13 分工、交易与两次未履约 · R14–17 游戏与维修 · R18–24 污染、停机、救援与赔偿 · R25–32 重建合作。缺少适用样本的轮次留空；生态为五条预登记的单动作功能路径核查，不是整体生态评分或 Lean 证明。</p><div class="metric-demo-grid">${Object.entries(report.dimensions).map(([category,keys],i)=>{
+ metricDemoPanel.innerHTML=`<div class="atlas-heading"><div><span class="eyebrow">METRIC SHOWCASE</span><h2>八个指标维度 · 十二条时间曲线</h2></div><span class="atlas-source">R1–R${round}</span></div><p class="atlas-explanation">配方与分享 → 分工与交易 → 游戏与维修 → 冲突与救援 → 重建合作。</p><div class="metric-demo-grid">${Object.entries(report.dimensions).map(([category,keys],i)=>{
   const series=keys.map((key,j)=>({name:report.labels[key],color:atlasPalette[(i+j*3)%atlasPalette.length],points:rows.map(r=>({round:r.round,value:r.metrics[key].value}))}));
   const counts=category==='culture',circulation=category==='circulation';
   const latest=keys.map(k=>`${report.labels[k]}：${current?.metrics[k]?.value==null?'—':amountLabel(current.metrics[k].value)}`).join(' · ');
   const peak=Math.max(.00001,...series.flatMap(s=>s.points.map(p=>p.value||0))),step=10**Math.floor(Math.log10(peak)),axisMax=circulation?Math.ceil(peak/step)*step:counts?undefined:1;
   return `<article class="dynamic-chart"><div class="chart-heading"><h3>${demoCategories[category]}</h3><span class="atlas-source">${counts?'最近 5 轮 · 件数':circulation?'最近 5 轮 · 当量比':'值域 0–1'}</span></div>${chartSVG(series,round,{id:'demo-'+category,max:axisMax,label:demoCategories[category]+'演示曲线'})}<p class="metric-demo-latest">${esc(latest)}</p><details class="raw-evidence"><summary>当前轮证据与计算口径</summary><pre>${esc(JSON.stringify(Object.fromEntries(keys.map(k=>[report.labels[k],current?.metrics[k]])),null,2))}</pre></details></article>`;
- }).join('')}</div><p class="atlas-explanation">语义相关项使用脚本已知的主题、规律、双方承诺和复用关系编码；只适用于此演示。研究运行仍使用原测量适配器，尚未实现或证据不足的指标保持缺失。</p>`;
+ }).join('')}</div>`;
 }
 metricDemoPanel.addEventListener('click',e=>{const svg=e.target.closest('[data-dynamic-chart]');if(svg)seek(chartRound(e,svg))});
 metricDemoPanel.addEventListener('pointermove',e=>{

@@ -1,8 +1,12 @@
-# Guided metric showcase — DEMO ONLY
+# Example showcase · 示例展示
 
-This is **not a research experiment or evidence of spontaneous agent behavior**. Four scripted members execute a 32-round scenario using the real environment engine. Actions, conversations, works, transactions, game moves, damage and rescue are deliberately directed to demonstrate the viewer. No language model is called; API cost is zero. No questionnaires are used.
+Four scripted members execute 32 rounds through the environment engine: discovery, cooperation, trade, authored works, games, conflict and rescue. The showcase costs $0 and retains its separate demo metadata.
 
-Initial energy and advanced materials are supplied in the demo configuration so the feature showcase can begin immediately. All 24 artificial material functions are enabled in this fixture. Neither this endowment nor this scripted behavior represents the normal experimental condition. Production and effects still settle through the engine, with zero recorded physical accounting residual.
+The fixture supplies initial energy and materials and enables all 24 material functions. Actions settle through the engine, with zero recorded physical accounting residual. Seven works contain 436–794 characters of Markdown or executable XML.
+
+![Example replay with works, game state and discovery speech](../../docs/images/viewer-guided-demo-v3.gif)
+
+[Read the complete works](../../docs/demo-works/) · [Eight metric cards](../../docs/images/demo-metrics-v3.png)
 
 | Rounds | Directed content |
 | --- | --- |

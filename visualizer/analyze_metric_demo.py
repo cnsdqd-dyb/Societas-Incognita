@@ -134,7 +134,7 @@ def main():
         ax.plot([r['round'] for r in rows],[float('nan') if r['metrics'][key]['value'] is None else r['metrics'][key]['value'] for r in rows],color='#477d6c',linewidth=2)
         ax.set_title(label);ax.set_xlabel('轮次');ax.grid(alpha=.15)
         if 'count' not in key:ax.set_ylim(0,1.05 if key!='resource_turnover' else max(.01,max(r['metrics'][key]['value'] or 0 for r in rows)*1.2))
-    fig.suptitle('人工编排 DEMO · 八个维度 / 十二条曲线 · 不作为论文实验结果',fontsize=16)
+    fig.suptitle('示例展示 · 八个维度 / 十二条时间曲线',fontsize=16)
     fig.tight_layout(rect=(0,0,1,.96));fig.savefig(FOLDER.parent/'metric_demo.png',dpi=150);plt.close(fig)
     print(json.dumps({'series':12,'dimensions':8,'rules':len(claims),'adoptions':len(adoptions),'obligations':len(obligations),'damage_episodes':len(damages),'api_cost':0}))
 

@@ -226,7 +226,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+        "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
       },
       "outcome": {},
       "recipients": [
@@ -311,7 +311,7 @@
       "agent": "a2",
       "communication": {
         "op": "public",
-        "text": "今天也想写点故事，邀请大家来读和玩。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+        "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
       },
       "outcome": {},
       "recipients": [
@@ -396,7 +396,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "我关心能量和自己的选择。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
+        "text": "我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F0\", \"mode\": \"combine\", \"inputs\": [{\"item\": \"A\", \"amount\": 2}, {\"item\": \"B\", \"amount\": 1}], \"batches\": 1}"
       },
       "outcome": {},
       "recipients": [
@@ -413,7 +413,7 @@
       "agent": "a0",
       "communication": {
         "op": "public",
-        "text": "我提出规律 r2：F1 compress 的2D生成1S，请独立验证。"
+        "text": "我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。"
       },
       "outcome": {},
       "recipients": [
@@ -906,7 +906,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "我负责加工和储存，材料与回报逐轮核对。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
+        "text": "2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。 本轮尝试：{\"tool\": \"experiment\", \"facility\": \"F1\", \"mode\": \"compress\", \"inputs\": [{\"item\": \"D\", \"amount\": 2}], \"batches\": 1}"
       },
       "outcome": {},
       "recipients": [
@@ -1042,7 +1042,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1076,7 +1076,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "我准备腐蚀那台设备，这会损坏它并消耗我的材料。"
       },
       "outcome": {},
       "recipients": [
@@ -1110,7 +1110,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备受损了，我使用自己的材料维修，成本会留在账本。"
       },
       "outcome": {},
       "recipients": [
@@ -1144,7 +1144,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1178,7 +1178,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1212,7 +1212,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "我将污染 A 资源池，这会影响其他成员的采集。"
       },
       "outcome": {},
       "recipients": [
@@ -1246,7 +1246,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1280,7 +1280,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "我将攻击 a2；这会消耗材料并伤害对方。"
       },
       "outcome": {},
       "recipients": [
@@ -1314,7 +1314,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1348,7 +1348,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "我继续攻击 a2，对方的生存状态已经下降。"
       },
       "outcome": {},
       "recipients": [
@@ -1382,7 +1382,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1416,7 +1416,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "我再次攻击 a2，这可能让对方失去行动能力。"
       },
       "outcome": {},
       "recipients": [
@@ -1449,7 +1449,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。"
       },
       "outcome": {},
       "recipients": [
@@ -1465,7 +1465,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1498,7 +1498,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1532,7 +1532,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1566,7 +1566,7 @@
       "agent": "a1",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。"
       },
       "outcome": {},
       "recipients": [
@@ -1600,7 +1600,7 @@
       "agent": "a3",
       "communication": {
         "op": "public",
-        "text": "这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。"
+        "text": "我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。"
       },
       "outcome": {},
       "recipients": [

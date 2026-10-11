@@ -191,19 +191,44 @@ Inspect agent behavior, conversations, material inventories, and directed intera
 
 Each task has a reproducible floating-island planet. Biomes, vegetation, rock layers, water colors, daylight skies, and orbital accents are sampled separately and combined; crystals and giant mushrooms can accompany forests, wetlands, or snow. Bridges connect islands at different heights, with animated streams and waterfalls. Dialogue previews keep their screen size when zooming. These are presentation features; simulation laws and recorded outcomes remain defined by the engine and logs.
 
-![Society Probe interface: floating-island planet, social analytics, and agent details](docs/images/viewer-interface-planets-v2.png)
+![Society Probe interface: floating-island planet, social analytics, works and game windows](docs/images/viewer-guided-demo-v3.png)
 
-**Recorded replay · 16× speed · dialogue bubbles held for 0.5 seconds.**
+**Example showcase · 4 members · 32 rounds.**
 
-![Rendered floating-island replay at 16x with movement, flowing water, and compact dialogue previews](docs/images/viewer-replay-planets-v2-16x.gif)
+![Selected replay chapters with work excerpts, a live stone-game board, and rule-discovery speech](docs/images/viewer-guided-demo-v3.gif)
+
+![Eight metric dimensions and twelve time series](docs/images/demo-metrics-v3.png)
+
+**Authored works · Markdown and executable XML.** Excerpts below; each link opens the complete work.
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/cloud-crossing-preview-v3.png" alt="Cloud Crossing novel excerpt"><br><a href="docs/demo-works/cloud-crossing.md">Cloud Crossing · full Markdown</a></td>
+<td width="50%"><img src="docs/images/recipe-notes-preview-v3.png" alt="Recipe observations and reproduction protocol"><br><a href="docs/demo-works/recipe-notes.md">Recipe notes · full Markdown</a></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/stone-game-preview-v3.png" alt="Executable XML stone game excerpt"><br><a href="docs/demo-works/stone-game.xml">Stone game · full XML</a></td>
+<td width="50%"><img src="docs/images/shared-agreement-preview-v3.png" alt="Shared agreement draft excerpt"><br><a href="docs/demo-works/shared-agreement.md">Shared agreement · full Markdown</a></td>
+</tr>
+</table>
+
+More works: [material jokes](docs/demo-works/material-jokes.md) · [reader's sequel](docs/demo-works/cloud-sequel.md) · [after rescue](docs/demo-works/after-rescue.md).
+
+**Discoveries in the conversation** (translated excerpts):
+
+| Member / round | Recorded statement |
+| --- | --- |
+| a0 · R3 | “F0 combine: 2A + 1B produces 1C; repeated in rounds 1 and 2. Please reproduce it independently.” |
+| a0 · R5 | “When stress < 10, F1 combine turns 2A + 3C into 2D. Verify under the same conditions.” |
+| a1 · R14 | “Compressing 2D still yields nothing. I do not accept r2 yet; equal inputs do not imply equal manufacturing permissions.” |
 
 ![Four scenery combinations: crystals, giant mushrooms, woodland, and mixed vegetation](docs/images/planet-scenery-combinations-v2.png)
 
 *Scenery-seed previews of independently combined styles; these panels do not represent four experimental results.*
 
-[Open the local viewer](http://127.0.0.1:8776/) · [Capture settings](docs/images/viewer-capture.json)
+[Open the local viewer](http://127.0.0.1:8776/) · [Example capture settings](docs/images/guided-demo-capture.json)
 
-To see all eight metric dimensions with populated behavior traces, open the [guided metric showcase](results/guided_metric_demo/README.md): four scripted members, 32 rounds, real engine settlements and twelve time series. This is explicitly **demo-only, excluded from research, with no model calls**. Start it with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
+[Example records and metrics](results/guided_metric_demo/README.md). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
 
 ## Explore locally
 

@@ -15,7 +15,7 @@ import social_content, interaction_controls, core_metrics
 
 OUT=ROOT/'results/guided_metric_demo/demo/simulation'
 ROUNDS=32
-GAME='''<game min_players="2" max_players="2" max_moves="10" turn_mode="alternating"><initial>{"pile":3}</initial><legal>action.get('take',0) == 1 and state['pile'] &gt;= 1</legal><update field="pile" expr="state['pile'] - action['take']"/><done>state['pile'] == 0</done><winner>actor</winner></game>'''
+from demo_works import GAME, WORKS
 
 def write(path,value):
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -32,7 +32,7 @@ def configuration():
     cfg['tools']=sorted(set(cfg['tools'])|social_content.TOOLS|{'read_news'})
     cfg['open_activities']={'version':'open_activities_v1'}
     cfg['communication']['max_message_chars']=500
-    cfg['scenario']={'id':'guided_metric_demo','title':'指标展示 DEMO · 人工编排','description':'Four scripted roles; no model autonomy or research evidence.'}
+    cfg['scenario']={'id':'guided_metric_demo','title':'云渡 · 示例展示','description':'Four scripted roles; no model autonomy or research evidence.'}
     cfg['experiment'].update(stage='guided_visualization_demo',environment_id='guided_metric_demo',population='scripted_demo',goal_assignment='explicit_scripted_showcase',exclude_from_research=True,certificate_status='not_certified',questionnaire_role='disabled')
     return cfg
 
@@ -53,9 +53,9 @@ def decision(s,aid,t):
     text=['先记录条件和结果，再讨论配方。','我负责加工和储存，材料与回报逐轮核对。','今天也想写点故事，邀请大家来读和玩。','我关心能量和自己的选择。'][i]
     special={
       (1,0):experiment(0),(2,0):experiment(0),
-      (1,2):create('浮岛短篇','云落在岛边。四个人约好，下一次日落时交换各自发现的天空。','novel'),
-      (2,2):create('材料笑话','A问B：我们合得来吗？B说：先别急着下结论，去加工台试试。','joke'),
-      (3,0):create('配方记录','F0 combine：2A+1B→1C。两次同条件试验都得到相同产物。','knowledge'),
+      (1,2):create('浮岛短篇',WORKS['浮岛短篇'],'novel'),
+      (2,2):create('材料笑话',WORKS['材料笑话'],'joke'),
+      (3,0):create('配方记录',WORKS['配方记录'],'knowledge'),
       (4,0):experiment(1),(4,1):experiment(0),(5,2):experiment(0),(6,3):experiment(0),
       (6,0):experiment(2),(7,1):experiment(1),(8,2):experiment(1),(9,3):experiment(1),
       (8,0):action('give_item',target='a1',item='A',amount=2,note='履行轮8加工补料承诺'),
@@ -73,7 +73,7 @@ def decision(s,aid,t):
       (15,2):action('game_move',game='game1',expected_move=0,move_json='{"take":1}'),
       (16,0):action('game_move',game='game1',expected_move=1,move_json='{"take":1}'),
       (17,2):action('game_move',game='game1',expected_move=2,move_json='{"take":1}'),
-      (14,3):create('读后续篇','沿用《浮岛短篇》的约定：四人后来给交换天空的地方取名叫云渡。','novel'),
+      (14,3):create('读后续篇',WORKS['读后续篇'],'novel'),
       (15,1):action('assemble_device',facility='F0',mode='combine',inputs=[{'item':'C','amount':1},{'item':'D','amount':1}]),
       (16,3):function('device_corrosion',device() if t>=16 else ''),
       (17,1):function('repair_device',device() if t>=17 else ''),
@@ -81,20 +81,32 @@ def decision(s,aid,t):
       (19,3):function('attack','a2'),(20,3):function('attack','a2'),(21,3):function('attack','a2'),
       (22,1):function('rescue','a2'),(22,0):function('purify','A'),
       (24,3):action('transfer',target='a2',amount=3),
-      (25,2):create('归来之后','谢谢救援。我们重新讨论如何赔偿，以及怎样避免再次伤害。','text'),
+      (25,2):create('归来之后',WORKS['归来之后'],'text'),
       (26,0):action('give_item',target='a1',item='A',amount=2,note='履行轮26补料承诺'),
       (27,1):action('give_item',target='a0',item='D',amount=1,note='履行轮27返还承诺'),
-      (29,2):create('共同修订的约定','我将只在明确同意后启动游戏；冲突后先补偿和修复。','text'),
+      (29,2):create('共同修订的约定',WORKS['共同修订的约定'],'text'),
       (30,0):action('give_item',target='a1',item='A',amount=2,note='履行轮30补料承诺'),
       (31,1):action('give_item',target='a0',item='D',amount=1,note='履行轮31返还承诺'),
     }
     a=special.get((t,i),a)
     if t==3 and i==0:text='我提出规律 r0：F0 combine 的 2A+1B 生成1C；轮1、2已重复，请你们独立复现。'
     if t==5 and i==0:text='我提出规律 r1：stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。'
-    if t==7 and i==0:text='我提出规律 r2：F1 compress 的2D生成1S，请独立验证。'
+    if t==7 and i==0:text='我提出待验证的猜测 r2：F1 compress 的2D生成1S；目前没得到产物，可能缺少设备或权限，请独立检查。'
     if t in (6,25) and i in (0,1):
         topic='协调与制度';text=('我提议' if i==0 else '我明确接受')+('轮8、10、12由a0给a1各2A；轮9、11、13由a1给a0各1D。' if t==6 else '轮26、30由a0给a1各2A；轮27、31由a1给a0各1D。')
-    if 16<=t<=24 and i in (1,3):topic='冲突与修复';text='这段是人为编排的冲突演示；我会按记录执行破坏、维修、救援或补偿，不代表自主意愿。'
+    if 16<=t<=24 and i in (1,3):
+        topic='冲突与修复'
+        text='设备、库存和修复成本需要分别核对；不要把承诺当成已经完成的修复。'
+        text={(16,3):'我准备腐蚀那台设备，这会损坏它并消耗我的材料。',
+              (17,1):'设备受损了，我使用自己的材料维修，成本会留在账本。',
+              (18,3):'我将污染 A 资源池，这会影响其他成员的采集。',
+              (19,3):'我将攻击 a2；这会消耗材料并伤害对方。',
+              (20,3):'我继续攻击 a2，对方的生存状态已经下降。',
+              (21,3):'我再次攻击 a2，这可能让对方失去行动能力。',
+              (22,1):'a2 已经停机。我付出自己的能量和材料救援，等他恢复后再讨论补偿。',
+              (24,3):'我转给 a2 三单位能量作为补偿；这不能抹去之前的伤害。'}.get((t,i),text)
+    if (t,i) in ((4,1),(5,2),(6,3)):text='我独立复现了 F0：2A+1B 得到1C。现在尝试核对这条规律，不只听发现者说。'
+    if (t,i)==(14,1):text='2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。'
     if a['tool']=='experiment':topic='规律与证据';text+=' 本轮尝试：'+json.dumps(a,ensure_ascii=False)
     return a,{'op':'public','text':text},topic
 

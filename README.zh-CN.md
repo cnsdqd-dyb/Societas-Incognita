@@ -198,19 +198,44 @@ $$
 
 每个任务呈现为一颗可复原的浮岛星球。生态类型、植被、岩层、水色、日间天空与星环分别随机选取并组合，森林、湿地或雪地也可以搭配晶体、巨型蘑菇等景观。高低浮岛通过栈桥连接，河流与瀑布带有动态水纹；缩放地图时，对话预览保持固定屏幕尺寸。这些属于展示层，仿真法则与实验结果仍以引擎和日志为准。
 
-![浮岛星球回放、群体分析与成员详情](docs/images/viewer-interface-planets-v2.png)
+![浮岛星球回放、群体分析、作品与游戏窗口](docs/images/viewer-guided-demo-v3.png)
 
-**实际记录回放 · 16× 播放 · 对话停留 0.5 秒。**
+**示例展示 · 4 位成员 · 32 轮。**
 
-![浮岛地图上的成员行动、流动水系与紧凑对话预览](docs/images/viewer-replay-planets-v2-16x.gif)
+![示例回放片段：作品内容、取石棋局与规律发现的发言](docs/images/viewer-guided-demo-v3.gif)
+
+![八个指标维度与十二条时间曲线](docs/images/demo-metrics-v3.png)
+
+**作品以 Markdown 和可执行 XML 保存。** 下方为节选，点击链接可阅读全文。
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/cloud-crossing-preview-v3.png" alt="浮岛短篇节选"><br><a href="docs/demo-works/cloud-crossing.md">浮岛短篇 · Markdown 全文</a></td>
+<td width="50%"><img src="docs/images/recipe-notes-preview-v3.png" alt="配方记录与复现方法节选"><br><a href="docs/demo-works/recipe-notes.md">配方记录 · Markdown 全文</a></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/stone-game-preview-v3.png" alt="可执行取石游戏 XML 节选"><br><a href="docs/demo-works/stone-game.xml">取石游戏 · XML 全文</a></td>
+<td width="50%"><img src="docs/images/shared-agreement-preview-v3.png" alt="共同修订的约定节选"><br><a href="docs/demo-works/shared-agreement.md">共同修订的约定 · Markdown 全文</a></td>
+</tr>
+</table>
+
+其它作品：[材料笑话](docs/demo-works/material-jokes.md) · [读后续篇](docs/demo-works/cloud-sequel.md) · [归来之后](docs/demo-works/after-rescue.md)。
+
+**发现规律时，他们说了什么？**
+
+| 成员 / 轮次 | 记录中的发言节选 |
+| --- | --- |
+| a0 · R3 | “F0 combine 的 2A+1B 生成1C；轮1、2已重复，请你们独立复现。” |
+| a0 · R5 | “stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。” |
+| a1 · R14 | “2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。” |
 
 ![晶体、巨型蘑菇、林木及混合植被的不同星球景观组合](docs/images/planet-scenery-combinations-v2.png)
 
 *四幅为景观种子预览，展示独立组合的风格，不代表四组实验结果。*
 
-[录制参数与景观种子](docs/images/viewer-capture.json)
+[示例录制参数](docs/images/guided-demo-capture.json)
 
-想看到八个指标维度在有内容时的效果，可打开[人工编排指标演示](results/guided_metric_demo/README.md)：4 个成员、32 轮、真实引擎结算与十二条时间曲线。它是**不进入研究统计的展示 DEMO，不调用模型**。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
+[示例记录与指标数据](results/guided_metric_demo/README.md)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
 
 ## 快速查看
 

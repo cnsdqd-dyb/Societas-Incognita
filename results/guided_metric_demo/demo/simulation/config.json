@@ -755,7 +755,7 @@
   "network_retries": 0,
   "scenario": {
     "id": "guided_metric_demo",
-    "title": "指标展示 DEMO · 人工编排",
+    "title": "云渡 · 示例展示",
     "description": "Four scripted roles; no model autonomy or research evidence."
   },
   "context_encoding": "compact_v1",
