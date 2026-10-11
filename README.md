@@ -4,6 +4,8 @@
 
 English · [简体中文](README.zh-CN.md)
 
+![A pixel-art material world connecting ecology, production, storage, and agent interaction](visualizer/assets/material-worlds-hero.png)
+
 **Frontend visualization**
 
 ![Four animated floating-island worlds with 2, 4, 6 and 8 moving members](docs/images/planet-populations-v5.gif)
@@ -23,8 +25,6 @@ This runs a four-member, eight-round **scripted demo with no model calls**. [Qui
 
 
 ## The research question
-
-![A pixel-art material world connecting ecology, production, storage, and agent interaction](visualizer/assets/material-worlds-hero.png)
 
 The [core measurement protocol](society_probe/society_probe/CORE_METRICS_V1.md) defines eight dimensions and twelve time series; questionnaires are retired. The [Luna low no-pressure analysis](results/luna_low_no_pressure_20261011/README.md) publishes 50-round plots, CSV, provenance and offline analysis inputs. Six series are numeric, damage recovery is not applicable, and five require further evidence. This is a single-run description, not a complete social-development score.
 

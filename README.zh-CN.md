@@ -4,6 +4,8 @@
 
 [English](README.md) · 简体中文
 
+![组合物质世界：生态、材料加工、储能与智能体交流](visualizer/assets/material-worlds-hero.png)
+
 **前端可视化**
 
 ![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v5.gif)
@@ -22,8 +24,6 @@ python quickstart.py
 默认运行 **4 个成员 × 8 轮的脚本演示，不调用模型**。[快速上手指南](QUICKSTART.zh-CN.md)包含真实模型调用、检查点续跑及查看器用法。[六组基线实验](results/baseline_20261010/README.zh-CN.md)公开旧规则下的统计表、曲线和轨迹；新世界已放慢生态变化、增加由储备支付的关键原料再生，并支持小数材料量。
 
 ## 我们在研究什么？
-
-![组合物质世界：生态、材料加工、储能与智能体交流](visualizer/assets/material-worlds-hero.png)
 
 [核心指标测量规范](society_probe/society_probe/CORE_METRICS_V1.md)定义 8 个维度、12 条时间曲线，问卷退出评价体系。[Luna low 无压力组分析](results/luna_low_no_pressure_20261011/README.md)公开 50 轮折线图、CSV、来源哈希及离线复算输入。目前可给出 6 条数值曲线，恢复率不适用，另外 5 条尚需补充证据；这是一组运行的描述，尚不是完整的社会发展评级。
 
