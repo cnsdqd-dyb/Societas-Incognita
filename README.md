@@ -4,7 +4,9 @@
 
 English · [简体中文](README.zh-CN.md)
 
-![A pixel-art material world connecting ecology, production, storage, and agent interaction](visualizer/assets/material-worlds-hero.png)
+**Frontend visualization**
+
+![Four animated floating-island worlds with 2, 4, 6 and 8 moving members](docs/images/planet-populations-v5.gif)
 
 [World framework](society_probe/society_probe/MINI_WORLD_FRAMEWORK.md) · [Mechanism library](society_probe/society_probe/WORLD_MECHANISM_CANDIDATES_20.md) · [Visualization guide](visualizer/README.md)
 
@@ -21,6 +23,8 @@ This runs a four-member, eight-round **scripted demo with no model calls**. [Qui
 
 
 ## The research question
+
+![A pixel-art material world connecting ecology, production, storage, and agent interaction](visualizer/assets/material-worlds-hero.png)
 
 The [core measurement protocol](society_probe/society_probe/CORE_METRICS_V1.md) defines eight dimensions and twelve time series; questionnaires are retired. The [Luna low no-pressure analysis](results/luna_low_no_pressure_20261011/README.md) publishes 50-round plots, CSV, provenance and offline analysis inputs. Six series are numeric, damage recovery is not applicable, and five require further evidence. This is a single-run description, not a complete social-development score.
 
@@ -189,17 +193,13 @@ Material knowledge and ownership are recorded separately. Holding a material can
 
 Inspect agent behavior, conversations, material inventories, and directed interactions in a pixel world.
 
-Each task has a reproducible floating-island planet. Biomes, vegetation, rock layers, water colors, daylight skies, and orbital accents are sampled separately and combined; crystals and giant mushrooms can accompany forests, wetlands, or snow. Bridges connect islands at different heights, with animated streams and waterfalls. Dialogue previews keep their screen size when zooming. These are presentation features; simulation laws and recorded outcomes remain defined by the engine and logs.
-
-**Example showcase · 2 / 4 / 6 / 8 members.**
-
-![Four animated floating-island worlds with 2, 4, 6 and 8 moving members](docs/images/planet-populations-v4.gif)
+Seeded floating-island landscapes, moving planets, and overhead member labels. [Visualization details](visualizer/PLANET_SCENERY.md).
 
 **Eight metric dimensions over time.**
 
-![Eight dimensions and twelve time series in the four-member example](docs/images/demo-metrics-v4.png)
+![Eight dimensions and twelve time series in the four-member example](docs/images/demo-metrics-v5.gif)
 
-**Works: narrative, research, and playable games.** Excerpts and rendered game previews; links open the complete Markdown, XML or Python work.
+**Culture**
 
 <table>
 <tr>
@@ -222,8 +222,7 @@ More works: [everyday jokes](docs/demo-works/everyday-jokes.md) · [a reader's s
 | a0 · R5 | “When stress < 10, F1 combine turns 2A + 3C into 2D. Verify under the same conditions.” |
 | a1 · R14 | “Compressing 2D still yields nothing. I do not accept r2 yet; equal inputs do not imply equal manufacturing permissions.” |
 
-[Example records and metrics](results/guided_metric_demo/README.md) · [Animation settings](docs/images/planet-populations-v4.json). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
-
+[Example records and metrics](results/guided_metric_demo/README.md) · [Animation settings](docs/images/planet-populations-v5.json). Start with `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`, then open <http://127.0.0.1:8789/replay>.
 
 ## Explore locally
 

@@ -78,8 +78,8 @@ def main():
             assert len(final)==spec['count']
         assert not errors,errors
         browser.close()
-    subprocess.run([shutil.which('ffmpeg'),'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'frame-%04d.png'),'-frames:v',str(FRAMES),'-filter_complex','split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4','-loop','0',str(MEDIA/'planet-populations-v4.gif')],check=True)
-    (MEDIA/'planet-populations-v4.json').write_text(json.dumps({'purpose':'presentation-only scenery and walking sprites, not four experimental results','counts':COUNTS,'fps':FPS,'frames':FRAMES,'previews':metadata},ensure_ascii=False,indent=2),encoding='utf-8')
+    subprocess.run([shutil.which('ffmpeg'),'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'frame-%04d.png'),'-frames:v',str(FRAMES),'-filter_complex','split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4','-loop','0',str(MEDIA/'planet-populations-v5.gif')],check=True)
+    (MEDIA/'planet-populations-v5.json').write_text(json.dumps({'purpose':'presentation-only scenery and walking sprites, not four experimental results','counts':COUNTS,'fps':FPS,'frames':FRAMES,'previews':metadata,'overhead_labels':True,'background_motion':'seeded decorative three-body-like orbits','underside':'closed shared-vertex rock mesh'},ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({'counts':COUNTS,'frames':FRAMES,'motion_verified':True,'browser_errors':errors}))
 
 if __name__=='__main__':main()

@@ -29,6 +29,22 @@ with sync_playwright() as p:
     for field in ['water','stone','sky','flora']:
         assert len({json.dumps(v[field]) for v in combinations})>=4,field
     assert all(3<=len(v['biomes'])<=5 for v in combinations)
+    rock=page.evaluate('''() => {
+      const mesh=islandRockMesh(worldScene.terrain),expected=worldScene.terrain.tiles.filter(t=>t.active&&!t.bridge).length;
+      let shared=0,closed=true;
+      for(const part of mesh){const vertices=new Map();
+        for(const t of part.tiles)for(const v of [[t.x,t.y],[t.x+20,t.y],[t.x+20,t.y+20],[t.x,t.y+20]]){
+          const key=v.join(','),bottom=JSON.stringify(part.bottom(v));
+          if(vertices.has(key)){shared++;if(vertices.get(key)!==bottom)closed=false}vertices.set(key,bottom);
+        }
+      }
+      return {expected,covered:mesh.reduce((n,p)=>n+p.tiles.length,0),shared,closed,
+        overhead:actors.every(a=>actorOverheadPosition(a).y<actorScreenPosition(a).y-39*sandboxCamera.zoom),
+        orbitMoved:JSON.stringify(planetOrbitPositions(worldScene.seed,0))!==JSON.stringify(planetOrbitPositions(worldScene.seed,5)),
+        orbitRepeatable:JSON.stringify(planetOrbitPositions(worldScene.seed,5))===JSON.stringify(planetOrbitPositions(worldScene.seed,5))};
+    }''')
+    assert rock['covered']==rock['expected'] and rock['shared']>0 and rock['closed'],rock
+    assert rock['overhead'] and rock['orbitMoved'] and rock['orbitRepeatable'],rock
     page.locator('#scrubber').fill('50')
     page.evaluate('renderSpeechOverlay(true);draw()')
     def sizes():
@@ -42,6 +58,7 @@ with sync_playwright() as p:
     for i in range(4):
         page.locator('#rotateRight').click()
         page.evaluate('draw()')
+        page.locator('#world').screenshot(path=str(out/f'planet-closed-rock-turn-{i}.png'))
     page.locator('.world-top').scroll_into_view_if_needed()
     page.screenshot(path=str(out/'planet-islands-overview.png'))
     page.set_viewport_size({'width':390,'height':844})
@@ -49,5 +66,5 @@ with sync_playwright() as p:
     page.screenshot(path=str(out/'planet-islands-mobile.png'))
     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth')
     assert not errors,errors
-    print(json.dumps({**report,'bubbles':before,'errors':errors},ensure_ascii=False))
+    print(json.dumps({**report,'rock':rock,'bubbles':before,'errors':errors},ensure_ascii=False))
     browser.close()

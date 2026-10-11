@@ -1,12 +1,12 @@
-**示例展示 · 2 / 4 / 6 / 8 位成员。**
+**前端可视化**
 
-![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v4.gif)
+![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v5.gif)
 
 **八个指标维度随时间的变化。**
 
-![四成员示例中的八个维度与十二条时间曲线](docs/images/demo-metrics-v4.png)
+![四成员示例中的八个维度与十二条时间曲线](docs/images/demo-metrics-v5.gif)
 
-**作品可以是叙事、研究，也可以是可玩的游戏。** 下方展示排版后的节选与实际棋局，点击链接可查看完整 Markdown、XML 或 Python。
+**文化**
 
 <table>
 <tr>
@@ -29,4 +29,4 @@
 | a0 · R5 | “stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。” |
 | a1 · R14 | “2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。” |
 
-[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v4.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
+[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v5.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。

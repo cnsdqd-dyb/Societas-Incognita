@@ -1,0 +1,9 @@
+{
+  "purpose": "example visualization",
+  "rounds": 32,
+  "dimensions": 8,
+  "series": 12,
+  "fixed_axes": true,
+  "checkpoint_sha256": "38677ba8caab6bc1b29d200e8ef85908339daadefcda2f9354dccfb9e817c65a",
+  "browser_errors": []
+}

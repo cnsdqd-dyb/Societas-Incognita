@@ -17,8 +17,8 @@ function renderMetricDemo(){
   const series=keys.map((key,j)=>({name:report.labels[key],color:atlasPalette[(i+j*3)%atlasPalette.length],points:rows.map(r=>({round:r.round,value:r.metrics[key].value}))}));
   const counts=category==='culture',circulation=category==='circulation';
   const latest=keys.map(k=>`${report.labels[k]}：${current?.metrics[k]?.value==null?'—':amountLabel(current.metrics[k].value)}`).join(' · ');
-  const peak=Math.max(.00001,...series.flatMap(s=>s.points.map(p=>p.value||0))),step=10**Math.floor(Math.log10(peak)),axisMax=circulation?Math.ceil(peak/step)*step:counts?undefined:1;
-  return `<article class="dynamic-chart"><div class="chart-heading"><h3>${demoCategories[category]}</h3><span class="atlas-source">${counts?'最近 5 轮 · 件数':circulation?'最近 5 轮 · 当量比':'值域 0–1'}</span></div>${chartSVG(series,round,{id:'demo-'+category,max:axisMax,label:demoCategories[category]+'演示曲线'})}<p class="metric-demo-latest">${esc(latest)}</p><details class="raw-evidence"><summary>当前轮证据与计算口径</summary><pre>${esc(JSON.stringify(Object.fromEntries(keys.map(k=>[report.labels[k],current?.metrics[k]])),null,2))}</pre></details></article>`;
+  const peak=Math.max(.00001,...report.round_series.flatMap(r=>keys.map(k=>r.metrics[k].value||0))),step=10**Math.floor(Math.log10(peak)),axisMax=circulation?Math.ceil(peak/step)*step:counts?Math.max(1,Math.ceil(peak)):1;
+  return `<article class="dynamic-chart"><div class="chart-heading"><h3>${demoCategories[category]}</h3><span class="atlas-source">${counts?'最近 5 轮 · 件数':circulation?'最近 5 轮 · 当量比':'值域 0–1'}</span></div>${chartSVG(series,report.round_series.at(-1).round,{id:'demo-'+category,max:axisMax,label:demoCategories[category]+'演示曲线'})}<p class="metric-demo-latest">${esc(latest)}</p><details class="raw-evidence"><summary>当前轮证据与计算口径</summary><pre>${esc(JSON.stringify(Object.fromEntries(keys.map(k=>[report.labels[k],current?.metrics[k]])),null,2))}</pre></details></article>`;
  }).join('')}</div>`;
 }
 metricDemoPanel.addEventListener('click',e=>{const svg=e.target.closest('[data-dynamic-chart]');if(svg)seek(chartRound(e,svg))});

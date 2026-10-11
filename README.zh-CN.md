@@ -4,7 +4,9 @@
 
 [English](README.md) · 简体中文
 
-![组合物质世界：生态、材料加工、储能与智能体交流](visualizer/assets/material-worlds-hero.png)
+**前端可视化**
+
+![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v5.gif)
 
 [研究框架](society_probe/society_probe/MINI_WORLD_FRAMEWORK.md) · [机制组合](society_probe/society_probe/MATHEMATICAL_WORLD_COMPOSITION.md) · [20 种机制](society_probe/society_probe/WORLD_MECHANISM_CANDIDATES_20.md) · [可视化使用说明](visualizer/README.md)
 
@@ -20,6 +22,8 @@ python quickstart.py
 默认运行 **4 个成员 × 8 轮的脚本演示，不调用模型**。[快速上手指南](QUICKSTART.zh-CN.md)包含真实模型调用、检查点续跑及查看器用法。[六组基线实验](results/baseline_20261010/README.zh-CN.md)公开旧规则下的统计表、曲线和轨迹；新世界已放慢生态变化、增加由储备支付的关键原料再生，并支持小数材料量。
 
 ## 我们在研究什么？
+
+![组合物质世界：生态、材料加工、储能与智能体交流](visualizer/assets/material-worlds-hero.png)
 
 [核心指标测量规范](society_probe/society_probe/CORE_METRICS_V1.md)定义 8 个维度、12 条时间曲线，问卷退出评价体系。[Luna low 无压力组分析](results/luna_low_no_pressure_20261011/README.md)公开 50 轮折线图、CSV、来源哈希及离线复算输入。目前可给出 6 条数值曲线，恢复率不适用，另外 5 条尚需补充证据；这是一组运行的描述，尚不是完整的社会发展评级。
 
@@ -196,17 +200,13 @@ $$
 
 相同实验身份映射到固定展示种子，决定像素环境布局与成员初始位置，刷新和重新回放时保持一致。
 
-每个任务呈现为一颗可复原的浮岛星球。生态类型、植被、岩层、水色、日间天空与星环分别随机选取并组合，森林、湿地或雪地也可以搭配晶体、巨型蘑菇等景观。高低浮岛通过栈桥连接，河流与瀑布带有动态水纹；缩放地图时，对话预览保持固定屏幕尺寸。这些属于展示层，仿真法则与实验结果仍以引擎和日志为准。
-
-**示例展示 · 2 / 4 / 6 / 8 位成员。**
-
-![四种浮岛星球中的 2、4、6、8 位小成员动态行走示例](docs/images/planet-populations-v4.gif)
+固定种子的多样浮岛、运动星球与头顶成员标识。[可视化说明](visualizer/PLANET_SCENERY.md)。
 
 **八个指标维度随时间的变化。**
 
-![四成员示例中的八个维度与十二条时间曲线](docs/images/demo-metrics-v4.png)
+![四成员示例中的八个维度与十二条时间曲线](docs/images/demo-metrics-v5.gif)
 
-**作品可以是叙事、研究，也可以是可玩的游戏。** 下方展示排版后的节选与实际棋局，点击链接可查看完整 Markdown、XML 或 Python。
+**文化**
 
 <table>
 <tr>
@@ -229,8 +229,7 @@ $$
 | a0 · R5 | “stress<10时，F1 combine 的2A+3C生成2D，请按相同条件验证。” |
 | a1 · R14 | “2D 压缩仍没有产物。我暂不接受 r2；材料数量相同不代表加工权限也相同。” |
 
-[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v4.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
-
+[示例记录与指标数据](results/guided_metric_demo/README.md) · [动画参数](docs/images/planet-populations-v5.json)。运行 `python visualizer/server.py --port 8789 --runs-root results/guided_metric_demo`，然后打开 <http://127.0.0.1:8789/replay>。
 
 ## 快速查看
 

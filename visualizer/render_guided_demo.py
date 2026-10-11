@@ -6,7 +6,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 
 def main():
-    for name in ["render_population_gallery.py", "render_artwork_showcase.py"]:
+    for name in ["render_population_gallery.py", "render_artwork_showcase.py", "render_metric_animation.py"]:
         subprocess.run([sys.executable, "-u", "-X", "utf8", str(HERE/name)],check=True)
 
 if __name__=="__main__":main()

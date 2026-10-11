@@ -150,8 +150,14 @@ function drawIsoActor(a){const p=actorScreenPosition(a),zoom=sandboxCamera.zoom,
  ctx.fillStyle='#35535035';ctx.beginPath();ctx.ellipse(p.x,p.y+4*zoom,12*zoom,4*zoom,0,0,Math.PI*2);ctx.fill();
  if(a.id===selected){ctx.strokeStyle='#f1d583';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(p.x,p.y+4*zoom,17*zoom,6*zoom,0,0,Math.PI*2);ctx.stroke()}
  const step=a.moving?Math.floor(clock*9+a.i)%2:0;paintSVG(directionalActorSVG(a,cameraFacing(a),step),p.x-19*zoom,p.y-39*zoom+bounce,38*zoom,43*zoom);ctx.restore();
- text(a.id,p.x,p.y+18*zoom,'#294e4d',Math.max(9,10*zoom));
  if(a.bubble){const x=p.x,y=p.y-60*zoom;rect(x-14*zoom,y-16*zoom,28*zoom,24*zoom,'#45615b');rect(x-16*zoom,y-18*zoom,28*zoom,24*zoom,'#fffced');text(a.bubble,x,y,'#355852',17*zoom)}
+}
+function actorOverheadPosition(a){const p=actorScreenPosition(a);return{x:p.x,y:p.y-46*sandboxCamera.zoom}}
+function drawActorOverhead(a){
+ const p=actorOverheadPosition(a),color=colors[a.i%colors.length];
+ ctx.save();if(a.inactive)ctx.globalAlpha=.55;
+ rect(p.x-15,p.y-15,30,16,'#fffdf3ee');rect(p.x-15,p.y,30,3,color);
+ text(a.id,p.x,p.y-4,'#294e4d',10);ctx.restore();
 }
 function rebuildSandboxItems(){
  sandboxStatic=worldScene.terrain.tiles.filter(t=>t.active).map(t=>({depth:sandboxDepth(t.x+10,t.y+10),order:0,draw:()=>drawIsoTile(t)}));
@@ -176,6 +182,7 @@ draw=function(){
  let j=0;for(const item of sandboxStatic){while(j<dynamic.length&&dynamic[j].depth<item.depth)dynamic[j++].draw();item.draw()}while(j<dynamic.length)dynamic[j++].draw();
  const water=worldScene.terrain.tiles.filter(t=>t.water);if(water.length){const t=water[Math.floor(clock*2)%water.length],p=projectWorld(t.x+10,t.y+10,t.level*sandboxStep);rect(p.x-4,p.y,9,2,'#cdece280')}
  drawProjectedInteractions();
+ actors.forEach(drawActorOverhead);
  if(typeof drawClimateEffects==='function')drawClimateEffects();
 };
 

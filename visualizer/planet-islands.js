@@ -29,7 +29,7 @@ makeWorld=function(){
   t.level=levelAt(x);t.water=false;
   if(island){t.biome=island.biome;if(!ecologyProtected(t)&&ecoHash(t.x,t.y)<.15)t.biome=profile[1][(island.id+1)%profile[1].length]}
  }
- for(const s of stations){s.terrainLevel=levelAt(s.x+s.w/2);for(const t of terrain.tiles)if(t.x+10>s.x-12&&t.x+10<s.x+s.w+12&&t.y+10>s.y-12&&t.y+10<s.y+s.h+12){t.active=true;t.level=s.terrainLevel;t.bridge=false}}
+ for(const [i,s] of stations.entries()){s.terrainLevel=levelAt(s.x+s.w/2);for(const t of terrain.tiles)if(t.x+10>s.x-12&&t.x+10<s.x+s.w+12&&t.y+10>s.y-12&&t.y+10<s.y+s.h+12){t.active=true;t.level=s.terrainLevel;t.bridge=false;t.island??=i}}
  // Rebuild corridors after ecological obstacles were settled; never accept a partial route.
  planetBuilding=true;
  try{for(const target of [...stations.map(s=>({x:s.x+s.w/2,y:s.y+s.h+34})),...worldScene.spawns])for(const p of [hub,...flatGridRoute(hub,target)]){const t=sandboxTile(p.x,p.y);t.active=true;t.road=true;t.bridge=t.island===null}}
@@ -58,25 +58,38 @@ makeWorld=function(){
  $('themeLabel').textContent=profile[0];$('terrainSummary').textContent=`${islands.length} 座浮岛 · 独立生态星球`;
  updateEcologyUI();
 };
+// Shared coordinates across each connected landmass close the bottom and cliff seams.
+function islandRockMesh(terrain){
+ const land=terrain.tiles.filter(t=>t.active&&!t.bridge),byKey=new Map(land.map(t=>[`${t.x},${t.y}`,t])),seen=new Set(),parts=[];
+ for(const first of land){if(seen.has(first))continue;const tiles=[first];seen.add(first);
+  for(let i=0;i<tiles.length;i++)for(const [dx,dy]of [[20,0],[-20,0],[0,20],[0,-20]]){const n=byKey.get(`${tiles[i].x+dx},${tiles[i].y+dy}`);if(n&&!seen.has(n)){seen.add(n);tiles.push(n)}}
+  const center={x:tiles.reduce((s,t)=>s+t.x+10,0)/tiles.length,y:tiles.reduce((s,t)=>s+t.y+10,0)/tiles.length},z=-45-parts.length%3*12;
+  const bottom=([x,y])=>[x+(center.x-x)*.28,y+(center.y-y)*.28,z],edges=[];
+  for(const t of tiles)for(const [dx,dy,a,b]of [[0,-20,[t.x,t.y],[t.x+20,t.y]],[20,0,[t.x+20,t.y],[t.x+20,t.y+20]],[0,20,[t.x+20,t.y+20],[t.x,t.y+20]],[-20,0,[t.x,t.y+20],[t.x,t.y]]])if(!byKey.has(`${t.x+dx},${t.y+dy}`))edges.push({t,dx,dy,a,b});
+  parts.push({tiles,edges,bottom});
+ }
+ return parts;
+}
+// Deterministic, decorative three-body-like orbits, independent of simulation time.
+function planetOrbitPositions(seed,time){
+ const phase=(seed>>>0)%997/997*Math.PI*2,t=time*.24;
+ return [42,23,13].map((r,i)=>{const a=t*(1+i*.22)+phase+i*Math.PI*2/3;return{x:775+Math.cos(a)*96+Math.sin(a*2.3+i)*21,y:93+Math.sin(a)*36+Math.cos(a*1.7+i)*13,r}});
+}
 drawIslandUnderside=function(){
  const terrain=worldScene.terrain;if(!terrain.islands)return;
  const traits=worldScene.planet;
- // A pale orbital silhouette gives each replay the feel of a separate world.
- ctx.save();ctx.globalAlpha=.2;ctx.fillStyle=traits.accent;ctx.beginPath();ctx.arc(790,86,42,0,Math.PI*2);ctx.fill();
- if(traits.rings){ctx.strokeStyle=traits.accent;ctx.lineWidth=5;ctx.beginPath();ctx.ellipse(790,86,72,16,-.3,0,Math.PI*2);ctx.stroke()}ctx.restore();
- const edges=[];
- for(const t of terrain.tiles){if(!t.active||t.bridge)continue;
-  for(const [dx,dy,a,b]of [[0,-20,[t.x,t.y],[t.x+20,t.y]],[20,0,[t.x+20,t.y],[t.x+20,t.y+20]],[0,20,[t.x+20,t.y+20],[t.x,t.y+20]],[-20,0,[t.x,t.y+20],[t.x,t.y]]]){
-   const n=(t.x+dx<0||t.x+dx>=W||t.y+dy<0||t.y+dy>=H)?null:sandboxTile(t.x+dx+10,t.y+dy+10);if(n?.active&&!n.bridge)continue;
-   const normal=rotatedNormal(dx,dy);if(normal.x+normal.y<=0)continue;
-   edges.push({t,a,b,depth:sandboxDepth(t.x+10,t.y+10)});
-  }
+ ctx.save();ctx.globalAlpha=.24;
+ for(const [i,p]of planetOrbitPositions(worldScene.seed,clock).entries()){
+  ctx.fillStyle=[traits.accent,traits.water[2],traits.stone[1][2]][i];ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+  if(i===0&&traits.rings){ctx.strokeStyle=traits.accent;ctx.lineWidth=4;ctx.beginPath();ctx.ellipse(p.x,p.y,p.r*1.65,p.r*.36,-.3,0,Math.PI*2);ctx.stroke()}
+ }ctx.restore();
+ const mesh=terrain.rockMesh??=islandRockMesh(terrain),faces=[];
+ for(const part of mesh){
+  for(const t of part.tiles)polyCanvas([[t.x,t.y],[t.x+20,t.y],[t.x+20,t.y+20],[t.x,t.y+20]].map(p=>projectWorld(...part.bottom(p))),traits.stone[1][1]);
+  for(const edge of part.edges){const normal=rotatedNormal(edge.dx,edge.dy);if(normal.x+normal.y>0)faces.push({...edge,bottom:part.bottom,depth:sandboxDepth(edge.t.x+10,edge.t.y+10)})}
  }
- edges.sort((a,b)=>a.depth-b.depth);
- for(const {t,a,b}of edges){const island=terrain.islands[t.island]||{x:t.x+10,y:t.y+10};
-  const bottom=p=>[p[0]+(island.x-p[0])*.28,p[1]+(island.y-p[1])*.28,-45-(t.island||0)%3*12];
-  polyCanvas([projectWorld(...a,0),projectWorld(...b,0),projectWorld(...bottom(b)),projectWorld(...bottom(a))],traits.stone[1][(t.x/20+t.y/20)%3]);
- }
+ faces.sort((a,b)=>a.depth-b.depth);
+ for(const {t,a,b,bottom}of faces)polyCanvas([projectWorld(...a,0),projectWorld(...b,0),projectWorld(...bottom(b)),projectWorld(...bottom(a))],traits.stone[1][(t.x/20+t.y/20)%3]);
 };
 drawIsoTile=function(t){
  if(!t.bridge){beforePlanetTile(t);return}
