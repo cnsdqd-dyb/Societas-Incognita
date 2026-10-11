@@ -19,7 +19,9 @@ function materialArt(item){
 materialIcon=function(item){return materialArt(item).svg.replace('<svg ','<svg class="material-icon" aria-hidden="true" ')};
 function drawMaterialSprite(item,x,y,size=22){paintSVG(materialArt(item).svg,x-size/2,y-size/2,size,size)}
 function treeArt(color='#426b58'){
- return pixelSVG(pr(23,51,8,25,'#7b6950')+pr(31,57,4,15,'#584c3e')+pp('26,4 34,16 40,16 40,25 48,25 48,35 56,35 56,48 48,48 48,57 8,57 8,48 0,48 0,35 8,35 8,25 16,25 16,16 22,16',color)+pr(18,22,12,6,'#8ca964')+pr(10,38,16,6,'#6f9567')+pr(32,31,12,5,'#547f65')+pr(22,9,6,10,'#a4b974')+pr(18,49,12,5,'#91ab67'),56,80);
+ let b=pr(23,51,8,25,'#7b6950')+pr(31,57,4,15,'#584c3e')+pp('26,4 34,16 40,16 40,25 48,25 48,35 56,35 56,48 48,48 48,57 8,57 8,48 0,48 0,35 8,35 8,25 16,25 16,16 22,16',color)+pr(18,22,12,6,'#8ca964')+pr(10,38,16,6,'#6f9567')+pr(32,31,12,5,'#547f65')+pr(22,9,6,10,'#a4b974')+pr(18,49,12,5,'#91ab67');
+ for(const [x,y]of [[24,18],[32,21],[15,28],[22,33],[40,36],[8,42],[30,46],[43,48],[15,51]])b+=pr(x,y,4,3,'#b0be7480')+pr(x+3,y+3,5,3,'#78a06b');
+ return pixelSVG(b,56,80);
 }
 function stationArt(id,t){
  let b=pp('10,76 136,76 154,88 24,100 4,90','#47615a25')+pr(10,34,126,48,'#6e8380')+pr(14,38,118,40,'#d7d6bf')+pr(112,38,20,40,'#a8b6a2')+pr(14,70,118,8,'#879b8c')+pr(20,42,4,20,'#f4eed9');

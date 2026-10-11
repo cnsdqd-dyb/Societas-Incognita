@@ -1,6 +1,6 @@
 {
   "run": "functional_sol_low_4x50_20261010/sol_low/simulation",
-  "completed_rounds": 40,
+  "completed_rounds": 50,
   "start_round": 8,
   "end_round": 12,
   "playback_speed": 16,

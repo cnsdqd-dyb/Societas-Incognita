@@ -4,6 +4,7 @@ import json
 from html import escape
 from pathlib import Path
 import mechanism_lab as lab
+from world_laws_art import scenery, member
 
 OUT = Path(__file__).resolve().parents[1] / 'docs' / 'images'
 OUT.mkdir(parents=True, exist_ok=True)
@@ -80,8 +81,8 @@ def svg(probe):
     ink = '#293f37'; muted = '#728075'; colors = {'A': '#719564', 'B': '#5b90a9', 'C': '#d3a35c', 'W': '#d08a6b', 'D': '#997baa', 'S': '#aeb255'}
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
            '<title id="title">World laws built from compositional mathematics</title>',
-           '<desc id="desc">Animated material quantities, actual production and inter-member transfers computed by the bounded research engine. Formulas are available to researchers but are not directly disclosed to agents in the hidden-rule setting. This is a fixed probe, not evidence that scientists have emerged.</desc>',
-           f'<rect width="{width}" height="{height}" fill="#f7f5ec"/>',
+           '<desc id="desc">Animated material quantities, actual production and inter-member transfers computed by the bounded research engine. Formulas are available to researchers but are not directly disclosed to agents in the hidden-rule setting. Material pools and member-held resources sit on layered ecological islands with industrial devices.</desc>',
+           f'<rect width="{width}" height="{height}" fill="#f8f5e9"/>',
            '<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#93a187"/></marker></defs>',
            '<style>text{font-family:Arial,sans-serif;fill:#293f37}.mono{font-family:Consolas,monospace}.small{font-size:12px;fill:#728075}</style>']
 
@@ -96,14 +97,19 @@ def svg(probe):
 
     text(28, 44, 'World laws built from compositional mathematics', 29)
     text(28, 73, 'Renewal + delay + cross-feeding + congestion + shared queue  |  seed 7', 14, muted)
-    text(28, 97, 'Fixed engine probe  /  actual quantities and settled transfers  /  no LLM decisions', 12, muted)
-    box(28, 119, 845, 443, '#fffdf5', '#ccd5c3')
-    box(894, 119, 358, 443, '#f1ead8', '#d8c8a7')
+    text(28, 97, 'Material pools / industrial transformations / member-to-member exchange', 12, muted)
+    box(28, 119, 845, 443, '#f0f2e3', '#ccd5c3')
+    # Quiet terraced scenery frames the six material islands.
+    out.append('<path d="M29,420L95,386L181,422L262,401L359,443L438,408L520,445L625,396L711,428L872,389V561H29Z" fill="#e5ead5"/>')
+    out.append('<path d="M29,455L119,439L210,465L308,446L410,480L528,456L650,477L766,444L872,471V561H29Z" fill="#dce4cd"/>')
+    for cx, cy in ((188,172),(476,175),(735,199)):
+        out.append(f'<path d="M{cx},{cy}h20v-7h30v7h18v7h-68Z" fill="#fffdf3"/>')
+    box(894, 119, 358, 443, '#f4efdf', '#d8c8a7')
     text(46, 146, 'Material dynamics', 18)
     text(910, 146, 'World-law layer', 18, '#795b3b')
     text(910, 171, 'Defined by researchers; not directly', 13, '#795b3b')
     text(910, 190, 'disclosed in the hidden-rule setting.', 13, '#795b3b')
-    nodes = {'A': (113, 233), 'B': (113, 390), 'C': (363, 233), 'W': (363, 390), 'D': (600, 320), 'S': (778, 320)}
+    nodes = {'A': (113, 217), 'B': (113, 363), 'C': (363, 217), 'W': (363, 363), 'D': (600, 285), 'S': (778, 285)}
     edges = [('A', 'C'), ('B', 'C'), ('A', 'W'), ('B', 'W'), ('C', 'D'), ('W', 'D'), ('D', 'S'), ('B', 'S')]
     paths = {}
     for source, target in edges:
@@ -123,16 +129,14 @@ def svg(probe):
         values[item] = [f['physics']['pools'].get(item, 0) if item in ('A', 'B') else
                         sum(a['inventory'].get(item, 0) for a in f['agents'].values()) for f in frames]
         top = max(1, max(values[item]))
-        box(x-39, y-40, 78, 80, '#e6eadf', '#83927b')
-        out.append(f'<rect x="{x-32}" y="{y+30}" width="64" height="0" fill="{colors[item]}">')
-        out.append(animated([round(64*v/top, 3) for v in values[item]], 'height'))
-        out.append(animated([round(y+30-64*v/top, 3) for v in values[item]], 'y'))
+        out.append(f'<g transform="translate({x},{y})">'+scenery(item, colors[item])+'</g>')
+        # A restrained gauge preserves the exact fixed per-material scale.
+        box(x-40, y-45, 80, 7, '#d7ddc8')
+        out.append(f'<rect x="{x-40}" y="{y-45}" width="0" height="7" fill="{colors[item]}">')
+        out.append(animated([round(80*v/top, 3) for v in values[item]], 'width'))
         out.append('</rect>')
-        # Small square material tiles keep the scene on the pixel-art vocabulary.
-        for i in range(4):
-            box(x-27+i*14, y-31, 7, 7, colors[item])
-        text(x-7, y+5, item, 25, ink, 'mono')
-        text(x-40, y+79, 'pool' if item in ('A', 'B') else 'held by members', 10, muted)
+        text(x-40, y-55, item, 22, ink, 'mono')
+        text(x-17, y-55, 'pool' if item in ('A', 'B') else 'held', 11, muted)
     # Only actual recipe completions activate material edges.
     for source, target in edges:
         active = []
@@ -144,12 +148,9 @@ def svg(probe):
         out.append(f'<rect x="-4" y="-4" width="8" height="8" fill="{colors[target]}"><animateMotion dur=".7s" repeatCount="indefinite" path="{paths[(source,target)]}"/></rect></g>')
     # The agent glyphs and transfer arcs below show actual handoffs, separately from recipes.
     for i, x in enumerate((225, 435, 645)):
-        rows = ['..hhhh..', '.hhhhhh.', '.ssssss.', '.sissis.', '.ssmmss.', 'sccccccs', '.cccccc.', '..pppp..', '..p..p..']
-        palette = {'h': '#846b50', 's': '#efd1a9', 'i': ink, 'm': '#c58c77', 'c': ['#789f85', '#7193a5', '#a48dae'][i], 'p': '#4e5c50'}
-        for row, line in enumerate(rows):
-            for col, pixel in enumerate(line):
-                if pixel in palette:
-                    box(x+col*7, 488+row*7, 7, 7, palette[pixel])
+        out.append(f'<path d="M{x-16},538L{x+30},556L{x+78},538L{x+31},520Z" fill="#c2d0ae"/>')
+        out.append(f'<path d="M{x-16},538L{x+30},556L{x+78},538L{x+62},554L{x+30},565L{x},554Z" fill="#9b7751"/>')
+        out.append(f'<g transform="translate({x+5},488)">'+member(i)+'</g>')
         text(x+12, 479, f'a{i}', 13, muted)
     text(46, 483, 'Material', 12, muted)
     text(46, 501, 'transfers', 12, muted)
@@ -211,7 +212,7 @@ def svg(probe):
         out.append(f'<g visibility="hidden"><animate attributeName="visibility" values="{vals}" keyTimes="{keys}" calcMode="discrete" dur="{duration}s" repeatCount="indefinite"/>')
         text(787, 146, f'R{f["round"]:02d}', 15, muted, 'mono')
         for item, (x, y) in nodes.items():
-            text(x-28, y+61, f'{values[item][j]:.2f}', 15, ink, 'mono')
+            text(x+18, y-55, f'{values[item][j]:.2f}', 12, ink, 'mono')
         out.append('</g>')
     text(28, 860, 'Bars use a fixed per-material scale; numeric labels give exact amounts. Moving pixels represent settled production or transfer.', 11, muted)
     out.append('</svg>')
@@ -219,8 +220,13 @@ def svg(probe):
 
 
 if __name__ == '__main__':
-    result = trajectory()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--reuse-data', action='store_true', help='Restyle the saved engine trajectory without rerunning it.')
+    args = parser.parse_args()
+    result = json.loads((OUT / 'compositional-world-laws-data.json').read_text(encoding='utf-8')) if args.reuse_data else trajectory()
     assert all(abs(f['accounting']['residual']) < 1e-7 for f in result['frames'])
     (OUT / 'compositional-world-laws.svg').write_text(svg(result), encoding='utf-8')
-    (OUT / 'compositional-world-laws-data.json').write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding='utf-8')
+    if not args.reuse_data:
+        (OUT / 'compositional-world-laws-data.json').write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding='utf-8')
     print('Animated SVG generated:', {k: sum(a['inventory'][k] for a in result['frames'][-1]['agents'].values()) for k in ('C','W','D','S')})
