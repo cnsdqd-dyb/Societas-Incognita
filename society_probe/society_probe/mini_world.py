@@ -146,7 +146,8 @@ def snapshot(state):
 
 def observation(cfg, state, aid):
     d = spec(cfg); m = state['mini_world']; a = state['agents'][aid]
-    catalog = [{'item': k, 'name': r.get('name', k)} for k, r in d['resources'].items()]
+    from identity_names import display_name
+    catalog = [{'item': k, 'name': display_name(cfg,'materials',k,r.get('name',k))} for k, r in d['resources'].items()]
     offers = {k: copy.deepcopy(o) | {'remaining_rounds': max(0, o['expires']-state['round'])}
               for k, o in m['offers'].items() if o['status'] == 'open' and o['expires'] > state['round']
               and (o['target'] in (aid, 'public') or o['seller'] == aid)}

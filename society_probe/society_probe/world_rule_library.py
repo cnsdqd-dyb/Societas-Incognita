@@ -337,6 +337,8 @@ def configure(source, candidate, members=4, pressure=True, visibility='hidden', 
         c['tools'] = sorted(set(c['tools']) | capability_devices.TOOLS)
     c['recipe_visibility'] = recipes; c['world_rule_visibility'] = visibility
     c['parallel_agents'] = members; c['max_estimated_cost_usd'] = 0
+    from identity_names import registry
+    c['identity_names']=registry(c['seed'],d['resources'],['a'+str(i) for i in range(members)])
     c['survey_rounds'] = []
     for key in ('mixed_world', 'open_contest', 'campaign_budget_db', 'survey_proxy_model'):
         c.pop(key, None)

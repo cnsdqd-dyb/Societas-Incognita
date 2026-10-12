@@ -318,6 +318,10 @@ class Society:
         for i, model in enumerate(cfg['models']):
             self.state['agents']['a'+str(i)] = {'model': model, 'stock': 2,
                 'energy': 5, 'alive': True, 'memory': {}, 'recent': [], 'inbox': []}
+        if cfg.get('identity_names'):
+            from identity_names import display_name
+            for aid,a in self.state['agents'].items():
+                a['name']=display_name(cfg,'members',aid)
         if cfg['world'].get('mechanism'):
             environments.initialize(cfg, self.state)
         if cfg.get('resource_seizure') or 'seize' in cfg['tools']:
@@ -343,6 +347,10 @@ class Society:
                 'available_tools': self.cfg['tools'], 'world_rules': self.public_rules(),
                 'scenario': self.cfg.get('scenario',{}),
                 'communication_rules': copy.deepcopy(self.cfg['communication'])}
+        if self.cfg.get('identity_names'):
+            observed['self']['name']=a['name']
+            for member,view in observed['members'].items():view['name']=s['agents'][member]['name']
+            observed['identity_note']='name 是固定显示名；动作和通信参数仍使用 id、item 等接口标识。材料持有量见 environment.your_inventory，可用能量见 self.stock。'
         if self.cfg['world'].get('mechanism'):
             observed['environment'] = environments.observation(self.cfg, s, aid)
         if environments.mini_world.enabled(self.cfg) and not a.get('function_knowledge'):
