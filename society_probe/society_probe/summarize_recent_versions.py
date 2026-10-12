@@ -93,6 +93,8 @@ def plot(rows):
     ax.set(yticks=y,yticklabels=labels,xlim=(0,200),xlabel='Attempted actions, including rejected operations');ax.invert_yaxis();ax.spines[['top','right']].set_visible(False)
     ax.set_title('Behavior profiles across completed interface versions',loc='left',pad=15);ax.legend(loc='upper center',bbox_to_anchor=(.5,-.13),ncol=4,frameon=False,fontsize=9)
     fig.tight_layout(rect=(0,.10,1,1));fig.savefig(OUT/'behavior_profiles.png',dpi=180);fig.savefig(OUT/'behavior_profiles.svg');plt.close(fig)
+    for path in OUT.glob('*.svg'):
+        path.write_text('\n'.join(line.rstrip() for line in path.read_text('utf-8').splitlines())+'\n',encoding='utf-8')
 
 
 if __name__=='__main__':main()
