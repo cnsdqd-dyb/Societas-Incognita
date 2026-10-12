@@ -1,0 +1,112 @@
+{
+  "diagnostic_only": true,
+  "exclude_from_free_run_analysis": true,
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "success": true,
+  "completed_rounds": 3,
+  "calls": 3,
+  "production": [
+    {
+      "agent": "a0",
+      "round": 3,
+      "facility": "F0",
+      "mode": "compress",
+      "inputs": {
+        "A": 0.49593441964128315,
+        "B": 0.49593441964128315
+      },
+      "batches": 1,
+      "produced": {
+        "C": 0.053713763916209,
+        "W": 0.9918688392825663
+      },
+      "result": "product",
+      "operating_energy_paid": 1.2398360491032079,
+      "feedback": {
+        "status": "executed",
+        "code": "PRODUCT",
+        "message": "实验已完成结算，请查看 produced 和实际费用记录。"
+      }
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "agent": "a0",
+      "decision": {
+        "action": {
+          "tool": "gather",
+          "item": "A",
+          "amount": 0.5
+        },
+        "communication": {
+          "op": "silent"
+        }
+      },
+      "outcome": {
+        "action": {
+          "item": "A",
+          "harvested": 0.5,
+          "extracted": 0.5
+        }
+      }
+    },
+    {
+      "round": 2,
+      "agent": "a0",
+      "decision": {
+        "action": {
+          "tool": "gather",
+          "item": "B",
+          "amount": 0.5
+        },
+        "communication": {
+          "op": "silent"
+        }
+      },
+      "outcome": {
+        "action": {
+          "item": "B",
+          "harvested": 0.5,
+          "extracted": 0.5
+        }
+      }
+    },
+    {
+      "round": 3,
+      "agent": "a0",
+      "decision": {
+        "action": {
+          "tool": "experiment",
+          "facility": "F0",
+          "mode": "M1",
+          "inputs": [
+            {
+              "item": "A",
+              "amount": 0.49593441964128315
+            },
+            {
+              "item": "B",
+              "amount": 0.49593441964128315
+            }
+          ],
+          "batches": 1
+        },
+        "communication": {
+          "op": "silent"
+        }
+      },
+      "outcome": {
+        "action": {
+          "experiment_queued": true,
+          "inputs_reserved": {
+            "A": 0.49593441964128315,
+            "B": 0.49593441964128315
+          }
+        }
+      }
+    }
+  ],
+  "intervention": "recipe disclosure plus explicit execution goal; other members wait; no added starting assets"
+}

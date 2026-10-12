@@ -1,0 +1,81 @@
+{
+  "scope": "Specific fresh-state 3-step execution, not all-state or Lean proof",
+  "trace": [
+    {
+      "round": 1,
+      "action": {
+        "tool": "gather",
+        "item": "A",
+        "amount": 1
+      },
+      "result": {
+        "item": "A",
+        "harvested": 1.0,
+        "extracted": 1.0
+      }
+    },
+    {
+      "round": 2,
+      "action": {
+        "tool": "gather",
+        "item": "B",
+        "amount": 1
+      },
+      "result": {
+        "item": "B",
+        "harvested": 1.0,
+        "extracted": 1.0
+      }
+    },
+    {
+      "round": 3,
+      "action": {
+        "tool": "experiment",
+        "facility": "F0",
+        "mode": "M1",
+        "inputs": [
+          {
+            "item": "A",
+            "amount": 0.5
+          },
+          {
+            "item": "B",
+            "amount": 0.5
+          }
+        ],
+        "batches": 1
+      },
+      "result": {
+        "experiment_queued": true,
+        "inputs_reserved": {
+          "A": 0.5,
+          "B": 0.5
+        }
+      }
+    }
+  ],
+  "production": [
+    {
+      "agent": "a0",
+      "round": 3,
+      "facility": "F0",
+      "mode": "compress",
+      "inputs": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "batches": 1,
+      "produced": {
+        "C": 0.0448229380138598,
+        "W": 1.0
+      },
+      "result": "product",
+      "operating_energy_paid": 1.25,
+      "feedback": {
+        "status": "executed",
+        "code": "PRODUCT",
+        "message": "实验已完成结算，请查看 produced 和实际费用记录。"
+      }
+    }
+  ]
+}
