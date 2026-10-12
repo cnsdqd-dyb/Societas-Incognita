@@ -15,6 +15,7 @@ import material_knowledge
 import capability_devices
 import material_combinations
 import functional_effects
+from interface_feedback import InterfaceError, experiment_feedback
 
 TOOLS = {'wait', 'inspect', 'transfer', 'gather', 'experiment', 'liquidate',
          'use_item', 'give_item', 'offer_items', 'accept_items', 'cancel_items', 'seize_item'}
@@ -24,6 +25,7 @@ TOOLS |= functional_effects.STORAGE_TOOLS
 HELP = '''One physical action per round. ENERGY denotes liquid stock; self.energy is vitality.
 gather(item,amount): attempt to extract a visible pool material.
 experiment(facility,mode,inputs:[{item,amount}],batches): attempt a combination at a station.
+Each material appears once in a basket; combine repeated quantities into one entry and check the visible quantity limit. Inputs must come from your own available inventory. Decimal quantities are allowed when the interface declares them; batches are integers.
 Inputs list names one-batch quantities; batches multiplies them. Results arrive at settlement.
 In continuous worlds material/ENERGY amounts may be positive decimals; batches and attack effort remain integers.
 liquidate(item,amount): attempt to convert a held material into liquid energy.
@@ -193,9 +195,12 @@ def continuous_quantities(cfg):
 def quantity(cfg, value, maximum=None, integer=False):
     cap = spec(cfg)['max_quantity'] if maximum is None else maximum
     if integer or not continuous_quantities(cfg):
-        if type(value) is not int or not 1 <= value <= cap: raise ValueError('Invalid integer quantity')
+        if type(value) is not int or not 1 <= value <= cap:
+            raise InterfaceError('Invalid integer quantity','INTEGER_QUANTITY','amount/batches',
+                '此数量须为允许范围内的正整数。','按接口范围提交整数；不能提交小数、字符串或布尔值。',{'maximum':cap,'integer_required':True})
     elif type(value) not in (int, float) or not math.isfinite(value) or not 0 < value <= cap:
-        raise ValueError('Invalid finite positive quantity')
+        raise InterfaceError('Invalid finite positive quantity','POSITIVE_QUANTITY','amount',
+            '数量须为允许范围内的有限正数。','允许小数，但不能为0、负数、NaN、无穷、字符串或布尔值。',{'maximum':cap,'decimal_allowed':True})
     return value
 
 
@@ -212,7 +217,9 @@ def parse_basket(cfg, value):
     for entry in value:
         if not isinstance(entry, dict) or set(entry) != {'item', 'amount'}: raise ValueError('Invalid basket entry')
         k = material(cfg, entry['item'], True)
-        if k in basket: raise ValueError('Duplicate basket material')
+        if k in basket:
+            raise InterfaceError('Duplicate basket material','DUPLICATE_MATERIAL','inputs',
+                '材料 '+k+' 在同一清单中重复出现。','同种材料须合并成一项；例如8A和2A写为 {"item":"A","amount":10}，再核对数量上限和自己的库存。',{'item':k})
         basket[k] = quantity(cfg, entry['amount'])
     return basket
 
@@ -222,8 +229,11 @@ def balance(a, item):
 
 
 def check_payment(a, basket):
-    if any(balance(a, k) < amount for k, amount in basket.items()):
-        raise ValueError('Insufficient assets')
+    shortages=[{'item':k,'required':amount,'available':balance(a,k),'shortfall':amount-balance(a,k)}
+               for k,amount in basket.items() if balance(a,k)<amount]
+    if shortages:
+        raise InterfaceError('Insufficient assets','INSUFFICIENT_ASSETS','amount/inputs',
+            '自己的可用资产不足以支付本次操作。','将数量降至实际可用余额以内，或先取得所需资源；余额有小数，不能向上取整。',{'shortages':shortages})
 
 
 def move(a, basket, sign):
@@ -407,6 +417,7 @@ def settle_physics(cfg, state, before_actions):
                 effects_total[k] = effects_total.get(k, 0)+extent*equations.evaluate(expr, c)
             record.update(result='product' if sum(products.values()) else 'no_product', produced=products,
                           operating_energy_paid=cost)
+        record['feedback']=experiment_feedback(record)
         m['discoveries'].setdefault(aid, []).append(copy.deepcopy(record)); completed.append({'agent': aid, **record})
         material_combinations.synchronize(cfg, state, 'production')
         a['inbox'].append({'round': state['round'], 'channel': 'production_result', **copy.deepcopy(record)})

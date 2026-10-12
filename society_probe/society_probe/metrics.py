@@ -95,9 +95,9 @@ def measure(state, cfg, window=5):
             series[-1]['material_economy'] = material
             holdings = [material.get('energy_equivalent_by_member', {}).get(a, 0) for a in alive]
             series[-1]['energy_equivalent_gini_alive'] = gini(holdings)
-            trades = [e for e in state['mini_world']['events'] if t-window < e['round'] <= t and e['tool'] == 'accept_items']
+            item_trades = [e for e in state['mini_world']['events'] if t-window < e['round'] <= t and e['tool'] == 'accept_items']
             transfers_items = [e for e in state['mini_world']['events'] if t-window < e['round'] <= t and e['tool'] == 'give_item']
-            series[-1]['item_trade_graph'] = graph_summary({(e['agent'], e['target']) for e in trades}, original)
+            series[-1]['item_trade_graph'] = graph_summary({(e['agent'], e['target']) for e in item_trades}, original)
             series[-1]['item_transfer_graph'] = graph_summary({(e['agent'], e['target']) for e in transfers_items}, original)
         if any(k in cfg['communication'] for k in ('max_turns_before_action','budget')):
             series[-1]['pre_action_communication_counts'] = dict(Counter(

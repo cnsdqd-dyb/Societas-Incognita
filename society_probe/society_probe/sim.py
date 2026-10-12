@@ -19,6 +19,7 @@ import environments
 import schemas
 import interaction_controls
 import social_content
+import interface_feedback
 
 
 def dump(path, value):
@@ -584,6 +585,8 @@ def compact(society, aid, api, persist=None):
 
 
 def survey(society, api, persist=None):
+    # Retired from current research metrics. Keep legacy implementations/data
+    # for historical inspection; old schedules alone must not trigger calls.
     if not society.cfg.get('survey_enabled', False):
         return
     if society.cfg.get('survey_protocol') == 'source_informed_v3':
@@ -861,8 +864,8 @@ def _run_impl(cfg, output, mock=False, resume=False):
                     try:
                         if not isinstance(result.get('action'),dict): raise ValueError('Missing action object')
                         outcome['action'] = society.act(aid,result['action'])
-                    except (ValueError,TypeError,KeyError):
-                        outcome['action_error'] = 'Rejected invalid/unavailable action'
+                    except (ValueError,TypeError,KeyError) as exc:
+                        interface_feedback.record_error(outcome,'action',exc)
                     try:
                         msg = result['communication']
                         if not isinstance(msg,dict): raise ValueError('Missing communication object')
@@ -877,8 +880,8 @@ def _run_impl(cfg, output, mock=False, resume=False):
                             recipients = [i for i in society.state['chats'][msg['chat']]['members'] if i != aid]
                         society.communicate(aid,msg)
                         if msg.get('op') == 'send': outcome['private_recipients'] = recipients
-                    except (ValueError,TypeError,KeyError):
-                        outcome['communication_error'] = 'Rejected invalid communication'
+                    except (ValueError,TypeError,KeyError) as exc:
+                        interface_feedback.record_error(outcome,'communication',exc)
                     record = {'round':t,'agent':aid,'decision':result,'outcome':outcome,
                               'observed_messages':visible[aid]['new_messages']}
                     if interaction_controls.has_dialogue(cfg):

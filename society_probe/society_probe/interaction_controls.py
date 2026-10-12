@@ -196,7 +196,10 @@ def actor_help(cfg, visible, full_help):
             result += game_formats()
         if has_dialogue(cfg):
             result += ('\n当前阶段 PHYSICAL_ACTION。通信已结束；从上述接口选择一个动作。'
-                       '输出 action 与 communication；communication 为 {"op":"silent"}。')
+                       '输出 action 与 communication；communication 为 {"op":"silent"}。'
+                       'action 是 JSON 对象：tool 字段填写所选接口名，卡片 parameters 中的具体参数字段与 tool 放在同一层。'
+                       '提交结构为 {"action":{"tool":"<所选接口名>","<参数名>":"<参数值>"},"communication":{"op":"silent"}}；'
+                       '根据接口填写参数，无参数的接口仅填写 tool。')
         else:
             result += '\n' + render(cfg, visible, 'communicate')
         return result
@@ -367,7 +370,8 @@ def advance_dialogue(society, api, progress, persist):
                 recipients = _valid_message(society, aid, msg, views[aid])
                 if msg.get('op') == 'send': outcome['private_recipients'] = recipients
             except (ValueError, TypeError, KeyError) as exc:
-                outcome['communication_error'] = str(exc)
+                from interface_feedback import record_error
+                record_error(outcome,'communication',exc)
             if msg.get('op') == 'silent':
                 stopped.append(aid)
             record = {'round': state['round'], 'dialogue_turn': turn + 1, 'agent': aid,
