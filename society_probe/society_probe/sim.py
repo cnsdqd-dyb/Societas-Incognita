@@ -370,7 +370,8 @@ class Society:
         if self.cfg.get('social_content'):
             observed['environment'].update(social_content.observation(self.cfg,s,aid))
             observed['self']['game_escrow']=sum(g['escrow'].get(aid,0) for g in s['social_content']['games'].values())
-        return interaction_controls.observation(self.cfg, s, observed)
+        from mode_labels import public_view
+        return public_view(self.cfg,interaction_controls.observation(self.cfg, s, observed))
 
     def public_rules(self):
         w = self.cfg['world']
@@ -465,6 +466,8 @@ class Society:
             raise
 
     def _act(self, aid, action):
+        from mode_labels import internal_action
+        action=internal_action(self.cfg,action)
         if not self.state['agents'][aid]['alive']:
             raise ValueError('Inactive members cannot act')
         if 'args' in action:

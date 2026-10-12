@@ -339,6 +339,8 @@ def configure(source, candidate, members=4, pressure=True, visibility='hidden', 
     c['parallel_agents'] = members; c['max_estimated_cost_usd'] = 0
     from identity_names import registry
     c['identity_names']=registry(c['seed'],d['resources'],['a'+str(i) for i in range(members)])
+    from mode_labels import registry as mode_registry
+    c['mode_labels']=mode_registry(c['seed'],d)
     c['survey_rounds'] = []
     for key in ('mixed_world', 'open_contest', 'campaign_budget_db', 'survey_proxy_model'):
         c.pop(key, None)

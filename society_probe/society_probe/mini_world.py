@@ -526,8 +526,9 @@ def action_properties(cfg, tool):
              'required': ['item', 'amount'], 'additionalProperties': False}
     basket = {'type': 'array', 'items': entry, 'minItems': 1, 'maxItems': len(d['resources'])+1}
     if tool == 'experiment':
+        from mode_labels import public_mode
         return {'facility': {'type': 'string', 'enum': list(d['facilities'])},
-                'mode': {'type': 'string', 'enum': sorted({mode for f in d['facilities'].values() for mode in f['modes']})},
+                'mode': {'type': 'string', 'enum': sorted({public_mode(cfg,mode) for f in d['facilities'].values() for mode in f['modes']})},
                 'inputs': basket, 'batches': {'type': 'integer', 'minimum': 1, 'maximum': d['max_batches']}}
     if tool in ('gather', 'liquidate', 'use_item'): return {'item': item, 'amount': amount}
     if tool == 'give_item':
