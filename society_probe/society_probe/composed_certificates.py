@@ -88,6 +88,8 @@ class Circuit:
 class Compiler:
     def __init__(self, cfg):
         world_rule_engine.validate(mini_world.spec(cfg))
+        if mini_world.spec(cfg).get('production_semantics') == 'limiting_reagent_v1':
+            raise Unsupported('Limiting-reagent settlement requires a new certificate compiler; old certificates must not be reused')
         if mini_world.spec(cfg)['noise']['distribution'] != 'none': raise Unsupported('Noise requires a separate robust or fixed-noise certificate')
         if any(cfg.get(k) for k in ('social_content','resource_seizure','open_activities','mixed_world','open_contest')) or cfg.get('rescue',{}).get('enabled'):
             raise Unsupported('Social/security/rescue extensions are outside this checker')

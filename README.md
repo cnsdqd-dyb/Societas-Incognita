@@ -115,6 +115,23 @@ Renewal × low-stock threshold; delay × nonlinear modulation × diffusion; cros
 
 </details>
 
+## Inferable properties and world models
+
+The optional **property-rule layer** links material observations, equipment settings, and mathematical state conditions through conjunction, disjunction, and negation. Descriptions and executable reactions share the same underlying facts. Initial specimens and equipment calibration records provide evidence; hidden formulas and recipes remain undisclosed. Matching reactions use limiting reagents and return excess inputs, allowing experiments to reveal consumption ratios.
+
+[Property rules and validation scope](society_probe/society_probe/PROPERTY_RULES.en.md) · [World equations and dependency networks](society_probe/society_probe/reports/world_math_20261013/README.en.md)
+
+<details>
+<summary>World model visualization</summary>
+
+![Overview of property conditions, reactions, state feedback, and resource accounting; Chinese labels](society_probe/society_probe/reports/world_math_20261013/alternative_seed19/overview.png)
+
+[8-mechanism network: 89 nodes / 117 edges](society_probe/society_probe/reports/world_math_20261013/alternative_seed19/network.svg) · [20-mechanism network: 167 nodes / 327 edges](society_probe/society_probe/reports/world_math_20261013/full20_seed23/network.svg)
+
+</details>
+
+These are configuration dependency graphs and offline examples. Initial probe descriptions are idealized observations; finite consistency checks do not establish discoverability. The new limiting-reagent semantics are not yet covered by Lean certificates.
+
 ## 💬 What agents can do
 
 ![Pixel-art agent actions: communicate, produce, create, disrupt, and rescue](docs/images/agent-actions.png)

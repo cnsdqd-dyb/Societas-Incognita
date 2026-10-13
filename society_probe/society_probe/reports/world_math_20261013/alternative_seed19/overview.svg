@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="810pt" height="494.496pt" viewBox="0 0 810 494.496" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-13T13:24:53.238014</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.7.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 494.496
+L 810 494.496
+L 810 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 32.256 231.7248
+L 219.744 231.7248
+Q 227.556 231.7248 227.556 223.9632
+L 227.556 101.4408
+Q 227.556 93.6792 219.744 93.6792
+L 32.256 93.6792
+Q 24.444 93.6792 24.444 101.4408
+L 24.444 223.9632
+Q 24.444 231.7248 32.256 231.7248
+z
+" clip-path="url(#p5da80218f7)" style="fill: #36a88b; fill-opacity: 0.094118; stroke: #36a88b; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 294.516 231.7248
+L 487.584 231.7248
+Q 495.396 231.7248 495.396 223.9632
+L 495.396 101.4408
+Q 495.396 93.6792 487.584 93.6792
+L 294.516 93.6792
+Q 286.704 93.6792 286.704 101.4408
+L 286.704 223.9632
+Q 286.704 231.7248 294.516 231.7248
+z
+" clip-path="url(#p5da80218f7)" style="fill: #8b72d2; fill-opacity: 0.094118; stroke: #8b72d2; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 562.356 231.7248
+L 755.424 231.7248
+Q 763.236 231.7248 763.236 223.9632
+L 763.236 101.4408
+Q 763.236 93.6792 755.424 93.6792
+L 562.356 93.6792
+Q 554.544 93.6792 554.544 101.4408
+L 554.544 223.9632
+Q 554.544 231.7248 562.356 231.7248
+z
+" clip-path="url(#p5da80218f7)" style="fill: #e9a548; fill-opacity: 0.094118; stroke: #e9a548; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 230.670535 162.4248
+Q 256.849939 162.4248 281.128686 162.4248
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 274.728686 159.2248
+L 281.128686 162.4248
+L 274.728686 165.6248
+z
+" clip-path="url(#p5da80218f7)" style="fill: #9baabc; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 498.510535 162.4248
+Q 524.689939 162.4248 548.968686 162.4248
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 542.568686 159.2248
+L 548.968686 162.4248
+L 542.568686 165.6248
+z
+" clip-path="url(#p5da80218f7)" style="fill: #9baabc; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 32.256 406.3608
+L 219.744 406.3608
+Q 227.556 406.3608 227.556 398.5992
+L 227.556 284.3928
+Q 227.556 276.6312 219.744 276.6312
+L 32.256 276.6312
+Q 24.444 276.6312 24.444 284.3928
+L 24.444 398.5992
+Q 24.444 406.3608 32.256 406.3608
+z
+" clip-path="url(#p5da80218f7)" style="fill: #49a596; fill-opacity: 0.094118; stroke: #49a596; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 294.516 406.3608
+L 487.584 406.3608
+Q 495.396 406.3608 495.396 398.5992
+L 495.396 284.3928
+Q 495.396 276.6312 487.584 276.6312
+L 294.516 276.6312
+Q 286.704 276.6312 286.704 284.3928
+L 286.704 398.5992
+Q 286.704 406.3608 294.516 406.3608
+z
+" clip-path="url(#p5da80218f7)" style="fill: #4382c5; fill-opacity: 0.094118; stroke: #4382c5; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 562.356 406.3608
+L 755.424 406.3608
+Q 763.236 406.3608 763.236 398.5992
+L 763.236 284.3928
+Q 763.236 276.6312 755.424 276.6312
+L 562.356 276.6312
+Q 554.544 276.6312 554.544 284.3928
+L 554.544 398.5992
+Q 554.544 406.3608 562.356 406.3608
+z
+" clip-path="url(#p5da80218f7)" style="fill: #e9a548; fill-opacity: 0.094118; stroke: #e9a548; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 658.89 234.277632
+Q 658.89 253.621948 658.89 271.065607
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 662.09 264.665607
+L 658.89 271.065607
+L 655.69 264.665607
+z
+" clip-path="url(#p5da80218f7)" style="fill: #9baabc; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 550.312579 341.496
+Q 524.690563 341.496 500.969204 341.496
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 507.369204 344.696
+L 500.969204 341.496
+L 507.369204 338.296
+z
+" clip-path="url(#p5da80218f7)" style="fill: #9baabc; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 282.472579 341.496
+Q 256.850563 341.496 233.129204 341.496
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 239.529204 344.696
+L 233.129204 341.496
+L 239.529204 338.296
+z
+" clip-path="url(#p5da80218f7)" style="fill: #9baabc; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 126 272.965643
+Q 126 254.174476 126 237.283966
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 122.8 243.683966
+L 126 237.283966
+L 129.2 243.683966
+z
+" clip-path="url(#p5da80218f7)" style="fill: #9baabc; stroke: #9baabc; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 416.16 272.965643
+Q 416.16 254.174476 416.16 237.283966
+" clip-path="url(#p5da80218f7)" style="fill: none; stroke: #4382c5; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 412.96 243.683966
+L 416.16 237.283966
+L 419.36 243.683966
+z
+" clip-path="url(#p5da80218f7)" style="fill: #4382c5; stroke: #4382c5; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #23334a; font: 700 23px 'Microsoft YaHei'; text-anchor: start" x="25.56" y="35.4672" transform="rotate(-0 25.56 35.4672)">世界规律如何连接起来</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #60718b; font: 11px 'Microsoft YaHei'; text-anchor: start" x="25.56" y="58.1976" transform="rotate(-0 25.56 58.1976)">candidate_19  ·  属性条件 → 反应 → 状态反馈</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #36a88b; font: 700 13px 'Microsoft YaHei'; text-anchor: start" x="40.626" y="120.2904" transform="rotate(-0 40.626 120.2904)">可观察的物质与设备</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(40.626 150.065625)">材料：光谱响应、偏转、孔隙</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(40.626 165.647081)">设备：模式通道、校准样片</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(40.626 181.228538)">初始线索 + 持有后的私有记录</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #8b72d2; font: 700 13px 'Microsoft YaHei'; text-anchor: start" x="302.886" y="120.2904" transform="rotate(-0 302.886 120.2904)">隐藏的逻辑条件</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(302.886 150.065625)">材料条件 ∧ 设备条件 ∧ 状态条件</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(302.886 165.647081)">条件内部可以包含 ∨ 与 ¬</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(302.886 181.228538)">满足条件才进入反应结算</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #e9a548; font: 700 13px 'Microsoft YaHei'; text-anchor: start" x="570.726" y="120.2904" transform="rotate(-0 570.726 120.2904)">实际加工与产出</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(570.726 150.065625)">限制性原料决定反应量</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(570.726 165.647081)">产率受数学状态与能量预算约束</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(570.726 181.228538)">产物、副产物、消耗、余料返还</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #49a596; font: 700 13px 'Microsoft YaHei'; text-anchor: start" x="40.626" y="303.2424" transform="rotate(-0 40.626 303.2424)">资源池与能量账本</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(40.626 333.017625)">再生、耗竭、物质流动、储能</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(40.626 348.599081)">物理变化反映到下一轮观测</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(40.626 364.180538)">总能量变化 = 外部输入 − 耗散</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #4382c5; font: 700 13px 'Microsoft YaHei'; text-anchor: start" x="302.886" y="303.2424" transform="rotate(-0 302.886 303.2424)">数学状态随操作演化</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(302.886 333.017625)">本世界有 9 个动态变量</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(302.886 348.599081)">stress、delay_0、delay_1…</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(302.886 364.249069)">加工与采集累计量进入状态方程</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #e9a548; font: 700 13px 'Microsoft YaHei'; text-anchor: start" x="570.726" y="303.2424" transform="rotate(-0 570.726 303.2424)">本世界的实际生产链</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(570.726 333.017625)">A + B → C + W</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(570.726 348.599081)">C + W → D</text>
+    <text style="fill: #23334a; font: 10.2px 'Microsoft YaHei'" transform="translate(570.726 364.180538)">D + B → S</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #4382c5; font: 9px 'Microsoft YaHei'; text-anchor: start" x="426.204" y="258.336" transform="rotate(-0 426.204 258.336)">影响下一轮条件</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #23334a; font: 700 12px 'Microsoft YaHei'; text-anchor: start" x="31.14" y="444.6144" transform="rotate(-0 31.14 444.6144)">44 条配置表达式    /    89 个依赖节点    /    117 条依赖边</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #77869b; font: 9px 'Microsoft YaHei'; text-anchor: start" x="31.14" y="467.8992" transform="rotate(-0 31.14 467.8992)">依据实际世界配置生成 · 示意图压缩了结算阶段 · 依赖关系不等于已证明的因果效应</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5da80218f7">
+   <rect x="14.4" y="14.4" width="781.2" height="465.696"/>
+  </clipPath>
+ </defs>
+</svg>

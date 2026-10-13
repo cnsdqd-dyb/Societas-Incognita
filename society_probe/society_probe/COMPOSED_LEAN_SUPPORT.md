@@ -1,5 +1,7 @@
 # 确定性组合模型的 Lean 区间轨迹证书
 
+**新增语义边界（2026-10-13）：** 可选[属性规则层](PROPERTY_RULES.md)采用 `limiting_reagent_v1` 返还多余投料，当前组合证书编译器明确拒绝此语义。有限属性一致性检查、数学表达式导出及依赖网络不构成Lean证书；下述已支持的旧语义范围不变。
+
 最新 v2 已加入依赖保持的运算图、实际有理值包含关系、精确等式、语义守卫和活性证明；世界动作编译与浮点运行时边界仍未消除，详见 [SEMANTIC_CERTIFICATE_V2.md](SEMANTIC_CERTIFICATE_V2.md)。
 
 阶段记录（现已接入 v2 运算图）：全部 13 类原语的通用区间可靠性由 `check_sound` 证明；世界动作编译层仍属于受信实现，不能称为完整仿真器端到端证明。详见 [INTERVAL_ALL_OPERATORS_PROOF.md](INTERVAL_ALL_OPERATORS_PROOF.md)。

@@ -242,7 +242,10 @@ def communication_actor_help(cfg, visible):
         return render(cfg, visible, 'communicate') + (
             '\n通信倒计时是上限，可提前结束；低于上限时可开始输出，'
             '最后一次输出完整保留，越过上限后不能再开始。以可见预算字段为准。'
-            '\n当前阶段 COMMUNICATION；只输出 communication 对象。')
+            '\n当前阶段 COMMUNICATION；只输出 communication 对象。'
+            '\n返回的顶层 JSON 必须只有 communication 字段；communication 是对象，其中 op 填卡片 action 的名称，卡片 parameters 中的参数直接放在 op 同一层。'
+            '\n结构为 {"communication":{"op":"<所选通信接口名>","<参数名>":"<参数值>"}}；无参数时仅包含 op。'
+            '\n卡片的 action、parameters 是接口说明字段，不是返回 JSON 的字段。')
     return communication_help() + '\nThis is a communication-only phase. Output only a communication object; no physical action.'
 
 

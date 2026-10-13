@@ -48,7 +48,8 @@ class ContinuousQuantities(unittest.TestCase):
     def test_schema_accepts_fractional_material_but_not_fractional_batch(self):
         cfg = self.fixture(); props = mini_world.action_properties(cfg, 'experiment')
         schema = {'type': 'object', 'properties': props, 'required': list(props)}
-        action = dict(facility='F0', mode='combine', inputs=[dict(item='A', amount=.125)], batches=1)
+        from mode_labels import public_mode
+        action = dict(facility='F0', mode=public_mode(cfg, 'combine'), inputs=[dict(item='A', amount=.125)], batches=1)
         jsonschema.validate(action, schema)
         action['batches'] = .5
         with self.assertRaises(jsonschema.ValidationError): jsonschema.validate(action, schema)

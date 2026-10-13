@@ -114,6 +114,23 @@ $$
 
 </details>
 
+## 可推断属性与世界模型
+
+可选的**属性规则层**用合取、析取和否定连接材料观测、设备设置与数学状态条件。描述与实际反应使用同一份底层事实；初始样本和设备校准记录提供分析线索，公式与配方仍隐藏。匹配后的反应按限制性原料结算，多余材料返还，成员可以通过实验推断消耗比例。
+
+[属性规则与检查范围](society_probe/society_probe/PROPERTY_RULES.md) · [世界方程与依赖网络](society_probe/society_probe/reports/world_math_20261013/README.md)
+
+<details>
+<summary>世界模型可视化</summary>
+
+![属性条件、反应、状态反馈与资源账本的关联总览](society_probe/society_probe/reports/world_math_20261013/alternative_seed19/overview.png)
+
+[8机制网络：89节点 / 117条边](society_probe/society_probe/reports/world_math_20261013/alternative_seed19/network.svg) · [20机制网络：167节点 / 327条边](society_probe/society_probe/reports/world_math_20261013/full20_seed23/network.svg)
+
+</details>
+
+这些是配置依赖网络和离线示例。初始探头描述属于理想化观测；有限一致性检查不保证可发现性。新增限制性原料结算尚未接入Lean证书。
+
 ## 💬 智能体能做什么？
 
 ![交流、生产、创作、破坏与救援的像素场景](docs/images/agent-actions.png)

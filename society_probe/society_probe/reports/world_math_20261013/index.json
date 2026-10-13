@@ -1,0 +1,79 @@
+[
+  {
+    "name": "alternative_seed19",
+    "seed": 19,
+    "modules": [
+      "renewable_ecology",
+      "cross_feeding",
+      "explicit_delay",
+      "shared_queue",
+      "fatigue_repair",
+      "finite_buffer",
+      "power_limited_storage",
+      "calibrated_measurement"
+    ],
+    "output": "alternative_seed19",
+    "equations": 44,
+    "nodes": 89,
+    "edges": 117
+  },
+  {
+    "name": "ecology_interdependence_seed31",
+    "seed": 31,
+    "modules": [
+      "renewable_ecology",
+      "trophic_balance",
+      "cross_feeding",
+      "explicit_delay"
+    ],
+    "output": "ecology_interdependence_seed31",
+    "equations": 26,
+    "nodes": 61,
+    "edges": 83
+  },
+  {
+    "name": "catalysis_repair_seed47",
+    "seed": 47,
+    "modules": [
+      "renewable_ecology",
+      "competitive_catalysis",
+      "autocatalytic_seed",
+      "fatigue_repair",
+      "shared_queue"
+    ],
+    "output": "catalysis_repair_seed47",
+    "equations": 29,
+    "nodes": 61,
+    "edges": 104
+  },
+  {
+    "name": "full20_seed23",
+    "seed": 23,
+    "modules": [
+      "renewable_ecology",
+      "allee_threshold",
+      "trophic_balance",
+      "internal_quota",
+      "substrate_inhibition",
+      "cross_feeding",
+      "competitive_catalysis",
+      "autocatalytic_seed",
+      "bistable_toggle",
+      "explicit_delay",
+      "chaotic_modulation",
+      "reaction_diffusion",
+      "congested_transport",
+      "shared_queue",
+      "fatigue_repair",
+      "finite_adsorption",
+      "finite_buffer",
+      "power_limited_storage",
+      "conductance_network",
+      "calibrated_measurement"
+    ],
+    "output": "full20_seed23",
+    "equations": 93,
+    "nodes": 167,
+    "edges": 327
+  }
+]

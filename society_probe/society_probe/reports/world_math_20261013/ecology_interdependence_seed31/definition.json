@@ -1,0 +1,1100 @@
+{
+  "version": "mini_world_v1",
+  "id": "candidate_31",
+  "resources": {
+    "A": {
+      "name": "material A",
+      "tier": 0,
+      "energy_value": 2,
+      "decay": 0,
+      "liquidation_efficiency": 1.0,
+      "accessibility": 1.0,
+      "observable_properties": {
+        "band": 19,
+        "direction": 1,
+        "porous": false
+      }
+    },
+    "B": {
+      "name": "material B",
+      "tier": 0,
+      "energy_value": 2,
+      "decay": 0,
+      "liquidation_efficiency": 1.0,
+      "accessibility": 1.0,
+      "traits": [
+        "Can serve as a recording-device component."
+      ],
+      "observable_properties": {
+        "band": 19,
+        "direction": -1,
+        "porous": false
+      }
+    },
+    "C": {
+      "name": "material C",
+      "tier": 1,
+      "energy_value": 4,
+      "decay": 0.02,
+      "liquidation_efficiency": 1.0,
+      "accessibility": 1.0,
+      "use_effects": {
+        "stress": -1
+      },
+      "traits": [
+        "Can serve as a device component supporting communication, recording, sensing or manufacturing."
+      ],
+      "observable_properties": {
+        "band": 20,
+        "direction": 1,
+        "porous": false
+      }
+    },
+    "D": {
+      "name": "material D",
+      "tier": 2,
+      "energy_value": 8,
+      "decay": 0.01,
+      "liquidation_efficiency": 1.0,
+      "accessibility": 1.0,
+      "traits": [
+        "Can serve as an advanced device component; function depends on the assembly."
+      ],
+      "observable_properties": {
+        "band": 23,
+        "direction": 1,
+        "porous": false
+      }
+    },
+    "S": {
+      "name": "material S",
+      "tier": 3,
+      "energy_value": 16,
+      "decay": 0,
+      "liquidation_efficiency": 1.0,
+      "accessibility": 0.2,
+      "observable_properties": {
+        "band": 6,
+        "direction": 1,
+        "porous": false
+      }
+    },
+    "W": {
+      "name": "material W",
+      "tier": 1,
+      "energy_value": 1,
+      "decay": 0,
+      "liquidation_efficiency": 1.0,
+      "accessibility": 1.0,
+      "traits": [
+        "A production byproduct usable by a different conversion process."
+      ],
+      "observable_properties": {
+        "band": 20,
+        "direction": -1,
+        "porous": false
+      }
+    }
+  },
+  "variables": {
+    "stress": {
+      "initial": 0,
+      "min": 0,
+      "max": 20,
+      "observable": true,
+      "next": {
+        "op": "max",
+        "args": [
+          0,
+          {
+            "op": "sub",
+            "args": [
+              {
+                "ref": "state.stress"
+              },
+              0.5
+            ]
+          }
+        ]
+      }
+    },
+    "delay_0": {
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "next": {
+        "ref": "activity.harvested.A"
+      },
+      "observable": true
+    },
+    "delay_1": {
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "next": {
+        "ref": "state.delay_0"
+      },
+      "observable": true
+    },
+    "delay_2": {
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "next": {
+        "ref": "state.delay_1"
+      },
+      "observable": true
+    }
+  },
+  "pools": {
+    "A": {
+      "initial": 40,
+      "capacity": 80,
+      "regeneration": {
+        "op": "add",
+        "args": [
+          {
+            "op": "mul",
+            "args": [
+              0.1,
+              {
+                "op": "div",
+                "args": [
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "mul",
+                        "args": [
+                          0.25,
+                          {
+                            "ref": "pool.A"
+                          },
+                          {
+                            "op": "max",
+                            "args": [
+                              0,
+                              {
+                                "op": "sub",
+                                "args": [
+                                  1,
+                                  {
+                                    "op": "div",
+                                    "args": [
+                                      {
+                                        "ref": "pool.A"
+                                      },
+                                      80
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "mul",
+                        "args": [
+                          {
+                            "op": "div",
+                            "args": [
+                              {
+                                "ref": "pool.B"
+                              },
+                              {
+                                "op": "add",
+                                "args": [
+                                  {
+                                    "ref": "pool.B"
+                                  },
+                                  10
+                                ]
+                              }
+                            ]
+                          },
+                          4,
+                          {
+                            "op": "div",
+                            "args": [
+                              {
+                                "ref": "pool.A"
+                              },
+                              80
+                            ]
+                          },
+                          {
+                            "op": "max",
+                            "args": [
+                              0,
+                              {
+                                "op": "sub",
+                                "args": [
+                                  1,
+                                  {
+                                    "op": "div",
+                                    "args": [
+                                      {
+                                        "ref": "pool.A"
+                                      },
+                                      80
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "add",
+                    "args": [
+                      1,
+                      {
+                        "op": "mul",
+                        "args": [
+                          0.1,
+                          {
+                            "ref": "state.delay_2"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "mul",
+            "args": [
+              0.25,
+              {
+                "op": "max",
+                "args": [
+                  0,
+                  {
+                    "op": "sub",
+                    "args": [
+                      1,
+                      {
+                        "op": "div",
+                        "args": [
+                          {
+                            "ref": "pool.A"
+                          },
+                          80
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "harvest_efficiency": 1,
+      "depletion": {
+        "op": "mul",
+        "args": [
+          0.1,
+          {
+            "op": "mul",
+            "args": [
+              0.05,
+              {
+                "ref": "pool.A"
+              },
+              {
+                "op": "div",
+                "args": [
+                  10,
+                  {
+                    "op": "add",
+                    "args": [
+                      {
+                        "ref": "pool.B"
+                      },
+                      10
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "recycled_fraction": 0.25
+    },
+    "B": {
+      "initial": 40,
+      "capacity": 80,
+      "regeneration": {
+        "op": "mul",
+        "args": [
+          0.1,
+          {
+            "op": "mul",
+            "args": [
+              0.25,
+              {
+                "ref": "pool.B"
+              },
+              {
+                "op": "max",
+                "args": [
+                  0,
+                  {
+                    "op": "sub",
+                    "args": [
+                      1,
+                      {
+                        "op": "div",
+                        "args": [
+                          {
+                            "ref": "pool.B"
+                          },
+                          80
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "harvest_efficiency": 1,
+      "depletion": {
+        "op": "mul",
+        "args": [
+          0.1,
+          {
+            "op": "mul",
+            "args": [
+              0.1,
+              {
+                "ref": "pool.A"
+              },
+              {
+                "op": "div",
+                "args": [
+                  {
+                    "ref": "pool.B"
+                  },
+                  {
+                    "op": "add",
+                    "args": [
+                      {
+                        "ref": "pool.B"
+                      },
+                      10
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "recycled_fraction": 0.5
+    },
+    "W": {
+      "initial": 0,
+      "capacity": 0,
+      "regeneration": 0,
+      "harvest_efficiency": 1
+    }
+  },
+  "facilities": {
+    "F0": {
+      "name": "station 0",
+      "modes": [
+        "combine",
+        "compress"
+      ],
+      "mode_properties": {
+        "combine": {
+          "channel": 982,
+          "sample_responses": [
+            [
+              {
+                "band": 19,
+                "direction": 1,
+                "porous": false
+              },
+              {
+                "band": 19,
+                "direction": -1,
+                "porous": false
+              }
+            ],
+            [
+              {
+                "band": 20,
+                "direction": 1,
+                "porous": false
+              },
+              {
+                "band": 20,
+                "direction": -1,
+                "porous": false
+              }
+            ]
+          ]
+        },
+        "compress": {
+          "channel": 2369,
+          "sample_responses": []
+        }
+      }
+    },
+    "F1": {
+      "name": "station 1",
+      "modes": [
+        "combine",
+        "compress"
+      ],
+      "mode_properties": {
+        "combine": {
+          "channel": 5077,
+          "sample_responses": [
+            [
+              {
+                "band": 23,
+                "direction": 1,
+                "porous": false
+              },
+              {
+                "band": 19,
+                "direction": -1,
+                "porous": false
+              }
+            ]
+          ]
+        },
+        "compress": {
+          "channel": 3713,
+          "sample_responses": []
+        }
+      }
+    }
+  },
+  "recipes": [
+    {
+      "output": "C",
+      "yield": 2,
+      "energy_cost": 2,
+      "condition": 1,
+      "effects": {},
+      "byproducts": {
+        "W": 2
+      },
+      "id": "pr0",
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "A": 3,
+        "B": 1
+      },
+      "property_rule_id": "r0"
+    },
+    {
+      "output": "D",
+      "yield": {
+        "op": "div",
+        "args": [
+          2,
+          4
+        ]
+      },
+      "energy_cost": 1.0,
+      "condition": {
+        "op": "lt",
+        "args": [
+          {
+            "ref": "state.stress"
+          },
+          10
+        ]
+      },
+      "effects": {
+        "stress": {
+          "op": "div",
+          "args": [
+            1,
+            4
+          ]
+        }
+      },
+      "byproducts": {},
+      "id": "pr1",
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "C": 1,
+        "W": 1
+      },
+      "property_rule_id": "r1"
+    },
+    {
+      "output": "S",
+      "yield": 0.875,
+      "energy_cost": 2,
+      "condition": 1,
+      "effects": {},
+      "requires_capability": "manufacturing",
+      "id": "pr2",
+      "facility": "F1",
+      "mode": "combine",
+      "inputs": {
+        "D": 1,
+        "B": 2
+      },
+      "property_rule_id": "r2"
+    }
+  ],
+  "initial_inventory": {},
+  "initial_reserve": 200,
+  "reserve_capacity": 10000,
+  "external_inflow": 32,
+  "experiment_cost": 0.1,
+  "noise": {
+    "distribution": "none",
+    "amplitude": 0.0
+  },
+  "max_quantity": 8,
+  "max_batches": 4,
+  "max_offers": 32,
+  "offer_ttl": 4,
+  "mechanism_implementations": {
+    "cross_feeding": "bounded_discrete_v1",
+    "explicit_delay": "bounded_discrete_v1"
+  },
+  "combination_functions": [
+    {
+      "id": "combination_0",
+      "name": "组合功能：stress",
+      "requires": {
+        "C": 1,
+        "D": 1
+      },
+      "consume": {
+        "C": 1,
+        "D": 1
+      },
+      "energy_cost": 1,
+      "kind": "world_state",
+      "effects": {
+        "stress": {
+          "op": "mul",
+          "args": [
+            1.5,
+            -1
+          ]
+        }
+      }
+    },
+    {
+      "id": "service_communication_range",
+      "name": "通信覆盖增强",
+      "requires": {
+        "D": 1
+      },
+      "consume": {
+        "D": 1
+      },
+      "energy_cost": 1,
+      "kind": "communication_range",
+      "effects": {
+        "amount": 2
+      }
+    },
+    {
+      "id": "service_work_capacity",
+      "name": "作品扩容",
+      "requires": {
+        "C": 1
+      },
+      "consume": {
+        "C": 1
+      },
+      "energy_cost": 1,
+      "kind": "work_capacity",
+      "effects": {
+        "factor": 2
+      }
+    },
+    {
+      "id": "service_purify",
+      "name": "资源净化",
+      "requires": {
+        "D": 1
+      },
+      "consume": {
+        "D": 1
+      },
+      "energy_cost": 1,
+      "kind": "purify",
+      "effects": {
+        "amount": 1
+      }
+    },
+    {
+      "id": "service_note_capacity",
+      "name": "私人记录扩容",
+      "requires": {
+        "D": 1
+      },
+      "consume": {
+        "D": 1
+      },
+      "energy_cost": 1,
+      "kind": "note_capacity",
+      "effects": {
+        "amount": 1000
+      }
+    },
+    {
+      "id": "service_rescue",
+      "name": "材料救援",
+      "requires": {
+        "D": 1,
+        "S": 1
+      },
+      "consume": {
+        "D": 1,
+        "S": 1
+      },
+      "energy_cost": 5,
+      "kind": "rescue",
+      "effects": {
+        "restore_energy": 5
+      }
+    },
+    {
+      "id": "service_device_interference",
+      "name": "设备干扰",
+      "requires": {
+        "D": 1,
+        "S": 1
+      },
+      "consume": {
+        "D": 1,
+        "S": 1
+      },
+      "energy_cost": 1,
+      "kind": "device_interference",
+      "effects": {
+        "factor": 0.5,
+        "duration": 3
+      }
+    }
+  ],
+  "production_semantics": "limiting_reagent_v1",
+  "quantity_semantics": "continuous_v1",
+  "note_base_capacity": 256,
+  "device_recipes": [
+    {
+      "id": "relay",
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "C": 1,
+        "D": 1
+      },
+      "build_cost": 1,
+      "retained_fraction": 0.75,
+      "recovery_efficiency": 0.5,
+      "fuel_per_recipient": 0.5,
+      "duration": 3,
+      "max_users": 4,
+      "capabilities": {
+        "communication_bonus": 500
+      }
+    },
+    {
+      "id": "archive",
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "B": 1,
+        "C": 2
+      },
+      "build_cost": 1,
+      "retained_fraction": 0.75,
+      "recovery_efficiency": 0.5,
+      "fuel_per_recipient": 0.5,
+      "duration": 3,
+      "max_users": 4,
+      "capabilities": {
+        "note_capacity": 2048
+      }
+    },
+    {
+      "id": "sensor",
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "C": 2,
+        "D": 1
+      },
+      "build_cost": 1,
+      "retained_fraction": 0.75,
+      "recovery_efficiency": 0.5,
+      "fuel_per_recipient": 0.5,
+      "duration": 3,
+      "max_users": 4,
+      "capabilities": {
+        "measurements": {
+          "stress": 0.1,
+          "delay_0": 0.1,
+          "delay_1": 0.1,
+          "delay_2": 0.1
+        }
+      }
+    },
+    {
+      "id": "workbench",
+      "facility": "F0",
+      "mode": "combine",
+      "inputs": {
+        "C": 1,
+        "D": 2
+      },
+      "build_cost": 1,
+      "retained_fraction": 0.75,
+      "recovery_efficiency": 0.5,
+      "fuel_per_recipient": 0.5,
+      "duration": 3,
+      "max_users": 4,
+      "capabilities": {
+        "manufacturing": true
+      }
+    }
+  ],
+  "property_rules": {
+    "version": "property_rules_v1",
+    "reactions": [
+      {
+        "id": "r0",
+        "slots": [
+          3,
+          1
+        ],
+        "when": {
+          "and": [
+            {
+              "eq": [
+                "device.channel",
+                982
+              ]
+            },
+            {
+              "and": [
+                {
+                  "eq": [
+                    "slot0.band",
+                    19
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        1
+                      ]
+                    },
+                    {
+                      "and": [
+                        {
+                          "eq": [
+                            "slot0.direction",
+                            0
+                          ]
+                        },
+                        {
+                          "eq": [
+                            "slot0.porous",
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                {
+                  "eq": [
+                    "slot1.band",
+                    19
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        -1
+                      ]
+                    },
+                    {
+                      "and": [
+                        {
+                          "eq": [
+                            "slot1.direction",
+                            0
+                          ]
+                        },
+                        {
+                          "eq": [
+                            "slot1.porous",
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "output": "C",
+          "yield": 2,
+          "energy_cost": 2,
+          "condition": 1,
+          "effects": {},
+          "byproducts": {
+            "W": 2
+          }
+        }
+      },
+      {
+        "id": "r1",
+        "slots": [
+          1,
+          1
+        ],
+        "when": {
+          "and": [
+            {
+              "eq": [
+                "device.channel",
+                982
+              ]
+            },
+            {
+              "and": [
+                {
+                  "eq": [
+                    "slot0.band",
+                    20
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        1
+                      ]
+                    },
+                    {
+                      "and": [
+                        {
+                          "eq": [
+                            "slot0.direction",
+                            0
+                          ]
+                        },
+                        {
+                          "eq": [
+                            "slot0.porous",
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                {
+                  "eq": [
+                    "slot1.band",
+                    20
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        -1
+                      ]
+                    },
+                    {
+                      "and": [
+                        {
+                          "eq": [
+                            "slot1.direction",
+                            0
+                          ]
+                        },
+                        {
+                          "eq": [
+                            "slot1.porous",
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "output": "D",
+          "yield": {
+            "op": "div",
+            "args": [
+              2,
+              4
+            ]
+          },
+          "energy_cost": 1.0,
+          "condition": {
+            "op": "lt",
+            "args": [
+              {
+                "ref": "state.stress"
+              },
+              10
+            ]
+          },
+          "effects": {
+            "stress": {
+              "op": "div",
+              "args": [
+                1,
+                4
+              ]
+            }
+          },
+          "byproducts": {}
+        }
+      },
+      {
+        "id": "r2",
+        "slots": [
+          1,
+          2
+        ],
+        "when": {
+          "and": [
+            {
+              "eq": [
+                "device.channel",
+                5077
+              ]
+            },
+            {
+              "and": [
+                {
+                  "eq": [
+                    "slot0.band",
+                    23
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        1
+                      ]
+                    },
+                    {
+                      "and": [
+                        {
+                          "eq": [
+                            "slot0.direction",
+                            0
+                          ]
+                        },
+                        {
+                          "eq": [
+                            "slot0.porous",
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                {
+                  "eq": [
+                    "slot1.band",
+                    19
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        -1
+                      ]
+                    },
+                    {
+                      "and": [
+                        {
+                          "eq": [
+                            "slot1.direction",
+                            0
+                          ]
+                        },
+                        {
+                          "eq": [
+                            "slot1.porous",
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "output": "S",
+          "yield": 0.875,
+          "energy_cost": 2,
+          "condition": 1,
+          "effects": {},
+          "requires_capability": "manufacturing"
+        }
+      }
+    ]
+  }
+}

@@ -57,3 +57,23 @@ python quickstart.py --mode native --output output/sol --resume
 新生成世界支持正的小数材料量和能量量；批次数、攻击力度保留整数。生态变化放慢，关键原料补充由有限世界能量储备支付。已公开的历史实验保持旧整数接口与旧世界规则。种子可复现世界定义，浮点与设备差异属于受信边界；模型轨迹仍须靠保存的回复回放，不能只靠种子重现。
 
 更多参数：`python quickstart.py --help`。只生成配置、不运行：`python society_probe/society_probe/prepare_functional_world.py --output output/world_config.json`。
+
+## 属性规则与数学模型导出
+
+启用新版规则层，运行不调用模型的脚本演示：
+
+```bash
+python quickstart.py --property-rules --output output/property_demo
+python society_probe/society_probe/world_math_export.py --config output/property_demo/config.json --output output/property_math
+```
+
+该选项提供由真实属性生成的描述，并启用限制性原料结算。脚本演示仍使用生存策略，不代表智能体自主发现规律。导出目录包含 `model.md`、`equations.tex`、`network.mmd`、表达式与依赖边JSON及完整物理定义；这些研究者文件不提供给成员。
+
+可选的PNG/SVG渲染需要安装绘图依赖：
+
+```bash
+python -m pip install -r requirements-figures.txt
+python society_probe/society_probe/render_world_math.py --root output/property_math
+```
+
+有限一致性检查和当前Lean边界见[属性规则说明](society_probe/society_probe/PROPERTY_RULES.md)。该选项仅在创建新世界时生效，续跑使用冻结配置。

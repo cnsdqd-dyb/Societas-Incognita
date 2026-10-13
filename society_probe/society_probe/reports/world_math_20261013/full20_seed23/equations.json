@@ -1,0 +1,3287 @@
+[
+  {
+    "target": "next.stress",
+    "expression": {
+      "op": "max",
+      "args": [
+        0,
+        {
+          "op": "sub",
+          "args": [
+            {
+              "ref": "state.stress"
+            },
+            0.5
+          ]
+        }
+      ]
+    },
+    "latex": "\\operatorname{max}\\left(0,\\left(\\mathrm{state.stress} - 0.5\\right)\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.substrate",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.5,
+                {
+                  "ref": "state.substrate"
+                }
+              ]
+            },
+            {
+              "ref": "activity.consumed.A"
+            }
+          ]
+        },
+        0,
+        100
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.5 \\cdot \\mathrm{state.substrate}\\right) + \\mathrm{activity.consumed.A}\\right),0,100\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.enzyme",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.95,
+                {
+                  "ref": "state.enzyme"
+                }
+              ]
+            },
+            {
+              "ref": "activity.consumed.C"
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.95 \\cdot \\mathrm{state.enzyme}\\right) + \\mathrm{activity.consumed.C}\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.inhibitor",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.8,
+                {
+                  "ref": "state.inhibitor"
+                }
+              ]
+            },
+            {
+              "ref": "activity.harvested.B"
+            }
+          ]
+        },
+        0,
+        20
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.8 \\cdot \\mathrm{state.inhibitor}\\right) + \\mathrm{activity.harvested.B}\\right),0,20\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.toggle_x",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.8,
+                {
+                  "ref": "state.toggle_x"
+                }
+              ]
+            },
+            {
+              "op": "div",
+              "args": [
+                0.6,
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "op": "pow",
+                      "args": [
+                        {
+                          "ref": "state.toggle_y"
+                        },
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.8 \\cdot \\mathrm{state.toggle\\_x}\\right) + \\frac{0.6}{\\left(1 + {\\mathrm{state.toggle\\_y}}^{2}\\right)}\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.toggle_y",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.8,
+                {
+                  "ref": "state.toggle_y"
+                }
+              ]
+            },
+            {
+              "op": "div",
+              "args": [
+                0.6,
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "op": "pow",
+                      "args": [
+                        {
+                          "ref": "state.toggle_x"
+                        },
+                        2
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.8 \\cdot \\mathrm{state.toggle\\_y}\\right) + \\frac{0.6}{\\left(1 + {\\mathrm{state.toggle\\_x}}^{2}\\right)}\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.delay_0",
+    "expression": {
+      "ref": "activity.harvested.A"
+    },
+    "latex": "\\mathrm{activity.harvested.A}",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.delay_1",
+    "expression": {
+      "ref": "state.delay_0"
+    },
+    "latex": "\\mathrm{state.delay\\_0}",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.delay_2",
+    "expression": {
+      "ref": "state.delay_1"
+    },
+    "latex": "\\mathrm{state.delay\\_1}",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.chaos_z",
+    "expression": {
+      "op": "mul",
+      "args": [
+        4,
+        {
+          "ref": "state.chaos_z"
+        },
+        {
+          "op": "sub",
+          "args": [
+            1,
+            {
+              "ref": "state.chaos_z"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(4 \\cdot \\mathrm{state.chaos\\_z} \\cdot \\left(1 - \\mathrm{state.chaos\\_z}\\right)\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.rd_x0",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.rd_x0"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y0"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "state.rd_x0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_x1"
+                        },
+                        {
+                          "ref": "state.rd_x0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.rd\\_x0} + \\left(0.1 \\cdot \\left(\\frac{1}{\\left(1 + {\\mathrm{state.rd\\_y0}}^{2}\\right)} - \\mathrm{state.rd\\_x0}\\right)\\right) + \\left(0.1 \\cdot \\left(\\left(\\mathrm{state.rd\\_x1} - \\mathrm{state.rd\\_x0}\\right)\\right)\\right)\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.rd_y0",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.rd_y0"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x0"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "state.rd_y0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.025,
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_y1"
+                        },
+                        {
+                          "ref": "state.rd_y0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.rd\\_y0} + \\left(0.1 \\cdot \\left(\\frac{1}{\\left(1 + {\\mathrm{state.rd\\_x0}}^{2}\\right)} - \\mathrm{state.rd\\_y0}\\right)\\right) + \\left(0.025 \\cdot \\left(\\left(\\mathrm{state.rd\\_y1} - \\mathrm{state.rd\\_y0}\\right)\\right)\\right)\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.rd_x1",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.rd_x1"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y1"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "state.rd_x1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_x0"
+                        },
+                        {
+                          "ref": "state.rd_x1"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_x2"
+                        },
+                        {
+                          "ref": "state.rd_x1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.rd\\_x1} + \\left(0.1 \\cdot \\left(\\frac{1}{\\left(1 + {\\mathrm{state.rd\\_y1}}^{2}\\right)} - \\mathrm{state.rd\\_x1}\\right)\\right) + \\left(0.1 \\cdot \\left(\\left(\\mathrm{state.rd\\_x0} - \\mathrm{state.rd\\_x1}\\right) + \\left(\\mathrm{state.rd\\_x2} - \\mathrm{state.rd\\_x1}\\right)\\right)\\right)\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.rd_y1",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.rd_y1"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x1"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "state.rd_y1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.025,
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_y0"
+                        },
+                        {
+                          "ref": "state.rd_y1"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_y2"
+                        },
+                        {
+                          "ref": "state.rd_y1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.rd\\_y1} + \\left(0.1 \\cdot \\left(\\frac{1}{\\left(1 + {\\mathrm{state.rd\\_x1}}^{2}\\right)} - \\mathrm{state.rd\\_y1}\\right)\\right) + \\left(0.025 \\cdot \\left(\\left(\\mathrm{state.rd\\_y0} - \\mathrm{state.rd\\_y1}\\right) + \\left(\\mathrm{state.rd\\_y2} - \\mathrm{state.rd\\_y1}\\right)\\right)\\right)\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.rd_x2",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.rd_x2"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.rd_y2"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "state.rd_x2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_x1"
+                        },
+                        {
+                          "ref": "state.rd_x2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.rd\\_x2} + \\left(0.1 \\cdot \\left(\\frac{1}{\\left(1 + {\\mathrm{state.rd\\_y2}}^{2}\\right)} - \\mathrm{state.rd\\_x2}\\right)\\right) + \\left(0.1 \\cdot \\left(\\left(\\mathrm{state.rd\\_x1} - \\mathrm{state.rd\\_x2}\\right)\\right)\\right)\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.rd_y2",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.rd_y2"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "div",
+                      "args": [
+                        1,
+                        {
+                          "op": "add",
+                          "args": [
+                            1,
+                            {
+                              "op": "pow",
+                              "args": [
+                                {
+                                  "ref": "state.rd_x2"
+                                },
+                                2
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "ref": "state.rd_y2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.025,
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "ref": "state.rd_y1"
+                        },
+                        {
+                          "ref": "state.rd_y2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.rd\\_y2} + \\left(0.1 \\cdot \\left(\\frac{1}{\\left(1 + {\\mathrm{state.rd\\_x2}}^{2}\\right)} - \\mathrm{state.rd\\_y2}\\right)\\right) + \\left(0.025 \\cdot \\left(\\left(\\mathrm{state.rd\\_y1} - \\mathrm{state.rd\\_y2}\\right)\\right)\\right)\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.damage",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "ref": "activity.produced.C"
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        2
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.damage} + \\left(0.1 \\cdot \\mathrm{activity.produced.C}\\right)\\right),0,2\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.buffer_capacity",
+    "expression": {
+      "op": "max",
+      "args": [
+        0,
+        {
+          "op": "sub",
+          "args": [
+            {
+              "ref": "state.buffer_capacity"
+            },
+            {
+              "op": "min",
+              "args": [
+                {
+                  "ref": "pool.P"
+                },
+                {
+                  "ref": "state.buffer_capacity"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\operatorname{max}\\left(0,\\left(\\mathrm{state.buffer\\_capacity} - \\operatorname{min}\\left(\\mathrm{pool.P},\\mathrm{state.buffer\\_capacity}\\right)\\right)\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.buffer_applied",
+    "expression": {
+      "op": "min",
+      "args": [
+        {
+          "ref": "pool.P"
+        },
+        {
+          "ref": "state.buffer_capacity"
+        }
+      ]
+    },
+    "latex": "\\operatorname{min}\\left(\\mathrm{pool.P},\\mathrm{state.buffer\\_capacity}\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.storage_phase",
+    "expression": {
+      "op": "sub",
+      "args": [
+        1,
+        {
+          "ref": "state.storage_phase"
+        }
+      ]
+    },
+    "latex": "\\left(1 - \\mathrm{state.storage\\_phase}\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.conductance_1",
+    "expression": {
+      "ref": "state.conductance_1"
+    },
+    "latex": "\\mathrm{state.conductance\\_1}",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.conductance_2",
+    "expression": {
+      "ref": "state.conductance_2"
+    },
+    "latex": "\\mathrm{state.conductance\\_2}",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.calibration",
+    "expression": {
+      "ref": "state.calibration"
+    },
+    "latex": "\\mathrm{state.calibration}",
+    "kind": "state_update"
+  },
+  {
+    "target": "regeneration.A",
+    "expression": {
+      "op": "add",
+      "args": [
+        {
+          "op": "mul",
+          "args": [
+            0.1,
+            {
+              "op": "div",
+              "args": [
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "mul",
+                          "args": [
+                            0.25,
+                            {
+                              "ref": "pool.A"
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.A"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.B"
+                                },
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    15
+                                  ]
+                                }
+                              ]
+                            },
+                            4,
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.A"
+                                },
+                                60
+                              ]
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.A"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.A"
+                                },
+                                6
+                              ]
+                            },
+                            1
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.1,
+                        {
+                          "ref": "state.delay_2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "mul",
+          "args": [
+            0.25,
+            {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    1,
+                    {
+                      "op": "div",
+                      "args": [
+                        {
+                          "ref": "pool.A"
+                        },
+                        60
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(0.1 \\cdot \\frac{\\operatorname{max}\\left(0,\\left(\\left(0.25 \\cdot \\mathrm{pool.A} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right) \\cdot \\left(\\frac{\\mathrm{pool.B}}{\\left(\\mathrm{pool.B} + 15\\right)} \\cdot 4 \\cdot \\frac{\\mathrm{pool.A}}{60} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right) \\cdot \\left(\\frac{\\mathrm{pool.A}}{6} - 1\\right)\\right)\\right)}{\\left(1 + \\left(0.1 \\cdot \\mathrm{state.delay\\_2}\\right)\\right)}\\right) + \\left(0.25 \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right)\\right)",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.A",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.05,
+                {
+                  "ref": "pool.A"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    15,
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "ref": "pool.B"
+                        },
+                        15
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    0,
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "mul",
+                          "args": [
+                            0.25,
+                            {
+                              "ref": "pool.A"
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.A"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.B"
+                                },
+                                {
+                                  "op": "add",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    15
+                                  ]
+                                }
+                              ]
+                            },
+                            4,
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.A"
+                                },
+                                60
+                              ]
+                            },
+                            {
+                              "op": "max",
+                              "args": [
+                                0,
+                                {
+                                  "op": "sub",
+                                  "args": [
+                                    1,
+                                    {
+                                      "op": "div",
+                                      "args": [
+                                        {
+                                          "ref": "pool.A"
+                                        },
+                                        60
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.A"
+                                },
+                                6
+                              ]
+                            },
+                            1
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\left(\\left(0.05 \\cdot \\mathrm{pool.A} \\cdot \\frac{15}{\\left(\\mathrm{pool.B} + 15\\right)}\\right) + \\operatorname{max}\\left(0,\\left(0 - \\left(\\left(0.25 \\cdot \\mathrm{pool.A} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right) \\cdot \\left(\\frac{\\mathrm{pool.B}}{\\left(\\mathrm{pool.B} + 15\\right)} \\cdot 4 \\cdot \\frac{\\mathrm{pool.A}}{60} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right) \\cdot \\left(\\frac{\\mathrm{pool.A}}{6} - 1\\right)\\right)\\right)\\right)\\right)\\right)",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.B",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "mul",
+          "args": [
+            {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.25,
+                    {
+                      "ref": "pool.B"
+                    },
+                    {
+                      "op": "max",
+                      "args": [
+                        0,
+                        {
+                          "op": "sub",
+                          "args": [
+                            1,
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.B"
+                                },
+                                60
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "sub",
+                      "args": [
+                        {
+                          "op": "div",
+                          "args": [
+                            {
+                              "ref": "pool.B"
+                            },
+                            6
+                          ]
+                        },
+                        1
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                0.2,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.8,
+                    {
+                      "ref": "state.chaos_z"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\left(\\operatorname{max}\\left(0,\\left(0.25 \\cdot \\mathrm{pool.B} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.B}}{60}\\right)\\right) \\cdot \\left(\\frac{\\mathrm{pool.B}}{6} - 1\\right)\\right)\\right) \\cdot \\left(0.2 + \\left(0.8 \\cdot \\mathrm{state.chaos\\_z}\\right)\\right)\\right)\\right)",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.B",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.2,
+                {
+                  "ref": "pool.A"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "ref": "pool.B"
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "ref": "pool.B"
+                        },
+                        15
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    0,
+                    {
+                      "op": "mul",
+                      "args": [
+                        0.25,
+                        {
+                          "ref": "pool.B"
+                        },
+                        {
+                          "op": "max",
+                          "args": [
+                            0,
+                            {
+                              "op": "sub",
+                              "args": [
+                                1,
+                                {
+                                  "op": "div",
+                                  "args": [
+                                    {
+                                      "ref": "pool.B"
+                                    },
+                                    60
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "sub",
+                          "args": [
+                            {
+                              "op": "div",
+                              "args": [
+                                {
+                                  "ref": "pool.B"
+                                },
+                                6
+                              ]
+                            },
+                            1
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\left(\\left(0.2 \\cdot \\mathrm{pool.A} \\cdot \\frac{\\mathrm{pool.B}}{\\left(\\mathrm{pool.B} + 15\\right)}\\right) + \\operatorname{max}\\left(0,\\left(0 - \\left(0.25 \\cdot \\mathrm{pool.B} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.B}}{60}\\right)\\right) \\cdot \\left(\\frac{\\mathrm{pool.B}}{6} - 1\\right)\\right)\\right)\\right)\\right)\\right)",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.Q",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.Q",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.5,
+        {
+          "ref": "activity.produced.C"
+        }
+      ]
+    },
+    "latex": "\\left(0.5 \\cdot \\mathrm{activity.produced.C}\\right)",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.W",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.W",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.P",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.P",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.P_bound",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.P_bound",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.P_neutral",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.P_neutral",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.BAT",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.BAT",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.NET",
+    "expression": 0,
+    "latex": "0",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.NET",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "reaction.pr0.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr0.yield",
+    "expression": {
+      "op": "mul",
+      "args": [
+        1.3333333333333333,
+        {
+          "op": "max",
+          "args": [
+            0,
+            {
+              "op": "sub",
+              "args": [
+                1,
+                {
+                  "op": "div",
+                  "args": [
+                    2,
+                    {
+                      "op": "max",
+                      "args": [
+                        2,
+                        {
+                          "ref": "pool.Q"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                4,
+                {
+                  "ref": "state.substrate"
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.substrate"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "pow",
+                      "args": [
+                        {
+                          "ref": "state.substrate"
+                        },
+                        2
+                      ]
+                    },
+                    4
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                2,
+                {
+                  "ref": "state.enzyme"
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.enzyme"
+                },
+                {
+                  "ref": "state.inhibitor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.toggle_x"
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                2,
+                {
+                  "ref": "state.toggle_x"
+                },
+                {
+                  "ref": "state.toggle_y"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.rd_y0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "op": "mul",
+                  "args": [
+                    0.1,
+                    {
+                      "ref": "pool.P"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "add",
+          "args": [
+            0.5,
+            {
+              "op": "div",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "ref": "state.conductance_1"
+                    },
+                    {
+                      "ref": "state.conductance_2"
+                    }
+                  ]
+                },
+                {
+                  "op": "max",
+                  "args": [
+                    1e-06,
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "ref": "state.conductance_1"
+                        },
+                        {
+                          "ref": "state.conductance_2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1.3333333333333333 \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{2}{\\operatorname{max}\\left(2,\\mathrm{pool.Q}\\right)}\\right)\\right) \\cdot \\frac{\\left(4 \\cdot \\mathrm{state.substrate}\\right)}{\\left(1 + \\mathrm{state.substrate} + \\frac{{\\mathrm{state.substrate}}^{2}}{4}\\right)} \\cdot \\frac{\\left(2 \\cdot \\mathrm{state.enzyme}\\right)}{\\left(1 + \\mathrm{state.enzyme} + \\mathrm{state.inhibitor}\\right)} \\cdot \\frac{\\left(1 + \\mathrm{state.toggle\\_x}\\right)}{\\left(2 + \\mathrm{state.toggle\\_x} + \\mathrm{state.toggle\\_y}\\right)} \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y0}\\right)} \\cdot \\frac{1}{\\left(1 + \\left(0.1 \\cdot \\mathrm{pool.P}\\right)\\right)} \\cdot \\left(0.5 + \\frac{\\left(\\mathrm{state.conductance\\_1} \\cdot \\mathrm{state.conductance\\_2}\\right)}{\\operatorname{max}\\left(1e-06,\\left(\\mathrm{state.conductance\\_1} + \\mathrm{state.conductance\\_2}\\right)\\right)}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr0.operating_cost",
+    "expression": {
+      "op": "add",
+      "args": [
+        2,
+        0.2,
+        {
+          "op": "mul",
+          "args": [
+            0.3,
+            {
+              "ref": "activity.submitted.F0"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(2 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F0}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr0.byproduct.W",
+    "expression": 2,
+    "latex": "2",
+    "kind": "byproduct_yield"
+  },
+  {
+    "target": "reaction.pr1.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.stress"
+            },
+            10
+          ]
+        },
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{state.stress} < 10\\right) \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.yield",
+    "expression": {
+      "op": "div",
+      "args": [
+        {
+          "op": "mul",
+          "args": [
+            2,
+            {
+              "op": "div",
+              "args": [
+                1,
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "ref": "state.rd_y2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        4
+      ]
+    },
+    "latex": "\\frac{\\left(2 \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y2}\\right)}\\right)}{4}",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.operating_cost",
+    "expression": {
+      "op": "div",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            4,
+            0.2,
+            {
+              "op": "mul",
+              "args": [
+                0.3,
+                {
+                  "ref": "activity.submitted.F1"
+                }
+              ]
+            }
+          ]
+        },
+        4
+      ]
+    },
+    "latex": "\\frac{\\left(4 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F1}\\right)\\right)}{4}",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.effect.stress",
+    "expression": {
+      "op": "div",
+      "args": [
+        1,
+        4
+      ]
+    },
+    "latex": "\\frac{1}{4}",
+    "kind": "reaction_effect"
+  },
+  {
+    "target": "reaction.pr2.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr2.yield",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.5833333333333334,
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.rd_y2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.5833333333333334 \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y2}\\right)}\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr2.operating_cost",
+    "expression": {
+      "op": "add",
+      "args": [
+        2,
+        0.2,
+        {
+          "op": "mul",
+          "args": [
+            0.3,
+            {
+              "ref": "activity.submitted.F1"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(2 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F1}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr3.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr3.yield",
+    "expression": {
+      "op": "mul",
+      "args": [
+        1.6666666666666665,
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.rd_y0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1.6666666666666665 \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y0}\\right)}\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr3.operating_cost",
+    "expression": {
+      "op": "add",
+      "args": [
+        0,
+        0.2,
+        {
+          "op": "mul",
+          "args": [
+            0.3,
+            {
+              "ref": "activity.submitted.F0"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F0}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr4.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr4.yield",
+    "expression": {
+      "op": "mul",
+      "args": [
+        1.3333333333333333,
+        {
+          "op": "max",
+          "args": [
+            0,
+            {
+              "op": "sub",
+              "args": [
+                1,
+                {
+                  "op": "div",
+                  "args": [
+                    2,
+                    {
+                      "op": "max",
+                      "args": [
+                        2,
+                        {
+                          "ref": "pool.Q"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                4,
+                {
+                  "ref": "state.substrate"
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.substrate"
+                },
+                {
+                  "op": "div",
+                  "args": [
+                    {
+                      "op": "pow",
+                      "args": [
+                        {
+                          "ref": "state.substrate"
+                        },
+                        2
+                      ]
+                    },
+                    4
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                2,
+                {
+                  "ref": "state.enzyme"
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.enzyme"
+                },
+                {
+                  "ref": "state.inhibitor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.toggle_x"
+                }
+              ]
+            },
+            {
+              "op": "add",
+              "args": [
+                2,
+                {
+                  "ref": "state.toggle_x"
+                },
+                {
+                  "ref": "state.toggle_y"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.rd_y0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1.3333333333333333 \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{2}{\\operatorname{max}\\left(2,\\mathrm{pool.Q}\\right)}\\right)\\right) \\cdot \\frac{\\left(4 \\cdot \\mathrm{state.substrate}\\right)}{\\left(1 + \\mathrm{state.substrate} + \\frac{{\\mathrm{state.substrate}}^{2}}{4}\\right)} \\cdot \\frac{\\left(2 \\cdot \\mathrm{state.enzyme}\\right)}{\\left(1 + \\mathrm{state.enzyme} + \\mathrm{state.inhibitor}\\right)} \\cdot \\frac{\\left(1 + \\mathrm{state.toggle\\_x}\\right)}{\\left(2 + \\mathrm{state.toggle\\_x} + \\mathrm{state.toggle\\_y}\\right)} \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y0}\\right)}\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr4.operating_cost",
+    "expression": {
+      "op": "add",
+      "args": [
+        2,
+        0.2,
+        {
+          "op": "mul",
+          "args": [
+            0.3,
+            {
+              "ref": "activity.submitted.F1"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(2 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F1}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr4.byproduct.W",
+    "expression": 2,
+    "latex": "2",
+    "kind": "byproduct_yield"
+  },
+  {
+    "target": "reaction.pr5.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.stress"
+            },
+            10
+          ]
+        },
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{state.stress} < 10\\right) \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr5.yield",
+    "expression": {
+      "op": "div",
+      "args": [
+        {
+          "op": "mul",
+          "args": [
+            2,
+            {
+              "op": "div",
+              "args": [
+                1,
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "ref": "state.rd_y2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        4
+      ]
+    },
+    "latex": "\\frac{\\left(2 \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y2}\\right)}\\right)}{4}",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr5.operating_cost",
+    "expression": {
+      "op": "div",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            4,
+            0.2,
+            {
+              "op": "mul",
+              "args": [
+                0.3,
+                {
+                  "ref": "activity.submitted.F0"
+                }
+              ]
+            }
+          ]
+        },
+        4
+      ]
+    },
+    "latex": "\\frac{\\left(4 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F0}\\right)\\right)}{4}",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr5.effect.stress",
+    "expression": {
+      "op": "div",
+      "args": [
+        1,
+        4
+      ]
+    },
+    "latex": "\\frac{1}{4}",
+    "kind": "reaction_effect"
+  },
+  {
+    "target": "reaction.pr6.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr6.yield",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.5833333333333334,
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.rd_y2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.5833333333333334 \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y2}\\right)}\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr6.operating_cost",
+    "expression": {
+      "op": "add",
+      "args": [
+        2,
+        0.2,
+        {
+          "op": "mul",
+          "args": [
+            0.3,
+            {
+              "ref": "activity.submitted.F0"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(2 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F0}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr7.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr7.yield",
+    "expression": {
+      "op": "mul",
+      "args": [
+        1.6666666666666665,
+        {
+          "op": "div",
+          "args": [
+            1,
+            {
+              "op": "add",
+              "args": [
+                1,
+                {
+                  "ref": "state.rd_y0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1.6666666666666665 \\cdot \\frac{1}{\\left(1 + \\mathrm{state.rd\\_y0}\\right)}\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr7.operating_cost",
+    "expression": {
+      "op": "add",
+      "args": [
+        0,
+        0.2,
+        {
+          "op": "mul",
+          "args": [
+            0.3,
+            {
+              "ref": "activity.submitted.F1"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0 + 0.2 + \\left(0.3 \\cdot \\mathrm{activity.submitted.F1}\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "flow.quota_loading",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "div",
+          "args": [
+            {
+              "ref": "pool.A"
+            },
+            {
+              "op": "add",
+              "args": [
+                10,
+                {
+                  "ref": "pool.A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\frac{\\mathrm{pool.A}}{\\left(10 + \\mathrm{pool.A}\\right)}\\right)",
+    "kind": "flow"
+  },
+  {
+    "target": "flow.adsorb",
+    "expression": {
+      "op": "mul",
+      "args": [
+        {
+          "op": "max",
+          "args": [
+            0,
+            {
+              "op": "sub",
+              "args": [
+                8,
+                {
+                  "ref": "pool.P_bound"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "div",
+          "args": [
+            {
+              "ref": "pool.P"
+            },
+            {
+              "op": "add",
+              "args": [
+                2,
+                {
+                  "ref": "pool.P"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\operatorname{max}\\left(0,\\left(8 - \\mathrm{pool.P\\_bound}\\right)\\right) \\cdot \\frac{\\mathrm{pool.P}}{\\left(2 + \\mathrm{pool.P}\\right)}\\right)",
+    "kind": "flow"
+  },
+  {
+    "target": "flow.regenerate_adsorbent",
+    "expression": {
+      "ref": "activity.consumed.C"
+    },
+    "latex": "\\mathrm{activity.consumed.C}",
+    "kind": "flow"
+  },
+  {
+    "target": "flow.neutralize",
+    "expression": {
+      "ref": "state.buffer_applied"
+    },
+    "latex": "\\mathrm{state.buffer\\_applied}",
+    "kind": "flow"
+  },
+  {
+    "target": "flow.charge",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "mul",
+          "args": [
+            2,
+            {
+              "ref": "state.storage_phase"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\left(2 \\cdot \\mathrm{state.storage\\_phase}\\right)\\right)",
+    "kind": "flow"
+  },
+  {
+    "target": "flow.discharge",
+    "expression": {
+      "op": "sub",
+      "args": [
+        1,
+        {
+          "ref": "state.storage_phase"
+        }
+      ]
+    },
+    "latex": "\\left(1 - \\mathrm{state.storage\\_phase}\\right)",
+    "kind": "flow"
+  },
+  {
+    "target": "flow.conduct",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "mul",
+          "args": [
+            4,
+            {
+              "op": "div",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "ref": "state.conductance_1"
+                    },
+                    {
+                      "ref": "state.conductance_2"
+                    }
+                  ]
+                },
+                {
+                  "op": "max",
+                  "args": [
+                    1e-06,
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "ref": "state.conductance_1"
+                        },
+                        {
+                          "ref": "state.conductance_2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\left(4 \\cdot \\frac{\\left(\\mathrm{state.conductance\\_1} \\cdot \\mathrm{state.conductance\\_2}\\right)}{\\operatorname{max}\\left(1e-06,\\left(\\mathrm{state.conductance\\_1} + \\mathrm{state.conductance\\_2}\\right)\\right)}\\right)\\right)",
+    "kind": "flow"
+  },
+  {
+    "target": "logical.r0",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1428
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1428\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r1",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1960
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1960\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r2",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1183
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1183\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.autocatalysis",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            217
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 217\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r0_route",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1183
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1183\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r1_route",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            5330
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 5330\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r2_route",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1428
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1428\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.autocatalysis_route",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            7167
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                23
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 7167\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 23\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "external_inflow",
+    "expression": 32,
+    "latex": "32",
+    "kind": "energy"
+  },
+  {
+    "target": "measurement_bias.stress",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.4,
+        {
+          "op": "sub",
+          "args": [
+            1,
+            {
+              "ref": "state.calibration"
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.4 \\cdot \\left(1 - \\mathrm{state.calibration}\\right)\\right)",
+    "kind": "measurement"
+  },
+  {
+    "target": "use.C.stress",
+    "expression": -1,
+    "latex": "-1",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.C.enzyme",
+    "expression": 1,
+    "latex": "1",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.C.toggle_y",
+    "expression": 2,
+    "latex": "2",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.C.damage",
+    "expression": -0.5,
+    "latex": "-0.5",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.C.buffer_capacity",
+    "expression": 2,
+    "latex": "2",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.C.conductance_2",
+    "expression": 1,
+    "latex": "1",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.S.calibration",
+    "expression": 1,
+    "latex": "1",
+    "kind": "material_effect"
+  }
+]

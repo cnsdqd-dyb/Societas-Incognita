@@ -1,0 +1,166 @@
+flowchart LR
+  n0["A · material"]
+  n1["B · material"]
+  n2["C · material"]
+  n3["D · material"]
+  n4["S · material"]
+  n5["next.stress"]
+  n6["stress · state"]
+  n7["next.enzyme"]
+  n8["enzyme · state"]
+  n9["activity.consumed.D"]
+  n10["next.inhibitor"]
+  n11["inhibitor · state"]
+  n12["activity.harvested.B"]
+  n13["next.damage"]
+  n14["damage · state"]
+  n15["activity.produced.C"]
+  n16["A · pool"]
+  n17["regeneration.A"]
+  n18["depletion.A"]
+  n19["B · pool"]
+  n20["regeneration.B"]
+  n21["depletion.B"]
+  n22["pr0 @ F0/compress"]
+  n23["F0"]
+  n24["activity.consumed.A"]
+  n25["activity.consumed.B"]
+  n26["reaction.pr0.condition"]
+  n27["reaction.pr0.yield"]
+  n28["reaction.pr0.operating_cost"]
+  n29["pr1 @ F0/compress"]
+  n30["activity.consumed.C"]
+  n31["activity.produced.D"]
+  n32["reaction.pr1.condition"]
+  n33["reaction.pr1.yield"]
+  n34["reaction.pr1.operating_cost"]
+  n35["reaction.pr1.effect.stress"]
+  n36["pr2 @ F1/combine"]
+  n37["F1"]
+  n38["activity.produced.S"]
+  n39["reaction.pr2.condition"]
+  n40["reaction.pr2.yield"]
+  n41["reaction.pr2.operating_cost"]
+  n42["pr3 @ F0/seed"]
+  n43["reaction.pr3.condition"]
+  n44["reaction.pr3.yield"]
+  n45["reaction.pr3.operating_cost"]
+  n46["logical.r0"]
+  n47["device.channel"]
+  n48["slot0.band"]
+  n49["slot0.direction"]
+  n50["slot0.porous"]
+  n51["slot1.band"]
+  n52["slot1.direction"]
+  n53["slot1.porous"]
+  n54["logical.r1"]
+  n55["logical.r2"]
+  n56["logical.autocatalysis"]
+  n57["external_inflow"]
+  n58["use.D.stress"]
+  n59["use.D.enzyme"]
+  n60["use.D.damage"]
+  n9 -->|dependency| n7
+  n12 -->|dependency| n10
+  n15 -->|dependency| n13
+  n18 -->|settlement| n16
+  n21 -->|settlement| n19
+  n47 -->|dependency| n56
+  n47 -->|dependency| n46
+  n47 -->|dependency| n54
+  n47 -->|dependency| n55
+  n23 -->|equipment| n22
+  n23 -->|equipment| n29
+  n23 -->|equipment| n42
+  n37 -->|equipment| n36
+  n56 -->|structural_eligibility| n42
+  n46 -->|structural_eligibility| n22
+  n54 -->|structural_eligibility| n29
+  n55 -->|structural_eligibility| n36
+  n0 -->|input| n22
+  n0 -->|input| n29
+  n0 -->|input| n42
+  n1 -->|input| n22
+  n1 -->|input| n36
+  n2 -->|input| n29
+  n2 -->|input| n42
+  n3 -->|input| n36
+  n3 -->|use| n60
+  n3 -->|use| n59
+  n3 -->|use| n58
+  n13 -->|next_round| n14
+  n7 -->|next_round| n8
+  n10 -->|next_round| n11
+  n5 -->|next_round| n6
+  n16 -->|dependency| n17
+  n19 -->|dependency| n20
+  n22 -->|activity| n24
+  n22 -->|activity| n25
+  n22 -->|activity| n15
+  n22 -->|output| n2
+  n26 -->|condition| n22
+  n28 -->|operating_cost| n22
+  n27 -->|yield| n22
+  n29 -->|activity| n24
+  n29 -->|activity| n30
+  n29 -->|activity| n31
+  n29 -->|output| n3
+  n29 -->|extent_scaled_effect| n35
+  n32 -->|condition| n29
+  n35 -->|pre_update_effect| n6
+  n34 -->|operating_cost| n29
+  n33 -->|yield| n29
+  n36 -->|activity| n25
+  n36 -->|activity| n9
+  n36 -->|activity| n38
+  n36 -->|output| n4
+  n39 -->|condition| n36
+  n41 -->|operating_cost| n36
+  n40 -->|yield| n36
+  n42 -->|activity| n24
+  n42 -->|activity| n30
+  n42 -->|activity| n15
+  n42 -->|output| n2
+  n43 -->|condition| n42
+  n45 -->|operating_cost| n42
+  n44 -->|yield| n42
+  n17 -->|settlement| n16
+  n20 -->|settlement| n19
+  n48 -->|dependency| n56
+  n48 -->|dependency| n46
+  n48 -->|dependency| n54
+  n48 -->|dependency| n55
+  n49 -->|dependency| n56
+  n49 -->|dependency| n46
+  n49 -->|dependency| n54
+  n49 -->|dependency| n55
+  n50 -->|dependency| n56
+  n50 -->|dependency| n46
+  n50 -->|dependency| n54
+  n50 -->|dependency| n55
+  n51 -->|dependency| n56
+  n51 -->|dependency| n46
+  n51 -->|dependency| n54
+  n51 -->|dependency| n55
+  n52 -->|dependency| n56
+  n52 -->|dependency| n46
+  n52 -->|dependency| n54
+  n52 -->|dependency| n55
+  n53 -->|dependency| n56
+  n53 -->|dependency| n46
+  n53 -->|dependency| n54
+  n53 -->|dependency| n55
+  n14 -->|dependency| n13
+  n14 -->|dependency| n26
+  n14 -->|dependency| n32
+  n14 -->|dependency| n39
+  n14 -->|dependency| n43
+  n8 -->|dependency| n7
+  n8 -->|dependency| n27
+  n11 -->|dependency| n10
+  n11 -->|dependency| n27
+  n6 -->|dependency| n5
+  n6 -->|dependency| n32
+  n60 -->|bounded_state_effect| n14
+  n59 -->|bounded_state_effect| n8
+  n58 -->|bounded_state_effect| n6

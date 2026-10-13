@@ -51,6 +51,7 @@ def main():
     p.add_argument('--model', help='Explicit provider model identifier; required for real-model modes')
     p.add_argument('--rounds', type=int, default=8)
     p.add_argument('--seed', type=int, default=2)
+    p.add_argument('--property-rules', action='store_true', help='Enable inferable property descriptions and limiting-reagent processing')
     p.add_argument('--api-cap', type=float, default=.25)
     p.add_argument('--output', default='output/quickstart')
     p.add_argument('--resume', action='store_true')
@@ -75,6 +76,8 @@ def main():
         import social_content
         source = json.loads((SOURCE/'configs/functional_services_20261010/native_base.json').read_text('utf-8'))
         candidate = library.with_capabilities(library.generate(args.seed, [k for k, _ in library.CANDIDATES_20]))
+        if args.property_rules:
+            candidate = library.with_property_rules(candidate)
         cfg = library.configure(source, candidate)
         cfg = social_content.configure(cfg)
         cfg['open_activities'] = {'version': 'open_activities_v1'}

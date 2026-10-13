@@ -1,0 +1,2477 @@
+{
+  "nodes": [
+    {
+      "id": "material.A",
+      "label": "A · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.B",
+      "label": "B · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.C",
+      "label": "C · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.D",
+      "label": "D · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.S",
+      "label": "S · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.Q",
+      "label": "Q · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.W",
+      "label": "W · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.P",
+      "label": "P · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.P_bound",
+      "label": "P_bound · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.P_neutral",
+      "label": "P_neutral · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.BAT",
+      "label": "BAT · material",
+      "kind": "material"
+    },
+    {
+      "id": "material.NET",
+      "label": "NET · material",
+      "kind": "material"
+    },
+    {
+      "id": "next.stress",
+      "label": "next.stress",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.stress",
+      "label": "stress · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.substrate",
+      "label": "next.substrate",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.substrate",
+      "label": "substrate · state",
+      "kind": "state"
+    },
+    {
+      "id": "activity.consumed.A",
+      "label": "activity.consumed.A",
+      "kind": "context"
+    },
+    {
+      "id": "next.enzyme",
+      "label": "next.enzyme",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.enzyme",
+      "label": "enzyme · state",
+      "kind": "state"
+    },
+    {
+      "id": "activity.consumed.C",
+      "label": "activity.consumed.C",
+      "kind": "context"
+    },
+    {
+      "id": "next.inhibitor",
+      "label": "next.inhibitor",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.inhibitor",
+      "label": "inhibitor · state",
+      "kind": "state"
+    },
+    {
+      "id": "activity.harvested.B",
+      "label": "activity.harvested.B",
+      "kind": "context"
+    },
+    {
+      "id": "next.toggle_x",
+      "label": "next.toggle_x",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.toggle_x",
+      "label": "toggle_x · state",
+      "kind": "state"
+    },
+    {
+      "id": "state.toggle_y",
+      "label": "toggle_y · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.toggle_y",
+      "label": "next.toggle_y",
+      "kind": "state_update"
+    },
+    {
+      "id": "next.delay_0",
+      "label": "next.delay_0",
+      "kind": "state_update"
+    },
+    {
+      "id": "activity.harvested.A",
+      "label": "activity.harvested.A",
+      "kind": "context"
+    },
+    {
+      "id": "state.delay_0",
+      "label": "delay_0 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.delay_1",
+      "label": "next.delay_1",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.delay_1",
+      "label": "delay_1 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.delay_2",
+      "label": "next.delay_2",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.delay_2",
+      "label": "delay_2 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.chaos_z",
+      "label": "next.chaos_z",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.chaos_z",
+      "label": "chaos_z · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.rd_x0",
+      "label": "next.rd_x0",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.rd_x0",
+      "label": "rd_x0 · state",
+      "kind": "state"
+    },
+    {
+      "id": "state.rd_y0",
+      "label": "rd_y0 · state",
+      "kind": "state"
+    },
+    {
+      "id": "state.rd_x1",
+      "label": "rd_x1 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.rd_y0",
+      "label": "next.rd_y0",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.rd_y1",
+      "label": "rd_y1 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.rd_x1",
+      "label": "next.rd_x1",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.rd_x2",
+      "label": "rd_x2 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.rd_y1",
+      "label": "next.rd_y1",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.rd_y2",
+      "label": "rd_y2 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.rd_x2",
+      "label": "next.rd_x2",
+      "kind": "state_update"
+    },
+    {
+      "id": "next.rd_y2",
+      "label": "next.rd_y2",
+      "kind": "state_update"
+    },
+    {
+      "id": "next.damage",
+      "label": "next.damage",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.damage",
+      "label": "damage · state",
+      "kind": "state"
+    },
+    {
+      "id": "activity.produced.C",
+      "label": "activity.produced.C",
+      "kind": "context"
+    },
+    {
+      "id": "next.buffer_capacity",
+      "label": "next.buffer_capacity",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.buffer_capacity",
+      "label": "buffer_capacity · state",
+      "kind": "state"
+    },
+    {
+      "id": "pool.P",
+      "label": "P · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "next.buffer_applied",
+      "label": "next.buffer_applied",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.buffer_applied",
+      "label": "buffer_applied · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.storage_phase",
+      "label": "next.storage_phase",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.storage_phase",
+      "label": "storage_phase · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.conductance_1",
+      "label": "next.conductance_1",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.conductance_1",
+      "label": "conductance_1 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.conductance_2",
+      "label": "next.conductance_2",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.conductance_2",
+      "label": "conductance_2 · state",
+      "kind": "state"
+    },
+    {
+      "id": "next.calibration",
+      "label": "next.calibration",
+      "kind": "state_update"
+    },
+    {
+      "id": "state.calibration",
+      "label": "calibration · state",
+      "kind": "state"
+    },
+    {
+      "id": "pool.A",
+      "label": "A · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.A",
+      "label": "regeneration.A",
+      "kind": "regeneration"
+    },
+    {
+      "id": "pool.B",
+      "label": "B · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "depletion.A",
+      "label": "depletion.A",
+      "kind": "depletion"
+    },
+    {
+      "id": "regeneration.B",
+      "label": "regeneration.B",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.B",
+      "label": "depletion.B",
+      "kind": "depletion"
+    },
+    {
+      "id": "pool.Q",
+      "label": "Q · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.Q",
+      "label": "regeneration.Q",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.Q",
+      "label": "depletion.Q",
+      "kind": "depletion"
+    },
+    {
+      "id": "pool.W",
+      "label": "W · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.W",
+      "label": "regeneration.W",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.W",
+      "label": "depletion.W",
+      "kind": "depletion"
+    },
+    {
+      "id": "regeneration.P",
+      "label": "regeneration.P",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.P",
+      "label": "depletion.P",
+      "kind": "depletion"
+    },
+    {
+      "id": "pool.P_bound",
+      "label": "P_bound · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.P_bound",
+      "label": "regeneration.P_bound",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.P_bound",
+      "label": "depletion.P_bound",
+      "kind": "depletion"
+    },
+    {
+      "id": "pool.P_neutral",
+      "label": "P_neutral · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.P_neutral",
+      "label": "regeneration.P_neutral",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.P_neutral",
+      "label": "depletion.P_neutral",
+      "kind": "depletion"
+    },
+    {
+      "id": "pool.BAT",
+      "label": "BAT · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.BAT",
+      "label": "regeneration.BAT",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.BAT",
+      "label": "depletion.BAT",
+      "kind": "depletion"
+    },
+    {
+      "id": "pool.NET",
+      "label": "NET · pool",
+      "kind": "pool"
+    },
+    {
+      "id": "regeneration.NET",
+      "label": "regeneration.NET",
+      "kind": "regeneration"
+    },
+    {
+      "id": "depletion.NET",
+      "label": "depletion.NET",
+      "kind": "depletion"
+    },
+    {
+      "id": "reaction.pr0",
+      "label": "pr0 @ F0/compress",
+      "kind": "reaction"
+    },
+    {
+      "id": "facility.F0",
+      "label": "F0",
+      "kind": "facility"
+    },
+    {
+      "id": "activity.consumed.B",
+      "label": "activity.consumed.B",
+      "kind": "context"
+    },
+    {
+      "id": "activity.produced.W",
+      "label": "activity.produced.W",
+      "kind": "context"
+    },
+    {
+      "id": "reaction.pr0.condition",
+      "label": "reaction.pr0.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr0.yield",
+      "label": "reaction.pr0.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr0.operating_cost",
+      "label": "reaction.pr0.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "activity.submitted.F0",
+      "label": "activity.submitted.F0",
+      "kind": "context"
+    },
+    {
+      "id": "reaction.pr0.byproduct.W",
+      "label": "reaction.pr0.byproduct.W",
+      "kind": "byproduct_yield"
+    },
+    {
+      "id": "reaction.pr1",
+      "label": "pr1 @ F1/combine",
+      "kind": "reaction"
+    },
+    {
+      "id": "facility.F1",
+      "label": "F1",
+      "kind": "facility"
+    },
+    {
+      "id": "activity.consumed.W",
+      "label": "activity.consumed.W",
+      "kind": "context"
+    },
+    {
+      "id": "activity.produced.D",
+      "label": "activity.produced.D",
+      "kind": "context"
+    },
+    {
+      "id": "reaction.pr1.condition",
+      "label": "reaction.pr1.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr1.yield",
+      "label": "reaction.pr1.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr1.operating_cost",
+      "label": "reaction.pr1.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "activity.submitted.F1",
+      "label": "activity.submitted.F1",
+      "kind": "context"
+    },
+    {
+      "id": "reaction.pr1.effect.stress",
+      "label": "reaction.pr1.effect.stress",
+      "kind": "reaction_effect"
+    },
+    {
+      "id": "reaction.pr2",
+      "label": "pr2 @ F1/compress",
+      "kind": "reaction"
+    },
+    {
+      "id": "activity.consumed.D",
+      "label": "activity.consumed.D",
+      "kind": "context"
+    },
+    {
+      "id": "activity.produced.S",
+      "label": "activity.produced.S",
+      "kind": "context"
+    },
+    {
+      "id": "reaction.pr2.condition",
+      "label": "reaction.pr2.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr2.yield",
+      "label": "reaction.pr2.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr2.operating_cost",
+      "label": "reaction.pr2.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr3",
+      "label": "pr3 @ F0/seed",
+      "kind": "reaction"
+    },
+    {
+      "id": "reaction.pr3.condition",
+      "label": "reaction.pr3.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr3.yield",
+      "label": "reaction.pr3.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr3.operating_cost",
+      "label": "reaction.pr3.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr4",
+      "label": "pr4 @ F1/compress",
+      "kind": "reaction"
+    },
+    {
+      "id": "reaction.pr4.condition",
+      "label": "reaction.pr4.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr4.yield",
+      "label": "reaction.pr4.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr4.operating_cost",
+      "label": "reaction.pr4.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr4.byproduct.W",
+      "label": "reaction.pr4.byproduct.W",
+      "kind": "byproduct_yield"
+    },
+    {
+      "id": "reaction.pr5",
+      "label": "pr5 @ F0/combine",
+      "kind": "reaction"
+    },
+    {
+      "id": "reaction.pr5.condition",
+      "label": "reaction.pr5.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr5.yield",
+      "label": "reaction.pr5.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr5.operating_cost",
+      "label": "reaction.pr5.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr5.effect.stress",
+      "label": "reaction.pr5.effect.stress",
+      "kind": "reaction_effect"
+    },
+    {
+      "id": "reaction.pr6",
+      "label": "pr6 @ F0/compress",
+      "kind": "reaction"
+    },
+    {
+      "id": "reaction.pr6.condition",
+      "label": "reaction.pr6.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr6.yield",
+      "label": "reaction.pr6.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr6.operating_cost",
+      "label": "reaction.pr6.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr7",
+      "label": "pr7 @ F1/seed",
+      "kind": "reaction"
+    },
+    {
+      "id": "reaction.pr7.condition",
+      "label": "reaction.pr7.condition",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr7.yield",
+      "label": "reaction.pr7.yield",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "reaction.pr7.operating_cost",
+      "label": "reaction.pr7.operating_cost",
+      "kind": "reaction_parameter"
+    },
+    {
+      "id": "flow.quota_loading",
+      "label": "flow.quota_loading",
+      "kind": "flow"
+    },
+    {
+      "id": "flow.adsorb",
+      "label": "flow.adsorb",
+      "kind": "flow"
+    },
+    {
+      "id": "flow.regenerate_adsorbent",
+      "label": "flow.regenerate_adsorbent",
+      "kind": "flow"
+    },
+    {
+      "id": "flow.neutralize",
+      "label": "flow.neutralize",
+      "kind": "flow"
+    },
+    {
+      "id": "flow.charge",
+      "label": "flow.charge",
+      "kind": "flow"
+    },
+    {
+      "id": "flow.discharge",
+      "label": "flow.discharge",
+      "kind": "flow"
+    },
+    {
+      "id": "flow.conduct",
+      "label": "flow.conduct",
+      "kind": "flow"
+    },
+    {
+      "id": "logical.r0",
+      "label": "logical.r0",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "device.channel",
+      "label": "device.channel",
+      "kind": "context"
+    },
+    {
+      "id": "slot0.band",
+      "label": "slot0.band",
+      "kind": "context"
+    },
+    {
+      "id": "slot0.direction",
+      "label": "slot0.direction",
+      "kind": "context"
+    },
+    {
+      "id": "slot0.porous",
+      "label": "slot0.porous",
+      "kind": "context"
+    },
+    {
+      "id": "slot1.band",
+      "label": "slot1.band",
+      "kind": "context"
+    },
+    {
+      "id": "slot1.direction",
+      "label": "slot1.direction",
+      "kind": "context"
+    },
+    {
+      "id": "slot1.porous",
+      "label": "slot1.porous",
+      "kind": "context"
+    },
+    {
+      "id": "logical.r1",
+      "label": "logical.r1",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "logical.r2",
+      "label": "logical.r2",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "logical.autocatalysis",
+      "label": "logical.autocatalysis",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "logical.r0_route",
+      "label": "logical.r0_route",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "logical.r1_route",
+      "label": "logical.r1_route",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "logical.r2_route",
+      "label": "logical.r2_route",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "logical.autocatalysis_route",
+      "label": "logical.autocatalysis_route",
+      "kind": "logical_rule"
+    },
+    {
+      "id": "external_inflow",
+      "label": "external_inflow",
+      "kind": "energy"
+    },
+    {
+      "id": "measurement_bias.stress",
+      "label": "measurement_bias.stress",
+      "kind": "measurement"
+    },
+    {
+      "id": "use.C.stress",
+      "label": "use.C.stress",
+      "kind": "material_effect"
+    },
+    {
+      "id": "use.C.enzyme",
+      "label": "use.C.enzyme",
+      "kind": "material_effect"
+    },
+    {
+      "id": "use.C.toggle_y",
+      "label": "use.C.toggle_y",
+      "kind": "material_effect"
+    },
+    {
+      "id": "use.C.damage",
+      "label": "use.C.damage",
+      "kind": "material_effect"
+    },
+    {
+      "id": "use.C.buffer_capacity",
+      "label": "use.C.buffer_capacity",
+      "kind": "material_effect"
+    },
+    {
+      "id": "use.C.conductance_2",
+      "label": "use.C.conductance_2",
+      "kind": "material_effect"
+    },
+    {
+      "id": "use.S.calibration",
+      "label": "use.S.calibration",
+      "kind": "material_effect"
+    }
+  ],
+  "edges": [
+    {
+      "source": "activity.consumed.A",
+      "target": "next.substrate",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.consumed.C",
+      "target": "flow.regenerate_adsorbent",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.consumed.C",
+      "target": "next.enzyme",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.harvested.A",
+      "target": "next.delay_0",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.harvested.B",
+      "target": "next.inhibitor",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.produced.C",
+      "target": "depletion.Q",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.produced.C",
+      "target": "next.damage",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F0",
+      "target": "reaction.pr0.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F0",
+      "target": "reaction.pr3.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F0",
+      "target": "reaction.pr5.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F0",
+      "target": "reaction.pr6.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F1",
+      "target": "reaction.pr1.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F1",
+      "target": "reaction.pr2.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F1",
+      "target": "reaction.pr4.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "activity.submitted.F1",
+      "target": "reaction.pr7.operating_cost",
+      "relation": "dependency"
+    },
+    {
+      "source": "depletion.A",
+      "target": "pool.A",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.B",
+      "target": "pool.B",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.BAT",
+      "target": "pool.BAT",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.NET",
+      "target": "pool.NET",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.P",
+      "target": "pool.P",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.P_bound",
+      "target": "pool.P_bound",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.P_neutral",
+      "target": "pool.P_neutral",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.Q",
+      "target": "pool.Q",
+      "relation": "settlement"
+    },
+    {
+      "source": "depletion.W",
+      "target": "pool.W",
+      "relation": "settlement"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "device.channel",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "facility.F0",
+      "target": "reaction.pr0",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F0",
+      "target": "reaction.pr3",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F0",
+      "target": "reaction.pr5",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F0",
+      "target": "reaction.pr6",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F1",
+      "target": "reaction.pr1",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F1",
+      "target": "reaction.pr2",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F1",
+      "target": "reaction.pr4",
+      "relation": "equipment"
+    },
+    {
+      "source": "facility.F1",
+      "target": "reaction.pr7",
+      "relation": "equipment"
+    },
+    {
+      "source": "flow.adsorb",
+      "target": "pool.P_bound",
+      "relation": "transfer"
+    },
+    {
+      "source": "flow.charge",
+      "target": "pool.BAT",
+      "relation": "transfer"
+    },
+    {
+      "source": "flow.conduct",
+      "target": "pool.NET",
+      "relation": "transfer"
+    },
+    {
+      "source": "flow.discharge",
+      "target": "pool.A",
+      "relation": "transfer"
+    },
+    {
+      "source": "flow.neutralize",
+      "target": "pool.P_neutral",
+      "relation": "transfer"
+    },
+    {
+      "source": "flow.quota_loading",
+      "target": "pool.Q",
+      "relation": "transfer"
+    },
+    {
+      "source": "flow.regenerate_adsorbent",
+      "target": "pool.P",
+      "relation": "transfer"
+    },
+    {
+      "source": "logical.autocatalysis",
+      "target": "reaction.pr3",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.autocatalysis_route",
+      "target": "reaction.pr7",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.r0",
+      "target": "reaction.pr0",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.r0_route",
+      "target": "reaction.pr4",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.r1",
+      "target": "reaction.pr1",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.r1_route",
+      "target": "reaction.pr5",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.r2",
+      "target": "reaction.pr2",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "logical.r2_route",
+      "target": "reaction.pr6",
+      "relation": "structural_eligibility"
+    },
+    {
+      "source": "material.A",
+      "target": "reaction.pr0",
+      "relation": "input"
+    },
+    {
+      "source": "material.A",
+      "target": "reaction.pr3",
+      "relation": "input"
+    },
+    {
+      "source": "material.A",
+      "target": "reaction.pr4",
+      "relation": "input"
+    },
+    {
+      "source": "material.A",
+      "target": "reaction.pr7",
+      "relation": "input"
+    },
+    {
+      "source": "material.B",
+      "target": "reaction.pr0",
+      "relation": "input"
+    },
+    {
+      "source": "material.B",
+      "target": "reaction.pr2",
+      "relation": "input"
+    },
+    {
+      "source": "material.B",
+      "target": "reaction.pr4",
+      "relation": "input"
+    },
+    {
+      "source": "material.B",
+      "target": "reaction.pr6",
+      "relation": "input"
+    },
+    {
+      "source": "material.C",
+      "target": "reaction.pr1",
+      "relation": "input"
+    },
+    {
+      "source": "material.C",
+      "target": "reaction.pr3",
+      "relation": "input"
+    },
+    {
+      "source": "material.C",
+      "target": "reaction.pr5",
+      "relation": "input"
+    },
+    {
+      "source": "material.C",
+      "target": "reaction.pr7",
+      "relation": "input"
+    },
+    {
+      "source": "material.C",
+      "target": "use.C.buffer_capacity",
+      "relation": "use"
+    },
+    {
+      "source": "material.C",
+      "target": "use.C.conductance_2",
+      "relation": "use"
+    },
+    {
+      "source": "material.C",
+      "target": "use.C.damage",
+      "relation": "use"
+    },
+    {
+      "source": "material.C",
+      "target": "use.C.enzyme",
+      "relation": "use"
+    },
+    {
+      "source": "material.C",
+      "target": "use.C.stress",
+      "relation": "use"
+    },
+    {
+      "source": "material.C",
+      "target": "use.C.toggle_y",
+      "relation": "use"
+    },
+    {
+      "source": "material.D",
+      "target": "reaction.pr2",
+      "relation": "input"
+    },
+    {
+      "source": "material.D",
+      "target": "reaction.pr6",
+      "relation": "input"
+    },
+    {
+      "source": "material.S",
+      "target": "use.S.calibration",
+      "relation": "use"
+    },
+    {
+      "source": "material.W",
+      "target": "reaction.pr1",
+      "relation": "input"
+    },
+    {
+      "source": "material.W",
+      "target": "reaction.pr5",
+      "relation": "input"
+    },
+    {
+      "source": "next.buffer_applied",
+      "target": "state.buffer_applied",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.buffer_capacity",
+      "target": "state.buffer_capacity",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.calibration",
+      "target": "state.calibration",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.chaos_z",
+      "target": "state.chaos_z",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.conductance_1",
+      "target": "state.conductance_1",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.conductance_2",
+      "target": "state.conductance_2",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.damage",
+      "target": "state.damage",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.delay_0",
+      "target": "state.delay_0",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.delay_1",
+      "target": "state.delay_1",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.delay_2",
+      "target": "state.delay_2",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.enzyme",
+      "target": "state.enzyme",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.inhibitor",
+      "target": "state.inhibitor",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.rd_x0",
+      "target": "state.rd_x0",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.rd_x1",
+      "target": "state.rd_x1",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.rd_x2",
+      "target": "state.rd_x2",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.rd_y0",
+      "target": "state.rd_y0",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.rd_y1",
+      "target": "state.rd_y1",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.rd_y2",
+      "target": "state.rd_y2",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.storage_phase",
+      "target": "state.storage_phase",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.stress",
+      "target": "state.stress",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.substrate",
+      "target": "state.substrate",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.toggle_x",
+      "target": "state.toggle_x",
+      "relation": "next_round"
+    },
+    {
+      "source": "next.toggle_y",
+      "target": "state.toggle_y",
+      "relation": "next_round"
+    },
+    {
+      "source": "pool.A",
+      "target": "depletion.A",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.A",
+      "target": "depletion.B",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.A",
+      "target": "flow.charge",
+      "relation": "source"
+    },
+    {
+      "source": "pool.A",
+      "target": "flow.conduct",
+      "relation": "source"
+    },
+    {
+      "source": "pool.A",
+      "target": "flow.quota_loading",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.A",
+      "target": "flow.quota_loading",
+      "relation": "source"
+    },
+    {
+      "source": "pool.A",
+      "target": "regeneration.A",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.B",
+      "target": "depletion.A",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.B",
+      "target": "depletion.B",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.B",
+      "target": "regeneration.A",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.B",
+      "target": "regeneration.B",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.BAT",
+      "target": "flow.discharge",
+      "relation": "source"
+    },
+    {
+      "source": "pool.P",
+      "target": "flow.adsorb",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.P",
+      "target": "flow.adsorb",
+      "relation": "source"
+    },
+    {
+      "source": "pool.P",
+      "target": "flow.neutralize",
+      "relation": "source"
+    },
+    {
+      "source": "pool.P",
+      "target": "next.buffer_applied",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.P",
+      "target": "next.buffer_capacity",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.P",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.P_bound",
+      "target": "flow.adsorb",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.P_bound",
+      "target": "flow.regenerate_adsorbent",
+      "relation": "source"
+    },
+    {
+      "source": "pool.Q",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "pool.Q",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "reaction.pr0",
+      "target": "activity.consumed.A",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr0",
+      "target": "activity.consumed.B",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr0",
+      "target": "activity.produced.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr0",
+      "target": "activity.produced.W",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr0",
+      "target": "material.C",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr0",
+      "target": "material.W",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr0.condition",
+      "target": "reaction.pr0",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr0.operating_cost",
+      "target": "reaction.pr0",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr0.yield",
+      "target": "reaction.pr0",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr1",
+      "target": "activity.consumed.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr1",
+      "target": "activity.consumed.W",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr1",
+      "target": "activity.produced.D",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr1",
+      "target": "material.D",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr1",
+      "target": "reaction.pr1.effect.stress",
+      "relation": "extent_scaled_effect"
+    },
+    {
+      "source": "reaction.pr1.condition",
+      "target": "reaction.pr1",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr1.effect.stress",
+      "target": "state.stress",
+      "relation": "pre_update_effect"
+    },
+    {
+      "source": "reaction.pr1.operating_cost",
+      "target": "reaction.pr1",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr1.yield",
+      "target": "reaction.pr1",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr2",
+      "target": "activity.consumed.B",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr2",
+      "target": "activity.consumed.D",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr2",
+      "target": "activity.produced.S",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr2",
+      "target": "material.S",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr2.condition",
+      "target": "reaction.pr2",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr2.operating_cost",
+      "target": "reaction.pr2",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr2.yield",
+      "target": "reaction.pr2",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr3",
+      "target": "activity.consumed.A",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr3",
+      "target": "activity.consumed.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr3",
+      "target": "activity.produced.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr3",
+      "target": "material.C",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr3.condition",
+      "target": "reaction.pr3",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr3.operating_cost",
+      "target": "reaction.pr3",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr3.yield",
+      "target": "reaction.pr3",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr4",
+      "target": "activity.consumed.A",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr4",
+      "target": "activity.consumed.B",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr4",
+      "target": "activity.produced.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr4",
+      "target": "activity.produced.W",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr4",
+      "target": "material.C",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr4",
+      "target": "material.W",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr4.condition",
+      "target": "reaction.pr4",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr4.operating_cost",
+      "target": "reaction.pr4",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr4.yield",
+      "target": "reaction.pr4",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr5",
+      "target": "activity.consumed.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr5",
+      "target": "activity.consumed.W",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr5",
+      "target": "activity.produced.D",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr5",
+      "target": "material.D",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr5",
+      "target": "reaction.pr5.effect.stress",
+      "relation": "extent_scaled_effect"
+    },
+    {
+      "source": "reaction.pr5.condition",
+      "target": "reaction.pr5",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr5.effect.stress",
+      "target": "state.stress",
+      "relation": "pre_update_effect"
+    },
+    {
+      "source": "reaction.pr5.operating_cost",
+      "target": "reaction.pr5",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr5.yield",
+      "target": "reaction.pr5",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr6",
+      "target": "activity.consumed.B",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr6",
+      "target": "activity.consumed.D",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr6",
+      "target": "activity.produced.S",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr6",
+      "target": "material.S",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr6.condition",
+      "target": "reaction.pr6",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr6.operating_cost",
+      "target": "reaction.pr6",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr6.yield",
+      "target": "reaction.pr6",
+      "relation": "yield"
+    },
+    {
+      "source": "reaction.pr7",
+      "target": "activity.consumed.A",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr7",
+      "target": "activity.consumed.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr7",
+      "target": "activity.produced.C",
+      "relation": "activity"
+    },
+    {
+      "source": "reaction.pr7",
+      "target": "material.C",
+      "relation": "output"
+    },
+    {
+      "source": "reaction.pr7.condition",
+      "target": "reaction.pr7",
+      "relation": "condition"
+    },
+    {
+      "source": "reaction.pr7.operating_cost",
+      "target": "reaction.pr7",
+      "relation": "operating_cost"
+    },
+    {
+      "source": "reaction.pr7.yield",
+      "target": "reaction.pr7",
+      "relation": "yield"
+    },
+    {
+      "source": "regeneration.A",
+      "target": "pool.A",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.B",
+      "target": "pool.B",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.BAT",
+      "target": "pool.BAT",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.NET",
+      "target": "pool.NET",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.P",
+      "target": "pool.P",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.P_bound",
+      "target": "pool.P_bound",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.P_neutral",
+      "target": "pool.P_neutral",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.Q",
+      "target": "pool.Q",
+      "relation": "settlement"
+    },
+    {
+      "source": "regeneration.W",
+      "target": "pool.W",
+      "relation": "settlement"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.band",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.direction",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot0.porous",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.band",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.direction",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.autocatalysis",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.autocatalysis_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.r0",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.r0_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.r1",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.r1_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.r2",
+      "relation": "dependency"
+    },
+    {
+      "source": "slot1.porous",
+      "target": "logical.r2_route",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.buffer_applied",
+      "target": "flow.neutralize",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.buffer_capacity",
+      "target": "next.buffer_applied",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.buffer_capacity",
+      "target": "next.buffer_capacity",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.calibration",
+      "target": "measurement_bias.stress",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.calibration",
+      "target": "next.calibration",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.chaos_z",
+      "target": "next.chaos_z",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.chaos_z",
+      "target": "regeneration.B",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.conductance_1",
+      "target": "flow.conduct",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.conductance_1",
+      "target": "next.conductance_1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.conductance_1",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.conductance_2",
+      "target": "flow.conduct",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.conductance_2",
+      "target": "next.conductance_2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.conductance_2",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "next.damage",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr0.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr1.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr2.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr3.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr4.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr5.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr6.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.damage",
+      "target": "reaction.pr7.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.delay_0",
+      "target": "next.delay_1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.delay_1",
+      "target": "next.delay_2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.delay_2",
+      "target": "regeneration.A",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.enzyme",
+      "target": "next.enzyme",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.enzyme",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.enzyme",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.inhibitor",
+      "target": "next.inhibitor",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.inhibitor",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.inhibitor",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x0",
+      "target": "next.rd_x0",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x0",
+      "target": "next.rd_x1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x0",
+      "target": "next.rd_y0",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x1",
+      "target": "next.rd_x0",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x1",
+      "target": "next.rd_x1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x1",
+      "target": "next.rd_x2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x1",
+      "target": "next.rd_y1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x2",
+      "target": "next.rd_x1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x2",
+      "target": "next.rd_x2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_x2",
+      "target": "next.rd_y2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "next.rd_x0",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "next.rd_y0",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "next.rd_y1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "reaction.pr3.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y0",
+      "target": "reaction.pr7.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y1",
+      "target": "next.rd_x1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y1",
+      "target": "next.rd_y0",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y1",
+      "target": "next.rd_y1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y1",
+      "target": "next.rd_y2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "next.rd_x2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "next.rd_y1",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "next.rd_y2",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "reaction.pr1.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "reaction.pr2.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "reaction.pr5.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.rd_y2",
+      "target": "reaction.pr6.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.storage_phase",
+      "target": "flow.charge",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.storage_phase",
+      "target": "flow.discharge",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.storage_phase",
+      "target": "next.storage_phase",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.stress",
+      "target": "next.stress",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.stress",
+      "target": "reaction.pr1.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.stress",
+      "target": "reaction.pr5.condition",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.substrate",
+      "target": "next.substrate",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.substrate",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.substrate",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_x",
+      "target": "next.toggle_x",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_x",
+      "target": "next.toggle_y",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_x",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_x",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_y",
+      "target": "next.toggle_x",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_y",
+      "target": "next.toggle_y",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_y",
+      "target": "reaction.pr0.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "state.toggle_y",
+      "target": "reaction.pr4.yield",
+      "relation": "dependency"
+    },
+    {
+      "source": "use.C.buffer_capacity",
+      "target": "state.buffer_capacity",
+      "relation": "bounded_state_effect"
+    },
+    {
+      "source": "use.C.conductance_2",
+      "target": "state.conductance_2",
+      "relation": "bounded_state_effect"
+    },
+    {
+      "source": "use.C.damage",
+      "target": "state.damage",
+      "relation": "bounded_state_effect"
+    },
+    {
+      "source": "use.C.enzyme",
+      "target": "state.enzyme",
+      "relation": "bounded_state_effect"
+    },
+    {
+      "source": "use.C.stress",
+      "target": "state.stress",
+      "relation": "bounded_state_effect"
+    },
+    {
+      "source": "use.C.toggle_y",
+      "target": "state.toggle_y",
+      "relation": "bounded_state_effect"
+    },
+    {
+      "source": "use.S.calibration",
+      "target": "state.calibration",
+      "relation": "bounded_state_effect"
+    }
+  ],
+  "interpretation": "Static configuration dependence; cycles can represent temporal feedback, not a Lean proof DAG"
+}

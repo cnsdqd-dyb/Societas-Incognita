@@ -271,6 +271,23 @@ def with_capabilities(candidate):
     return result
 
 
+def with_property_rules(candidate):
+    """Opt-in propositional physical observations and limiting-reagent reactions.
+
+    Apply after capability/physical layers. Existing frozen candidates are not
+    migrated, and old Lean certificates do not cover the new settlement rule.
+    """
+    import property_rules
+    result = copy.deepcopy(candidate)
+    result['definition'], report = property_rules.install(result['definition'],
+        result.get('generation', {}).get('seed', 0))
+    engine.validate(result['definition'])
+    result.setdefault('generation', {}).update(property_rule_validation=report,
+        property_rule_version=property_rules.VERSION, definition_sha256=digest(result['definition']),
+        status='candidate_not_certified')
+    return result
+
+
 def add_functional_services(d, seed, kinds):
     """Install only executable services, with reproducible costly materials."""
     import functional_effects

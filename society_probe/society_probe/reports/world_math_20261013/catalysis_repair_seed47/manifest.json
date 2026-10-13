@@ -1,0 +1,21 @@
+{
+  "world_sha256": "7e03507463b37afccaf5c53023fafaac8581c7cc022be3f26c7c6d203cf76fb3",
+  "equations": 29,
+  "nodes": 61,
+  "edges": 104,
+  "status": "configuration_export_not_formal_proof",
+  "semantics": "limiting_reagent_v1",
+  "engine_sha256": {
+    "mini_world.py": "d328e3f2bcce0bb9149ba286ccd0e922e6fe7bc65e35dd006c93dbc9a76a48ba",
+    "property_rules.py": "f27dbe1b7a5ccc4900455401b4c16f580db383f24591a6211a3f9c3e9c77eda4",
+    "production_semantics.py": "ad1528f659826f540cba5763d9b7f54d87b254c579ba60926693a42316529141",
+    "mechanism_extensions.py": "75b17be400a4ac3d1b17f3837766542deeaefc0af7b8922e504e3ba5de74fe25",
+    "sim.py": "a74373036c67218459afd86a4e371ea1cf89b09c21e65cb9c09e6afda59ad3d8",
+    "environments.py": "1ced6ee5fb4f590ff7ca9c3d83906d842fe6c1d1fb666b506cddf5ac7cf56f28",
+    "functional_effects.py": "6605845154c466281c36b01d24a6694e956a764404c3f6b396a299cf7a3a73e7",
+    "capability_devices.py": "225370e75b8d31ad73878f3d9ba9974b27251782419e9a68214cdac40cd4178a",
+    "material_combinations.py": "638accc3ff7f43653d9715309ee594d9334316626ff813321e4b4718c7a5a839",
+    "social_content.py": "9a8001e3e9ff3496022414852199815064d5e7aee1819fc904826c8838b3e962",
+    "interaction_controls.py": "a85ab75c7475605bf016b68ab5b4150388f069984982440d43c377ea8affa0c0"
+  }
+}

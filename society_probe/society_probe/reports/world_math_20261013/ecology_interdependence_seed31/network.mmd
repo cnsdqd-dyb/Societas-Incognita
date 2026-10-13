@@ -1,0 +1,145 @@
+flowchart LR
+  n0["A · material"]
+  n1["B · material"]
+  n2["C · material"]
+  n3["D · material"]
+  n4["S · material"]
+  n5["W · material"]
+  n6["next.stress"]
+  n7["stress · state"]
+  n8["next.delay_0"]
+  n9["activity.harvested.A"]
+  n10["delay_0 · state"]
+  n11["next.delay_1"]
+  n12["delay_1 · state"]
+  n13["next.delay_2"]
+  n14["delay_2 · state"]
+  n15["A · pool"]
+  n16["regeneration.A"]
+  n17["B · pool"]
+  n18["depletion.A"]
+  n19["regeneration.B"]
+  n20["depletion.B"]
+  n21["W · pool"]
+  n22["regeneration.W"]
+  n23["depletion.W"]
+  n24["pr0 @ F0/combine"]
+  n25["F0"]
+  n26["activity.consumed.A"]
+  n27["activity.consumed.B"]
+  n28["activity.produced.C"]
+  n29["activity.produced.W"]
+  n30["reaction.pr0.condition"]
+  n31["reaction.pr0.yield"]
+  n32["reaction.pr0.operating_cost"]
+  n33["reaction.pr0.byproduct.W"]
+  n34["pr1 @ F0/combine"]
+  n35["activity.consumed.C"]
+  n36["activity.consumed.W"]
+  n37["activity.produced.D"]
+  n38["reaction.pr1.condition"]
+  n39["reaction.pr1.yield"]
+  n40["reaction.pr1.operating_cost"]
+  n41["reaction.pr1.effect.stress"]
+  n42["pr2 @ F1/combine"]
+  n43["F1"]
+  n44["activity.consumed.D"]
+  n45["activity.produced.S"]
+  n46["reaction.pr2.condition"]
+  n47["reaction.pr2.yield"]
+  n48["reaction.pr2.operating_cost"]
+  n49["logical.r0"]
+  n50["device.channel"]
+  n51["slot0.band"]
+  n52["slot0.direction"]
+  n53["slot0.porous"]
+  n54["slot1.band"]
+  n55["slot1.direction"]
+  n56["slot1.porous"]
+  n57["logical.r1"]
+  n58["logical.r2"]
+  n59["external_inflow"]
+  n60["use.C.stress"]
+  n9 -->|dependency| n8
+  n18 -->|settlement| n15
+  n20 -->|settlement| n17
+  n23 -->|settlement| n21
+  n50 -->|dependency| n49
+  n50 -->|dependency| n57
+  n50 -->|dependency| n58
+  n25 -->|equipment| n24
+  n25 -->|equipment| n34
+  n43 -->|equipment| n42
+  n49 -->|structural_eligibility| n24
+  n57 -->|structural_eligibility| n34
+  n58 -->|structural_eligibility| n42
+  n0 -->|input| n24
+  n1 -->|input| n24
+  n1 -->|input| n42
+  n2 -->|input| n34
+  n2 -->|use| n60
+  n3 -->|input| n42
+  n5 -->|input| n34
+  n8 -->|next_round| n10
+  n11 -->|next_round| n12
+  n13 -->|next_round| n14
+  n6 -->|next_round| n7
+  n15 -->|dependency| n18
+  n15 -->|dependency| n20
+  n15 -->|dependency| n16
+  n17 -->|dependency| n18
+  n17 -->|dependency| n20
+  n17 -->|dependency| n16
+  n17 -->|dependency| n19
+  n24 -->|activity| n26
+  n24 -->|activity| n27
+  n24 -->|activity| n28
+  n24 -->|activity| n29
+  n24 -->|output| n2
+  n24 -->|output| n5
+  n30 -->|condition| n24
+  n32 -->|operating_cost| n24
+  n31 -->|yield| n24
+  n34 -->|activity| n35
+  n34 -->|activity| n36
+  n34 -->|activity| n37
+  n34 -->|output| n3
+  n34 -->|extent_scaled_effect| n41
+  n38 -->|condition| n34
+  n41 -->|pre_update_effect| n7
+  n40 -->|operating_cost| n34
+  n39 -->|yield| n34
+  n42 -->|activity| n27
+  n42 -->|activity| n44
+  n42 -->|activity| n45
+  n42 -->|output| n4
+  n46 -->|condition| n42
+  n48 -->|operating_cost| n42
+  n47 -->|yield| n42
+  n16 -->|settlement| n15
+  n19 -->|settlement| n17
+  n22 -->|settlement| n21
+  n51 -->|dependency| n49
+  n51 -->|dependency| n57
+  n51 -->|dependency| n58
+  n52 -->|dependency| n49
+  n52 -->|dependency| n57
+  n52 -->|dependency| n58
+  n53 -->|dependency| n49
+  n53 -->|dependency| n57
+  n53 -->|dependency| n58
+  n54 -->|dependency| n49
+  n54 -->|dependency| n57
+  n54 -->|dependency| n58
+  n55 -->|dependency| n49
+  n55 -->|dependency| n57
+  n55 -->|dependency| n58
+  n56 -->|dependency| n49
+  n56 -->|dependency| n57
+  n56 -->|dependency| n58
+  n10 -->|dependency| n11
+  n12 -->|dependency| n13
+  n14 -->|dependency| n16
+  n7 -->|dependency| n6
+  n7 -->|dependency| n38
+  n60 -->|bounded_state_effect| n7

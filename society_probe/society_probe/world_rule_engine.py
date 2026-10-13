@@ -127,7 +127,7 @@ def validate(spec):
         raise ValueError('Invalid recipe graph')
     signatures = set(); ids = set()
     import production_semantics
-    if spec.get('production_semantics', 'exact_integer_v1') not in ('exact_integer_v1', 'proportional_v1'):
+    if spec.get('production_semantics', 'exact_integer_v1') not in ('exact_integer_v1', 'proportional_v1', 'limiting_reagent_v1'):
         raise ValueError('Unknown production semantics')
     for facility in spec['facilities'].values():
         number(facility.get('min_processing_extent', 0), 0, 1e6)
@@ -147,6 +147,8 @@ def validate(spec):
             from functools import reduce
             common = reduce(gcd, r['inputs'].values())
             signature = (r['facility'], r['mode'], tuple(sorted((k,n//common) for k,n in r['inputs'].items())))
+        if spec.get('production_semantics') == 'limiting_reagent_v1':
+            signature = (r['facility'], r['mode'], tuple(sorted(r['inputs'])))
         if signature in signatures: raise ValueError('Ambiguous recipe signature')
         signatures.add(signature)
         number(r['energy_cost'], 0, 1e6)
@@ -156,6 +158,8 @@ def validate(spec):
         effect = r.get('effects', {})
         if not set(effect) <= set(spec['variables']): raise ValueError('Unknown material function target')
         for expr in effect.values(): validate_expression(expr, refs)
+    import property_rules
+    property_rules.validate(spec)
     for k in ('initial_reserve', 'reserve_capacity', 'experiment_cost'):
         number(spec[k], 0, 1e9)
     if spec['initial_reserve'] > spec['reserve_capacity']: raise ValueError('Reserve exceeds capacity')

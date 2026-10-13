@@ -1,0 +1,207 @@
+flowchart LR
+  n0["A · material"]
+  n1["B · material"]
+  n2["C · material"]
+  n3["D · material"]
+  n4["S · material"]
+  n5["W · material"]
+  n6["P · material"]
+  n7["P_neutral · material"]
+  n8["BAT · material"]
+  n9["next.stress"]
+  n10["stress · state"]
+  n11["next.delay_0"]
+  n12["activity.harvested.A"]
+  n13["delay_0 · state"]
+  n14["next.delay_1"]
+  n15["delay_1 · state"]
+  n16["next.delay_2"]
+  n17["delay_2 · state"]
+  n18["next.damage"]
+  n19["damage · state"]
+  n20["activity.produced.C"]
+  n21["next.buffer_capacity"]
+  n22["buffer_capacity · state"]
+  n23["P · pool"]
+  n24["next.buffer_applied"]
+  n25["buffer_applied · state"]
+  n26["next.storage_phase"]
+  n27["storage_phase · state"]
+  n28["next.calibration"]
+  n29["calibration · state"]
+  n30["A · pool"]
+  n31["regeneration.A"]
+  n32["depletion.A"]
+  n33["B · pool"]
+  n34["regeneration.B"]
+  n35["depletion.B"]
+  n36["W · pool"]
+  n37["regeneration.W"]
+  n38["depletion.W"]
+  n39["regeneration.P"]
+  n40["depletion.P"]
+  n41["P_neutral · pool"]
+  n42["regeneration.P_neutral"]
+  n43["depletion.P_neutral"]
+  n44["BAT · pool"]
+  n45["regeneration.BAT"]
+  n46["depletion.BAT"]
+  n47["pr0 @ F1/combine"]
+  n48["F1"]
+  n49["activity.consumed.A"]
+  n50["activity.consumed.B"]
+  n51["activity.produced.W"]
+  n52["reaction.pr0.condition"]
+  n53["reaction.pr0.yield"]
+  n54["reaction.pr0.operating_cost"]
+  n55["reaction.pr0.byproduct.W"]
+  n56["pr1 @ F1/compress"]
+  n57["activity.consumed.C"]
+  n58["activity.consumed.W"]
+  n59["activity.produced.D"]
+  n60["reaction.pr1.condition"]
+  n61["reaction.pr1.yield"]
+  n62["reaction.pr1.operating_cost"]
+  n63["reaction.pr1.effect.stress"]
+  n64["pr2 @ F1/compress"]
+  n65["activity.consumed.D"]
+  n66["activity.produced.S"]
+  n67["reaction.pr2.condition"]
+  n68["reaction.pr2.yield"]
+  n69["reaction.pr2.operating_cost"]
+  n70["flow.neutralize"]
+  n71["flow.charge"]
+  n72["flow.discharge"]
+  n73["logical.r0"]
+  n74["device.channel"]
+  n75["slot0.band"]
+  n76["slot0.direction"]
+  n77["slot0.porous"]
+  n78["slot1.band"]
+  n79["slot1.direction"]
+  n80["slot1.porous"]
+  n81["logical.r1"]
+  n82["logical.r2"]
+  n83["external_inflow"]
+  n84["measurement_bias.stress"]
+  n85["use.C.calibration"]
+  n86["use.S.stress"]
+  n87["use.S.damage"]
+  n88["use.S.buffer_capacity"]
+  n12 -->|dependency| n11
+  n20 -->|dependency| n18
+  n32 -->|settlement| n30
+  n35 -->|settlement| n33
+  n46 -->|settlement| n44
+  n40 -->|settlement| n23
+  n43 -->|settlement| n41
+  n38 -->|settlement| n36
+  n74 -->|dependency| n73
+  n74 -->|dependency| n81
+  n74 -->|dependency| n82
+  n48 -->|equipment| n47
+  n48 -->|equipment| n56
+  n48 -->|equipment| n64
+  n71 -->|transfer| n44
+  n72 -->|transfer| n30
+  n70 -->|transfer| n41
+  n73 -->|structural_eligibility| n47
+  n81 -->|structural_eligibility| n56
+  n82 -->|structural_eligibility| n64
+  n0 -->|input| n47
+  n1 -->|input| n47
+  n1 -->|input| n64
+  n2 -->|input| n56
+  n2 -->|use| n85
+  n3 -->|input| n64
+  n4 -->|use| n88
+  n4 -->|use| n87
+  n4 -->|use| n86
+  n5 -->|input| n56
+  n24 -->|next_round| n25
+  n21 -->|next_round| n22
+  n28 -->|next_round| n29
+  n18 -->|next_round| n19
+  n11 -->|next_round| n13
+  n14 -->|next_round| n15
+  n16 -->|next_round| n17
+  n26 -->|next_round| n27
+  n9 -->|next_round| n10
+  n30 -->|source| n71
+  n30 -->|dependency| n31
+  n33 -->|dependency| n34
+  n44 -->|source| n72
+  n23 -->|source| n70
+  n23 -->|dependency| n24
+  n23 -->|dependency| n21
+  n23 -->|dependency| n53
+  n47 -->|activity| n49
+  n47 -->|activity| n50
+  n47 -->|activity| n20
+  n47 -->|activity| n51
+  n47 -->|output| n2
+  n47 -->|output| n5
+  n52 -->|condition| n47
+  n54 -->|operating_cost| n47
+  n53 -->|yield| n47
+  n56 -->|activity| n57
+  n56 -->|activity| n58
+  n56 -->|activity| n59
+  n56 -->|output| n3
+  n56 -->|extent_scaled_effect| n63
+  n60 -->|condition| n56
+  n63 -->|pre_update_effect| n10
+  n62 -->|operating_cost| n56
+  n61 -->|yield| n56
+  n64 -->|activity| n50
+  n64 -->|activity| n65
+  n64 -->|activity| n66
+  n64 -->|output| n4
+  n67 -->|condition| n64
+  n69 -->|operating_cost| n64
+  n68 -->|yield| n64
+  n31 -->|settlement| n30
+  n34 -->|settlement| n33
+  n45 -->|settlement| n44
+  n39 -->|settlement| n23
+  n42 -->|settlement| n41
+  n37 -->|settlement| n36
+  n75 -->|dependency| n73
+  n75 -->|dependency| n81
+  n75 -->|dependency| n82
+  n76 -->|dependency| n73
+  n76 -->|dependency| n81
+  n76 -->|dependency| n82
+  n77 -->|dependency| n73
+  n77 -->|dependency| n81
+  n77 -->|dependency| n82
+  n78 -->|dependency| n73
+  n78 -->|dependency| n81
+  n78 -->|dependency| n82
+  n79 -->|dependency| n73
+  n79 -->|dependency| n81
+  n79 -->|dependency| n82
+  n80 -->|dependency| n73
+  n80 -->|dependency| n81
+  n80 -->|dependency| n82
+  n25 -->|dependency| n70
+  n22 -->|dependency| n24
+  n22 -->|dependency| n21
+  n29 -->|dependency| n84
+  n29 -->|dependency| n28
+  n19 -->|dependency| n18
+  n19 -->|dependency| n52
+  n19 -->|dependency| n60
+  n19 -->|dependency| n67
+  n13 -->|dependency| n14
+  n15 -->|dependency| n16
+  n17 -->|dependency| n31
+  n27 -->|dependency| n71
+  n27 -->|dependency| n72
+  n27 -->|dependency| n26
+  n10 -->|dependency| n9
+  n10 -->|dependency| n60
+  n85 -->|bounded_state_effect| n29
+  n88 -->|bounded_state_effect| n22
+  n87 -->|bounded_state_effect| n19
+  n86 -->|bounded_state_effect| n10

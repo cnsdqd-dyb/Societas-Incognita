@@ -1,0 +1,786 @@
+[
+  {
+    "target": "next.stress",
+    "expression": {
+      "op": "max",
+      "args": [
+        0,
+        {
+          "op": "sub",
+          "args": [
+            {
+              "ref": "state.stress"
+            },
+            0.5
+          ]
+        }
+      ]
+    },
+    "latex": "\\operatorname{max}\\left(0,\\left(\\mathrm{state.stress} - 0.5\\right)\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.enzyme",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.95,
+                {
+                  "ref": "state.enzyme"
+                }
+              ]
+            },
+            {
+              "ref": "activity.consumed.D"
+            }
+          ]
+        },
+        0,
+        4
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.95 \\cdot \\mathrm{state.enzyme}\\right) + \\mathrm{activity.consumed.D}\\right),0,4\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.inhibitor",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "op": "mul",
+              "args": [
+                0.8,
+                {
+                  "ref": "state.inhibitor"
+                }
+              ]
+            },
+            {
+              "ref": "activity.harvested.B"
+            }
+          ]
+        },
+        0,
+        20
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\left(0.8 \\cdot \\mathrm{state.inhibitor}\\right) + \\mathrm{activity.harvested.B}\\right),0,20\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "next.damage",
+    "expression": {
+      "op": "clamp",
+      "args": [
+        {
+          "op": "add",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            {
+              "op": "mul",
+              "args": [
+                0.1,
+                {
+                  "ref": "activity.produced.C"
+                }
+              ]
+            }
+          ]
+        },
+        0,
+        2
+      ]
+    },
+    "latex": "\\operatorname{clamp}\\left(\\left(\\mathrm{state.damage} + \\left(0.1 \\cdot \\mathrm{activity.produced.C}\\right)\\right),0,2\\right)",
+    "kind": "state_update"
+  },
+  {
+    "target": "regeneration.A",
+    "expression": {
+      "op": "add",
+      "args": [
+        {
+          "op": "mul",
+          "args": [
+            0.1,
+            {
+              "op": "mul",
+              "args": [
+                0.25,
+                {
+                  "ref": "pool.A"
+                },
+                {
+                  "op": "max",
+                  "args": [
+                    0,
+                    {
+                      "op": "sub",
+                      "args": [
+                        1,
+                        {
+                          "op": "div",
+                          "args": [
+                            {
+                              "ref": "pool.A"
+                            },
+                            60
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "mul",
+          "args": [
+            0.25,
+            {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    1,
+                    {
+                      "op": "div",
+                      "args": [
+                        {
+                          "ref": "pool.A"
+                        },
+                        60
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(0.1 \\cdot \\left(0.25 \\cdot \\mathrm{pool.A} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right)\\right) + \\left(0.25 \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.A}}{60}\\right)\\right)\\right)\\right)",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.A",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "regeneration.B",
+    "expression": {
+      "op": "mul",
+      "args": [
+        0.1,
+        {
+          "op": "mul",
+          "args": [
+            0.25,
+            {
+              "ref": "pool.B"
+            },
+            {
+              "op": "max",
+              "args": [
+                0,
+                {
+                  "op": "sub",
+                  "args": [
+                    1,
+                    {
+                      "op": "div",
+                      "args": [
+                        {
+                          "ref": "pool.B"
+                        },
+                        60
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(0.1 \\cdot \\left(0.25 \\cdot \\mathrm{pool.B} \\cdot \\operatorname{max}\\left(0,\\left(1 - \\frac{\\mathrm{pool.B}}{60}\\right)\\right)\\right)\\right)",
+    "kind": "regeneration"
+  },
+  {
+    "target": "depletion.B",
+    "expression": 0,
+    "latex": "0",
+    "kind": "depletion"
+  },
+  {
+    "target": "reaction.pr0.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr0.yield",
+    "expression": {
+      "op": "div",
+      "args": [
+        {
+          "op": "mul",
+          "args": [
+            1.5,
+            {
+              "op": "div",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    2,
+                    {
+                      "ref": "state.enzyme"
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    1,
+                    {
+                      "ref": "state.enzyme"
+                    },
+                    {
+                      "ref": "state.inhibitor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        2
+      ]
+    },
+    "latex": "\\frac{\\left(1.5 \\cdot \\frac{\\left(2 \\cdot \\mathrm{state.enzyme}\\right)}{\\left(1 + \\mathrm{state.enzyme} + \\mathrm{state.inhibitor}\\right)}\\right)}{2}",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr0.operating_cost",
+    "expression": 0.5,
+    "latex": "0.5",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.stress"
+            },
+            10
+          ]
+        },
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{state.stress} < 10\\right) \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.yield",
+    "expression": 1.6666666666666667,
+    "latex": "1.6666666666666667",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.operating_cost",
+    "expression": 0,
+    "latex": "0",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr1.effect.stress",
+    "expression": 1,
+    "latex": "1",
+    "kind": "reaction_effect"
+  },
+  {
+    "target": "reaction.pr2.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr2.yield",
+    "expression": 1.35,
+    "latex": "1.35",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr2.operating_cost",
+    "expression": 1,
+    "latex": "1",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr3.condition",
+    "expression": {
+      "op": "and",
+      "args": [
+        1,
+        {
+          "op": "lt",
+          "args": [
+            {
+              "ref": "state.damage"
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(1 \\land \\left(\\mathrm{state.damage} < 1\\right)\\right)",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr3.yield",
+    "expression": 1.6666666666666665,
+    "latex": "1.6666666666666665",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "reaction.pr3.operating_cost",
+    "expression": 0,
+    "latex": "0",
+    "kind": "reaction_parameter"
+  },
+  {
+    "target": "logical.r0",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1457
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1457\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r1",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            1457
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 1457\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.r2",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            6125
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                24
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    -1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 6125\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 24\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = -1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "logical.autocatalysis",
+    "expression": {
+      "and": [
+        {
+          "eq": [
+            "device.channel",
+            9491
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot0.band",
+                1
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot0.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot0.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot0.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "and": [
+            {
+              "eq": [
+                "slot1.band",
+                27
+              ]
+            },
+            {
+              "or": [
+                {
+                  "eq": [
+                    "slot1.direction",
+                    1
+                  ]
+                },
+                {
+                  "and": [
+                    {
+                      "eq": [
+                        "slot1.direction",
+                        0
+                      ]
+                    },
+                    {
+                      "eq": [
+                        "slot1.porous",
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "latex": "\\left(\\left(\\mathrm{device.channel} = 9491\\right) \\land \\left(\\left(\\mathrm{slot0.band} = 1\\right) \\land \\left(\\left(\\mathrm{slot0.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot0.direction} = 0\\right) \\land \\left(\\mathrm{slot0.porous} = \\top\\right)\\right)\\right)\\right) \\land \\left(\\left(\\mathrm{slot1.band} = 27\\right) \\land \\left(\\left(\\mathrm{slot1.direction} = 1\\right) \\lor \\left(\\left(\\mathrm{slot1.direction} = 0\\right) \\land \\left(\\mathrm{slot1.porous} = \\top\\right)\\right)\\right)\\right)\\right)",
+    "kind": "logical_rule"
+  },
+  {
+    "target": "external_inflow",
+    "expression": 40,
+    "latex": "40",
+    "kind": "energy"
+  },
+  {
+    "target": "use.D.stress",
+    "expression": -1,
+    "latex": "-1",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.D.enzyme",
+    "expression": 1,
+    "latex": "1",
+    "kind": "material_effect"
+  },
+  {
+    "target": "use.D.damage",
+    "expression": -0.5,
+    "latex": "-0.5",
+    "kind": "material_effect"
+  }
+]

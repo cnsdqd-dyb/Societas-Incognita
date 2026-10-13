@@ -57,3 +57,23 @@ Native usage is charged or quota-counted by your Codex plan; `cost_usd=0` is **n
 The default revised generator permits positive decimal material/energy amounts, keeps batches and attack effort integral, slows ecological turnover, and funds precursor reseeding from the finite reserve. Historical results keep their original integer interface and original world rules. Seeds reproduce the mathematical definition; floating runtime/device differences remain a trusted boundary, and model responses require recorded replay rather than just reseeding.
 
 Further options: `python quickstart.py --help`. Prepare a config without running anything with `python society_probe/society_probe/prepare_functional_world.py --output output/world_config.json`.
+
+## Property rules and mathematical exports
+
+Opt into the new rule layer without making model calls:
+
+```bash
+python quickstart.py --property-rules --output output/property_demo
+python society_probe/society_probe/world_math_export.py --config output/property_demo/config.json --output output/property_math
+```
+
+The flag enables grounded descriptive observations and limiting-reagent processing. The scripted demo still uses a survival policy; it does not demonstrate autonomous scientific discovery. The exporter writes `model.md`, `equations.tex`, `network.mmd`, JSON equations/edges, and a complete physical definition. These are researcher artifacts and are not supplied to actors.
+
+Optional PNG/SVG rendering requires the figure dependencies:
+
+```bash
+python -m pip install -r requirements-figures.txt
+python society_probe/society_probe/render_world_math.py --root output/property_math
+```
+
+See [property rules](society_probe/society_probe/PROPERTY_RULES.en.md) for finite consistency checks and the current Lean boundary. The flag applies when creating a world; resume uses the frozen configuration.

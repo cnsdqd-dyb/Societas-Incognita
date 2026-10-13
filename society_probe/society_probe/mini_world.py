@@ -173,6 +173,8 @@ def observation(cfg, state, aid):
     result.update(functional_effects.observation(cfg, state, aid))
     if d.get('combination_functions'):
         result['your_functions'] = material_combinations.observation(cfg, state, aid)
+    import property_rules
+    result = property_rules.observe(d, state, result)
     return result
 
 
@@ -190,7 +192,8 @@ def public_rules(cfg):
 
 def continuous_quantities(cfg):
     d = spec(cfg)
-    return d.get('quantity_semantics') == 'continuous_v1' or d.get('production_semantics') == 'proportional_v1'
+    import production_semantics
+    return d.get('quantity_semantics') == 'continuous_v1' or production_semantics.proportional(d)
 
 
 def quantity(cfg, value, maximum=None, integer=False):
@@ -383,6 +386,8 @@ def settle_physics(cfg, state, before_actions):
         extent = float(extent)*batches
         record = {'round': state['round'], 'facility': pending['facility'], 'mode': pending['mode'],
                   'inputs': copy.deepcopy(pending['inputs']), 'batches': batches, 'produced': {}}
+        if d.get('production_semantics') == 'limiting_reagent_v1':
+            record.update(consumed_inputs={}, returned_inputs=copy.deepcopy(pending['inputs']))
         diagnostic_count = functional_effects.data(state).get('facilities', {}).get(pending['facility'], {}).get('diagnostics', 0)
         if diagnostic_count:
             # Diagnostics measure hidden state first, without revealing equations.
@@ -398,7 +403,13 @@ def settle_physics(cfg, state, before_actions):
             move(a, pending['inputs'], 1); record['result'] = 'insufficient_operating_energy'
         else:
             cost = max(0., equations.evaluate(recipe.get('operating_cost', recipe['energy_cost']), c))*extent; move(a, {'ENERGY': cost}, -1)
-            available = basket_energy(cfg, pending['inputs'])+cost
+            consumed = pending['inputs']
+            if d.get('production_semantics') == 'limiting_reagent_v1':
+                consumed = {k: min(pending['inputs'][k], n*extent) for k,n in recipe['inputs'].items()}
+                returned = {k: max(0., amount-consumed[k]) for k,amount in pending['inputs'].items()}
+                move(a, returned, 1)
+                record.update(consumed_inputs=copy.deepcopy(consumed), returned_inputs=returned)
+            available = basket_energy(cfg, consumed)+cost
             item = recipe['output']; density = d['resources'][item]['energy_value']
             raw = max(0., equations.evaluate(recipe['yield'], c))*extent*noise(cfg, state, aid, 'recipe:'+recipe['id'])
             output = min(raw, available/density) if proportional else min(math.floor(raw+1e-9), math.floor(available/density+1e-9))
@@ -413,7 +424,7 @@ def settle_physics(cfg, state, before_actions):
                 products[byproduct] = count; remaining -= count*value
                 move(a, {byproduct: count}, 1); add_activity(state, 'produced', byproduct, count)
                 material_knowledge.acquire(cfg, state, aid, byproduct, count, 'production')
-            for k, amount in pending['inputs'].items(): add_activity(state, 'consumed', k, amount)
+            for k, amount in consumed.items(): add_activity(state, 'consumed', k, amount)
             for k, expr in recipe.get('effects', {}).items():
                 effects_total[k] = effects_total.get(k, 0)+extent*equations.evaluate(expr, c)
             record.update(result='product' if sum(products.values()) else 'no_product', produced=products,

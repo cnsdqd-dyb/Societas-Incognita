@@ -6,7 +6,7 @@ import math
 
 
 def proportional(definition):
-    return definition.get('production_semantics', 'exact_integer_v1') == 'proportional_v1'
+    return definition.get('production_semantics', 'exact_integer_v1') in ('proportional_v1', 'limiting_reagent_v1')
 
 
 def match(definition, facility, mode, basket):
@@ -16,6 +16,10 @@ def match(definition, facility, mode, basket):
         if set(recipe['inputs']) != set(basket):
             continue
         factors = [Fraction(str(basket[k])) / n for k, n in recipe['inputs'].items()]
+        if definition.get('production_semantics') == 'limiting_reagent_v1':
+            if all(x > 0 for x in factors):
+                return recipe, min(factors)
+            continue
         if proportional(definition):
             if factors[0] > 0 and all(math.isclose(float(x), float(factors[0]), rel_tol=1e-12, abs_tol=0) for x in factors):
                 # Only roundoff-scale discrepancies qualify; the limiting input funds output.
